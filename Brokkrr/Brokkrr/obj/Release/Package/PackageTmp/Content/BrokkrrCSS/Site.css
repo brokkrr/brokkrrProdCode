@@ -1,0 +1,30 @@
+﻿
+.DropdownBG {
+  /*  background-image: url('../../Images/Insurance/down.png');*/
+    background-image: url(../../Images/Insurance/down.png);
+    background-size: 16px 16px;
+}
+
+
+.Hiddenfield{display:none;}
+
+.RequiredField{
+    color:red !important;
+}
+
+.imageFit {
+             object-fit:cover;
+            -webkit-object-fit: cover!important; 
+            -moz-object-fit:cover;
+            -ms-object-fit:cover;
+     
+        }
+
+  .imageFitSize {
+
+          
+	object-fit: contain;
+    width:120px;
+            height:100px;
+           max-width:100%;
+        }

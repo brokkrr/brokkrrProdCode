@@ -1,0 +1,1174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BrokerDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AutoInsuranceDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="VehicleType" Type="varchar" MaxLength="50" />
+    <Property Name="IsInsured" Type="bit" />
+    <Property Name="InsuranceCompany" Type="varchar" MaxLength="50" />
+    <Property Name="CoverageExpires" Type="varchar" MaxLength="50" />
+    <Property Name="Language" Type="varchar" MaxLength="50" />
+    <Property Name="Notes" Type="varchar(max)" />
+    <Property Name="longitude" Type="nvarchar" MaxLength="200" />
+    <Property Name="latitude" Type="nvarchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Path" Type="varchar" MaxLength="500" />
+    <Property Name="DeclarationDocBase64" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="AutoTypeMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AutoType" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="BenefitsInsuranceDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="IsInsured" Type="bit" />
+    <Property Name="InsuranceCompany" Type="varchar" MaxLength="100" />
+    <Property Name="Language" Type="varchar" MaxLength="50" />
+    <Property Name="EmployeeStrength" Type="varchar" MaxLength="50" />
+    <Property Name="CoverageExpires" Type="varchar" MaxLength="50" />
+    <Property Name="Notes" Type="varchar(max)" />
+    <Property Name="longitude" Type="nvarchar" MaxLength="200" />
+    <Property Name="latitude" Type="nvarchar" MaxLength="200" />
+    <Property Name="IndustryId" Type="int" />
+    <Property Name="SubIndustryId" Type="nvarchar(max)" />
+    <Property Name="SubIndustrySICCode" Type="nvarchar(max)" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Path" Type="varchar" MaxLength="500" />
+    <Property Name="DeclarationDocBase64" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="BrokerAvailability">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="IsAvailable" Type="bit" />
+  </EntityType>
+  <EntityType Name="BrokerBriefcase">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Url" Type="nvarchar(max)" />
+    <Property Name="Title" Type="varchar" MaxLength="1000" />
+    <Property Name="Description" Type="varchar(max)" />
+    <Property Name="IsActivated" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="UploadedBy" Type="int" />
+    <Property Name="DateFrom" Type="datetime" />
+    <Property Name="DateTo" Type="datetime" />
+    <Property Name="AssignedCompany" Type="varchar" MaxLength="1000" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="LastUpdateDate" Type="datetime" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BrokerDB.dbo.BrokerMessages' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="BrokerMessages">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="BrokerId" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BrokerId" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Message" Type="nvarchar(max)" />
+    <Property Name="ContactDate" Type="datetime" />
+    <Property Name="IsRead" Type="bit" />
+    <Property Name="CustomerMsgId" Type="int" />
+    <Property Name="LocalDateTime" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="DeclarationDocPath" Type="varchar" MaxLength="500" />
+    <Property Name="DeclarationDocBase64" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="BrokerPayment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="PaymentId" Type="nvarchar" MaxLength="50" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar" MaxLength="200" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PaymentDate" Type="datetime" />
+    <Property Name="IsPaid" Type="bit" />
+    <Property Name="PaymentMode" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BusinessInsuranceDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="IsInsured" Type="bit" />
+    <Property Name="InsuranceCompany" Type="varchar" MaxLength="100" />
+    <Property Name="SICCode" Type="varchar" MaxLength="50" />
+    <Property Name="Revenue" Type="varchar" MaxLength="50" />
+    <Property Name="CoverageExpires" Type="varchar" MaxLength="50" />
+    <Property Name="Language" Type="varchar" MaxLength="50" />
+    <Property Name="Notes" Type="varchar(max)" />
+    <Property Name="longitude" Type="nvarchar" MaxLength="200" />
+    <Property Name="latitude" Type="nvarchar" MaxLength="200" />
+    <Property Name="IndustryId" Type="int" />
+    <Property Name="SubIndustryId" Type="nvarchar(max)" />
+    <Property Name="SubIndustrySICCode" Type="nvarchar(max)" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Path" Type="varchar" MaxLength="500" />
+    <Property Name="DeclarationDocBase64" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="CompanyMaster">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Name="CompanyId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="200" />
+    <Property Name="Logo" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BrokerDB.dbo.Config' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Config">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ConfigName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ConfigValue" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BrokerDB.dbo.CustomerBrokerChat' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CustomerBrokerChat">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BrokerMsgId" Type="int" />
+    <Property Name="CustMsgId" Type="int" />
+    <Property Name="BrokerId" Type="int" />
+    <Property Name="CustomerId" Type="int" />
+    <Property Name="BrokerMessage" Type="nvarchar(max)" />
+    <Property Name="CustomerMessage" Type="nvarchar(max)" />
+    <Property Name="MessageDate" Type="datetime" />
+    <Property Name="IsRead" Type="bit" />
+    <Property Name="LocalDateTime" Type="datetime" />
+    <Property Name="IsDeletedByCustomer" Type="bit" />
+    <Property Name="IsDeletedByBroker" Type="bit" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BrokerDB.dbo.CustomerMessages' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="CustomerMessages">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="BrokerId" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="BrokerId" Type="int" Nullable="false" />
+    <Property Name="ContactDate" Type="datetime" />
+    <Property Name="Message" Type="varchar(max)" />
+    <Property Name="BrokerMsgId" Type="int" />
+    <Property Name="LocalDateTime" Type="datetime" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="IsRead" Type="bit" />
+    <Property Name="IsRatingGiven" Type="bit" />
+  </EntityType>
+  <EntityType Name="ErrorLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ErrorType" Type="nvarchar" MaxLength="50" />
+    <Property Name="ErrorMessage" Type="nvarchar(max)" />
+    <Property Name="PageName" Type="nvarchar" MaxLength="50" />
+    <Property Name="ErrorDate" Type="datetime" />
+    <Property Name="IPAddress" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="HomeInsuranceDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="EstimatedValue" Type="varchar" MaxLength="100" />
+    <Property Name="IsInsured" Type="bit" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="100" />
+    <Property Name="CoverageExpires" Type="varchar" MaxLength="50" />
+    <Property Name="Language" Type="varchar" MaxLength="50" />
+    <Property Name="Notes" Type="varchar(max)" />
+    <Property Name="longitude" Type="nvarchar" MaxLength="200" />
+    <Property Name="latitude" Type="nvarchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Path" Type="varchar" MaxLength="500" />
+    <Property Name="DeclarationDocBase64" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="IndustryMaster">
+    <Key>
+      <PropertyRef Name="IndustryId" />
+    </Key>
+    <Property Name="IndustryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IndustryName" Type="nvarchar" MaxLength="500" />
+    <Property Name="IndustrySICCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="CompanyId" Type="int" />
+  </EntityType>
+  <EntityType Name="InsuranceTypeMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InsuranceName" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="LifeInsuranceDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+    <Property Name="City" Type="varchar" MaxLength="50" />
+    <Property Name="IsInsured" Type="bit" />
+    <Property Name="InsuranceCompany" Type="varchar" MaxLength="100" />
+    <Property Name="Language" Type="varchar" MaxLength="50" />
+    <Property Name="FaceValue" Type="varchar" MaxLength="50" />
+    <Property Name="CoverageExpires" Type="varchar" MaxLength="50" />
+    <Property Name="Notes" Type="varchar(max)" />
+    <Property Name="longitude" Type="nvarchar" MaxLength="200" />
+    <Property Name="latitude" Type="nvarchar" MaxLength="200" />
+    <Property Name="CreateDate" Type="datetime" />
+    <Property Name="Path" Type="varchar" MaxLength="500" />
+    <Property Name="DeclarationDocBase64" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PaymentMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DateOfEffect" Type="datetime" />
+  </EntityType>
+  <EntityType Name="SubIndustryMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IndustryId" Type="int" />
+    <Property Name="SICCode" Type="nvarchar" MaxLength="20" />
+    <Property Name="SubIndustryName" Type="nvarchar" MaxLength="500" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="IsDeleted" Type="bit" />
+    <Property Name="CompanyId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BrokerDB.dbo.User' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+    <Property Name="EmailId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar(max)" />
+    <Property Name="Address" Type="nvarchar" MaxLength="300" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" MaxLength="50" />
+    <Property Name="Country" Type="nvarchar" MaxLength="50" />
+    <Property Name="PinCode" Type="nvarchar(max)" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="MobNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="DOB" Type="datetime" />
+    <Property Name="ProfilePicture" Type="nvarchar(max)" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="UserType" Type="nvarchar" MaxLength="50" />
+    <Property Name="RegisteredDate" Type="datetime" />
+    <Property Name="RegisterdType" Type="nvarchar" MaxLength="50" />
+    <Property Name="IsUpdateProfile" Type="bit" />
+    <Property Name="HouseType" Type="nvarchar" MaxLength="50" />
+    <Property Name="AddressofHouse" Type="nvarchar" MaxLength="200" />
+    <Property Name="IsHavingCar" Type="bit" />
+    <Property Name="NoOfCars" Type="int" />
+    <Property Name="TypeOfEmployment" Type="nvarchar" MaxLength="100" />
+    <Property Name="CompanyName" Type="varchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" />
+    <Property Name="Resume" Type="nvarchar" MaxLength="100" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="150" />
+    <Property Name="Languages" Type="nvarchar" MaxLength="200" />
+    <Property Name="Specialities" Type="nvarchar" MaxLength="200" />
+    <Property Name="RegistrationCode" Type="varchar" MaxLength="100" />
+    <Property Name="IsEmailIdVerified" Type="bit" />
+    <Property Name="IsAvailable" Type="bit" />
+    <Property Name="Awards" Type="nvarchar(max)" />
+    <Property Name="Skills" Type="nvarchar(max)" />
+    <Property Name="Recomendations" Type="nvarchar(max)" />
+    <Property Name="License" Type="nvarchar" MaxLength="50" />
+    <Property Name="ExpiryDate" Type="datetime" />
+    <Property Name="longitude" Type="nvarchar" MaxLength="200" />
+    <Property Name="latitude" Type="nvarchar" MaxLength="200" />
+    <Property Name="ProfilePictureImg" Type="nvarchar(max)" />
+    <Property Name="ResumeDoc" Type="nvarchar(max)" />
+    <Property Name="IsPaymentDone" Type="bit" />
+    <Property Name="ForgetPasswordRanNum" Type="varchar(max)" />
+    <Property Name="DeviceId" Type="varchar(max)" />
+    <Property Name="HomeValue" Type="nvarchar(max)" />
+    <Property Name="AutoType" Type="nvarchar(max)" />
+    <Property Name="Revenue" Type="nvarchar(max)" />
+    <Property Name="Employees" Type="nvarchar(max)" />
+    <Property Name="CoverageAmt" Type="nvarchar(max)" />
+    <Property Name="CompanyLogo" Type="nvarchar(max)" />
+    <Property Name="IndustryId" Type="nvarchar(max)" />
+    <Property Name="SubIndustryId" Type="nvarchar(max)" />
+    <Property Name="Bio" Type="nvarchar(max)" />
+    <Property Name="RegisteredFor" Type="nvarchar" MaxLength="50" />
+    <Property Name="NoofEmployee" Type="varchar" MaxLength="100" />
+    <Property Name="EstPremium" Type="varchar" MaxLength="100" />
+    <Property Name="Website" Type="varchar" MaxLength="100" />
+    <Property Name="IsAdmin" Type="bit" />
+  </EntityType>
+  <EntityType Name="UserBroker">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="BrokerId" Type="int" />
+    <Property Name="SearchDate" Type="datetime" />
+    <Property Name="InsuranceType" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BrokerDB.dbo.UserEducation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="UserEducation">
+    <Key>
+      <PropertyRef Name="EduId" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="EduId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="UniversityName" Type="nvarchar" MaxLength="100" />
+    <Property Name="CourseName" Type="nvarchar" MaxLength="100" />
+    <Property Name="DurationFrom" Type="nvarchar" MaxLength="50" />
+    <Property Name="DurationTo" Type="nvarchar" MaxLength="50" />
+    <Property Name="EducationLogo" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="UserExperience">
+    <Key>
+      <PropertyRef Name="ExpId" />
+    </Key>
+    <Property Name="ExpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Designation" Type="nvarchar" MaxLength="100" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="100" />
+    <Property Name="DurationFrom" Type="nvarchar" MaxLength="50" />
+    <Property Name="DurationTo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Bio" Type="nvarchar(max)" />
+    <Property Name="CompanyLogo" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="UserIndustry">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="IndustryId" Type="int" />
+    <Property Name="SubIndustryId" Type="int" />
+  </EntityType>
+  <EntityType Name="UserSerchedZipCodes">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="UserZipCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="ZipCode" Type="varchar" MaxLength="20" />
+    <Property Name="Longitude" Type="nvarchar" MaxLength="200" />
+    <Property Name="Latitude" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="WatchedVideoHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="VideoId" Type="int" />
+    <Property Name="IsWatched" Type="bit" />
+  </EntityType>
+  <EntityType Name="WebsiteLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="LogMessage" Type="nvarchar" MaxLength="500" />
+    <Property Name="LogDate" Type="datetime" />
+  </EntityType>
+  <Function Name="ParseCommaDelimitedString" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CommaSeparatedStr" Type="nvarchar" Mode="In" />
+    <ReturnType>
+      <CollectionType>
+        <RowType>
+          <Property Name="Id" Type="int" Nullable="false" />
+        </RowType>
+      </CollectionType>
+    </ReturnType>
+  </Function>
+  <Function Name="spCheckUserExist" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spCheckUserLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spErrorLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="ErrorType" Type="nvarchar" Mode="In" />
+    <Parameter Name="ErrorMessage" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="PageName" Type="nvarchar" Mode="In" />
+    <Parameter Name="IPAddress" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="spGetUserDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spRegisterUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="EmailId" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="Address" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="State" Type="varchar" Mode="In" />
+    <Parameter Name="Country" Type="varchar" Mode="In" />
+    <Parameter Name="PinCode" Type="varchar" Mode="In" />
+    <Parameter Name="MobNo" Type="varchar" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+    <Parameter Name="UserType" Type="varchar" Mode="In" />
+    <Parameter Name="RegisterdType" Type="varchar" Mode="In" />
+    <Parameter Name="IsUpdateProfile" Type="bit" Mode="In" />
+    <Parameter Name="RegistrationCode" Type="varchar" Mode="In" />
+    <Parameter Name="RegisteredFor" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spUpdateBroker" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="Address" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="State" Type="varchar" Mode="In" />
+    <Parameter Name="Country" Type="varchar" Mode="In" />
+    <Parameter Name="PinCode" Type="varchar" Mode="In" />
+    <Parameter Name="MobNo" Type="varchar" Mode="In" />
+    <Parameter Name="CompanyName" Type="varchar" Mode="In" />
+    <Parameter Name="Title" Type="varchar" Mode="In" />
+    <Parameter Name="Resume" Type="varchar" Mode="In" />
+    <Parameter Name="Designation" Type="varchar" Mode="In" />
+    <Parameter Name="Languages" Type="varchar" Mode="In" />
+    <Parameter Name="Specialities" Type="varchar" Mode="In" />
+    <Parameter Name="DOB" Type="varchar" Mode="In" />
+    <Parameter Name="ProfilePicture" Type="varchar(max)" Mode="In" />
+    <Parameter Name="PhoneNo" Type="varchar" Mode="In" />
+    <Parameter Name="Awards" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Skills" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Recomendations" Type="varchar(max)" Mode="In" />
+    <Parameter Name="License" Type="varchar" Mode="In" />
+    <Parameter Name="ExpiryDate" Type="varchar" Mode="In" />
+    <Parameter Name="Exp_Designation" Type="varchar" Mode="In" />
+    <Parameter Name="Exp_CompanyName" Type="varchar" Mode="In" />
+    <Parameter Name="Exp_DurationFrom" Type="varchar" Mode="In" />
+    <Parameter Name="Exp_DurationTo" Type="varchar" Mode="In" />
+    <Parameter Name="Edu_UniversityName" Type="varchar" Mode="In" />
+    <Parameter Name="Edu_CourseName" Type="varchar" Mode="In" />
+    <Parameter Name="Edu_DurationFrom" Type="varchar" Mode="In" />
+    <Parameter Name="Edu_DurationTo" Type="varchar" Mode="In" />
+    <Parameter Name="UpdateTable" Type="varchar" Mode="In" />
+    <Parameter Name="ProfilePicImagePath" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ResumeImagePath" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="spUpdateCustomer" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="Address" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="State" Type="varchar" Mode="In" />
+    <Parameter Name="Country" Type="varchar" Mode="In" />
+    <Parameter Name="PinCode" Type="varchar" Mode="In" />
+    <Parameter Name="MobNo" Type="varchar" Mode="In" />
+    <Parameter Name="HouseType" Type="varchar" Mode="In" />
+    <Parameter Name="AddressOfHouse" Type="varchar" Mode="In" />
+    <Parameter Name="IsHavingCar" Type="bit" Mode="In" />
+    <Parameter Name="NoOfCars" Type="varchar" Mode="In" />
+    <Parameter Name="TypeOfEmployment" Type="varchar" Mode="In" />
+    <Parameter Name="CompanyName" Type="varchar" Mode="In" />
+    <Parameter Name="ProfilePicture" Type="varchar(max)" Mode="In" />
+    <Parameter Name="PhoneNo" Type="varchar" Mode="In" />
+    <Parameter Name="DOB" Type="varchar" Mode="In" />
+    <Parameter Name="ProfilePicImagePath" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="spUpdateCustomerForWeb" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="Phone" Type="varchar" Mode="In" />
+    <Parameter Name="Address" Type="varchar" Mode="In" />
+    <Parameter Name="ZipCode" Type="varchar" Mode="In" />
+    <Parameter Name="HouseType" Type="varchar" Mode="In" />
+    <Parameter Name="IsHavingCars" Type="varchar" Mode="In" />
+    <Parameter Name="NoOfCars" Type="int" Mode="In" />
+    <Parameter Name="Occupation" Type="varchar" Mode="In" />
+    <Parameter Name="CompanyName" Type="varchar" Mode="In" />
+    <Parameter Name="ProfilePicture" Type="nvarchar" Mode="In" />
+    <Parameter Name="ProfilePictureImg" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsProfileUpdated" Type="varchar" Mode="In" />
+    <Parameter Name="NoofEmployee" Type="varchar" Mode="In" />
+    <Parameter Name="EstPremium" Type="varchar" Mode="In" />
+    <Parameter Name="Website" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="spUpdateUser" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="Address" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="StateId" Type="int" Mode="In" />
+    <Parameter Name="CountryId" Type="int" Mode="In" />
+    <Parameter Name="PinCode" Type="varchar" Mode="In" />
+    <Parameter Name="MobNo" Type="varchar" Mode="In" />
+    <Parameter Name="IsActive" Type="bit" Mode="In" />
+    <Parameter Name="UserType" Type="varchar" Mode="In" />
+    <Parameter Name="IsUpdateProfile" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="spWebsiteLog" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="Type" Type="nvarchar" Mode="In" />
+    <Parameter Name="LogMessage" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="uspBrokerMessages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="BrokerId" Type="int" Mode="In" />
+    <Parameter Name="InsuranceType" Type="varchar" Mode="In" />
+    <Parameter Name="Note" Type="varchar" Mode="In" />
+    <Parameter Name="LocalDateTime" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="uspCheckBrokerLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspCheckForValidEmailId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmailId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="uspContactBroker" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="BrokerId" Type="int" Mode="In" />
+    <Parameter Name="InsuranceType" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspDeleteBrokerDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmailId" Type="varchar" Mode="In" />
+    <Parameter Name="TableName" Type="varchar" Mode="In" />
+    <Parameter Name="ArrayList" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspDeleteBrokerSubDetailsWeb" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="TableName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspDeleteIndustryId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uspDeleteMessage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="MessageId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uspDeleteMultipleChatMessages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="MessageId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="uspDeleteMultipleMessages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="MessageId" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspForgetPasswordRanNum" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmailId" Type="varchar" Mode="In" />
+    <Parameter Name="ForgetPasswordRanNum" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="uspGetBrokerDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserName" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspGetBrokersAvailabilty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uspGetBrokersList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="ZipCode" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="Language" Type="varchar" Mode="In" />
+    <Parameter Name="Speciality" Type="varchar" Mode="In" />
+    <Parameter Name="Longitude" Type="nvarchar" Mode="In" />
+    <Parameter Name="Latitude" Type="nvarchar" Mode="In" />
+    <Parameter Name="Withinmiles" Type="nvarchar" Mode="In" />
+    <Parameter Name="SearchCriteria" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="IndustryId" Type="int" Mode="In" />
+    <Parameter Name="SubIndustryId" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="uspGetChatMessages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="TimeSpan" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspGetChatMessages1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MessageID" Type="int" Mode="In" />
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="IsRead" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspGetChatMessagesByMessageId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="MessageID" Type="int" Mode="In" />
+    <Parameter Name="TimeStamp" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspGetCompanyMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="uspGetContactedBrokersList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uspGetContactedList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="TimeStamp" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspGetCurrentTimeSpan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="uspGetDeviceId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uspGetIndustryMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CompanyId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uspGetPaymentAmount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="uspGetSubIndustryMaster" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IndustryId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uspGetUnreadChatMessages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="MessageID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uspGetUnreadMsgCount" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uspgetUnreadMsgCountByDeviceid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uspGetUserAndPaymentList" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="uspHomeInsuranceDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="ZipCode" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="EstimatedValue" Type="varchar" Mode="In" />
+    <Parameter Name="IsInsured" Type="bit" Mode="In" />
+    <Parameter Name="CompanyName" Type="varchar" Mode="In" />
+    <Parameter Name="CoverageExpires" Type="varchar" Mode="In" />
+    <Parameter Name="Language" Type="varchar" Mode="In" />
+    <Parameter Name="Notes" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Longitude" Type="nvarchar" Mode="In" />
+    <Parameter Name="Latitude" Type="nvarchar" Mode="In" />
+    <Parameter Name="Path" Type="varchar" Mode="In" />
+    <Parameter Name="DeclarationDocBase64" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="uspInsertIndustryId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="IndustryId" Type="int" Mode="In" />
+    <Parameter Name="SubIndustryId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uspInsertNewPayment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Amount" Type="decimal" Mode="In" />
+    <Parameter Name="DateOfEffect" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="uspInsertPaymentDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="PaymentId" Type="nvarchar" Mode="In" />
+    <Parameter Name="ItemName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Description" Type="nvarchar" Mode="In" />
+    <Parameter Name="Amount" Type="decimal" Mode="In" />
+    <Parameter Name="IsPaid" Type="bit" Mode="In" />
+    <Parameter Name="PaymentMode" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="uspResetPassword" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmailId" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspSaveAutoInsuranceDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="ZipCode" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="VehicleType" Type="varchar" Mode="In" />
+    <Parameter Name="IsInsured" Type="bit" Mode="In" />
+    <Parameter Name="InsuranceCompany" Type="varchar" Mode="In" />
+    <Parameter Name="CoverageExpires" Type="varchar" Mode="In" />
+    <Parameter Name="Language" Type="varchar" Mode="In" />
+    <Parameter Name="Notes" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Longitude" Type="nvarchar" Mode="In" />
+    <Parameter Name="Latitude" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocPath" Type="varchar" Mode="In" />
+    <Parameter Name="DeclarationDocBase64" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="uspSaveBenefitsInsuranceDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="ZipCode" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="IsInsured" Type="varchar" Mode="In" />
+    <Parameter Name="InsuranceCompany" Type="varchar" Mode="In" />
+    <Parameter Name="EmployeeStrength" Type="varchar" Mode="In" />
+    <Parameter Name="CoverageExpires" Type="varchar" Mode="In" />
+    <Parameter Name="Language" Type="varchar" Mode="In" />
+    <Parameter Name="Notes" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Longitude" Type="nvarchar" Mode="In" />
+    <Parameter Name="Latitude" Type="nvarchar" Mode="In" />
+    <Parameter Name="IndustryId" Type="int" Mode="In" />
+    <Parameter Name="SubIndustryId" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="DocPath" Type="varchar" Mode="In" />
+    <Parameter Name="DeclarationDocBase64" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="uspSaveBrokerBasicDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FirstName" Type="nvarchar" Mode="In" />
+    <Parameter Name="LastName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Phone" Type="nvarchar" Mode="In" />
+    <Parameter Name="Email" Type="nvarchar" Mode="In" />
+    <Parameter Name="Address" Type="nvarchar" Mode="In" />
+    <Parameter Name="ZipCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Title" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Language" Type="nvarchar" Mode="In" />
+    <Parameter Name="Specialities" Type="nvarchar" Mode="In" />
+    <Parameter Name="Password" Type="nvarchar" Mode="In" />
+    <Parameter Name="RegistrationCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyLogoPath" Type="nvarchar" Mode="In" />
+    <Parameter Name="ProfilePicPath" Type="nvarchar" Mode="In" />
+    <Parameter Name="HomeValue" Type="nvarchar" Mode="In" />
+    <Parameter Name="AutoType" Type="nvarchar" Mode="In" />
+    <Parameter Name="Revenue" Type="nvarchar" Mode="In" />
+    <Parameter Name="Employees" Type="nvarchar" Mode="In" />
+    <Parameter Name="CoverageAmt" Type="nvarchar" Mode="In" />
+    <Parameter Name="IndustryId" Type="nvarchar" Mode="In" />
+    <Parameter Name="SubIndustryId" Type="nvarchar" Mode="In" />
+    <Parameter Name="longitude" Type="nvarchar" Mode="In" />
+    <Parameter Name="latitude" Type="nvarchar" Mode="In" />
+    <Parameter Name="Bio" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="uspSaveBrokerChat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="BrokerMsgId" Type="int" Mode="In" />
+    <Parameter Name="BrokerId" Type="int" Mode="In" />
+    <Parameter Name="CustomerId" Type="int" Mode="In" />
+    <Parameter Name="BrokerMessage" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="CustomerMsgId" Type="int" Mode="In" />
+    <Parameter Name="LocalDateTime" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="uspSaveBrokerCompanyDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="ExpComp" Type="varchar" Mode="In" />
+    <Parameter Name="ExpDesig" Type="varchar" Mode="In" />
+    <Parameter Name="ExpFromMonth" Type="varchar" Mode="In" />
+    <Parameter Name="ExpFromYear" Type="varchar" Mode="In" />
+    <Parameter Name="ExpToMonth" Type="varchar" Mode="In" />
+    <Parameter Name="ExpToYear" Type="varchar" Mode="In" />
+    <Parameter Name="ExpLogoPath" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspSaveBrokerCompanyDetailsNew" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="CompanyId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="uspSaveBrokerEducationDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="Education" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="uspSaveBrokerEducationDetailsNew" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="School" Type="nvarchar" Mode="In" />
+    <Parameter Name="Degree" Type="nvarchar" Mode="In" />
+    <Parameter Name="Year" Type="nvarchar" Mode="In" />
+    <Parameter Name="EduLogoPath" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="uspSaveBrokerFiles" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FileName" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="FieldName" Type="nvarchar" Mode="In" />
+    <Parameter Name="FieldName1" Type="nvarchar" Mode="In" />
+    <Parameter Name="RenamedImageName" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="uspSaveBrokerIndustryDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="IndustryId" Type="nvarchar" Mode="In" />
+    <Parameter Name="SubIndustryId" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="uspSaveBusinessInsuranceDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="ZipCode" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="IsInsured" Type="varchar" Mode="In" />
+    <Parameter Name="InsuranceCompany" Type="varchar" Mode="In" />
+    <Parameter Name="SICCode" Type="varchar" Mode="In" />
+    <Parameter Name="Revenue" Type="varchar" Mode="In" />
+    <Parameter Name="CoverageExpires" Type="varchar" Mode="In" />
+    <Parameter Name="Language" Type="varchar" Mode="In" />
+    <Parameter Name="Notes" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Longitude" Type="nvarchar" Mode="In" />
+    <Parameter Name="Latitude" Type="nvarchar" Mode="In" />
+    <Parameter Name="IndustryId" Type="int" Mode="In" />
+    <Parameter Name="SubIndustryId" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="DocPath" Type="varchar" Mode="In" />
+    <Parameter Name="DeclarationDocBase64" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="uspSaveCustomerBasicDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="Phone" Type="varchar" Mode="In" />
+    <Parameter Name="Email" Type="varchar" Mode="In" />
+    <Parameter Name="Address" Type="varchar" Mode="In" />
+    <Parameter Name="ZipCode" Type="varchar" Mode="In" />
+    <Parameter Name="Password" Type="varchar" Mode="In" />
+    <Parameter Name="RegistrationCode" Type="varchar" Mode="In" />
+    <Parameter Name="HouseType" Type="varchar" Mode="In" />
+    <Parameter Name="IsHavingCars" Type="varchar" Mode="In" />
+    <Parameter Name="NoOfCars" Type="int" Mode="In" />
+    <Parameter Name="Occupation" Type="varchar" Mode="In" />
+    <Parameter Name="CompanyName" Type="varchar" Mode="In" />
+    <Parameter Name="NoofEmployee" Type="varchar" Mode="In" />
+    <Parameter Name="EstPremium" Type="varchar" Mode="In" />
+    <Parameter Name="Website" Type="varchar" Mode="In" />
+    <Parameter Name="RegisteredFor" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspSaveCustomerChat" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="CustMsgId" Type="int" Mode="In" />
+    <Parameter Name="CustomerId" Type="int" Mode="In" />
+    <Parameter Name="BrokerId" Type="int" Mode="In" />
+    <Parameter Name="CustomerMessage" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="BrokerMsgId" Type="int" Mode="In" />
+    <Parameter Name="LocalDateTime" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="uspSaveLifeInsuranceDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="ZipCode" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="IsInsured" Type="bit" Mode="In" />
+    <Parameter Name="InsuranceCompany" Type="varchar" Mode="In" />
+    <Parameter Name="Language" Type="varchar" Mode="In" />
+    <Parameter Name="FaceValue" Type="varchar" Mode="In" />
+    <Parameter Name="CoverageExpires" Type="varchar" Mode="In" />
+    <Parameter Name="Notes" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Longitude" Type="nvarchar" Mode="In" />
+    <Parameter Name="Latitude" Type="nvarchar" Mode="In" />
+    <Parameter Name="DocPath" Type="varchar" Mode="In" />
+    <Parameter Name="DeclarationDocBase64" Type="nvarchar(max)" Mode="In" />
+  </Function>
+  <Function Name="uspSetBrokerAvailabilityWithZipCode" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="Availability" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="uspSetBrokersAvailabilty" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="Availability" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="uspSetDeviceId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="DeviceId" Type="varchar(max)" Mode="In" />
+  </Function>
+  <Function Name="uspSetIsRead" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MessageId" Type="nvarchar" Mode="In" />
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="MainMessageId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uspUpdateBrokerBasicDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="FirstName" Type="nvarchar" Mode="In" />
+    <Parameter Name="LastName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Phone" Type="nvarchar" Mode="In" />
+    <Parameter Name="Area" Type="nvarchar" Mode="In" />
+    <Parameter Name="ZipCode" Type="nvarchar" Mode="In" />
+    <Parameter Name="Title" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Language" Type="nvarchar" Mode="In" />
+    <Parameter Name="Specialities" Type="nvarchar" Mode="In" />
+    <Parameter Name="CompanyLogoPath" Type="nvarchar" Mode="In" />
+    <Parameter Name="ProfilePicPath" Type="nvarchar" Mode="In" />
+    <Parameter Name="HomeValue" Type="nvarchar" Mode="In" />
+    <Parameter Name="AutoType" Type="nvarchar" Mode="In" />
+    <Parameter Name="Revenue" Type="nvarchar" Mode="In" />
+    <Parameter Name="Employees" Type="nvarchar" Mode="In" />
+    <Parameter Name="CoverageAmt" Type="nvarchar" Mode="In" />
+    <Parameter Name="IndustryId" Type="nvarchar" Mode="In" />
+    <Parameter Name="SubIndustryId" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsProfilePhotoChanged" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsCompanyLogoChanged" Type="nvarchar" Mode="In" />
+    <Parameter Name="longitude" Type="nvarchar" Mode="In" />
+    <Parameter Name="latitude" Type="nvarchar" Mode="In" />
+    <Parameter Name="Bio" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspUpdateBrokerForAndroid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="Address" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="State" Type="varchar" Mode="In" />
+    <Parameter Name="Country" Type="varchar" Mode="In" />
+    <Parameter Name="PinCode" Type="varchar(max)" Mode="In" />
+    <Parameter Name="MobNo" Type="varchar" Mode="In" />
+    <Parameter Name="CompanyName" Type="varchar" Mode="In" />
+    <Parameter Name="Title" Type="varchar" Mode="In" />
+    <Parameter Name="Resume" Type="varchar" Mode="In" />
+    <Parameter Name="Designation" Type="varchar" Mode="In" />
+    <Parameter Name="Languages" Type="varchar" Mode="In" />
+    <Parameter Name="Specialities" Type="varchar" Mode="In" />
+    <Parameter Name="DOB" Type="varchar" Mode="In" />
+    <Parameter Name="ProfilePicture" Type="varchar(max)" Mode="In" />
+    <Parameter Name="PhoneNo" Type="varchar" Mode="In" />
+    <Parameter Name="Awards" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Skills" Type="varchar(max)" Mode="In" />
+    <Parameter Name="Recomendations" Type="varchar(max)" Mode="In" />
+    <Parameter Name="License" Type="varchar" Mode="In" />
+    <Parameter Name="ExpiryDate" Type="varchar" Mode="In" />
+    <Parameter Name="Exp_Designation" Type="varchar" Mode="In" />
+    <Parameter Name="Exp_CompanyName" Type="varchar" Mode="In" />
+    <Parameter Name="Exp_DurationFrom" Type="varchar" Mode="In" />
+    <Parameter Name="Exp_DurationTo" Type="varchar" Mode="In" />
+    <Parameter Name="Exp_Bio" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Edu_UniversityName" Type="varchar" Mode="In" />
+    <Parameter Name="Edu_CourseName" Type="varchar" Mode="In" />
+    <Parameter Name="Edu_DurationFrom" Type="varchar" Mode="In" />
+    <Parameter Name="Edu_DurationTo" Type="varchar" Mode="In" />
+    <Parameter Name="UpdateTable" Type="varchar" Mode="In" />
+    <Parameter Name="ProfilePicImagePath" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="ResumeImagePath" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="IsProfilePicUpdated" Type="varchar" Mode="In" />
+    <Parameter Name="longitude" Type="nvarchar" Mode="In" />
+    <Parameter Name="latitude" Type="nvarchar" Mode="In" />
+    <Parameter Name="HomeValue" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="AutoType" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Revenue" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Employees" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="CoverageAmt" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="IsCompanyLogoUpdated" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="CompanyLogoPath" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Edu_Logo" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="IndustryId" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="SubIndustryId" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="UserBio" Type="nvarchar(max)" Mode="In" />
+    <Parameter Name="Exp_Logo" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="uspUpdateBrokerPaymentDoneFlag" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+  </Function>
+  <Function Name="uspUpdateCustomerForAndroid" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="FirstName" Type="varchar" Mode="In" />
+    <Parameter Name="LastName" Type="varchar" Mode="In" />
+    <Parameter Name="Address" Type="varchar" Mode="In" />
+    <Parameter Name="City" Type="varchar" Mode="In" />
+    <Parameter Name="State" Type="varchar" Mode="In" />
+    <Parameter Name="Country" Type="varchar" Mode="In" />
+    <Parameter Name="PinCode" Type="varchar" Mode="In" />
+    <Parameter Name="MobNo" Type="varchar" Mode="In" />
+    <Parameter Name="HouseType" Type="varchar" Mode="In" />
+    <Parameter Name="AddressOfHouse" Type="varchar" Mode="In" />
+    <Parameter Name="IsHavingCar" Type="bit" Mode="In" />
+    <Parameter Name="NoOfCars" Type="varchar" Mode="In" />
+    <Parameter Name="TypeOfEmployment" Type="varchar" Mode="In" />
+    <Parameter Name="CompanyName" Type="varchar" Mode="In" />
+    <Parameter Name="ProfilePicture" Type="varchar(max)" Mode="In" />
+    <Parameter Name="PhoneNo" Type="varchar" Mode="In" />
+    <Parameter Name="DOB" Type="varchar" Mode="In" />
+    <Parameter Name="ProfilePicImagePath" Type="varchar(max)" Mode="In" />
+    <Parameter Name="IsProfilePicUpdated" Type="varchar" Mode="In" />
+    <Parameter Name="NoOfEmp" Type="varchar" Mode="In" />
+    <Parameter Name="Website" Type="varchar" Mode="In" />
+    <Parameter Name="EstPremium" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspUpdateEducationDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EduId" Type="int" Mode="In" />
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="Edu_UniversityName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Edu_CourseName" Type="nvarchar" Mode="In" />
+    <Parameter Name="Edu_DurationFrom" Type="nvarchar" Mode="In" />
+    <Parameter Name="Edu_DurationTo" Type="nvarchar" Mode="In" />
+    <Parameter Name="Edu_Logo" Type="nvarchar" Mode="In" />
+    <Parameter Name="IsUpdated" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="uspVerifyEmailId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="EmailId" Type="varchar" Mode="In" />
+    <Parameter Name="RegistrationCode" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="uspViewUserProfile" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="BrokerDBModelStoreContainer">
+    <EntitySet Name="AutoInsuranceDetails" EntityType="Self.AutoInsuranceDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AutoTypeMaster" EntityType="Self.AutoTypeMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BenefitsInsuranceDetails" EntityType="Self.BenefitsInsuranceDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BrokerAvailability" EntityType="Self.BrokerAvailability" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BrokerBriefcase" EntityType="Self.BrokerBriefcase" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BrokerPayment" EntityType="Self.BrokerPayment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BusinessInsuranceDetails" EntityType="Self.BusinessInsuranceDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CompanyMaster" EntityType="Self.CompanyMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ErrorLog" EntityType="Self.ErrorLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HomeInsuranceDetails" EntityType="Self.HomeInsuranceDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IndustryMaster" EntityType="Self.IndustryMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InsuranceTypeMaster" EntityType="Self.InsuranceTypeMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LifeInsuranceDetails" EntityType="Self.LifeInsuranceDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentMaster" EntityType="Self.PaymentMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubIndustryMaster" EntityType="Self.SubIndustryMaster" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserBroker" EntityType="Self.UserBroker" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserExperience" EntityType="Self.UserExperience" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserIndustry" EntityType="Self.UserIndustry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserSerchedZipCodes" EntityType="Self.UserSerchedZipCodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserZipCode" EntityType="Self.UserZipCode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WatchedVideoHistory" EntityType="Self.WatchedVideoHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WebsiteLog" EntityType="Self.WebsiteLog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BrokerMessages" EntityType="Self.BrokerMessages" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [BrokerMessages].[Id] AS [Id], 
+    [BrokerMessages].[BrokerId] AS [BrokerId], 
+    [BrokerMessages].[UserId] AS [UserId], 
+    [BrokerMessages].[Message] AS [Message], 
+    [BrokerMessages].[ContactDate] AS [ContactDate], 
+    [BrokerMessages].[IsRead] AS [IsRead], 
+    [BrokerMessages].[CustomerMsgId] AS [CustomerMsgId], 
+    [BrokerMessages].[LocalDateTime] AS [LocalDateTime], 
+    [BrokerMessages].[IsDeleted] AS [IsDeleted], 
+    [BrokerMessages].[DeclarationDocPath] AS [DeclarationDocPath], 
+    [BrokerMessages].[DeclarationDocBase64] AS [DeclarationDocBase64]
+    FROM [dbo].[BrokerMessages] AS [BrokerMessages]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Config" EntityType="Self.Config" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Config].[Id] AS [Id], 
+    [Config].[ConfigName] AS [ConfigName], 
+    [Config].[ConfigValue] AS [ConfigValue]
+    FROM [dbo].[Config] AS [Config]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CustomerBrokerChat" EntityType="Self.CustomerBrokerChat" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [CustomerBrokerChat].[Id] AS [Id], 
+    [CustomerBrokerChat].[BrokerMsgId] AS [BrokerMsgId], 
+    [CustomerBrokerChat].[CustMsgId] AS [CustMsgId], 
+    [CustomerBrokerChat].[BrokerId] AS [BrokerId], 
+    [CustomerBrokerChat].[CustomerId] AS [CustomerId], 
+    [CustomerBrokerChat].[BrokerMessage] AS [BrokerMessage], 
+    [CustomerBrokerChat].[CustomerMessage] AS [CustomerMessage], 
+    [CustomerBrokerChat].[MessageDate] AS [MessageDate], 
+    [CustomerBrokerChat].[IsRead] AS [IsRead], 
+    [CustomerBrokerChat].[LocalDateTime] AS [LocalDateTime], 
+    [CustomerBrokerChat].[IsDeletedByCustomer] AS [IsDeletedByCustomer], 
+    [CustomerBrokerChat].[IsDeletedByBroker] AS [IsDeletedByBroker]
+    FROM [dbo].[CustomerBrokerChat] AS [CustomerBrokerChat]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CustomerMessages" EntityType="Self.CustomerMessages" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [CustomerMessages].[Id] AS [Id], 
+    [CustomerMessages].[UserId] AS [UserId], 
+    [CustomerMessages].[BrokerId] AS [BrokerId], 
+    [CustomerMessages].[ContactDate] AS [ContactDate], 
+    [CustomerMessages].[Message] AS [Message], 
+    [CustomerMessages].[BrokerMsgId] AS [BrokerMsgId], 
+    [CustomerMessages].[LocalDateTime] AS [LocalDateTime], 
+    [CustomerMessages].[IsDeleted] AS [IsDeleted], 
+    [CustomerMessages].[IsRead] AS [IsRead], 
+    [CustomerMessages].[IsRatingGiven] AS [IsRatingGiven]
+    FROM [dbo].[CustomerMessages] AS [CustomerMessages]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="User" EntityType="Self.User" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [User].[UserId] AS [UserId], 
+    [User].[FirstName] AS [FirstName], 
+    [User].[LastName] AS [LastName], 
+    [User].[EmailId] AS [EmailId], 
+    [User].[Password] AS [Password], 
+    [User].[Address] AS [Address], 
+    [User].[City] AS [City], 
+    [User].[State] AS [State], 
+    [User].[Country] AS [Country], 
+    [User].[PinCode] AS [PinCode], 
+    [User].[PhoneNo] AS [PhoneNo], 
+    [User].[MobNo] AS [MobNo], 
+    [User].[DOB] AS [DOB], 
+    [User].[ProfilePicture] AS [ProfilePicture], 
+    [User].[IsActive] AS [IsActive], 
+    [User].[UserType] AS [UserType], 
+    [User].[RegisteredDate] AS [RegisteredDate], 
+    [User].[RegisterdType] AS [RegisterdType], 
+    [User].[IsUpdateProfile] AS [IsUpdateProfile], 
+    [User].[HouseType] AS [HouseType], 
+    [User].[AddressofHouse] AS [AddressofHouse], 
+    [User].[IsHavingCar] AS [IsHavingCar], 
+    [User].[NoOfCars] AS [NoOfCars], 
+    [User].[TypeOfEmployment] AS [TypeOfEmployment], 
+    [User].[CompanyName] AS [CompanyName], 
+    [User].[Title] AS [Title], 
+    [User].[Resume] AS [Resume], 
+    [User].[Designation] AS [Designation], 
+    [User].[Languages] AS [Languages], 
+    [User].[Specialities] AS [Specialities], 
+    [User].[RegistrationCode] AS [RegistrationCode], 
+    [User].[IsEmailIdVerified] AS [IsEmailIdVerified], 
+    [User].[IsAvailable] AS [IsAvailable], 
+    [User].[Awards] AS [Awards], 
+    [User].[Skills] AS [Skills], 
+    [User].[Recomendations] AS [Recomendations], 
+    [User].[License] AS [License], 
+    [User].[ExpiryDate] AS [ExpiryDate], 
+    [User].[longitude] AS [longitude], 
+    [User].[latitude] AS [latitude], 
+    [User].[ProfilePictureImg] AS [ProfilePictureImg], 
+    [User].[ResumeDoc] AS [ResumeDoc], 
+    [User].[IsPaymentDone] AS [IsPaymentDone], 
+    [User].[ForgetPasswordRanNum] AS [ForgetPasswordRanNum], 
+    [User].[DeviceId] AS [DeviceId], 
+    [User].[HomeValue] AS [HomeValue], 
+    [User].[AutoType] AS [AutoType], 
+    [User].[Revenue] AS [Revenue], 
+    [User].[Employees] AS [Employees], 
+    [User].[CoverageAmt] AS [CoverageAmt], 
+    [User].[CompanyLogo] AS [CompanyLogo], 
+    [User].[IndustryId] AS [IndustryId], 
+    [User].[SubIndustryId] AS [SubIndustryId], 
+    [User].[Bio] AS [Bio], 
+    [User].[RegisteredFor] AS [RegisteredFor], 
+    [User].[NoofEmployee] AS [NoofEmployee], 
+    [User].[EstPremium] AS [EstPremium], 
+    [User].[Website] AS [Website], 
+    [User].[IsAdmin] AS [IsAdmin]
+    FROM [dbo].[User] AS [User]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="UserEducation" EntityType="Self.UserEducation" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [UserEducation].[EduId] AS [EduId], 
+    [UserEducation].[UserId] AS [UserId], 
+    [UserEducation].[UniversityName] AS [UniversityName], 
+    [UserEducation].[CourseName] AS [CourseName], 
+    [UserEducation].[DurationFrom] AS [DurationFrom], 
+    [UserEducation].[DurationTo] AS [DurationTo], 
+    [UserEducation].[EducationLogo] AS [EducationLogo]
+    FROM [dbo].[UserEducation] AS [UserEducation]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

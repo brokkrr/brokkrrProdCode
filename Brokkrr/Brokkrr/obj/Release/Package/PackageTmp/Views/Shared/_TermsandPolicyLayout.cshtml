@@ -1,0 +1,646 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+    <link rel="shortcut icon" href="~/Images/Assets/brokkrIcon24x24.png">
+    <title>brokkrr Inc.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- font links -->
+    <link href="~/Content/BrokkrrCSS/OpenSans.css" rel="stylesheet" />
+
+    @*<link href="~/Content/BrokkrrCSS/CSS1/Home.css" rel="stylesheet" />
+        <link href="~/Content/HomeCSS/Hub-442016f18c.css" rel="stylesheet" />*@
+
+    <!-- css links -->
+    <link href="~/Content/BrokkrrCSS/CSS1/style.css" rel="stylesheet" />
+    <link href="~/Content/BrokkrrCSS/CSS2/style.css" rel="stylesheet" />
+    <link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/BrokkrrCSS/Site.css" rel="stylesheet" />
+
+
+    <!-- /css links -->
+    <!-- js links -->
+    <script src="~/Scripts/Scripts2/jquery.min.js"></script>
+    <script src="~/Scripts/Scripts2/bootstrap.min.js"></script>
+
+    <!-- /js links -->
+
+    <script type="text/javascript">
+        /* When the user clicks on the button,
+       toggle between hiding and showing the dropdown content */
+        $(document).ready(function () {
+
+            // alert(window.screen.width);
+            var count = 0;
+
+            var UserId = '@ViewBag.UserId';
+            var WeServiceUrl = '@Session["WebServiceURL"]';
+            //alert("UserId - " + UserId);
+
+            if (UserId != "") {
+                $.ajax({
+                    type: "POST",
+                    url: WeServiceUrl,
+                    data: { UserId: UserId, ActionName: "DoGetUnreadMsgCount" },
+                    success: function (data) {
+
+                        var obj = JSON.parse(data);
+                        var issuccess = obj.IsSuccess;
+                        var ErrorMessage = obj.ErrorMessage;
+                        var UnreadMsgCnt = obj.UnreadMsgCnt;
+
+                        if (issuccess == true) {
+                            //alert("UnreadMsgCnt - " + UnreadMsgCnt);
+                            if (UnreadMsgCnt.length > 0) {
+                                $.each(UnreadMsgCnt, function (i, res) {
+                                    if (res.UnreadMsgCnt > 0) {
+                                        //alert(res.UnreadMsgCnt);
+                                        $("div.badge-warning").text(res.UnreadMsgCnt);
+                                    }
+                                    else {
+                                        $("div.badge-warning").text(0);
+                                    }
+                                });
+                            }
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) { }
+
+                });
+            }
+
+            /*Check for unseen video for this user*/
+            //alert("Here");
+            if (UserId != "") {
+                //alert("UserId- " + UserId + " WeServiceUrl- " + WeServiceUrl)
+                $.ajax({
+                    type: "POST",
+                    url: WeServiceUrl,
+                    data: { UserId: UserId, ActionName: "DoGetUnWatchedVideoCount" },
+                    success: function (data) {
+
+                        var obj = JSON.parse(data);
+                        var issuccess = obj.IsSuccess;
+                        var ErrorMessage = obj.ErrorMessage;
+                        var VideoDetails = obj.VideoDetails;
+                        //alert(VideoDetails)
+                        if (issuccess == true) {
+                            if (VideoDetails.length > 0) {
+                                $.each(VideoDetails, function (i, res) {
+                                    if (res.Cnt > 0) {
+                                        $("#NewVideo").css("display", "block");
+                                    }
+                                    else {
+                                        $("#NewVideo").css("display", "none");
+                                    }
+                                });
+                            }
+                        }
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) { }
+
+                });
+            }
+
+            $('#profileImage').click(function () {
+                //  alert("hii");
+                if (count == 0) {
+                    // alert("enter for fadeIn");
+                    $('#myDropdown').fadeIn('slow');
+                    count++;
+                    //  alert("Called for fadeIn");
+                }
+                else {
+                    //  alert("enter for fadeOut");
+                    $('#myDropdown').fadeOut('slow');
+                    count--;
+                    //  alert("Called for fadeOut");
+                }
+
+                window.onclick = function (event) {
+                    $('#myDropdown').fadeOut('slow');
+                    count = 0;
+                }
+
+            });
+
+        });
+
+    </script>
+    <script>
+    function closenotification() {
+        $('#notificationbar').hide()
+        location.href = "#";
+    }
+
+    window.onload = function () {
+        $('#notificationbar').show();
+
+    }
+
+    function RedirectMessage() {
+
+        //location.href = "../../CustomerRegistration/Index";
+        location.href = "../../Message/CustomerMessage";
+    }
+    </script>
+
+    <style type="text/css">
+        @@Media screen and (max-width:640px) {
+            .notification {
+                background-color: rgb(0,109,183);
+                width: 180px;
+                margin-right: 48px;
+                height: 40px;
+                /*padding: 8px 0 0 8px;*/
+                position: fixed;
+                z-index: 1;
+                bottom: 0;
+                cursor: pointer;
+            }
+        }
+
+        @@media screen and (min-width:641px) and (max-width:980px) {
+            .notification {
+                /* Add this */
+                background-color: rgb(41,171,228);
+                width: 400px;
+                margin-right: 60px;
+                height: 40px;
+                /*padding: 8px 0 0 8px;*/
+                position: fixed;
+                z-index: 1;
+                bottom: 0;
+                cursor: pointer;
+            }
+        }
+
+        @@media screen and (min-width:981px) {
+            .notification {
+                /* Add this */
+                background-color: rgb(41,171,228);
+                width: 400px;
+                margin-right: 60px;
+                height: 40px;
+                /*padding: 8px 0 0 8px;*/
+                position: fixed;
+                z-index: 1;
+                bottom: 0;
+                cursor: pointer;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-container {
+            /* ... */
+            display: flex;
+            justify-content: flex-end;
+        }
+
+
+
+        .chatname {
+            color: #fff;
+            /*font-family: OpenSans-Regular !important;*/
+            font-weight: bold;
+            padding: 0 0 0 16px;
+            width: 80%;
+            display: inline-block;
+            padding: 8px 0 0 8px;
+        }
+
+        #img {
+            float: right;
+            padding: 12px 8px;
+        }
+
+        /* Make the badge float in the top right corner of the button */
+        .badge-warning {
+            background-color: red;
+            width: 20px;
+            color: #fff;
+            border-radius: 32px;
+            height: 20px;
+            /*padding: 0px 3px;*/
+            display: inline-block;
+            margin: -39px -7px -33px -10px;
+            position: relative;
+            top: -16px;
+            text-align:center;
+        }
+    </style>
+
+
+
+    <style type="text/css">
+        .dropbtn {
+            /*background-color: #4CAF50;*/
+            background-color: #f1f1f1;
+            /*color: white;*/
+            color: rgb(72,205,255);
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+            .dropbtn:hover, .dropbtn:focus {
+                background-color: #3e8e41;
+                /*background-color:rgb(72,205,255);*/
+                color: #fff;
+            }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            color: rgb(72,205,255);
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-top: 30%;
+            left: 25%;
+            border-radius: 4px;
+        }
+
+            .dropdown-content a {
+                /*color: black;*/
+                color: rgb(72,205,255);
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+        .dropdown a:hover {
+            /*background-color: #f1f1f1;*/
+            background-color: rgb(72,205,255);
+            color: #fff;
+        }
+
+        .show {
+            display: block;
+        }
+
+
+        #profileImage {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #ffffff;
+            font-size: 20px;
+            color: rgb(72,205,255);
+            text-align: center;
+            line-height: 40px;
+            font-family: open sans;
+            text-align: center;
+            margin-left: 12% !important;
+        }
+
+        .username {
+            color: #fff;
+            padding-right: 0;
+            font-size: 22px !important;
+            font-family: open sans;
+            text-align: right;
+            /*top: 25px;*/
+            margin-top: 12%;
+        }
+
+        .caret{
+            margin-left: -3px !important;
+            margin-top: -3px !important;
+        }
+    </style>
+    <style type="text/css">
+        /*and (min-width: 335px)*/
+        @@media screen and (max-width:640px) {
+
+            #profileImage {
+                width: 28px;
+                height: 27px;
+                border-radius: 50%;
+                background: #ffffff;
+                font-size: 14px;
+                color: rgb(72,205,255);
+                text-align: center;
+                line-height: 25px;
+                font-family: open sans;
+                text-align: center;
+                margin: 8px 0;
+            }
+
+
+            .dropdown-content {
+                position: absolute;
+                background-color: #f9f9f9;
+                color: rgb(72,205,255);
+                /*min-width: 67px;*/
+                overflow: auto;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                margin-left: 30%;
+                min-width: 64px;
+                /*margin-left: -62%;*/
+                margin-left: 16px;
+                font-size: 2.8vw;
+                margin-top: 66% !important;
+                border-radius: 4%;
+                margin-top: 28%;
+                left: -23px;
+                text-align: center;
+            }
+
+
+                .dropdown-content a {
+                    color: black;
+                    color: rgb(72,205,255);
+                    padding: 5px 8px;
+                    text-decoration: none;
+                    display: block;
+                }
+
+            .username {
+                color: #fff;
+                padding-right: 0;
+                font-size: 9.8px !important;
+                font-family: open sans;
+                text-align: right;
+                /*top: 19px;*/
+                margin-top: 14%;
+                right: -14px;
+            }
+
+            .ss {
+                padding-left: 0 !important;
+                margin-top: 62%;
+            }
+        }
+
+        .ss {
+            padding-left: 0 !important;
+            /*top: 20px;*/
+            margin-top: 11%;
+        }
+
+        .loginname {
+            font-size: 10px;
+        }
+
+
+
+        @@media screen and (max-width:1024px) {
+
+
+            .dropdown-content {
+                position: absolute;
+                background-color: #f9f9f9;
+                color: rgb(72,205,255);
+                /*min-width: 67px;*/
+                overflow: auto;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                margin-left: 30%;
+                min-width: 64px;
+                /*margin-left: -62%;*/
+                margin-left: 16px;
+                font-size: 2vw;
+                /*margin-top: 66% !important;*/
+                /*Changes for ipad*/
+                border-radius: 4%;
+                margin-top: 42%;
+                left: -33px;
+                text-align: center;
+            }
+        }
+
+
+        @@media screen and (min-width:1366) {
+
+
+            .dropdown-content {
+                position: absolute;
+                background-color: #f9f9f9;
+                color: rgb(72,205,255);
+                /*min-width: 67px;*/
+                overflow: auto;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                margin-left: 30%;
+                min-width: 64px;
+                /*margin-left: -62%;*/
+                margin-left: 16px;
+                font-size: 2.8vw;
+                margin-top: 66% !important;
+                /*Changes for ipad*/
+                border-radius: 4%;
+                margin-top: 28%;
+                left: -23px;
+                text-align: center;
+            }
+        }
+    </style>
+
+    <!-- 23 May 2018 R.Shah-->
+
+    <style type="text/css">
+        .meinekeasscalign {
+            padding-top: 20px;
+            padding-right: 0;
+            text-align: center;
+        }
+
+
+        @@media only screen and (min-width:2880px) {
+            .meinekeasscalign {
+                padding-top: 47px !important;
+                padding-right: 0;
+                text-align: center;
+            }
+
+           
+        }
+
+        @@media only screen and (min-width:3840px) {
+            .meinekeasscalign {
+                padding-top: 64px !important;
+                padding-right: 0;
+                text-align: center;
+            }
+
+          
+        }
+    </style>
+
+</head>
+<body style="overflow-x:hidden;">
+    <div id="notificationbar" class='menu-container'>
+
+        <div class='notification' style="display:none !important;">
+
+            <div class="badge-warning">
+                0
+            </div>
+            <div class='chatname' onclick="RedirectMessage();">Chat with brokkrr</div>
+            <div id="img"><img src="~/Images/Assets/if_close15_216468.png" class="img-responsive" style="cursor:pointer;" onclick="closenotification();" /></div>
+        </div>
+
+    </div>
+    <div class="row" style="height:auto;background-color:rgb(72,205,255);">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            @*<div class="col-md-6 col-sm-6 col-xs-6">*@
+            <div class="col-md-6 col-sm-6 col-xs-6" style="padding:1.5%;padding-left:7%;">
+                <a href="@Url.Action("Index", "Home")"><img src="~/Images/NewAssets/logo.png" alt="Logo" class="img-responsive" /></a>
+            </div>
+            @*<div class="col-md-4 col-sm-4 col-xs-4">
+                    <div class="col-md-5 col-sm-6 col-xs-6" style="padding-top:8%;color:#fff;font-size:1.3vw;font-family:open sans;">
+                        <a style="font-family:open sans;color:white;text-decoration: none;" href="@Url.Action("HomePage", "Home")">NEW SEARCH</a>
+                    </div>
+                    <div class="col-md-5 col-sm-6 col-xs-6" style="padding-left: 0%;padding-top:8%;color:#fff;font-size:1.3vw;font-family:open sans;">
+                        <a style="font-family:open sans;color:white;text-decoration: none;" href="@Url.Action("CustomerMessage", "Message")">MESSAGES</a>
+                    </div>
+                </div>*@
+
+            <div class="col-md-4 col-sm-4 col-xs-4" style="padding-right:0;padding-left:0;display:none;">
+                <div id="lblSerchBroker" class="col-md-6 col-sm-6 col-xs-6" style="padding-right:0;padding-left:0;">
+                    <a id="aSerchBrokerMeineke" style="display:none;" href="@Url.Action("MeinekeHomePage", "Home")">
+                        <div class="username">
+                            Search brokkrr
+                        </div>
+                    </a>
+                    <a id="aSerchBrokerBrokkrr" style="display:none;" href="@Url.Action("HomePage", "Home")">
+                        <div class="username">
+                            Search brokkrr
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6" style="padding-right:0;padding-left:0;">
+                    <div id="username" style="padding-right:0;padding-left:0;">
+                        <div class="username">
+                            @ViewBag.UserName
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @*<div class="col-md-2 col-sm-2 col-xs-2" style="padding-right:0;padding-left:0;">
+                    <a href="@Url.Action("MeinekeHomePage", "Home")">
+                        <div class="col-md-12 col-sm-12 col-xs-12 username">
+                            Search Broker
+                        </div>
+                    </a>
+                </div>
+                <div id="username" class="col-md-2 col-sm-2 col-xs-2" style="padding-right:0;padding-left:0;">
+                    <div class="col-md-12 col-sm-12 col-xs-12 username">
+                        @ViewBag.UserName
+                    </div>
+                </div>*@
+
+            <div id="usernamedropdown" class="col-md-2 col-sm-2 col-xs-2 dropdown" style="display: none;">
+                <div class="col-md-6 col-sm-6 col-xs-6 ss">
+                    <div class="col-md-4 col-sm-4">
+
+                    </div>
+                    <div class="col-md-4 col-sm-4 briefcase">
+                        <div id="NewVideo" class="badge" style="display:none;position: absolute;margin-top: 2px;margin-left: 23px;background-color: red;">
+                            New
+                        </div>
+                        @*@if (Convert.ToString(Session["IsAdmin"]) == "True")
+                            {
+
+                                <a href="@Url.Action("Index", "BrokkrrBriefcase")" title="Brokkrr's Briefcase"><img src="~/Images/White_BriefCase.png" /></a>
+                            }
+                            else
+                            {*@
+                        <a href="@Url.Action("Briefcase", "BrokkrrBriefcase")" title="Brokkrr's Briefcase"><img src="~/Images/White_BriefCase.png" /></a>
+                        @*}*@
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12 ">
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-xs-6 ss">
+                    <div onclick="myFunction()" id="profileImage" style="cursor:pointer;display:none;" class="dropdown-toggle" data-toggle="dropdown">
+                        @ViewBag.Initials <div class="caret">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="myDropdown" class="dropdown-content" style="text-align: center;">
+                    <a style="font-family:open sans;text-decoration:none;" href="@Url.Action("MeinekeHomePage", "Home")">Search brokkrr</a>
+                    <a style="font-family:open sans;text-decoration:none;" href="@Url.Action("MeinekeCustomerProfile", "Profile")">My Profile</a>
+                    @*@if (Convert.ToString(Session["IsAdmin"]) == "True")
+                        {
+                            <a style="font-family:open sans;text-decoration:none;" href="@Url.Action("Index", "BrokkrrBriefcase")">brokkrr's Briefcase</a>
+                        }
+                        else
+                        {*@
+                    <a style="font-family:open sans;text-decoration:none;" href="@Url.Action("Briefcase", "BrokkrrBriefcase")">brokkrr's Briefcase</a>
+                    @*}*@
+                    <a style="font-family:open sans;text-decoration:none;" href="@Url.Action("CustomerMessage", "Message")">Messages</a>
+                    <a style="font-family:open sans;text-decoration:none;" href="@Url.Action("CustomerLogout", "Login")">Log out</a>
+                </div>
+
+            </div>
+            @*</div>*@
+        </div>
+    </div>
+
+
+    @RenderBody()
+
+
+    <footer class="footer-distributed" style="position: relative;background-image:none;display:none;" id="footerLayout">
+        <div class="container" style="width:100%">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-right:0;">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 allrightalign" style="">
+                        <p style="display: block;color: #666666;font-size: 16px;font-family:open sans;text-align: center;">
+                            © 2018 brokkrr. All rights reserved.
+                        </p>
+                    </div>
+
+                    <div class="col-sm-3 col-md-2 text-center" style="padding-left:0;">
+                        <p class="footer-company-about">
+                            <div class="social-icons socialiconsalign" style="">
+                                <a style="cursor:default;"><span class="facebook"></span></a>
+                                <a style="cursor:default;"><span class="twitter"></span></a>
+                                <a style="cursor:default;"><span class="linkedin"></span></a>
+                            </div>
+                        </p>
+                    </div>
+                    <div class="col-sm-2 col-md-5" style="margin-bottom:0%;text-align: center;margin-top: 25px;font-size: 16px;">
+                        <a href="@Url.Action("TermsAndConditions", "Home")">Terms and conditions</a> | <a href="#">Privacy policy</a>
+                    </div>
+                    <div class="col-sm-1 col-md-1" style="margin-bottom: 0%;margin-top: 1.5%;">
+                        <div style="padding-right:4%;text-align:center">
+                            <img src="~/Images/NewAssets/footer-logo.png" alt="logo" />
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1" style="margin-bottom:0%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+    </footer>
+
+   
+</body>
+
+</html>

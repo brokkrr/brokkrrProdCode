@@ -1,0 +1,3027 @@
+﻿@model BrokerMVC.Models.AllModels
+
+<!---New Website Work-->
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/BrokerViewLayout.cshtml";
+    // Layout = null;
+}
+
+<script src="~/Scripts/Scripts2/bootstrap.min.js"></script>
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script type="text/javascript" src="~/Scripts/Scripts2/jquery.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700' rel='stylesheet' type='text/css'>
+
+@*<script src="~/js/HomeJs/jquery-2.2.4.min.js"></script>*@
+<script src="~/js/HomeJs/main-a63a635ec9.bundle.js"></script>
+
+@*For Multiselect dropdown*@
+<link href="~/Content/BrokkrrCSS/jquery-ui.css" rel="stylesheet" />
+<link href="~/Content/MeinekeHomePage.css" rel="stylesheet" />
+
+
+<script src="~/Scripts/Scripts1/jquery-1.10.2.js"></script>
+
+<script src="~/Scripts/Scripts1/jquery-ui.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<script type="text/javascript" src="~/Scripts/Scripts2/jquery.min.js"></script>
+<script src="~/js/bootstrap-multiselect.js"></script>
+<script src="~/js/bootstrapForMultiSelect.min.js"></script>
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrapForMultiSelect.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrap-multiselect.css" rel="stylesheet" type="text/css">
+@*End of Multiselect dropdown*@
+
+@*<script src="~/Scripts/Scripts2/bootstrap.min.js"></script>*@
+
+<style>
+
+     #loading-image {
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        z-index: 100;
+    }
+
+      .bodyblur {
+        opacity: 0.5 !important;
+        background-color: white !important;
+    }
+
+    .dropdown-menu > .active > a
+    {
+        color: #fff;
+text-decoration: none;
+background-color: #b3d0e9;
+
+    }
+
+    .modal-open {
+        /*overflow-y: scroll !important;*/
+    }
+
+     /* Scroll Css */
+
+        .list::-webkit-scrollbar {
+            width: 6px;
+            direction: ltr;
+            
+        }
+        /* Track */
+
+        .list::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            
+        }
+
+        /* Handle */
+
+        .list::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background: rgb(69,205,243);
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+            
+        }
+
+
+        .list::-moz-webkit-scrollbar-thumb:window-inactive {
+            background: rgba(243,243,243,243);
+          
+        }
+
+        .list::-webkit-scrollbar-thumb:window-inactive {
+            background: rgba(243,243,243,243);
+            
+        }
+
+    .open > .dropdown-menu {
+        display: block;
+        white-space: nowrap;
+        /*white-space:pre-wrap;*/
+        max-height: none !important;
+        max-width: none !important;
+        font-size: 0.9vw !important;
+    }
+
+    .btn-group > .btn:first-child {
+        font-size: 1.2vw;
+    }
+</style>
+
+<style>
+    .placeholder::-webkit-input-placeholder {
+        font-size: 1.1vw;
+        color: rgb(181,193,196);
+        /*text-transform: uppercase;
+    text-transform: uppercase;*/
+        text-align: left;
+        font-weight: normal;
+    }
+
+    .placeholder:-moz-placeholder { /* older Firefox*/
+        font-size: 1.1vw;
+        color: rgb(181,193,196);
+        /*text-transform: uppercase;*/
+        text-align: left;
+        font-weight: normal;
+    }
+
+    .placeholder::-moz-placeholder { /* Firefox 19+ */
+        font-size: 1.1vw;
+        color: rgb(181,193,196);
+        /*text-transform: uppercase;*/
+        text-align: left;
+        font-weight: normal;
+    }
+
+    .placeholder:-ms-input-placeholder {
+        font-size: 1.1vw;
+        color: rgb(181,193,196);
+        /*text-transform: uppercase;*/
+        text-align: left;
+        font-weight: normal;
+    }
+</style>
+<style type="text/css">
+    .customtopspace {
+        margin-top: 20px;
+    }
+</style>
+
+<style type="text/css">
+
+    .modal-backdrop {
+        z-index:95;
+    }
+
+    .removeScroll {
+        overflow-y:hidden;
+    }
+    .addScroll {
+        overflow-y:scroll;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    .ImgText {
+        position: absolute;
+        z-index: 99;
+        /*bottom: 50%;*/
+        font-size: 3.2vw;
+        color: #fff;
+        left: 30%;
+        top: 20%;
+        font-family: open sans-serif;
+    }
+
+    .ImgSubText {
+        position: absolute;
+        z-index: 99;
+        bottom: 40%;
+        font-size: 3.1vw;
+        color: #fff;
+        /*left: 20%;*/
+        left: 8%;
+        /*right: 20%;*/
+        width: 80%;
+        line-height: 1.2em;
+        font-family: open sans-serif;
+    }
+
+    .btn-3 {
+    }
+
+    #aLogin {
+        color: #FFFFFF;
+    }
+
+        #aLogin :hover {
+            color: #FFFFFF;
+        }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#SubmitInfo").bind("click", function () {
+
+            var FirstName = $("#FirstName").val();
+            var PhoneNo = $("#PhoneNo").val();
+            var EmailId = $("#EmailId").val();
+            var Password = $("#Password").val();
+            var ConfirmPassword = $("#ConfirmPassword").val();
+            var Area = $("#Area").val();
+            var Zip = $("#Zip").val();
+
+            if (FirstName != '' && PhoneNo != '' && EmailId != '' && Password != '' && ConfirmPassword != ''
+                && Area != '' && Zip != '' && (Password == ConfirmPassword) && (Password.length >= 8) && Zip.length==5)
+            {
+                $('#loading').show();
+                $('#myPage').addClass("bodyblur"); 
+                $('#priorities').addClass("bodyblur");
+                $('#AreaContent').addClass("bodyblur");
+            }
+            else {
+                $('#loading').hide();
+                $('#myPage').removeClass("bodyblur");
+                $('#priorities').removeClass("bodyblur");
+                $('#AreaContent').removeClass("bodyblur");
+
+                //$('#loading').show();
+                //$('#myPage').addClass("bodyblur");
+                //$('#priorities').addClass("bodyblur");
+                //$('#AreaContent').addClass("bodyblur");               
+            }           
+        });        
+    });
+
+    $(function () {
+        $('#chkLanguages').multiselect({
+            includeSelectAllOption: true,
+            //buttonWidth: '240px'
+            //enableFiltering: true
+            fontsize: '1.2vw'
+        });
+
+        $('#chkLanguages').multiselect('rebuild');
+    });
+
+    $(function () {
+        $('#chkSubIndustry1').multiselect({
+            maxHeight: 300,
+            buttonWidth: '190px',
+
+            onChange: function (element, checked) {
+                if (checked == true) {
+                    var i = 0;
+                    $("select#chkSubIndustry1 option:selected").each(function () {
+                        i = i + 1;
+                        if (i > 5) {
+                            $("#divmain").removeClass("addScroll");
+                            $("#divmain").addClass("removeScroll");
+                            $("#lblError").text('Sorry! Select max. 5 SIC codes.');
+                            $("#ModalError").modal();
+                            $('#chkSubIndustry1').multiselect('deselect', $(this).val());
+                        }
+                    });
+                }
+            }
+        });
+    });
+
+    $(function () {
+        $('#chkSubIndustry2').multiselect({
+            maxHeight: 300,
+            buttonWidth: '190px',
+
+            onChange: function (element, checked) {
+                if (checked == true) {
+                    var i = 0;
+                    $("select#chkSubIndustry2 option:selected").each(function () {
+                        i = i + 1;
+                        if (i > 5) {
+                            $("#divmain").removeClass("addScroll");
+                            $("#divmain").addClass("removeScroll");
+                            $("#lblError").text('Sorry! Select max. 5 SIC codes.');
+                            $("#ModalError").modal();
+                            $('#chkSubIndustry2').multiselect('deselect', $(this).val());
+                        }
+                    });
+                }
+            }
+        });
+    });
+
+    $(function () {
+        $('#chkSubIndustry3').multiselect({
+            maxHeight: 300,
+            buttonWidth: '190px',
+
+            onChange: function (element, checked) {
+                if (checked == true) {
+                    var i = 0;
+                    $("select#chkSubIndustry3 option:selected").each(function () {
+                        i = i + 1;
+                        if (i > 5) {
+                            $("#divmain").removeClass("addScroll");
+                            $("#divmain").addClass("removeScroll");
+                            $("#lblError").text('Sorry! Select max. 5 SIC codes.');
+                            $("#ModalError").modal();
+                            $('#chkSubIndustry3').multiselect('deselect', $(this).val());
+                        }
+                    });
+                }
+            }
+        });
+    });
+
+
+</script>
+
+@*Open Popup on Specialities textbox click*@
+<script>
+    $(function () {
+        $('.txtSpeciality').on('focus', function () {
+            //alert("Called Textbox Click12345");
+            $("#lblErrorMessage").text('');
+            var result = false;
+            var str = "";
+            if ($("#txtSpeciality1").val() != "") {
+                //alert($("#txtSpeciality1").val());
+
+                str = $("#txtSpeciality1").val();
+
+                result = str.indexOf("Home") > -1;
+                //alert("result : "+result);
+                if (result == false) {
+                    $('#chkHome').attr('checked', false);
+                    clickHome();
+                }
+                result = false;
+
+                result = str.indexOf("Auto") > -1;
+                if (result == false) {
+                    $('#chkAuto').attr('checked', false);
+                    clickAuto();
+                }
+                result = false;
+
+                result = str.indexOf("Benefits") > -1;
+                if (result == false) {
+                    $('#chkBenefits').attr('checked', false);
+                    clickBenefits();
+                }
+                result = false;
+
+                result = str.indexOf("Business") > -1;
+                if (result == false) {
+                    $('#chkBusiness').attr('checked', false);
+                    clickBusiness();
+                }
+                result = false;
+
+                result = str.indexOf("Life") > -1;
+                if (result == false) {
+                    $('#chkLife').attr('checked', false);
+                    clickLife();
+                }
+                result = false;
+            }
+            //alert("Before showing modal popup");
+            $("#ModalSpecialities").modal();
+
+
+            //$(this).val("Home,Benefits");
+            //$(this).val($('.txtA').val() + " - " + $('.txtB').val());
+        });
+    });
+
+    function clickAll() {
+        var chkAll = document.getElementById("chkAll");
+        if (chkAll.checked) {
+            $('#chkHome').attr('checked', true);
+            $('#chkHome1').attr('checked', true);
+            $('#chkHome2').attr('checked', true);
+            $('#chkHome3').attr('checked', true);
+
+            $('#chkAuto').attr('checked', true);
+            $('#chkStandard').attr('checked', true);
+            $('#chkEconomy').attr('checked', true);
+            $('#chkLuxury').attr('checked', true);
+            $('#chkCollectible').attr('checked', true);
+
+            $('#chkBenefits').attr('checked', true);
+            $('#chkBenefits1').attr('checked', true);
+            $('#chkBenefits2').attr('checked', true);
+            $('#chkBenefits3').attr('checked', true);
+            $('#chkBenefits4').attr('checked', true);
+
+            $('#chkBusiness').attr('checked', true);
+            $('#chkBusiness1').attr('checked', true);
+            $('#chkBusiness2').attr('checked', true);
+            $('#chkBusiness3').attr('checked', true);
+            $('#chkBusiness4').attr('checked', true);
+
+            $('#chkLife').attr('checked', true);
+            $('#chkLife1').attr('checked', true);
+            $('#chkLife2').attr('checked', true);
+            $('#chkLife3').attr('checked', true);
+            $('#chkLife4').attr('checked', true);
+
+            $("#divHome").show();
+            $("#divAuto").show();
+            $("#divBenefits").show();
+            $("#divBusiness").show();
+            $("#divLife").show();
+        }
+        else {
+            $('#chkHome').attr('checked', false);
+            $('#chkHome1').attr('checked', false);
+            $('#chkHome2').attr('checked', false);
+            $('#chkHome3').attr('checked', false);
+
+            $('#chkAuto').attr('checked', false);
+            $('#chkStandard').attr('checked', false);
+            $('#chkEconomy').attr('checked', false);
+            $('#chkLuxury').attr('checked', false);
+            $('#chkCollectible').attr('checked', false);
+
+            $('#chkBenefits').attr('checked', false);
+            $('#chkBenefits1').attr('checked', false);
+            $('#chkBenefits2').attr('checked', false);
+            $('#chkBenefits3').attr('checked', false);
+            $('#chkBenefits4').attr('checked', false);
+
+            $('#chkBusiness').attr('checked', false);
+            $('#chkBusiness1').attr('checked', false);
+            $('#chkBusiness2').attr('checked', false);
+            $('#chkBusiness3').attr('checked', false);
+            $('#chkBusiness4').attr('checked', false);
+
+            $('#chkLife').attr('checked', false);
+            $('#chkLife1').attr('checked', false);
+            $('#chkLife2').attr('checked', false);
+            $('#chkLife3').attr('checked', false);
+            $('#chkLife4').attr('checked', false);
+
+            $("#divHome").hide();
+            $("#divAuto").hide();
+            $("#divBenefits").hide();
+            $("#divBusiness").hide();
+            $("#divLife").hide();
+        }
+    }
+
+    function clickHome() {
+        var chkHome = document.getElementById("chkHome");
+        if (chkHome.checked) {
+            $("#divHome").show();
+        } else {
+            $('#chkHome1').attr('checked', false);
+            $('#chkHome2').attr('checked', false);
+            $('#chkHome3').attr('checked', false);
+
+            $("#divHome").hide();
+            $('#chkAll').attr('checked', false);
+        }
+    }
+
+    function clickAuto() {
+        var chkAuto = document.getElementById("chkAuto");
+        if (chkAuto.checked) {
+            $("#divAuto").show();
+        } else {
+            $('#chkStandard').attr('checked', false);
+            $('#chkEconomy').attr('checked', false);
+            $('#chkLuxury').attr('checked', false);
+            $('#chkCollectible').attr('checked', false);
+
+            $("#divAuto").hide();
+            $('#chkAll').attr('checked', false);
+        }
+    }
+
+    function clickBenefits() {
+        var chkBenefits = document.getElementById("chkBenefits");
+        if (chkBenefits.checked) {
+            $("#divBenefits").show();
+        } else {
+            $('#chkBenefits1').attr('checked', false);
+            $('#chkBenefits2').attr('checked', false);
+            $('#chkBenefits3').attr('checked', false);
+            $('#chkBenefits4').attr('checked', false);
+
+            $("#divBenefits").hide();
+            $('#chkAll').attr('checked', false);
+        }
+    }
+
+    function clickBusiness() {
+        var chkBusiness = document.getElementById("chkBusiness");
+        if (chkBusiness.checked) {
+            $("#divBusiness").show();
+        } else {
+            $('#chkBusiness1').attr('checked', false);
+            $('#chkBusiness2').attr('checked', false);
+            $('#chkBusiness3').attr('checked', false);
+            $('#chkBusiness4').attr('checked', false);
+
+            $("#divBusiness").hide();
+            $('#chkAll').attr('checked', false);
+        }
+    }
+
+    function clickLife() {
+        var chkLife = document.getElementById("chkLife");
+        if (chkLife.checked) {
+            $("#divLife").show();
+        } else {
+            $('#chkLife1').attr('checked', false);
+            $('#chkLife2').attr('checked', false);
+            $('#chkLife3').attr('checked', false);
+            $('#chkLife4').attr('checked', false);
+
+            $("#divLife").hide();
+            $('#chkAll').attr('checked', false);
+        }
+    }
+
+    function clickOK() {
+        var Spec = "";
+        var chkHome = document.getElementById("chkHome");
+        var chkAuto = document.getElementById("chkAuto");
+        var chkBenefits = document.getElementById("chkBenefits");
+        var chkBusiness = document.getElementById("chkBusiness");
+        var chkLife = document.getElementById("chkLife");
+
+        //For SubCategory
+        var Homevalue = "";
+        var AutoType = "";
+        var Revenue = "";
+        var Employees = "";
+        var CoverageAmt = "";
+        var flag = true;
+
+        ///////////////////////// For Home ///////////////////////////////////////////////////
+
+        var chkHome1 = document.getElementById("chkHome1");
+        if (chkHome1.checked) {
+            Homevalue = Homevalue + ';' + $("#chkHome1").attr('value');
+        }
+
+        var chkHome2 = document.getElementById("chkHome2");
+        if (chkHome2.checked) {
+            Homevalue = Homevalue + ';' + $("#chkHome2").attr('value');
+        }
+
+        var chkHome3 = document.getElementById("chkHome3");
+        if (chkHome3.checked) {
+            Homevalue = Homevalue + ';' + $("#chkHome3").attr('value');
+        }
+
+        Homevalue = Homevalue.slice(1, Homevalue.length);
+
+        $("#txtHomeValue1").val(Homevalue);
+
+        if (chkHome.checked && Homevalue == '') {
+            $("#lblErrorMessage").text('Please select sub category.');
+            flag = false;
+        }
+
+        ///////////////////////// For Auto ///////////////////////////////////////////////////
+
+        var chkAuto1 = document.getElementById("chkEconomy");
+        if (chkAuto1.checked) {
+            AutoType = AutoType + ';' + $("#chkEconomy").attr('value');
+        }
+
+        var chkAuto2 = document.getElementById("chkStandard");
+        if (chkAuto2.checked) {
+            AutoType = AutoType + ';' + $("#chkStandard").attr('value');
+        }
+
+        var chkAuto3 = document.getElementById("chkLuxury");
+        if (chkAuto3.checked) {
+            AutoType = AutoType + ';' + $("#chkLuxury").attr('value');
+        }
+
+        var chkAuto4 = document.getElementById("chkCollectible");
+        if (chkAuto4.checked) {
+            AutoType = AutoType + ';' + $("#chkCollectible").attr('value');
+        }
+
+        AutoType = AutoType.slice(1, AutoType.length);
+
+        $("#txtAutoType1").val(AutoType);
+
+        if (chkAuto.checked && AutoType == '') {
+            $("#lblErrorMessage").text('Please select sub category.');
+            flag = false;
+        }
+
+        ///////////////////////// For Benefits ///////////////////////////////////////////////////
+
+        var chkBenefits1 = document.getElementById("chkBenefits1");
+        if (chkBenefits1.checked) {
+            Employees = Employees + ';' + $("#chkBenefits1").attr('value');
+        }
+
+        var chkBenefits2 = document.getElementById("chkBenefits2");
+        if (chkBenefits2.checked) {
+            Employees = Employees + ';' + $("#chkBenefits2").attr('value');
+        }
+
+        var chkBenefits3 = document.getElementById("chkBenefits3");
+        if (chkBenefits3.checked) {
+            Employees = Employees + ';' + $("#chkBenefits3").attr('value');
+        }
+
+        var chkBenefits4 = document.getElementById("chkBenefits4");
+        if (chkBenefits4.checked) {
+            Employees = Employees + ';' + $("#chkBenefits4").attr('value');
+        }
+
+        Employees = Employees.slice(1, Employees.length);
+
+        $("#txtEmployees1").val(Employees);
+
+        if (chkBenefits.checked && Employees == '') {
+            $("#lblErrorMessage").text('Please select sub category.');
+            flag = false;
+        }
+
+        ///////////////////////// For Business ///////////////////////////////////////////////////
+
+        var chkBusiness1 = document.getElementById("chkBusiness1");
+        if (chkBusiness1.checked) {
+            Revenue = Revenue + ';' + $("#chkBusiness1").attr('value');
+        }
+
+        var chkBusiness2 = document.getElementById("chkBusiness2");
+        if (chkBusiness2.checked) {
+            Revenue = Revenue + ';' + $("#chkBusiness2").attr('value');
+        }
+
+        var chkBusiness3 = document.getElementById("chkBusiness3");
+        if (chkBusiness3.checked) {
+            Revenue = Revenue + ';' + $("#chkBusiness3").attr('value');
+        }
+
+        var chkBusiness4 = document.getElementById("chkBusiness4");
+        if (chkBusiness4.checked) {
+            Revenue = Revenue + ';' + $("#chkBusiness4").attr('value');
+        }
+
+        Revenue = Revenue.slice(1, Revenue.length);
+
+        $("#txtRevenue1").val(Revenue);
+
+        if (chkBusiness.checked && Revenue == '') {
+            $("#lblErrorMessage").text('Please select sub category.');
+            flag = false;
+        }
+
+        ///////////////////////// For Life ///////////////////////////////////////////////////
+
+        var chkLife1 = document.getElementById("chkLife1");
+        if (chkLife1.checked) {
+            CoverageAmt = CoverageAmt + ';' + $("#chkLife1").attr('value');
+        }
+
+        var chkLife2 = document.getElementById("chkLife2");
+        if (chkLife2.checked) {
+            CoverageAmt = CoverageAmt + ';' + $("#chkLife2").attr('value');
+        }
+
+        var chkLife3 = document.getElementById("chkLife3");
+        if (chkLife3.checked) {
+            CoverageAmt = CoverageAmt + ';' + $("#chkLife3").attr('value');
+        }
+
+        var chkLife4 = document.getElementById("chkLife4");
+        if (chkLife4.checked) {
+            CoverageAmt = CoverageAmt + ';' + $("#chkLife4").attr('value');
+        }
+
+        CoverageAmt = CoverageAmt.slice(1, CoverageAmt.length);
+
+        $("#txtCoverageAmt1").val(CoverageAmt);
+
+        if (chkLife.checked && CoverageAmt == '') {
+            $("#lblErrorMessage").text('Please select sub category.');
+            flag = false;
+        }
+
+        if (flag == true) {
+            if (chkHome.checked) {
+                Spec = Spec + ',' + $("#chkHome").attr('value');
+            }
+            if (chkAuto.checked) {
+                Spec = Spec + ',' + $("#chkAuto").attr('value');
+            }
+            if (chkBenefits.checked) {
+                Spec = Spec + ',' + $("#chkBenefits").attr('value');
+            }
+            if (chkBusiness.checked) {
+                Spec = Spec + ',' + $("#chkBusiness").attr('value');
+            }
+            if (chkLife.checked) {
+                Spec = Spec + ',' + $("#chkLife").attr('value');
+            }
+
+            Spec = Spec.slice(1, Spec.length);
+
+            $("#txtSpeciality1").val(Spec);
+            $("#lblErrorMessage").text('');
+            $('#ModalSpecialities').modal('hide');
+
+        }
+        //End of SubCategory
+    }
+
+    function clickCancel() {
+        var result1 = false;
+        var str1 = "";
+        if ($("#txtSpeciality1").val() != "") {
+            //alert($("#txtSpeciality1").val());
+
+            str1 = $("#txtSpeciality1").val();
+            result1 = str1.indexOf("Home") > -1;
+            //alert("result : "+result);
+            if (result1 == false) {
+                //alert("In Home If");
+                $('#chkHome').attr('checked', false);
+                clickHome();
+            }
+            else {
+                //alert("In Home Else");
+                var txtHomeValue1 = $("#txtHomeValue1").val();
+                var chkSubOptions = "";
+                //alert(txtHomeValue1);
+
+                chkSubOptions = txtHomeValue1.indexOf("$500,000 or less") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkHome1').attr('checked', true);
+                }
+                else {
+                    $('#chkHome1').attr('checked', false);
+                }
+
+                chkSubOptions = txtHomeValue1.indexOf("$501,000 - $1,000,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkHome2').attr('checked', true);
+                }
+                else {
+                    $('#chkHome2').attr('checked', false);
+                }
+
+                chkSubOptions = txtHomeValue1.indexOf("More than $1,000,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkHome3').attr('checked', true);
+                }
+                else {
+                    $('#chkHome3').attr('checked', false);
+                }
+
+                $('#chkHome').attr('checked', true);
+                $("#divHome").show();
+            }
+            result1 = false;
+
+            result1 = str1.indexOf("Auto") > -1;
+            if (result1 == false) {
+                $('#chkAuto').attr('checked', false);
+                clickAuto();
+            } else {
+                var txtAutoType1 = $("#txtAutoType1").val();
+                var chkSubOptions = "";
+
+                chkSubOptions = txtAutoType1.indexOf("Economy") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkEconomy').attr('checked', true);
+                }
+                else {
+                    $('#chkEconomy').attr('checked', false);
+                }
+
+                chkSubOptions = txtAutoType1.indexOf("Standard") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkStandard').attr('checked', true);
+                }
+                else {
+                    $('#chkStandard').attr('checked', false);
+                }
+
+                chkSubOptions = txtAutoType1.indexOf("Luxury") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkLuxury').attr('checked', true);
+                }
+                else {
+                    $('#chkLuxury').attr('checked', false);
+                }
+
+                chkSubOptions = txtAutoType1.indexOf("Collectible") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkCollectible').attr('checked', true);
+                }
+                else {
+                    $('#chkCollectible').attr('checked', false);
+                }
+
+                $('#chkAuto').attr('checked', true);
+                $("#divAuto").show();
+            }
+
+            result1 = false;
+
+            result1 = str1.indexOf("Benefits") > -1;
+            if (result1 == false) {
+                $('#chkBenefits').attr('checked', false);
+                clickBenefits();
+            }
+            else {
+
+                var txtEmployees1 = $("#txtEmployees1").val();
+                var chkSubOptions = "";
+
+                chkSubOptions = txtEmployees1.indexOf("1-25") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBenefits1').attr('checked', true);
+                }
+                else {
+                    $('#chkBenefits1').attr('checked', false);
+                }
+
+                chkSubOptions = txtEmployees1.indexOf("26-50") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBenefits2').attr('checked', true);
+                }
+                else {
+                    $('#chkBenefits2').attr('checked', false);
+                }
+
+                chkSubOptions = txtEmployees1.indexOf("51-100") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBenefits3').attr('checked', true);
+                }
+                else {
+                    $('#chkBenefits3').attr('checked', false);
+                }
+
+                chkSubOptions = txtEmployees1.indexOf("More than 100") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBenefits4').attr('checked', true);
+                }
+                else {
+                    $('#chkBenefits4').attr('checked', false);
+                }
+
+                $('#chkBenefits').attr('checked', true);
+                $("#divBenefits").show();
+            }
+            result1 = false;
+
+            result1 = str1.indexOf("Business") > -1;
+            if (result1 == false) {
+                $('#chkBusiness').attr('checked', false);
+                clickBusiness();
+            }
+            else {
+                var txtRevenue1 = $("#txtRevenue1").val();
+                var chkSubOptions = "";
+
+                chkSubOptions = txtRevenue1.indexOf("Up to $1,000,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBusiness1').attr('checked', true);
+                }
+                else {
+                    $('#chkBusiness1').attr('checked', false);
+                }
+
+                chkSubOptions = txtRevenue1.indexOf("$1,000,001 and $5,000,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBusiness2').attr('checked', true);
+                }
+                else {
+                    $('#chkBusiness2').attr('checked', false);
+                }
+
+                chkSubOptions = txtRevenue1.indexOf("$5,000,001 and $10,000,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBusiness3').attr('checked', true);
+                }
+                else {
+                    $('#chkBusiness3').attr('checked', false);
+                }
+
+                chkSubOptions = txtRevenue1.indexOf("Over $10,000,001") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBusiness4').attr('checked', true);
+                }
+                else {
+                    $('#chkBusiness4').attr('checked', false);
+                }
+
+
+                $('#chkBusiness').attr('checked', true);
+                $("#divBusiness").show();
+            }
+            result1 = false;
+
+            result1 = str1.indexOf("Life") > -1;
+            if (result1 == false) {
+                $('#chkLife').attr('checked', false);
+                clickLife();
+            }
+            else {
+
+                var txtCoverageAmt1 = $("#txtCoverageAmt1").val();
+                var chkSubOptions = "";
+
+                chkSubOptions = txtCoverageAmt1.indexOf("$250,000 or less") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkLife1').attr('checked', true);
+                }
+                else {
+                    $('#chkLife1').attr('checked', false);
+                }
+
+                chkSubOptions = txtCoverageAmt1.indexOf("$250,001 to $500,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkLife2').attr('checked', true);
+                }
+                else {
+                    $('#chkLife2').attr('checked', false);
+                }
+
+                chkSubOptions = txtCoverageAmt1.indexOf("$500,001 to $1,000,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkLife3').attr('checked', true);
+                }
+                else {
+                    $('#chkLife3').attr('checked', false);
+                }
+
+                chkSubOptions = txtCoverageAmt1.indexOf("More than $1,000,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkLife4').attr('checked', true);
+                }
+                else {
+                    $('#chkLife4').attr('checked', false);
+                }
+
+                $('#chkLife').attr('checked', true);
+                $("#divLife").show();
+            }
+            result1 = false;
+        }
+        else {
+
+            $('#chkHome').attr('checked', false);
+            clickHome();
+            $('#chkAuto').attr('checked', false);
+            clickAuto();
+            $('#chkBenefits').attr('checked', false);
+            clickBenefits();
+            $('#chkBusiness').attr('checked', false);
+            clickBusiness();
+            $('#chkLife').attr('checked', false);
+            clickLife();
+
+        }
+        $('#ModalSpecialities').modal('hide');
+    }
+
+    $(function () {
+        $('.classcheckbox').on('change', function () {
+
+            if (this.checked == false) {
+                $('#chkAll').attr('checked', false); //change "select all" checked status to false
+            }
+
+            if ($('.classcheckbox:checked').length == $('.classcheckbox').length) {
+                $('#chkAll').attr('checked', true); //change "select all" checked status to true
+            }
+        });
+    });
+
+</script>
+@*End of Open Popup on Specialities textbox click*@
+
+@*New Script containg Education,Prior Employment and Industry adding and removing code*@
+<script>
+    $(document).ready(function () {
+
+        $('#ModalError').on('hidden.bs.modal', function () {
+            $("#divmain").addClass("addScroll");
+            $("#divmain").removeClass("removeScroll");
+        });
+
+        $("#Bio1").keyup(function (e) {
+            @*var input = $(this);
+            var text = input.val().replace(/[^a-zA-Z0-9-?@&!$%*().,_\s]/g, "");
+            if (/|/.test(text)) { text = text.replace(/|/g, ""); } input.val(text);*@
+            //alert("Here");
+            var text = $("#Bio1").val();
+            text = text.replace(/[^a-zA-Z0-9-?&!$%*().,_\s]/g, "");
+            if (/|/.test(text)) { text = text.replace(/|/g, ""); }
+            $("#Bio1").val(text);
+            //alert(text);
+        });
+
+        var iPhoneAppPath = '@ViewBag.iPhoneAppPath';
+        var AndroidAppPath = '@ViewBag.AndroidAppPath';
+
+        $("#iPhoneAppPath").attr("href", iPhoneAppPath);
+
+        /************ Fill Industry Master***************/
+        var Industry1 = $("#Industry1");
+        $.getJSON('@Url.Action("GetIndustryMaster", "BrokerRegistration")', function (result) {
+            if (result.result.length > 0) {
+                for (var i in result.result) {
+                    Industry1.append($('<option/>', {
+                        maxHeight: 500,
+
+                        value: result.result[i].Value,
+                        text: result.result[i].Text,
+                        title: result.result[i].Text
+                    }));
+                }
+
+            }
+        });
+
+        var Industry2 = $("#Industry2");
+        $.getJSON('@Url.Action("GetIndustryMaster", "BrokerRegistration")', function (result) {
+            if (result.result.length > 0) {
+                for (var i in result.result) {
+                    Industry2.append($('<option/>', {
+                        maxHeight: 500,
+
+                        value: result.result[i].Value,
+                        text: result.result[i].Text,
+                        title: result.result[i].Text
+                    }));
+                }
+
+            }
+        });
+
+        var Industry3 = $("#Industry3");
+        $.getJSON('@Url.Action("GetIndustryMaster", "BrokerRegistration")', function (result) {
+            if (result.result.length > 0) {
+                for (var i in result.result) {
+                    Industry3.append($('<option/>', {
+                        maxHeight: 500,
+
+                        value: result.result[i].Value,
+                        text: result.result[i].Text,
+                        title: result.result[i].Text
+                    }));
+                }
+
+            }
+        });
+        /************ End of Fill Industry Master***************/
+
+        //For Adding and Deleting Education details
+        var iCnt = 0;
+
+        $("#btnAdd").bind("click", function () {
+
+            if (iCnt <= 4) {
+                iCnt = iCnt + 1;
+                var div = $("<div />");
+                div.html(GetDynamicTextBox(iCnt));
+                $('#Education1').val("");
+                $("#id1").prepend(div);
+            }
+            else {
+                //alert("You Exceeds the limit");
+                $("#divmain").removeClass("addScroll");
+                $("#divmain").addClass("removeScroll");
+                $("#lblError").text('Sorry! Education details record entry exceed its limit.');
+                $("#ModalError").modal();
+            }
+
+        });
+
+        $("#btnGet").bind("click", function () {
+            var values = "";
+            $("input[name=DynamicTextBox]").each(function () {
+                values += $(this).val() + "\n";
+            });
+
+        });
+
+        $("body").on("click", ".remove", function () {
+            $(this).closest("div").remove();
+            iCnt = iCnt - 1;
+        });
+
+        function GetDynamicTextBox(value) {
+            return '<input name = "BrokerEduction[0].School' + value + '" type="text" value = "" placeholder="School" Style ="width:80%;border:none;border-bottom:1px solid #999999;font-size:1.5vw !important;" class="placeholder"/>' +
+            '<img src="/Images/Assets/Close_Red.png" value="Remove" class="remove" style="width: 3vw;"/><br/>' +
+            '<input name = "BrokerEduction[0].Degree' + value + '" type="text" value = "" placeholder="Degree" Style ="width:80%;border:none;border-bottom:1px solid #999999;font-size:1.5vw !important;" class="placeholder"/>' +
+            '<input name = "BrokerEduction[0].Year' + value + '"  type="text" value = "" placeholder="Year" Style ="width:80%;border:none;border-bottom:1px solid #999999;font-size:1.5vw !important;" class="placeholder"/>' +
+            '<input name = "BrokerEduction[0].EducationLogo' + value + '" id="EducationLogo' + value + '" type="text" value = "" placeholder="Logo" Style ="width:60%;border:none;border-bottom:1px solid #999999;font-size:1.5vw !important;" class="placeholder" readonly/>' +
+            '<input name = "BrokerEduction[0].HiddenEducationLogo' + value + '" id="HiddenEducationLogo' + value + '" type="text" value = "" placeholder="Logo" Style ="display:none;" class="placeholder" readonly/>' +
+            '<input type="file" id="fileToUploadEdu' + value + '" name="file" style="display:none" accept=".jpe,.jpg,.jpeg,.png,.gif" />' +
+            '<input type="button" value="BROWSE" id="btnUploadEdu" onclick="openfileDialogEducation(' + value + ');" class="btn btn-default"  style="background-color: #066691;color: white;border-radius:21px;font-size: 1.1vw !important;" /><hr/>'
+        }
+        //End of Adding and Deleting Education details
+
+
+        //For Adding and Deleting Prior Employment details
+        var iCntPrior = 0;
+
+        $("#btnAddPriorEmployment").bind("click", function () {
+            var Addflag = "false";
+            if (iCntPrior <= 6) {
+                iCntPrior = iCntPrior + 1;
+
+                if ((iCntPrior - 1) > 0) {
+                    var current = iCntPrior - 1;
+
+                    for (var i = 1; i <= current; i++) {
+                        var ExpFromMonthVal1 = $('#ExpFromMonth' + i).val();
+                        var ExpFromYearVal1 = $('#ExpFromYear' + i).val();
+
+                        var ExpToMonthVal1 = $('#ExpToMonth' + i).val();
+                        var ExpToYearVal1 = $('#ExpToYear' + i).val();
+
+                        if ((ExpFromMonthVal1 != 'Select' && ExpFromYearVal1 != 'Select')) {
+                            if ((ExpToMonthVal1 != 'Select' && ExpToYearVal1 != 'Select')) {
+                                //alert("Here-1 " + Addflag);
+                                //if (Addflag == "true") {
+                                //    var div = $("<div />");
+                                //    div.html(GetDynamicTextBoxPrior(iCntPrior));
+                                //    $("#idPriorEmployer").prepend(div);
+                                //    Addflag="false";
+                                //}
+                                Addflag = "true";
+                            }
+                            else {
+                                Addflag = "false";
+                                iCntPrior = iCntPrior - 1;
+                                $("#divmain").removeClass("addScroll");
+                                $("#divmain").addClass("removeScroll");
+                                $("#lblError").text('Please select proper from date and to date for company details.');
+                                $("#ModalError").modal();
+                                break;
+                            }
+
+                        }
+                        else {
+                            if ((ExpFromMonthVal1 != "Select" && ExpFromYearVal1 == 'Select') || (ExpFromMonthVal1 == "Select" && ExpFromYearVal1 != 'Select')) {
+                                Addflag = "false";
+                                iCntPrior = iCntPrior - 1;
+                                $("#divmain").removeClass("addScroll");
+                                $("#divmain").addClass("removeScroll");
+                                $("#lblError").text('Please select proper from date and to date for company details.');
+                                $("#ModalError").modal();
+                                break;
+                            }
+                            else {
+                                Addflag = "true";
+                                //alert("Here-2 " + Addflag);
+                                //if (Addflag == "true") {
+                                //    var div = $("<div />");
+                                //    div.html(GetDynamicTextBoxPrior(iCntPrior));
+                                //    $("#idPriorEmployer").prepend(div);
+                                //    Addflag = "false";
+                                //}
+                            }
+                        }
+                    }
+
+                    if (Addflag == "true") {
+                        var div = $("<div />");
+                        div.html(GetDynamicTextBoxPrior(iCntPrior));
+                        $("#idPriorEmployer").prepend(div);
+                        Addflag = "false";
+                    }
+
+                }
+                else {
+                    //alert("Here-3");
+                    var div = $("<div />");
+                    div.html(GetDynamicTextBoxPrior(iCntPrior));
+                    $("#idPriorEmployer").prepend(div);
+                }
+            }
+            else {
+                //alert("You Exceeds the limit");
+                $("#divmain").removeClass("addScroll");
+                $("#divmain").addClass("removeScroll");
+                $("#lblError").text('Sorry! Experience details record entry exceed its limit.');
+                $("#ModalError").modal();
+            }
+
+        });
+
+        $("#btnGet").bind("click", function () {
+            var values = "";
+            $("input[name=DynamicTextBox]").each(function () {
+                values += $(this).val() + "\n";
+            });
+
+        });
+
+        $("body").on("click", ".removeExp", function () {
+            $(this).closest("div").remove();
+            iCntPrior = iCntPrior - 1;
+        });
+
+        function GetDynamicTextBoxPrior(value) {
+            // return '<input name = "BrokerPriorEmployment[0].CmpName' + value + '" type="text" value = "" placeholder="Company Name" Style ="width:80%;" />' +
+            //'<img src="/Images/Assets/Close_Red.png" value="Remove" class="removeExp" /><br/>' +
+            //'<input name = "BrokerPriorEmployment[0].CmpLogo' + value + '" id="CmpLogo' + value + '" type="text" value = "" placeholder="Company Logo" Style ="width:80%;" readonly/>' +
+            //'<input type="file" id="fileToUploadExp' + value + '" name="file" style="display:none" accept=".jpe,.jpg,.jpeg,.png,.gif" />'+
+            //'<input type="button" value="BROWSE" id="btnUploadExpComp" onclick="openfileDialogExperience(' + value + ');" class="btn btn-default"  style="background-color: #066691;color: white;" />'+
+            //'<input name = "BrokerPriorEmployment[0].Desig' + value + '" type="text" value = "" placeholder="Designation" Style ="width:80%;" />' +
+            //'<input name = "BrokerPriorEmployment[0].DurFrom' + value + '" class="ExpFrom' + value + '" id="ExpFrom' + value + '" type="text" value = "" placeholder="From" Style ="width:80%;" />' +
+            //'<input name = "BrokerPriorEmployment[0].DurTo' + value + '"  type="text" value = "" placeholder="To" Style ="width:80%;" /><hr/><div class="clearfix"></div>'
+
+            return '<input name = "BrokerPriorEmployment[0].CmpName' + value + '" type="text" value = "" placeholder="Company Name" Style ="width:80%;border:none;border-bottom:1px solid #999999;font-size:1.5vw !important;" class="placeholder"/>' +
+            '<img src="/Images/Assets/Close_Red.png" value="Remove" class="removeExp" style="width: 3vw;"/><br/>' +
+            '<input name = "BrokerPriorEmployment[0].CmpLogo' + value + '" id="CmpLogo' + value + '" type="text" value = "" placeholder="Company Logo" Style ="width:60%;border:none;border-bottom:1px solid #999999;font-size:1.5vw !important;" class="placeholder" readonly/>' +
+            '<input name = "BrokerPriorEmployment[0].HiddenCmpLogo' + value + '" id="HiddenCmpLogo' + value + '" type="text" value = "" placeholder="Company Logo" Style ="display:none;" class="placeholder" readonly/>' +
+            '<input type="file" id="fileToUploadExp' + value + '" name="file" style="display:none" accept=".jpe,.jpg,.jpeg,.png,.gif" />' +
+            '<input type="button" value="BROWSE" id="btnUploadExpComp" onclick="openfileDialogExperience(' + value + ');" class="btn btn-default"  style="background-color: #066691;color: white;border-radius:21px;font-size: 1.1vw !important;" />' +
+            '<input name = "BrokerPriorEmployment[0].Desig' + value + '" type="text" value = "" placeholder="Designation" Style ="width:80%;border:none;border-bottom:1px solid #999999;font-size:1.5vw !important;" class="placeholder"/>' +
+            '<div class="col-md-12 col-sm-12 col-xs-12" style="padding:0;"><div class="col-md-5 col-sm-5 col-xs-12" style="padding-left:0;"><select class="ExpFromMonth" id="ExpFromMonth' + value + '" name="BrokerPriorEmployment[0].DurMonthFrom' + value + '" style="color:black;border:none;border-bottom:1px solid #999999;font-size: 1.1vw !important;"><option value="Select">From Month</option><option value="Jan">Jan</option><option value="Feb">Feb</option><option value="Mar">Mar</option><option value="Apr">Apr</option><option value="May">May</option><option value="Jun">Jun</option><option value="Jul">Jul</option><option value="Aug">Aug</option><option value="Sep">Sep</option><option value="Oct">Oct</option><option value="Nov">Nov</option><option value="Dec">Dec</option></select></div>' +
+            '<div class="col-md-5 col-sm-5 col-xs-12" style="padding-left:0;"><select class="ExpFromYear" id="ExpFromYear' + value + '" name="BrokerPriorEmployment[0].DurYearFrom' + value + '" style="color:black;border:none;border-bottom:1px solid #999999;font-size: 1.1vw !important;"><option value="Select">From Year</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><optionvalue="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option><option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option><option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option><option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option><option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option><option value="1959">1959</option><option value="1958">1958</option><option value="1957">1957</option><option value="1956">1956</option><option value="1955">1955</option><option value="1954">1954</option><option value="1953">1953</option><option value="1952">1952</option><option value="1951">1951</option><option value="1950">1950</option></select></div></div>' +
+            '<div class="col-md-12 col-sm-12 col-xs-12" style="padding:0;"><div class="col-md-5 col-sm-5 col-xs-12" style="padding-left:0;"><select class="ExpToMonth" id="ExpToMonth' + value + '" name="BrokerPriorEmployment[0].DurMonthTo' + value + '" style="margin-top: 3%;color:black;border:none;border-bottom:1px solid #999999;font-size: 1.1vw !important;""><option value="Select">To Month</option><option value="Jan">Jan</option><option value="Feb">Feb</option><option value="Mar">Mar</option><option value="Apr">Apr</option><option value="May">May</option><option value="Jun">Jun</option><option value="Jul">Jul</option><option value="Aug">Aug</option><option value="Sep">Sep</option><option value="Oct">Oct</option><option value="Nov">Nov</option><option value="Dec">Dec</option></select></div>' +
+            '<div class="col-md-5 col-sm-5 col-xs-12" style="padding-left:0;"><select class="ExpToYear" id="ExpToYear' + value + '" name="BrokerPriorEmployment[0].DurYearTo' + value + '" style="margin-top: 3%;color:black;border:none;border-bottom:1px solid #999999;font-size: 1.1vw !important;""><option value="Select">To Year</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><optionvalue="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option><option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option><option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option><option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option><option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option><option value="1959">1959</option><option value="1958">1958</option><option value="1957">1957</option><option value="1956">1956</option><option value="1955">1955</option><option value="1954">1954</option><option value="1953">1953</option><option value="1952">1952</option><option value="1951">1951</option><option value="1950">1950</option></select></div></div><hr/><div class="clearfix"></div><hr/>'
+
+        }
+
+
+        //Validation for From Date and To Date for Company Details.
+
+        $("body").on("change", ".ExpFromMonth", function () {
+            var ThisId = this.id;
+            var Id = ThisId[ThisId.length - 1];
+
+            var ExpFromMonthVal = $('#ExpFromMonth' + Id).val();
+
+            if (ExpFromMonthVal == "Select") {
+                $("#ExpToMonth" + Id).val("Select");
+                $("#ExpToYear" + Id).val("Select");
+            }
+
+        });
+
+        $("body").on("change", ".ExpFromYear", function () {
+            var ThisId = this.id;
+            var Id = ThisId[ThisId.length - 1];
+
+            var ExpFromYearVal = $('#ExpFromYear' + Id).val();
+
+            if (ExpFromYearVal == "Select") {
+                $("#ExpToMonth" + Id).val("Select");
+                $("#ExpToYear" + Id).val("Select");
+            }
+
+        });
+
+        $("body").on("change", ".ExpToMonth", function () {
+            var ThisId = this.id;
+            var Id = ThisId[ThisId.length - 1];
+            //alert("ThisId - " + ThisId+" , Id - "+Id);
+
+            var ExpFromMonthVal = $('#ExpFromMonth' + Id).val();
+            var ExpFromYearVal = $('#ExpFromYear' + Id).val();
+
+            var ExpToMonthVal = $('#ExpToMonth' + Id).val();
+            var ExpToYearVal = $('#ExpToYear' + Id).val();
+
+            //alert(ExpToMonthVal + " / " + ExpToYearVal);
+
+            var ExpFromMonthValInNo = "";
+            var ExpToMonthValInNo = "";
+
+            if (ExpFromMonthVal != 'Select' && ExpFromYearVal != 'Select') {
+
+                if (ExpToMonthVal != 'Select' && ExpToYearVal != 'Select') {
+                    if (ExpFromMonthVal == 'Jan') {
+                        ExpFromMonthValInNo = "1";
+                    }
+                    else if (ExpFromMonthVal == 'Feb') {
+                        ExpFromMonthValInNo = "2";
+                    }
+                    else if (ExpFromMonthVal == 'Mar') {
+                        ExpFromMonthValInNo = "3";
+                    }
+                    else if (ExpFromMonthVal == 'Apr') {
+                        ExpFromMonthValInNo = "4";
+                    }
+                    else if (ExpFromMonthVal == 'May') {
+                        ExpFromMonthValInNo = "5";
+                    }
+                    else if (ExpFromMonthVal == 'Jun') {
+                        ExpFromMonthValInNo = "6";
+                    }
+                    else if (ExpFromMonthVal == 'Jul') {
+                        ExpFromMonthValInNo = "7";
+                    }
+                    else if (ExpFromMonthVal == 'Aug') {
+                        ExpFromMonthValInNo = "8";
+                    }
+                    else if (ExpFromMonthVal == 'Sep') {
+                        ExpFromMonthValInNo = "9";
+                    }
+                    else if (ExpFromMonthVal == 'Oct') {
+                        ExpFromMonthValInNo = "10";
+                    }
+                    else if (ExpFromMonthVal == 'Nov') {
+                        ExpFromMonthValInNo = "11";
+                    }
+                    else if (ExpFromMonthVal == 'Dec') {
+                        ExpFromMonthValInNo = "12";
+                    }
+
+                    if (ExpToMonthVal == 'Jan') {
+                        ExpToMonthValInNo = "1";
+                    }
+                    else if (ExpToMonthVal == 'Feb') {
+                        ExpToMonthValInNo = "2";
+                    }
+                    else if (ExpToMonthVal == 'Mar') {
+                        ExpToMonthValInNo = "3";
+                    }
+                    else if (ExpToMonthVal == 'Apr') {
+                        ExpToMonthValInNo = "4";
+                    }
+                    else if (ExpToMonthVal == 'May') {
+                        ExpToMonthValInNo = "5";
+                    }
+                    else if (ExpToMonthVal == 'Jun') {
+                        ExpToMonthValInNo = "6";
+                    }
+                    else if (ExpToMonthVal == 'Jul') {
+                        ExpToMonthValInNo = "7";
+                    }
+                    else if (ExpToMonthVal == 'Aug') {
+                        ExpToMonthValInNo = "8";
+                    }
+                    else if (ExpToMonthVal == 'Sep') {
+                        ExpToMonthValInNo = "9";
+                    }
+                    else if (ExpToMonthVal == 'Oct') {
+                        ExpToMonthValInNo = "10";
+                    }
+                    else if (ExpToMonthVal == 'Nov') {
+                        ExpToMonthValInNo = "11";
+                    }
+                    else if (ExpToMonthVal == 'Dec') {
+                        ExpToMonthValInNo = "12";
+                    }
+
+
+                    var FromDate = new Date(ExpFromYearVal, ExpFromMonthValInNo, 1);
+                    var ToDate = new Date(ExpToYearVal, ExpToMonthValInNo, 1);
+
+                    if (FromDate > ToDate) {
+
+                        $("#ExpToMonth" + Id).val("Select");
+                        // $("#ExpToYear"+Id).val("Select");
+
+                        $("#divmain").removeClass("addScroll");
+                        $("#divmain").addClass("removeScroll");
+
+                        $("#lblError").text('Please select proper from date for company.');
+                        $("#ModalError").modal();
+
+                    }
+                    else {
+                        //alert("In Else");
+                    }
+                }
+                else {
+
+                }
+
+            }
+            else {
+                $("#ExpToMonth" + Id).val("Select");
+                $("#ExpToYear" + Id).val("Select");
+
+                //alert("here");
+                $("#divmain").removeClass("addScroll");
+                $("#divmain").addClass("removeScroll");
+
+                $("#lblError").text('Please select from month and from year for company.');
+                $("#ModalError").modal();
+            }
+        });
+
+        $("body").on("change", ".ExpToYear", function () {
+            var ThisId = this.id;
+            var Id = ThisId[ThisId.length - 1];
+            //alert("ThisId - " + ThisId+" , Id - "+Id);
+
+            var ExpFromMonthVal = $('#ExpFromMonth' + Id).val();
+            var ExpFromYearVal = $('#ExpFromYear' + Id).val();
+
+            var ExpToMonthVal = $('#ExpToMonth' + Id).val();
+            var ExpToYearVal = $('#ExpToYear' + Id).val();
+
+            var ExpFromMonthValInNo = "";
+            var ExpToMonthValInNo = "";
+
+            if (ExpFromMonthVal != 'Select' && ExpFromYearVal != 'Select') {
+
+                if (ExpToMonthVal != 'Select' && ExpToYearVal != 'Select') {
+                    if (ExpFromMonthVal == 'Jan') {
+                        ExpFromMonthValInNo = "1";
+                    }
+                    else if (ExpFromMonthVal == 'Feb') {
+                        ExpFromMonthValInNo = "2";
+                    }
+                    else if (ExpFromMonthVal == 'Mar') {
+                        ExpFromMonthValInNo = "3";
+                    }
+                    else if (ExpFromMonthVal == 'Apr') {
+                        ExpFromMonthValInNo = "4";
+                    }
+                    else if (ExpFromMonthVal == 'May') {
+                        ExpFromMonthValInNo = "5";
+                    }
+                    else if (ExpFromMonthVal == 'Jun') {
+                        ExpFromMonthValInNo = "6";
+                    }
+                    else if (ExpFromMonthVal == 'Jul') {
+                        ExpFromMonthValInNo = "7";
+                    }
+                    else if (ExpFromMonthVal == 'Aug') {
+                        ExpFromMonthValInNo = "8";
+                    }
+                    else if (ExpFromMonthVal == 'Sep') {
+                        ExpFromMonthValInNo = "9";
+                    }
+                    else if (ExpFromMonthVal == 'Oct') {
+                        ExpFromMonthValInNo = "10";
+                    }
+                    else if (ExpFromMonthVal == 'Nov') {
+                        ExpFromMonthValInNo = "11";
+                    }
+                    else if (ExpFromMonthVal == 'Dec') {
+                        ExpFromMonthValInNo = "12";
+                    }
+
+                    if (ExpToMonthVal == 'Jan') {
+                        ExpToMonthValInNo = "1";
+                    }
+                    else if (ExpToMonthVal == 'Feb') {
+                        ExpToMonthValInNo = "2";
+                    }
+                    else if (ExpToMonthVal == 'Mar') {
+                        ExpToMonthValInNo = "3";
+                    }
+                    else if (ExpToMonthVal == 'Apr') {
+                        ExpToMonthValInNo = "4";
+                    }
+                    else if (ExpToMonthVal == 'May') {
+                        ExpToMonthValInNo = "5";
+                    }
+                    else if (ExpToMonthVal == 'Jun') {
+                        ExpToMonthValInNo = "6";
+                    }
+                    else if (ExpToMonthVal == 'Jul') {
+                        ExpToMonthValInNo = "7";
+                    }
+                    else if (ExpToMonthVal == 'Aug') {
+                        ExpToMonthValInNo = "8";
+                    }
+                    else if (ExpToMonthVal == 'Sep') {
+                        ExpToMonthValInNo = "9";
+                    }
+                    else if (ExpToMonthVal == 'Oct') {
+                        ExpToMonthValInNo = "10";
+                    }
+                    else if (ExpToMonthVal == 'Nov') {
+                        ExpToMonthValInNo = "11";
+                    }
+                    else if (ExpToMonthVal == 'Dec') {
+                        ExpToMonthValInNo = "12";
+                    }
+
+
+                    var FromDate = new Date(ExpFromYearVal, ExpFromMonthValInNo, 1);
+                    var ToDate = new Date(ExpToYearVal, ExpToMonthValInNo, 1);
+
+                    if (FromDate > ToDate) {
+
+                        // $("#ExpToMonth" + Id).val("Select");
+                        $("#ExpToYear" + Id).val("Select");
+
+                        $("#divmain").removeClass("addScroll");
+                        $("#divmain").addClass("removeScroll");
+
+                        $("#lblError").text('Please select proper from date for company.');
+                        $("#ModalError").modal();
+
+                    }
+                    else {
+                        //alert("In Else");
+                    }
+                }
+                else {
+
+                }
+
+            }
+            else {
+                $("#ExpToMonth" + Id).val("Select");
+                $("#ExpToYear" + Id).val("Select");
+
+                $("#divmain").removeClass("addScroll");
+                $("#divmain").addClass("removeScroll");
+
+                $("#lblError").text('Please select from month or from year for company.');
+                $("#ModalError").modal();
+            }
+        });
+
+        //End of validation for From Date and To Date for Company Details.
+
+
+        //End of Adding and Deleting Prior Employment details
+
+
+        //Adding Industry and SubIndustry
+        var iCntIndustry = 1;
+        var defaultvalue = 0;
+        var NewId;
+        var OldId;
+        var IndustryId = ["1", "2", "3"];
+
+        $("#btnAddIndustry").bind("click", function () {
+            if (iCntIndustry <= 3) {
+
+                NewId = IndustryId[0];
+                $('#divIndustry' + NewId).show();
+                var mySelect = $('#Industry' + NewId);
+
+                $('#Industry' + NewId + ' option[value="' + defaultvalue + '"]').attr("selected", "selected");
+
+                iCntIndustry = iCntIndustry + 1;
+                IndustryId.shift();
+
+                if ($.browser.name == 'chrome' || $.browser.name == 'unknown') {
+                    var optLen = $('#Industry' + NewId + ' option').size();
+                    for (var i = 0; i < optLen; i++) {
+                        var txt = $('#Industry' + NewId + ' option').eq(i).text();
+                        txt = txt.substring(0, 40);
+                        $('#Industry' + NewId + ' option').eq(i).text(txt);
+                    }
+                }
+
+                //Binding value to SubIndustry
+                var SubIndustry = $("#chkSubIndustry" + NewId);
+                $('#chkSubIndustry' + NewId).empty();
+                $('#chkSubIndustry' + NewId).trigger("chosen:updated");
+                $('#chkSubIndustry' + NewId).multiselect('rebuild');
+
+                $.getJSON('@Url.Action("GetSubIndustryMaster", "BrokerRegistration")', { id: defaultvalue }, function (result) {
+                    if (result.result.length > 0) {
+                        for (var i in result.result) {
+                            SubIndustry.append($('<option/>', {
+                                value: result.result[i].Value,
+                                text: result.result[i].Text
+                            }));
+                        }
+                        $('#chkSubIndustry' + NewId).trigger("chosen:updated");
+                        $('#chkSubIndustry' + NewId).multiselect('rebuild');
+                    }
+                });
+            }
+            else {
+                $("#divmain").removeClass("addScroll");
+                $("#divmain").addClass("removeScroll");
+                $("#lblError").text('Sorry! Industry and SIC Code limit exceeded.');
+                $("#ModalError").modal();
+            }
+        });
+
+        $("body").on("click", ".Remove1", function () {
+            var ImgId = this.id;
+            $('#divIndustry' + ImgId).hide();
+            IndustryId.push(ImgId);
+            iCntIndustry = iCntIndustry - 1;
+        });
+        $("body").on("click", ".Remove2", function () {
+            var ImgId = this.id;
+            $('#divIndustry' + ImgId).hide();
+            IndustryId.push(ImgId);
+            iCntIndustry = iCntIndustry - 1;
+        });
+        $("body").on("click", ".Remove3", function () {
+            var ImgId = this.id;
+            $('#divIndustry' + ImgId).hide();
+            IndustryId.push(ImgId);
+            iCntIndustry = iCntIndustry - 1;
+        });
+
+        ///////////////////////////////////////////////////////////////////////////
+
+        //Change Event of First Industry
+        $("#Industry1").change(function () {
+        //alert("Here");
+            var dropdown = $("#Industry1");
+            var value = dropdown.val();
+            var SubIndustry = $("#chkSubIndustry1");
+
+            $('#chkSubIndustry1').empty();
+            $('#chkSubIndustry1').trigger("chosen:updated");
+            $('#chkSubIndustry1').multiselect('rebuild');
+
+            $.getJSON('@Url.Action("GetSubIndustryMaster", "BrokerRegistration")', { id: value }, function (result) {
+                if (result.result.length > 0) {
+                    for (var i in result.result) {
+                        SubIndustry.append($('<option/>', {
+                            value: result.result[i].Value,
+                            text: result.result[i].Text
+                        }));
+                    }
+                    $('#chkSubIndustry1').trigger("chosen:updated");
+                    $('#chkSubIndustry1').multiselect('rebuild');
+                }
+            });
+
+        });
+
+        //Change Event of Second Industry
+        $("#Industry2").change(function () {
+            var dropdown = $("#Industry2");
+            var value = dropdown.val();
+            var SubIndustry = $("#chkSubIndustry2");
+
+            $('#chkSubIndustry2').empty();
+            $('#chkSubIndustry2').trigger("chosen:updated");
+            $('#chkSubIndustry2').multiselect('rebuild');
+
+            $.getJSON('@Url.Action("GetSubIndustryMaster", "BrokerRegistration")', { id: value }, function (result) {
+                if (result.result.length > 0) {
+                    for (var i in result.result) {
+                        SubIndustry.append($('<option/>', {
+                            value: result.result[i].Value,
+                            text: result.result[i].Text
+                        }));
+                    }
+                    $('#chkSubIndustry2').trigger("chosen:updated");
+                    $('#chkSubIndustry2').multiselect('rebuild');
+                }
+            });
+
+        });
+
+        //Change Event of Third Industry
+        $("#Industry3").change(function () {
+            var dropdown = $("#Industry3");
+            var value = dropdown.val();
+            var SubIndustry = $("#chkSubIndustry3");
+
+            $('#chkSubIndustry3').empty();
+            $('#chkSubIndustry3').trigger("chosen:updated");
+            $('#chkSubIndustry3').multiselect('rebuild');
+
+            $.getJSON('@Url.Action("GetSubIndustryMaster", "BrokerRegistration")', { id: value }, function (result) {
+                if (result.result.length > 0) {
+                    for (var i in result.result) {
+                        SubIndustry.append($('<option/>', {
+                            value: result.result[i].Value,
+                            text: result.result[i].Text
+                        }));
+                    }
+                    $('#chkSubIndustry3').trigger("chosen:updated");
+                    $('#chkSubIndustry3').multiselect('rebuild');
+                }
+            });
+
+        });
+
+        //Sample code for getting selected elements id's
+        $("#GetValues").click(function () {
+            $("select#chkSubIndustry1 option:selected").each(function () {
+
+            });
+        });
+
+        //End of Adding Industry and SubIndustry
+
+    });
+</script>
+
+@*End of New Script containg Education,Prior Employment and Industry adding and removing code*@
+
+@*Open file dialog on Browse button click*@
+
+<script type="text/javascript">
+    function openfileDialog() {
+        $("#fileToUpload").click();
+
+        $("#fileToUpload").change(function () {
+            var FileName = $(this).val();
+            if (this.files[0].size / 1024 <= 4096 && this.files[0].size / 1024 >= 3072) {
+                var FR = new FileReader();
+                FR.readAsDataURL(this.files[0]);
+                FR.onload = function (e) {
+
+                    var img = new Image();
+                    img.src = e.target.result;
+
+                    img.onload = function () {
+                        var value1 = 10;
+                        
+                        // RESIZE THE IMAGES ONE BY ONE.
+                        img.width = (img.width * value1) / 100
+                        img.height = (img.height * value1) / 100
+
+                        var canvas = document.createElement("canvas");
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+
+                        var ctx = canvas.getContext("2d");
+                        ctx.drawImage(img, 0, 0, img.width, img.width);
+
+                        var dataUri = canvas.toDataURL();
+                        var base64 = dataUri;
+                        base64 = base64.replace(/^data:image\/(png|jpg|jpeg|gif);base64,/, "").replace(/^data:;base64,/, "").replace(/^data:text\/html;base64,/, "");
+                        $("#HiddenProfilePhoto1").val(base64);    
+                        $("#ProfilePhoto1").val(FileName);
+                        $("#fileToUpload").val('');                        
+                    }
+                }      
+            }
+            else if (this.files[0].size / 1024 < 3072 && this.files[0].size / 1024 > 1024)
+            {
+                var FR = new FileReader();
+                FR.readAsDataURL(this.files[0]);
+                FR.onload = function (e) {
+
+                    var img = new Image();
+                    img.src = e.target.result;
+
+                    img.onload = function () {
+                        var value1 = 50;
+
+                        // RESIZE THE IMAGES ONE BY ONE.
+                        img.width = (img.width * value1) / 100
+                        img.height = (img.height * value1) / 100
+
+                        var canvas = document.createElement("canvas");
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+
+                        var ctx = canvas.getContext("2d");
+                        ctx.drawImage(img, 0, 0, img.width, img.width);
+
+                        var dataUri = canvas.toDataURL();
+                        var base64 = dataUri;
+                        base64 = base64.replace(/^data:image\/(png|jpg|jpeg|gif);base64,/, "").replace(/^data:;base64,/, "").replace(/^data:text\/html;base64,/, "");
+                        $("#HiddenProfilePhoto1").val(base64);
+                        $("#ProfilePhoto1").val(FileName);
+                        $("#fileToUpload").val('');
+                    }
+                }
+            }
+            else if (this.files[0].size / 1024 <= 1024 && this.files[0].size / 1024 > 0)
+            {
+                var FR = new FileReader();
+                FR.readAsDataURL(this.files[0]);
+                FR.onload = function (e) {
+                    var base64 = e.target.result;
+                    base64 = base64.replace(/^data:image\/(png|jpg|jpeg|gif);base64,/, "").replace(/^data:;base64,/, "").replace(/^data:text\/html;base64,/, "");
+                    $("#HiddenProfilePhoto1").val(base64);
+                    $("#ProfilePhoto1").val(FileName);
+                    $("#fileToUpload").val('');
+                } 
+            }
+            else {
+                $("#fileToUpload").val('');
+                $("#ProfilePhoto1").val('');
+                $("#HiddenProfilePhoto1").val('');
+                $("#divmain").removeClass("addScroll");
+                $("#divmain").addClass("removeScroll");
+                $("#lblError").text('File Size Should not greater than 4 MB.');
+                $("#ModalError").modal();
+            }
+        });
+    }
+
+    function openfileDialogCompLogo() {
+        $("#UploadCompanyLogo").click();
+           
+        $("#UploadCompanyLogo").change(function () {
+            var FileName = $(this).val();
+            if (this.files[0].size / 1024 <= 4096 && this.files[0].size / 1024 >= 3072) {
+                var FR = new FileReader();
+                FR.readAsDataURL(this.files[0]);
+                FR.onload = function (e) {
+
+                    var img = new Image();
+                    img.src = e.target.result;
+
+                    img.onload = function () {
+                        var value1 = 10;
+
+                        // RESIZE THE IMAGES ONE BY ONE.
+                        img.width = (img.width * value1) / 100
+                        img.height = (img.height * value1) / 100
+
+                        var canvas = document.createElement("canvas");
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+
+                        var ctx = canvas.getContext("2d");
+                        ctx.drawImage(img, 0, 0, img.width, img.width);
+
+                        var dataUri = canvas.toDataURL();
+                        var base64 = dataUri;
+                        base64 = base64.replace(/^data:image\/(png|jpg|jpeg|gif);base64,/, "").replace(/^data:;base64,/, "").replace(/^data:text\/html;base64,/, "");
+                        $("#HiddenCompanyLogo1").val(base64);
+                        $("#CompLogo1").val(FileName);
+                        $("#UploadCompanyLogo").val('');
+                    }
+                }
+            }
+            else if (this.files[0].size / 1024 < 3072 && this.files[0].size / 1024 > 1024) {
+                var FR = new FileReader();
+                FR.readAsDataURL(this.files[0]);
+                FR.onload = function (e) {
+
+                    var img = new Image();
+                    img.src = e.target.result;
+
+                    img.onload = function () {
+                        var value1 = 50;
+
+                        // RESIZE THE IMAGES ONE BY ONE.
+                        img.width = (img.width * value1) / 100
+                        img.height = (img.height * value1) / 100
+
+                        var canvas = document.createElement("canvas");
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+
+                        var ctx = canvas.getContext("2d");
+                        ctx.drawImage(img, 0, 0, img.width, img.width);
+
+                        var dataUri = canvas.toDataURL();
+                        var base64 = dataUri;
+                        base64 = base64.replace(/^data:image\/(png|jpg|jpeg|gif);base64,/, "").replace(/^data:;base64,/, "").replace(/^data:text\/html;base64,/, "");
+                        $("#HiddenCompanyLogo1").val(base64);
+                        $("#CompLogo1").val(FileName);
+                        $("#UploadCompanyLogo").val('');
+                    }
+                }
+            }
+            else if (this.files[0].size / 1024 <= 1024 && this.files[0].size / 1024 > 0) {
+                var FR = new FileReader();
+                FR.readAsDataURL(this.files[0]);
+                FR.onload = function (e) {
+                    var base64 = e.target.result;
+                    base64 = base64.replace(/^data:image\/(png|jpg|jpeg|gif);base64,/, "").replace(/^data:;base64,/, "").replace(/^data:text\/html;base64,/, "");
+                    $("#HiddenCompanyLogo1").val(base64);
+                    $("#CompLogo1").val(FileName);
+                    $("#UploadCompanyLogo").val('');
+                }
+            }
+            else {
+                $("#UploadCompanyLogo").val('');
+                $("#CompLogo1").val('');
+                $("#HiddenCompanyLogo1").val('');
+                $("#divmain").removeClass("addScroll");
+                $("#divmain").addClass("removeScroll");
+                $("#lblError").text('File Size Should not greater than 4 MB.');
+                $("#ModalError").modal();
+            }
+        });
+    }
+
+    function openfileDialogEducation(value) {
+
+        $("#fileToUploadEdu" + value).click();
+
+        //$("#fileToUploadEdu" + value).change(function () {
+        //    if (this.files[0].size / 1024 <= 4096) {
+        //        $("#EducationLogo" + value).val($(this).val());
+        //    }
+        //    else {
+        //        $("#fileToUploadEdu" + value).val('');
+        //        $("#EducationLogo" + value).val('');
+        //        $("#divmain").removeClass("addScroll");
+        //        $("#divmain").addClass("removeScroll");
+        //        $("#lblError").text('File Size Should not greater than 4 MB.');
+        //        $("#ModalError").modal();
+        //    }
+        //});
+
+        $("#fileToUploadEdu" + value).change(function () {
+            var FileName = $(this).val();
+            if (this.files[0].size / 1024 <= 4096 && this.files[0].size / 1024 >= 3072) {
+                var FR = new FileReader();
+                FR.readAsDataURL(this.files[0]);
+                FR.onload = function (e) {
+
+                    var img = new Image();
+                    img.src = e.target.result;
+
+                    img.onload = function () {
+                        var value1 = 10;
+
+                        // RESIZE THE IMAGES ONE BY ONE.
+                        img.width = (img.width * value1) / 100
+                        img.height = (img.height * value1) / 100
+
+                        var canvas = document.createElement("canvas");
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+
+                        var ctx = canvas.getContext("2d");
+                        ctx.drawImage(img, 0, 0, img.width, img.width);
+
+                        var dataUri = canvas.toDataURL();
+                        var base64 = dataUri;
+                        base64 = base64.replace(/^data:image\/(png|jpg|jpeg|gif);base64,/, "").replace(/^data:;base64,/, "").replace(/^data:text\/html;base64,/, "");
+                        $("#HiddenEducationLogo"+value).val(base64);
+                        $("#EducationLogo" + value).val(FileName);
+                        $("#fileToUploadEdu" + value).val('');
+                    }
+                }
+            }
+            else if (this.files[0].size / 1024 < 3072 && this.files[0].size / 1024 > 1024) {
+                var FR = new FileReader();
+                FR.readAsDataURL(this.files[0]);
+                FR.onload = function (e) {
+
+                    var img = new Image();
+                    img.src = e.target.result;
+
+                    img.onload = function () {
+                        var value1 = 50;
+
+                        // RESIZE THE IMAGES ONE BY ONE.
+                        img.width = (img.width * value1) / 100
+                        img.height = (img.height * value1) / 100
+
+                        var canvas = document.createElement("canvas");
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+
+                        var ctx = canvas.getContext("2d");
+                        ctx.drawImage(img, 0, 0, img.width, img.width);
+
+                        var dataUri = canvas.toDataURL();
+                        var base64 = dataUri;
+                        base64 = base64.replace(/^data:image\/(png|jpg|jpeg|gif);base64,/, "").replace(/^data:;base64,/, "").replace(/^data:text\/html;base64,/, "");
+                        $("#HiddenEducationLogo" + value).val(base64);
+                        $("#EducationLogo" + value).val(FileName);
+                        $("#fileToUploadEdu" + value).val('');
+                    }
+                }
+            }
+            else if (this.files[0].size / 1024 <= 1024 && this.files[0].size / 1024 > 0) {
+                var FR = new FileReader();
+                FR.readAsDataURL(this.files[0]);
+                FR.onload = function (e) {
+                    var base64 = e.target.result;
+                    base64 = base64.replace(/^data:image\/(png|jpg|jpeg|gif);base64,/, "").replace(/^data:;base64,/, "").replace(/^data:text\/html;base64,/, "");
+                    $("#HiddenEducationLogo" + value).val(base64);
+                    $("#EducationLogo" + value).val(FileName);
+                    $("#fileToUploadEdu" + value).val('');
+                }
+            }
+            else {
+                $("#HiddenEducationLogo" + value).val('');
+                $("#EducationLogo" + value).val('');
+                $("#fileToUploadEdu" + value).val('');
+                $("#divmain").removeClass("addScroll");
+                $("#divmain").addClass("removeScroll");
+                $("#lblError").text('File Size Should not greater than 4 MB.');
+                $("#ModalError").modal();
+            }
+        });
+    }
+
+    function openfileDialogExperience(value) {
+
+        $("#fileToUploadExp" + value).click();
+               
+        $("#fileToUploadExp" + value).change(function () {
+            var FileName = $(this).val();
+           
+            if (this.files[0].size / 1024 <= 4096 && this.files[0].size / 1024 >= 3072) {
+               
+                var FR = new FileReader();
+                FR.readAsDataURL(this.files[0]);
+                FR.onload = function (e) {
+
+                    var img = new Image();
+                    img.src = e.target.result;
+
+                    img.onload = function () {
+                        var value1 = 10;
+
+                        // RESIZE THE IMAGES ONE BY ONE.
+                        img.width = (img.width * value1) / 100
+                        img.height = (img.height * value1) / 100
+
+                     
+
+                        var canvas = document.createElement("canvas");
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+
+                        var ctx = canvas.getContext("2d");
+                        ctx.drawImage(img, 0, 0, img.width, img.width);
+
+                        var dataUri = canvas.toDataURL();
+                        //alert("Here - " + value);
+                        var base64 = dataUri;
+                        base64 = base64.replace(/^data:image\/(png|jpg|jpeg|gif);base64,/, "").replace(/^data:;base64,/, "").replace(/^data:text\/html;base64,/, "");
+                        $("#HiddenCmpLogo" + value).val(base64);
+                        $("#CmpLogo" + value).val(FileName);
+                        $("#fileToUploadExp" + value).val('');
+                    }
+                }
+            }
+            else if (this.files[0].size / 1024 < 3072 && this.files[0].size / 1024 > 1024) {
+                var FR = new FileReader();
+                FR.readAsDataURL(this.files[0]);
+                FR.onload = function (e) {
+
+                    var img = new Image();
+                    img.src = e.target.result;
+
+                    img.onload = function () {
+                        var value1 = 50;
+
+                        // RESIZE THE IMAGES ONE BY ONE.
+                        img.width = (img.width * value1) / 100
+                        img.height = (img.height * value1) / 100
+
+                        var canvas = document.createElement("canvas");
+                        canvas.width = img.width;
+                        canvas.height = img.height;
+
+                        var ctx = canvas.getContext("2d");
+                        ctx.drawImage(img, 0, 0, img.width, img.width);
+
+                        var dataUri = canvas.toDataURL();
+                        var base64 = dataUri;
+                        base64 = base64.replace(/^data:image\/(png|jpg|jpeg|gif);base64,/, "").replace(/^data:;base64,/, "").replace(/^data:text\/html;base64,/, "");
+                        $("#HiddenCmpLogo" + value).val(base64);
+                        $("#CmpLogo" + value).val(FileName);
+                        $("#fileToUploadExp" + value).val('');
+                    }
+                }
+            }
+            else if (this.files[0].size / 1024 <= 1024 && this.files[0].size / 1024 > 0) {
+                var FR = new FileReader();
+                FR.readAsDataURL(this.files[0]);
+                FR.onload = function (e) {
+                    var base64 = e.target.result;
+                    base64 = base64.replace(/^data:image\/(png|jpg|jpeg|gif);base64,/, "").replace(/^data:;base64,/, "").replace(/^data:text\/html;base64,/, "");
+                    $("#HiddenCmpLogo" + value).val(base64);
+                    $("#CmpLogo" + value).val(FileName);
+                    $("#fileToUploadExp" + value).val('');
+                }
+            }
+            else {
+                $("#HiddenCmpLogo" + value).val('');
+                $("#CmpLogo" + value).val('');
+                $("#fileToUploadExp" + value).val('');
+                $("#divmain").removeClass("addScroll");
+                $("#divmain").addClass("removeScroll");
+                $("#lblError").text('File Size Should not greater than 4 MB.');
+                $("#ModalError").modal();
+            }
+        });
+    }
+
+</script>
+
+@*End of Opening file dialog on Browse button click*@
+
+@*Validation for Duration From,To for experience details*@
+<script type="text/javascript">
+
+</script>
+@*End of validation for Duration From,To for experience details*@
+
+
+<div class="bodycustomer" id="myPage" style="overflow-x:hidden;">
+    <div id="loading" style="display:none;">
+        <img id="loading-image" src="~/Images/NewAssets/loader.gif" alt="Loading..." />
+    </div>
+    <div class="row" style="margin-left:0;margin-right:0;">
+        <div class="col-md-12 col-sm-12 col-xs-12" style="height:auto;padding:0;margin:0;overflow-x:hidden;">
+            <div class="row" style="margin-left:0;margin-right:0;">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="position:absolute;z-index:99;padding:2%;padding-left:0;padding-right:0;">
+                    <div class="col-sm-6 col-xs-6 img-responsive" style="padding-left:9%;">
+                        <a href="@Url.Action("Index", "Home")"><img id="mainlogo" class="img-responsive" src="~/Images/NewImages/image001.png" style="float:left;max-width: 100%;" /></a>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" style="padding-bottom:0;">
+
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-5" style="float:right;color:#fff;padding-left:0px;padding-right:0px;">
+
+                        <div class="col-md-5 col-sm-5 col-xs-5" style="font-size:1.5vw;padding-top:4%;padding-left:0px;padding-right:0px;">
+                            <center><a href="#priorities" style="color:#fff;font-family: 'Open Sans';display:none;">HOW IT WORKS</a></center>
+                        </div>
+                        <div class="col-md-1 col-sm-1 col-xs-1" style="font-size:1.5vw;padding-top:4%;padding-left:0px;padding-right:0px;">
+                            <center><a id="aLogin" style="font-family: open sans;display:none;" href="#">LOGIN</a></center>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6" style="font-size:1.5vw;padding-top:3.8%;padding-right:0px;padding-left: 0;">
+                            @*<button style="height:auto;background-color: #fff;color: darkturquoise;border: none;border-radius: 20px;font-family: open sans;">DOWNLOAD APP</button>*@
+                            <center><a id="aLogin" class="btnrubroker" href="@Url.Action("Index", "Home")">NEED A BROKKRR?</a></center>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-left:0;margin-right:0;">
+                <div class="col-md-12 col-sm-8 col-xs-4" style="width: 40%;position:absolute;z-index:99;top:18%;font-size: 3.3vw;font-weight:600;line-height:1em;font-family:Open Sans;left:10%;color:rgb(52,60,66);">
+                    Become a brokkrr!<br /> Get leads in real-time
+                    <br />
+                </div>
+                <div class="col-md-12 col-sm-8 col-xs-4" style="width: 40%;position:absolute;z-index:99;top:32%;font-size: 3.5vw;font-weight:600;line-height:1em;font-family:Open Sans;left:10%;color:#fff;">
+                    <div style="font-size: 1.8vw;color:rgb(59,71,78);text-transform:none !important;"> Sign up now!</div>
+                </div>
+
+                <div class="col-md-12 col-sm-8 col-xs-4" style="width: 40%;position:absolute;z-index:99;top:36%;font-size: 3.5vw;font-weight:600;line-height:1em;font-family:Open Sans;left:10%;color:#fff;">
+
+                    <div style="font-size: 1.0vw;color:rgb(59,71,78);text-transform:none !important;"> It only takes a few seconds.</div>
+                </div>
+                <div id="divmain" class="col-md-12 col-sm-8 col-xs-4 list addScroll" style="width: 37%;position:absolute;z-index:99;top:34%;line-height:1.2em;font-family:Open Sans;left:11%;color:#999999;background-color:#fff;height:52%;margin-top:4%;padding: 3%;text-transform: none;font-size: 1.2vw;">
+                    @*<span style="font-size: 1.8vw;color:rgb(22,188,166);text-transform:none !important;"> Sign up now!</span><br />
+                <span style="font-size: 1.0vw;color:#494949;line-height:3;text-transform:none !important;"> It only takes a few seconds.</span><br /><br />*@
+
+                    @using (Html.BeginForm("Index", "BrokerRegistration", FormMethod.Post
+                                    , new { enctype = "multipart/form-data" }))
+                    {
+                        <!--================================================== FIRST NAME ========================================================-->
+                        @*<div>
+                        @Html.LabelFor(model => model.BrokerInfo[0].FirstName, htmlAttributes: new { @class = "control-label col-md-12", Style = "text-transform: uppercase;margin-bottom: -6px !important;font-weight: normal !important;" })
+                    </div>*@
+                        <div class="col-md-12 ErrorMsg" tabindex="1">
+                            @Html.TextBoxFor(model => model.BrokerInfo[0].FirstName, new { @Id = "FirstName", @placeholder = "FIRST NAME", @class = "form-control placeholder", Style = "font-size:1.3vw !important;border: none;padding:0;height:auto !important;padding:2%;border:none;border-bottom:1px solid #999999;margin-bottom:0;" })
+                            @Html.ValidationMessageFor(model => model.BrokerInfo[0].FirstName, "", new { @class = "text-danger", style = "font-size: 1.1vw;" })
+                        </div><div class="clearfix"></div>
+                        <!--================================================= //FIRST NAME =========================================================-->
+                        <!--==================================================LAST NAME ========================================================-->
+                        @*<div class="">
+                        @Html.LabelFor(model => model.BrokerInfo[0].LastName, htmlAttributes: new { @class = "control-label col-md-12", Style = "text-transform: uppercase;margin-bottom: -6px !important;font-weight: normal !important;" })
+                    </div>*@
+                        <div class="col-md-12 ErrorMsg" tabindex="1">
+                            @Html.TextBoxFor(model => model.BrokerInfo[0].LastName, new { @placeholder = "LAST NAME", @class = "form-control placeholder", Style = "font-size:1.3vw !important;border: none;padding:0;height:auto !important;padding:2%;border:none;border-bottom:1px solid #999999;margin-bottom:0;" })
+
+                        </div><div class="clearfix"></div>
+                          <!--================================================= //LAST NAME =========================================================-->
+                         <!--==================================================PHONE NO ========================================================-->
+                        @*<div class="">
+                        @Html.LabelFor(model => model.BrokerInfo[0].PhoneNo1, htmlAttributes: new { @class = "control-label col-md-12", Style = "text-transform: uppercase;margin-bottom: -6px !important;font-weight: normal !important;" })
+                    </div>*@
+                        <div class="col-md-12 ErrorMsg" tabindex="1">
+                            @Html.TextBoxFor(model => model.BrokerInfo[0].PhoneNo1, new { @Id = "PhoneNo", @placeholder = "PHONE#", @class = "form-control placeholder", Style = "font-size:1.3vw !important;border: none;padding:0;height:auto !important;padding:2%;border:none;border-bottom:1px solid #999999;margin-bottom:0;" })
+                            @Html.ValidationMessageFor(model => model.BrokerInfo[0].PhoneNo1, "", new { @class = "text-danger", style = "font-size: 1.1vw;" })
+                        </div><div class="clearfix"></div>
+                          <!--================================================= //PHONE NO =========================================================-->
+                        <!--================================================== EMAIL ========================================================-->
+                        @*<div class="">
+                        @Html.LabelFor(model => model.BrokerInfo[0].Email, htmlAttributes: new { @class = "control-label col-md-12", Style = "text-transform: uppercase;margin-bottom: -6px !important;font-weight: normal !important;" })
+                    </div>*@
+                        <div class="col-md-12 ErrorMsg" tabindex="1">
+                            @Html.TextBoxFor(model => model.BrokerInfo[0].Email, new { @Id = "EmailId", @placeholder = "EMAIL ADDRESS", @class = "form-control placeholder", Style = "font-size:1.3vw !important;border: none;padding:0;height:auto !important;padding:2%;border:none;border-bottom:1px solid #999999;margin-bottom:0;" })
+                            @Html.ValidationMessageFor(model => model.BrokerInfo[0].Email, "", new { @class = "text-danger", style = "font-size: 1.1vw;" })
+                        </div><div class="clearfix"></div>
+                          <!--================================================= //EMAIL =========================================================-->
+
+                         <!--================================================== PASSWORD ========================================================-->
+                        @*<div class="">
+                        @Html.LabelFor(model => model.BrokerInfo[0].Password, htmlAttributes: new { @class = "control-label col-md-12", Style = "text-transform: uppercase;margin-bottom: -6px !important;font-weight: normal !important;" })
+                    </div>*@
+                        <div class="col-md-12 ErrorMsg" tabindex="1">
+                            @Html.PasswordFor(model => model.BrokerInfo[0].Password, new { @Id = "Password", @placeholder = "PASSWORD", @class = "form-control placeholder", Style = "font-size:1.3vw !important;border: none;padding:0;height:auto !important;padding:2%;border:none;border-bottom:1px solid #999999;margin-bottom:0;" })
+                            @Html.ValidationMessageFor(model => model.BrokerInfo[0].Password, "", new { @class = "text-danger", style = "font-size: 1.1vw;" })
+                        </div><div class="clearfix"></div>
+                         <!--================================================== // PASSWORD ========================================================-->
+
+                          <!--================================================== CONFIRM PASSWORD ========================================================-->
+                        @*<div class="">
+                        @Html.LabelFor(model => model.BrokerInfo[0].ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-12", Style = "text-transform: uppercase;margin-bottom: -6px !important;font-weight: normal !important;" })
+                    </div>*@
+                        <div class="col-md-12 ErrorMsg" tabindex="1">
+                            @Html.PasswordFor(model => model.BrokerInfo[0].ConfirmPassword, new { @Id = "ConfirmPassword", @placeholder = "CONFIRM PASSWORD", @class = "form-control placeholder", Style = "font-size:1.3vw !important;border: none;padding:0;height:auto !important;padding:2%;border:none;border-bottom:1px solid #999999;margin-bottom:0;" })
+                            @Html.ValidationMessageFor(model => model.BrokerInfo[0].ConfirmPassword, "", new { @class = "text-danger", style = "font-size: 1.1vw;" })
+                        </div><div class="clearfix"></div>
+                         <!--================================================== // CONFIRM PASSWORD ========================================================-->
+
+                          <!--================================================== PROFILE PHOTO ========================================================-->
+                        @*<div class="">
+                        @Html.LabelFor(model => model.BrokerInfo[0].ProfilePhoto, htmlAttributes: new { @class = "control-label col-md-12", Style = "text-transform: uppercase;margin-bottom: -6px !important;font-weight: normal !important;" })
+                    </div>*@
+                        <div class="col-md-8 ErrorMsg" tabindex="1">
+                            @Html.TextBoxFor(model => model.BrokerInfo[0].ProfilePhoto, new { @placeholder = "PROFILE PHOTO", @id = "ProfilePhoto1", @readonly = "readonly", @class = "form-control placeholder", Style = "font-size:1.3vw !important;border: none;padding:0;height:auto !important;padding:2%;border:none;border-bottom:1px solid #999999;background: none;margin-bottom:0;" })
+                            @Html.HiddenFor(model => model.BrokerInfo[0].HiddenProfilePhoto, new { @id = "HiddenProfilePhoto1" })
+                        </div>
+                        <div class="col-md-4 ErrorMsg" tabindex="1">
+
+                            <input type="file" id="fileToUpload" name="file" style="display:none" accept=".jpe,.jpg,.jpeg,.png,.gif" />
+                            <input type="button" value="BROWSE" id="btnUpload" onclick="openfileDialog();" class="btn btn-default" style="background-color: #066691;color: white;border-radius:21px;font-size: 1.1vw !important;margin-top:9px;" />
+                        </div>
+                        <div class="clearfix"></div>
+                         <!--================================================== // PROFILE PHOTO ========================================================-->
+
+                         <!--================================================== AREA ========================================================-->
+                        @*<div class="customtopspace">
+                        @Html.LabelFor(model => model.BrokerInfo[0].Area, htmlAttributes: new { @class = "control-label col-md-12", Style = "text-transform: uppercase;margin-bottom: -6px !important;font-weight: normal !important;" })
+                    </div>*@
+                        <div class="col-md-12 ErrorMsg" tabindex="1">
+                            @Html.TextBoxFor(model => model.BrokerInfo[0].Area, new { @Id = "Area", @placeholder = "AREA", @class = "form-control placeholder", Style = "font-size:1.3vw !important;border: none;padding:0;height:auto !important;padding:2%;border:none;border-bottom:1px solid #999999;margin-bottom:0;" })
+                            @Html.ValidationMessageFor(model => model.BrokerInfo[0].Area, "", new { @class = "text-danger", style = "font-size: 1.1vw;" })
+                        </div><div class="clearfix"></div>
+                          <!--================================================= //AREA =========================================================-->
+                          <!--================================================== ZipCode ========================================================-->
+                        @*<div class="">
+                        @Html.LabelFor(model => model.BrokerInfo[0].ZipCode, htmlAttributes: new { @class = "control-label col-md-12", Style = "text-transform: uppercase;margin-bottom: -6px !important;font-weight: normal !important;" })
+                    </div>*@
+                        <div class="col-md-12 ErrorMsg" tabindex="1">
+                            @Html.TextBoxFor(model => model.BrokerInfo[0].ZipCode, new { @Id = "Zip", @placeholder = "ZIP CODE", @class = "form-control placeholder", Style = "font-size:1.3vw !important;border: none;padding:0;height:auto !important;padding:2%;border:none;border-bottom:1px solid #999999;margin-bottom:0;" })
+                            @Html.ValidationMessageFor(model => model.BrokerInfo[0].ZipCode, "", new { @class = "text-danger", style = "font-size: 1.1vw;" })
+                        </div><div class="clearfix"></div>
+                          <!--================================================= //ZipCode =========================================================-->
+                           <!--================================================== Title ========================================================-->
+                        @*<div class="">
+                        @Html.LabelFor(model => model.BrokerInfo[0].Title, htmlAttributes: new { @class = "control-label col-md-12", Style = "text-transform: uppercase;margin-bottom: -6px !important;font-weight: normal !important;" })
+                    </div>*@
+                        <div class="col-md-12 ErrorMsg" tabindex="1">
+                            @Html.TextBoxFor(model => model.BrokerInfo[0].Title, new { @placeholder = "TITLE", @class = "form-control placeholder", Style = "font-size:1.3vw !important;border: none;padding:0;height:auto !important;padding:2%;border:none;border-bottom:1px solid #999999;margin-bottom:0;" })
+
+                        </div><div class="clearfix"></div>
+                          <!--================================================= //Title =========================================================-->
+                           <!--================================================== Company ========================================================-->
+                        @*<div class="">
+                        @Html.LabelFor(model => model.BrokerInfo[0].Company, htmlAttributes: new { @class = "control-label col-md-12", Style = "text-transform: uppercase;margin-bottom: -6px !important;font-weight: normal !important;" })
+                    </div>*@
+                        <div class="col-md-12 ErrorMsg" tabindex="1">
+                            @Html.TextBoxFor(model => model.BrokerInfo[0].Company, new { @placeholder = "COMPANY NAME", @class = "form-control placeholder", Style = "font-size:1.3vw !important;border: none;padding:0;height:auto !important;padding:2%;border:none;border-bottom:1px solid #999999;" })
+
+                        </div><div class="clearfix"></div>
+                          <!--================================================= //Company =========================================================-->
+                          <!--================================================== Company Logo ========================================================-->
+                        @*<div class="customtopspace">
+                        @Html.LabelFor(model => model.BrokerInfo[0].CompanyLogo, htmlAttributes: new { @class = "control-label col-md-12", Style = "text-transform: uppercase;margin-bottom: -6px !important;font-weight: normal !important;" })
+                    </div>*@
+                        <div class="col-md-8 ErrorMsg" tabindex="1">
+                            @Html.TextBoxFor(model => model.BrokerInfo[0].CompanyLogo, new { @placeholder = "COMPANY LOGO", @class = "form-control placeholder", @id = "CompLogo1", @readonly = "readonly", Style = "font-size:1.3vw !important;border: none;padding:0;height:auto !important;padding:2%;border:none;border-bottom:1px solid #999999;background: none;" })
+                            @Html.HiddenFor(model => model.BrokerInfo[0].HiddenCompanyLogo, new { @id = "HiddenCompanyLogo1" })
+                        </div>
+                        <div class="col-md-4 ErrorMsg" tabindex="1">
+                            <input type="file" id="UploadCompanyLogo" name="file" style="display:none" accept=".jpe,.jpg,.jpeg,.png,.gif" />
+                            <input type="button" value="BROWSE" id="btnUploadCompLogo" onclick="openfileDialogCompLogo();" class="btn btn-default" style="background-color: #066691;color: white;border-radius:21px;font-size: 1.1vw !important;margin-top:9px;" />
+                        </div>
+                        <div class="clearfix"></div>
+                          <!--================================================= //Company Logo =========================================================-->
+                          <!--================================================== Bio ========================================================-->
+                        @*<div class="customtopspace">
+                        @Html.LabelFor(model => model.BrokerInfo[0].Bio, htmlAttributes: new { @class = "control-label col-md-12", Style = "text-transform: uppercase;margin-bottom: -6px !important;font-weight: normal !important;" })
+                    </div>*@
+                        <div class="col-md-12 ErrorMsg" tabindex="1" style="margin-top: 2%;">
+                            @Html.TextAreaFor(model => model.BrokerInfo[0].Bio, new { @placeholder = "BIO", @maxlength = "250", id = "Bio1", @class = "form-control placeholder", Style = "font-size:1.3vw !important;padding:0;height:auto !important;padding:2%;border:none;border-bottom:1px solid #999999;:#fff;" })
+
+                        </div><div class="clearfix"></div>
+                          <!--================================================= //Bio =========================================================-->
+                            <!--================================================== Languages ========================================================-->
+                        <div class="customtopspace">
+                            @Html.LabelFor(model => model.BrokerLanguages[0].Language, htmlAttributes: new { @class = "control-label col-md-12", Style = "text-transform: uppercase;margin-bottom: -6px !important;font-weight: normal !important;" })
+                        </div>
+                        <div class="col-md-12 ErrorMsg" tabindex="1">
+
+                            <select id="chkLanguages" multiple="multiple" name="chkLanguages" style="font-size:1vw !important;">
+                                <option value="English">English</option>
+                                <option value="Spanish">Spanish</option>
+                                <option value="Chinese(Cantonese)">Chinese(Cantonese)</option>
+                                <option value="Chinese(Mandarin)">Chinese(Mandarin)</option>
+                                <option value="Korean">Korean</option>
+                                <option value="Vietnamese">Vietnamese</option>
+                            </select>
+                        </div><div class="clearfix"></div>
+                          <!--================================================= //Languages =========================================================-->
+                          <!--================================================= Specialities =========================================================-->
+                        @*<div class="customtopspace">
+                        @Html.LabelFor(model => model.BrokerInfo[0].Specialities, htmlAttributes: new { @class = "control-label col-md-12", Style = "text-transform: uppercase;margin-bottom: -6px !important;font-weight: normal !important;" })
+                    </div>*@
+                        <div class="col-md-12 ErrorMsg" tabindex="1">
+                            @Html.TextBoxFor(model => model.BrokerInfo[0].Specialities, new { @placeholder = "SPECIALITIES", @id = "txtSpeciality1", @class = "txtSpeciality form-control placeholder", Style = "font-size:1.3vw !important;margin-bottom: 0px;border:none;border-bottom:1px solid #999999;" })
+
+                            @Html.HiddenFor(model => model.BrokerInfo[0].HomeValue, new { @class = "txtHomeValue", @id = "txtHomeValue1" })
+                            @Html.HiddenFor(model => model.BrokerInfo[0].AutoType, new { @class = "txtAutoType", @id = "txtAutoType1" })
+                            @Html.HiddenFor(model => model.BrokerInfo[0].Revenue, new { @class = "txtRevenue", @id = "txtRevenue1" })
+                            @Html.HiddenFor(model => model.BrokerInfo[0].Employees, new { @class = "txtEmployees", @id = "txtEmployees1" })
+                            @Html.HiddenFor(model => model.BrokerInfo[0].CoverageAmt, new { @class = "txtCoverageAmt", @id = "txtCoverageAmt1" })
+
+                        </div><div class="clearfix"></div>
+                          <!--================================================= //Specialities =========================================================-->
+                          <!--================================================== Industry and SIC codes ========================================================-->
+                        <div class="customtopspace">
+                            @Html.LabelFor(model => model.BrokerInfo[0].IndustryName, htmlAttributes: new { @class = "control-label col-md-12", Style = "text-transform: uppercase;margin-bottom: -6px !important;font-weight: normal !important;" })
+
+                        </div>
+                        <div class="col-md-12 ErrorMsg" tabindex="1">
+                            <span id="btnAddIndustry" style="width:9%;"><img src="~/Images/Assets/ADD.png" id="btnAddIndustry" style="padding-left: 1.7%;padding-top: 2%;width: 3vw;" /></span>
+                        </div><div class="clearfix"></div>
+                             <!--///////////////////////////////////For adding Extra Details///////////////////////////////////////////-->
+                        <div class="col-md-12 " tabindex="1" id="Maindiv">
+                            <div id="divIndustry1" class="col-sm-12 ErrorMsg" style="padding-left:0px;display:none;margin-bottom: -10px;">
+                                @*@Html.DropDownList("Industry1", (IEnumerable<SelectListItem>)ViewBag.IndustryMaster, new { @class = "form-control col-sm-12 Industry-menu", @id = "Industry1", Style = "float:left; width:85%;padding-left:0px;" })*@
+
+                                @Html.DropDownList("Industry1", new List<SelectListItem>
+                            {
+                                new SelectListItem {Value="0", Text ="Select Industry", Selected = true}
+                            }, new { @class = "DropdownBG", @id = "Industry1", Style = "float:left; width:85%;padding-left:0px;font-size:1vw !important;" })
+
+                                <img id="1" src="/Images/Assets/Close_Red.png" class="Remove1" style="width: 3vw;" /><br />
+
+                                @Html.DropDownList("chkSubIndustry1", (IEnumerable<SelectListItem>)ViewBag.IndustryMaster, new { @class = "form-control col-sm-12  open dropdown-menu list", multiple = "multiple", @id = "chkSubIndustry1", Style = "float:left; width:100%;padding-left:0px;" })
+                            </div>
+                            <div class="col-sm-12">
+                                &nbsp;
+                            </div>
+                            <div id="divIndustry2" class="col-sm-12 ErrorMsg" style="padding-left:0px;display:none;margin-bottom: -10px;">
+                                @*@Html.DropDownList("Industry2", (IEnumerable<SelectListItem>)ViewBag.IndustryMaster, new { @class = "form-control col-sm-12 Industry-menu", @id = "Industry2", Style = "float:left; width:85%;padding-left:0px;" })*@
+
+                                @Html.DropDownList("Industry2", new List<SelectListItem> { new SelectListItem { Value = "0", Text = "Select Industry", Selected = true } },
+                                 new { @class = "DropdownBG", @id = "Industry2", Style = "float:left; width:85%;padding-left:0px;font-size:1vw !important;" })
+
+                                <img id="2" src="/Images/Assets/Close_Red.png" class="Remove2" style="width: 3vw;" /><br />
+
+                                @Html.DropDownList("chkSubIndustry2", (IEnumerable<SelectListItem>)ViewBag.IndustryMaster, new { @class = "form-control col-sm-12  open dropdown-menu list", multiple = "multiple", @id = "chkSubIndustry2", Style = "float:left; width:100%;padding-left:0px;", @disabled = "disabled" })
+                            </div>
+                            <div class="col-sm-12">
+                                &nbsp;
+                            </div>
+                            <div id="divIndustry3" class="col-sm-12 ErrorMsg" style="padding-left:0px;display:none;margin-bottom: 15px;">
+                                @*@Html.DropDownList("Industry3", (IEnumerable<SelectListItem>)ViewBag.IndustryMaster, new { @class = "form-control col-sm-12 Industry-menu", @id = "Industry3", Style = "float:left; width:85%;padding-left:0px;" })*@
+
+                                @Html.DropDownList("Industry3", new List<SelectListItem> { new SelectListItem { Value = "0", Text = "Select Industry", Selected = true } },
+                                 new { @class = "DropdownBG", @id = "Industry3", Style = "float:left; width:85%;padding-left:0px;font-size:1vw !important;" })
+
+                                <img id="3" src="/Images/Assets/Close_Red.png" class="Remove3" style="width: 3vw;" /><br />
+
+                                @Html.DropDownList("chkSubIndustry3", (IEnumerable<SelectListItem>)ViewBag.IndustryMaster, new { @class = "form-control col-sm-12 open dropdown-menu list", multiple = "multiple", @id = "chkSubIndustry3", Style = "float:left; width:100%;padding-left:0px;" })
+                            </div>
+                        </div>
+                        <!--==================================================// Industry and SIC codes ========================================================-->
+
+                         <!--================================================== Prior Employment ========================================================-->
+                        <div class="customtopspace">
+                            @Html.LabelFor(model => model.BrokerPriorEmployment[0].CmpName, htmlAttributes: new { @class = "control-label col-md-12", Style = "text-transform: uppercase;margin-bottom: -6px !important;font-weight: normal !important;" })
+                        </div>
+                        <div class="col-md-12 ErrorMsg" tabindex="1">
+                            <span id="btnAddPriorEmployment" style="width:9%;"><img src="~/Images/Assets/ADD.png" style="padding-left: 1.7%;padding-top: 2%;width: 3vw;" /></span>
+                        </div><div class="clearfix"></div>
+
+                        <div class="col-md-12" id="idPriorEmployer" style="margin-bottom: 10px;">
+                            <div class="col-md-12" style="padding-left:0px;">
+                            </div>
+                        </div><div class="clearfix"></div>
+                         <!--==================================================// Prior Employment ========================================================-->
+
+                         <!--================================================== Education ========================================================-->
+                        <div class="customtopspace">
+                            @Html.LabelFor(model => model.BrokerEduction[0].School, htmlAttributes: new { @class = "control-label col-md-12", Style = "text-transform: uppercase;margin-bottom: -6px !important;font-weight: normal !important;" })
+                        </div>
+                        <div class="col-md-12 ErrorMsg" tabindex="1">
+                            <span id="btnAdd" style="width:9%;"><img src="~/Images/Assets/ADD.png" style="padding-left: 1.7%;padding-top: 2%;width: 3vw;" /></span>
+                        </div><div class="clearfix"></div>
+
+                        <div class="col-md-12" id="id1" style="margin-bottom: 18px;">
+                            <div class="col-md-12" style="padding-left:0px;">
+                            </div>
+                        </div><div class="clearfix"></div>
+                         <!--==================================================// Education ========================================================-->
+
+                        <br />
+                        @*<input type="submit" value="SUBMIT" name="SUBMIT" id="UpdateInfo" class=" btn btn-default" style="position: relative;margin-left: 37%;background-color:rgb(6, 102, 145);color: white;background-image: linear-gradient(to right, #1CBCA2 0%, #41C282 51%, #71c663 100%);border-radius: 21px;width: 40%;" />*@
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <input type="submit" value="SUBMIT" name="SUBMIT" id="SubmitInfo" class="col-md-offset-4 col-sm-offset-4 col-xs-12 btn btn-default" style="position: relative;background-color:rgb(41,171,228);color: white;border-radius: 30px;font-size:1.1vw !important;padding-top: 5%;padding-bottom:5%;" />
+                            </div>
+                        </div>
+                        <br />
+                        <div>
+
+                        </div>
+                    }
+
+                </div>
+            </div>
+
+            <img src='~/Images/NewImages/main-bg-with-characters.png' class="img-responsive" style="height:auto !important;width:100%;position:relative" />
+        </div>
+    </div>
+</div>
+
+<div class="priority" id="priorities" style="height:auto;">
+    @*background-image:url(../../Images/MeinekeDealers/MeetMatchSecureBackground.png);*@
+    <div class="container">
+        <div class="text-center">
+            <h4 class="mmsmain" style="color: rgb(41,174,225) !important;">Match. Meet. Secure.</h4>
+            <div class="clearfix"></div>
+            <div id="MMS-content" style="color: rgb(115,124,132);">
+                Choose from carefully vetted and rated insurance brokkrrs to get you<br /> the best insurance at the best price.
+            </div>
+        </div>
+        <div class="col-sm-4" style="padding:2%;">
+            <img src="~/Images/APSP/icon-match.png" alt="icon-match" width="90" height="90" />
+            <h4 class="match" style="color: rgb(41,174,225) !important;">Match.</h4>
+            <center>
+                <span class="mmssubcontent" style="color: rgb(115,124,132);">
+                    In just a few clicks you'll be instantly<br />
+                    matched with the best brokkrr for your<br />
+                    specific insurance need. All brokkrr specialists are<br />
+                    brokkrr verified experts in their niche.
+                </span>
+            </center>
+        </div>
+        <div class="col-sm-4" style="padding:2%;">
+            <img src="~/Images/APSP/icon-meet.png" alt="icon-meet" width="140" height="140" style="height:90px;" />
+            <h4 class="meet" style="color: rgb(41,174,225) !important;">Meet.</h4>
+            <center>
+                <span class="mmssubcontent" style="color: rgb(115,124,132);">
+                    Meet with the expert brokkrr of your<br />
+                    choosing (up to 3) to secure the perfect<br />
+                    policy. Check out their experience,<br />
+                    resume and ratings. You have the con-<br />
+                    trol - feel free to date around.
+                </span>
+            </center>
+        </div>
+        <div class="col-sm-4" style="padding:2%;">
+            <img src="~/Images/APSP/icon-secure.png" alt="icon-secure" width="70" height="70" />
+            <h4 class="secure" style="color: rgb(41,174,225) !important;">Secure.</h4>
+            <center>
+                <span class="mmssubcontent" style="color: rgb(115,124,132);">
+                    Secure your insurance policy with<br />
+                    the peace of mind knowing it's<br />
+                    backed by the brokkrr<br />
+                    guarantee.
+                </span>
+            </center>
+        </div>
+
+        <div class="clearboth">
+
+        </div>
+        <br />
+        <br />
+        <div class="col-md-12">
+            <center>
+                <img src="~/Images/APSP/icon-guarantee.png" />
+                <div id="guarantee-heading" style="color: rgb(41,174,225) !important;">
+                    The brokkrr Guarantee!
+                </div>
+                <br />
+                <div class="guarantee-content" style="color: rgb(115,124,132);">
+                    brokkrr is Free and insures your transaction up to a $1,000,000 dollars. Why take on the liability?<br />
+                    Let the professional compete and earn your business!
+                </div>
+                <br />
+                <br />
+                <br />
+            </center>
+        </div>
+
+    </div>
+</div>
+
+<div class="Phone img-responsive" style="background-image:url(../../Images/NewImages/Rating-bg.png);height:auto;background-repeat:no-repeat;background-size: 100% 100%;">
+    <br />
+
+
+    <center>
+        <div class="col-md-12" style="padding: 7% 0 2%;font-size: 34px;">
+            See what people are saying about brokkrr...
+        </div>
+    </center>
+    <div class="row" style="margin-left:0;margin-right:0;">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-1 col-sm-1 col-xs-1">
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-9" style="background-color:#fff;border-radius: 6px;padding-bottom: 1%;color:#69737b;">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 2% 3%;padding-bottom:0%;clear:both;">
+                    <div class="col-md-1 col-sm-2 col-xs-3" style="padding:0px 0px 0px 8px">
+                        <img src="~/Images/MeinekeDealers/review-avatar-1.png" class="img-responsive" style="float:left;" />
+                    </div>
+
+                    <div class="col-md-10 col-sm-9 col-xs-9" style="padding-left:0;margin-left:0;">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                            <img src="~/Images/MeinekeDealers/5-stars.png" class="img-responsive" style="float:left;" />
+
+
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <span class="col-md-12 col-sm-12 col-xs-12 testdate">December 4, 2017</span>
+                        </div>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1">
+
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 name">
+                    Owner of a Pool Construction Company
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 testcontent">
+                    "I have always struggled with my insurance. What to cover, how to cover it properly and most importantly am I with the right brokkrr and carrier. brokkrr solved this problem for me by answering a few quick questions. I was connected to a specialty brokkrr who placed my insurance within minutes. I am convinced this is the way to go. Reminds me of Uber for insurance."
+                </div>
+                <br />
+
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2">
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="row" style="margin-left:0;margin-right:0;">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-2 col-sm-2 col-xs-2">
+
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-9" style="background-color:#fff;border-radius: 6px;padding-bottom: 1%;color:#69737b;">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 1% 3%;padding-bottom:0%;clear:both;">
+                    <div class="col-md-1 col-sm-2 col-xs-3" style="padding:0px 0px 0px 8px">
+                        <img src="~/Images/MeinekeDealers/review-avatar-2.png" class="img-responsive" style="float:left;" />
+                    </div>
+
+                    <div class="col-md-10 col-sm-9 col-xs-9" style="padding-left:0;margin-left:0;">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                            <img src="~/Images/MeinekeDealers/5-stars.png" class="img-responsive" style="float:left;" />
+
+
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <span class="col-md-12 col-sm-12 col-xs-12 testdate">January 14, 2018</span>
+                        </div>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1">
+
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 name">
+                    Owner of a Auto repair franchise with multiple locations
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 testcontent">
+                    I have always felt that the insurance industry sucks. It’s impossible to understand coverages and navigate the multitude of options. I was referred to brokkrr by a friend and I have to tell you this simplified the process and connected real time to a brokkrr who specializes in the auto industry. He came to my office within an hour and I was able to place the insurance seamlessly. I can’t believe how easy this was! I would recommend it to anyone who wants to simplify the purchase of their insurance.
+
+                </div>
+                <br />
+
+            </div>
+            <div class="col-md-1 col-sm-1 col-xs-1">
+
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="row" style="margin-left:0;margin-right:0;">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-1 col-sm-1 col-xs-1">
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-9" style="background-color:#fff;border-radius: 6px;padding-bottom: 1%;color:#69737b;">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 1% 3%;padding-bottom:0%;clear:both;">
+                    <div class="col-md-1 col-sm-2 col-xs-3" style="padding:0px 0px 0px 8px">
+                        <img src="~/Images/MeinekeDealers/review-avatar-3.png" class="img-responsive" style="float:left;" />
+                    </div>
+
+                    <div class="col-md-10 col-sm-9 col-xs-9" style="padding-left:0;margin-left:0;">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                            <img src="~/Images/MeinekeDealers/5-stars.png" class="img-responsive" style="float:left;" />
+
+
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <span class="col-md-12 col-sm-12 col-xs-12 testdate">January 26, 2018</span>
+                        </div>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1">
+
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 name">
+                    Owner of High Value Home
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 testcontent">
+                    I live in an area considered risky due to Fire. I always was told I had no options for insuring my high value home. One of my neighbors told me to go brokkrr. I did and I was immediately connected with five brokkrrs who specialize in writing insurance for homes in my area. It took me less than a minute and I was connected and speaking with a brokkrr who provided me some options that saved me money. They even drove to my house to pick up the payment and introduce themselves. I couldn’t be happier.
+
+                </div>
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="row" style="margin-left:0;margin-right:0;">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-2 col-sm-2 col-xs-2">
+
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-9" style="background-color:#fff;border-radius: 6px;padding-bottom: 1%;color:#69737b;">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 1% 3%;padding-bottom:0%;clear:both;">
+                    <div class="col-md-1 col-sm-2 col-xs-3" style="padding:0px 0px 0px 8px">
+                        <img src="~/Images/MeinekeDealers/review-avatar-2.png" class="img-responsive" style="float:left;" />
+                    </div>
+
+                    <div class="col-md-10 col-sm-9 col-xs-9" style="padding-left:0;margin-left:0;">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                            <img src="~/Images/MeinekeDealers/5-stars.png" class="img-responsive" style="float:left;" />
+
+
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <span class="col-md-12 col-sm-12 col-xs-12 testdate">February 14, 2018</span>
+                        </div>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1">
+
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 name">
+                    Owner of Multiple Luxury vehicles
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 testcontent">
+                    I have a collection of Luxury vehicles. I was paying through the nose to cover them. When I found brokkrr I was connected with a certified auto expert who specialized in Luxury autos. He found me solutions and saved me money in the process. This was done all via their app. This is no doubt the future of the insurance buying process.
+
+                </div>
+                <br />
+
+            </div>
+            <div class="col-md-1 col-sm-1 col-xs-1">
+
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="row" style="margin-left:0;margin-right:0;">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-1 col-sm-1 col-xs-1">
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-9" style="background-color:#fff;border-radius: 6px;padding-bottom: 1%;color:#69737b;">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 1% 3%;padding-bottom:0%;clear:both;">
+                    <div class="col-md-1 col-sm-2 col-xs-3" style="padding:0px 0px 0px 8px">
+                        <img src="~/Images/MeinekeDealers/review-avatar-3.png" class="img-responsive" style="float:left;" />
+                    </div>
+
+                    <div class="col-md-10 col-sm-9 col-xs-9" style="padding-left:0;margin-left:0;">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                            <img src="~/Images/MeinekeDealers/5-stars.png" class="img-responsive" style="float:left;" />
+
+
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <span class="col-md-12 col-sm-12 col-xs-12 testdate">february 27, 2018</span>
+                        </div>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1">
+
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 name">
+                    Owner of a technology company and multiple homes
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 testcontent">
+                    I don’t like to meet with people or speak to people until I am ready to buy something from them. brokkrr gave me the opportunity to match with an insurance brokkrr that could help me cover my business and home. The best part is I was able to do it all through the app. This is the way my generation will buy their insurance. What a concept what an app! THERE IS NO OTHER WAY!
+
+                </div>
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+    <br />
+
+</div>
+<br />
+<br />
+
+<div class="row" style="margin-left:0;margin-right:0;">
+    <div class="col-md-12">
+        <div class="col-md-4">
+
+            <div class="col-md-4 col-sm-4">
+
+            </div>
+
+            <div class="col-md-6 col-sm-6" style="padding:6%;padding-left:0px;padding-left:0px;">
+                <img src="~/Images/NewImages/nerds.png" class="img-responsive " style="width: 200px;height: 150px;" />
+            </div>
+            <div class="col-md-2 col-sm-2">
+
+            </div>
+            <div class="clearfix">
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6 selfcontent">
+
+
+            <h3 class="selfpro">Self-proclaimed Insurance Nerds</h3>
+            <br />
+
+            <span>
+                brokkrr was developed by self-proclaimed "insurance nerds" who<br />
+                were born with a genetic mutation of loving the insurance industry.<br />
+                The beauty is we love it, so you don't have to.  Along with our love<br />
+                for the industry came displeasure with the process and how it takes place.<br />
+                Teamed with self-proclaimed "analytic nerds,” we came up<br />
+                with a process to demystify the insurance industry (thus upsetting the<br />
+                old-guard).  This new process gives the power of the industry back<br />
+                to where it belongs...you. Level UP and Match.Meet. Secure your brokkrr.
+            </span>
+
+
+
+
+        </div>
+        <div class="col-md-2">
+
+        </div>
+        <div class="clearfix">
+
+        </div>
+        <br />
+    </div>
+
+</div>
+
+<footer class="footer-distributed" style="position: relative;background-image:none;">
+    <div class="container" style="width:100%">
+        <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-right:0;">
+            <div class="row">
+                <div class="col-md-3 col-sm-3" style="padding-top: 20px;padding-right:0;text-align: center;">
+                    <p style="display: block;color: #666666;font-size: 16px;font-family:open sans;text-align: center;">
+                        © 2018 brokkrr. All rights reserved.
+                    </p>
+                </div>
+
+                <div class="col-sm-3 col-md-2 text-center" style="padding-left:0;">
+                    <p class="footer-company-about">
+                        <div class="social-icons" style="margin-bottom:0px;margin-top: 15px;">
+                            <a style="cursor:default;"><span class="facebook"></span></a>
+                            <a style="cursor:default;"><span class="twitter"></span></a>
+                            <a style="cursor:default;"><span class="linkedin"></span></a>
+                        </div>
+                    </p>
+                </div>
+                <div class="col-sm-2 col-md-5" style="margin-bottom:0%;">
+                </div>
+                <div class="col-sm-1 col-md-1" style="margin-bottom: 0%;margin-top: 1.5%;padding-left:0;">
+                    <div style="padding-right:4%;text-align:center">
+                        <img src="~/Images/NewAssets/footer-logo.png" alt="logo" />
+                    </div>
+                </div>
+                <div class="col-md-1 col-sm-1" style="margin-bottom:0%;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="ModalSpecialities" role="dialog" style="overflow-y:hidden;">
+        <div class="modal-dialog" style="padding:5%;text-align: center;">
+            <div class="modal-content list" style="text-align:left;height: 350px;overflow-y: scroll;">
+                <div class="modal-header" style="padding-top: 3px; padding-bottom: 3px;">
+                    <button type="button" class="close" onclick="clickCancel();" style="color: red;margin-top:10px;">&times;</button>
+                    <h4 class="modal-title" style="font-weight:bold;font-size: 16px;margin-top:10px;margin-bottom:10px;">Pick your specialities</h4>
+                </div>
+                <div class="modal-body list" style="padding-top: 0px;padding-bottom: 0px;font-weight:100;">
+                    <br />
+                    <div>
+                        <input type="checkbox" id="chkAll" name="Select All" value="Select All" onclick="clickAll();" />&nbsp;Select All<br />
+                    </div>
+                    <br />
+                    <input type="checkbox" class="classcheckbox" id="chkHome" name="Home" value="Home" onclick="clickHome();" />&nbsp;Home<br />
+
+                    <div id="divHome" style="display:none;">
+                        Home Value(Select one or all that apply to you)<br />
+                        <input type="checkbox" class="classcheckbox" id="chkHome1" name="$500,000 or less" value="$500,000 or less" style="margin-left:15px;" />&nbsp;$500,000 or less<br />
+                        <input type="checkbox" class="classcheckbox" id="chkHome2" name="$501,000 - $1,000,000" value="$501,000 - $1,000,000" style="margin-left:15px;" />&nbsp;$501,000 - $1,000,000<br />
+                        <input type="checkbox" class="classcheckbox" id="chkHome3" name="More than $1,000,000" value="More than $1,000,000" style="margin-left:15px;" />&nbsp;More than $1,000,000<br />
+                        <br />
+                    </div>
+
+                    <input type="checkbox" id="chkAuto" class="classcheckbox" name="Auto" value="Auto" onclick="clickAuto();" />&nbsp;Auto<br />
+
+                    <div id="divAuto" style="display:none;">
+                        Auto Type(Select one or all that apply to you)<br />
+                        <input type="checkbox" class="classcheckbox" id="chkEconomy" name="Economy" value="Economy" style="margin-left:15px;" />&nbsp;Economy<br />
+                        <input type="checkbox" class="classcheckbox" id="chkStandard" name="Standard" value="Standard" style="margin-left:15px;" />&nbsp;Standard<br />
+                        <input type="checkbox" class="classcheckbox" id="chkLuxury" name="Luxury" value="Luxury" style="margin-left:15px;" />&nbsp;Luxury<br />
+                        <input type="checkbox" class="classcheckbox" id="chkCollectible" name="Collectible" value="Collectible" style="margin-left:15px;" />&nbsp;Collectible<br />
+                        <br />
+                    </div>
+
+                    <input type="checkbox" id="chkBenefits" class="classcheckbox" name="Benefits" value="Benefits" onclick="clickBenefits();" />&nbsp;Benefits<br />
+
+                    <div id="divBenefits" style="display:none;">
+                        Number of Employees(Select one or all that apply to you)<br />
+                        <input type="checkbox" class="classcheckbox" id="chkBenefits1" name="1-25" value="1-25" style="margin-left:15px;" />&nbsp;1-25<br />
+                        <input type="checkbox" class="classcheckbox" id="chkBenefits2" name="26-50" value="26-50" style="margin-left:15px;" />&nbsp;26-50<br />
+                        <input type="checkbox" class="classcheckbox" id="chkBenefits3" name="51-100" value="51-100" style="margin-left:15px;" />&nbsp;51-100<br />
+                        <input type="checkbox" class="classcheckbox" id="chkBenefits4" name="More than 100" value="More than 100" style="margin-left:15px;" />&nbsp;More than 100<br />
+                        <br />
+                    </div>
+                    <input type="checkbox" id="chkBusiness" class="classcheckbox" name="Business" value="Business" onclick="clickBusiness();" />&nbsp;Business<br />
+
+                    <div id="divBusiness" style="display:none;">
+                        Gross Revenue(Select one or all that apply to you)<br />
+                        <input type="checkbox" class="classcheckbox" id="chkBusiness1" name="Up to $1,000,000" value="Up to $1,000,000" style="margin-left:15px;" />&nbsp;Up to $1,000,000<br />
+                        <input type="checkbox" class="classcheckbox" id="chkBusiness2" name="$1,000,001 and $5,000,000" value="$1,000,001 and $5,000,000" style="margin-left:15px;" />&nbsp;$1,000,001 and $5,000,000<br />
+                        <input type="checkbox" class="classcheckbox" id="chkBusiness3" name="$5,000,001 and $10,000,000" value="$5,000,001 and $10,000,000" style="margin-left:15px;" />&nbsp;$5,000,001 and $10,000,000<br />
+                        <input type="checkbox" class="classcheckbox" id="chkBusiness4" name="Over $10,000,001" value="Over $10,000,001" style="margin-left:15px;" />&nbsp;Over $10,000,001<br />
+                        <br />
+                    </div>
+                    <input type="checkbox" id="chkLife" class="classcheckbox" name="Life" value="Life" onclick="clickLife();" />&nbsp;Life<br />
+
+                    <div id="divLife" style="display:none;">
+                        Coverage Amount(Select one or all that apply to you)<br />
+                        <input type="checkbox" class="classcheckbox" id="chkLife1" name="$250,000 or less" value="$250,000 or less" style="margin-left:15px;" />&nbsp;$250,000 or less<br />
+                        <input type="checkbox" class="classcheckbox" id="chkLife2" name="$250,001 to $500,000" value="$250,001 to $500,000" style="margin-left:15px;" />&nbsp;$250,001 to $500,000<br />
+                        <input type="checkbox" class="classcheckbox" id="chkLife3" name="$500,001 to $1,000,000" value="$500,001 to $1,000,000" style="margin-left:15px;" />&nbsp;$500,001 to $1,000,000<br />
+                        <input type="checkbox" class="classcheckbox" id="chkLife4" name="More than $1,000,000" value="More than $1,000,000" style="margin-left:15px;" />&nbsp;More than $1,000,000<br />
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <span><label for="lblErrorMessage" id="lblErrorMessage" style="color:red;margin-left:20px;"></label></span>
+                <div class="modal-footer" style="padding: 5px; text-align:center;">
+                    <button type="button" class="btn btn-default" onclick="clickOK();">Done</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="ModalError" role="dialog" style="overflow-y:hidden;">
+        <div class="modal-dialog" style="padding:5%">
+            <div class="modal-content">
+                <div class="modal-header" style="padding-top: 3px; padding-bottom: 3px;">
+                    <img id="" src="~/Images/NewAssets/closepopup.png" style="float: right;margin-top: 3%;cursor:pointer;" data-dismiss="modal" />
+                    <h4 class="modal-title" style="color: black;font-size:30px;margin-top:10px;margin-bottom:10px;text-align: left;margin:2.5%;font-weight:bold;font-family:open sans;">Message</h4>
+                </div>
+                <div class="modal-body" style="padding-top: 0px;padding-bottom: 0px;font-weight:100;">
+                    <br />
+                    <span><label for="lblError" id="lblError" style="color:red;margin-left:20px;font-size: 16px;line-height: 1;"></label></span>
+
+                    <br />
+                </div>
+                <div class="modal-footer" style="padding: 5px;text-align:center;">
+
+                    <button id="btnOK" data-dismiss="modal" style="margin-bottom: 10px;margin-bottom: 10px;background-color:#17d1ff;color: #fff;background-color: rgb(72,205,258);height: 40px;width: 20%;border: none;border-radius: 30px;">
+                        <span style="font-size: 20px;">OK</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+@*<footer class="footer-distributed" style="position: relative;background-image:none;">
+    <div class="container" style="width:100%">
+        <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-right:0;">
+            <div class="row">
+                <div class="col-md-3 col-sm-3" style="padding-top: 20px;padding-right:0;text-align: center;">
+                    <p style="display: block;color: #666666;font-size: 16px;font-family:open sans;text-align: center;">
+                        © 2018 Brokkrr. All rights reserved.
+                    </p>
+                </div>
+
+                <div class="col-sm-3 col-md-2 text-center" style="padding-left:0;">
+                    <p class="footer-company-about">
+                        <div class="social-icons" style="margin-bottom:0px;margin-top: 15px;">
+                            <a style="cursor:default;"><span class="facebook"></span></a>
+                            <a style="cursor:default;"><span class="twitter"></span></a>
+                            <a style="cursor:default;"><span class="linkedin"></span></a>
+                        </div>
+                    </p>
+                </div>
+                <div class="col-sm-2 col-md-5" style="margin-bottom:0%;">
+                </div>
+                <div class="col-sm-1 col-md-1" style="margin-bottom: 0%;margin-top: 1.5%;">
+                    <div style="padding-right:4%;text-align:center">
+                        <img src="~/Images/NewAssets/footer-logo.png" alt="logo" />
+                    </div>
+                </div>
+                <div class="col-md-1 col-sm-1" style="margin-bottom:0%;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="ModalSpecialities" role="dialog" style="overflow-y:hidden;">
+        <div class="modal-dialog" style="padding:5%;text-align: center;">
+            <div class="modal-content list" style="text-align:left;height: 350px;overflow-y: scroll;">
+                <div class="modal-header" style="padding-top: 3px; padding-bottom: 3px;">
+                    <button type="button" class="close" onclick="clickCancel();" style="color: red;margin-top:10px;">&times;</button>
+                    <h4 class="modal-title" style="font-weight:bold;font-size: 16px;margin-top:10px;margin-bottom:10px;">Pick your specialities</h4>
+                </div>
+                <div class="modal-body list" style="padding-top: 0px;padding-bottom: 0px;font-weight:100;">
+                    <br />
+                    <div>
+                        <input type="checkbox" id="chkAll" name="Select All" value="Select All" onclick="clickAll();" />&nbsp;Select All<br />
+                    </div>
+                    <br />
+                    <input type="checkbox" class="classcheckbox" id="chkHome" name="Home" value="Home" onclick="clickHome();" />&nbsp;Home<br />
+
+                    <div id="divHome" style="display:none;">
+                        Home Value(Select one or all that apply to you)<br />
+                        <input type="checkbox" class="classcheckbox" id="chkHome1" name="$500,000 or less" value="$500,000 or less" style="margin-left:15px;" />&nbsp;$500,000 or less<br />
+                        <input type="checkbox" class="classcheckbox" id="chkHome2" name="$501,000 - $1,000,000" value="$501,000 - $1,000,000" style="margin-left:15px;" />&nbsp;$501,000 - $1,000,000<br />
+                        <input type="checkbox" class="classcheckbox" id="chkHome3" name="More than $1,000,000" value="More than $1,000,000" style="margin-left:15px;" />&nbsp;More than $1,000,000<br />
+                        <br />
+                    </div>
+
+                    <input type="checkbox" id="chkAuto" class="classcheckbox" name="Auto" value="Auto" onclick="clickAuto();" />&nbsp;Auto<br />
+
+                    <div id="divAuto" style="display:none;">
+                        Auto Type(Select one or all that apply to you)<br />
+                        <input type="checkbox" class="classcheckbox" id="chkEconomy" name="Economy" value="Economy" style="margin-left:15px;" />&nbsp;Economy<br />
+                        <input type="checkbox" class="classcheckbox" id="chkStandard" name="Standard" value="Standard" style="margin-left:15px;" />&nbsp;Standard<br />
+                        <input type="checkbox" class="classcheckbox" id="chkLuxury" name="Luxury" value="Luxury" style="margin-left:15px;" />&nbsp;Luxury<br />
+                        <input type="checkbox" class="classcheckbox" id="chkCollectible" name="Collectible" value="Collectible" style="margin-left:15px;" />&nbsp;Collectible<br />
+                        <br />
+                    </div>
+
+                    <input type="checkbox" id="chkBenefits" class="classcheckbox" name="Benefits" value="Benefits" onclick="clickBenefits();" />&nbsp;Benefits<br />
+
+                    <div id="divBenefits" style="display:none;">
+                        Number of Employees(Select one or all that apply to you)<br />
+                        <input type="checkbox" class="classcheckbox" id="chkBenefits1" name="1-25" value="1-25" style="margin-left:15px;" />&nbsp;1-25<br />
+                        <input type="checkbox" class="classcheckbox" id="chkBenefits2" name="26-50" value="26-50" style="margin-left:15px;" />&nbsp;26-50<br />
+                        <input type="checkbox" class="classcheckbox" id="chkBenefits3" name="51-100" value="51-100" style="margin-left:15px;" />&nbsp;51-100<br />
+                        <input type="checkbox" class="classcheckbox" id="chkBenefits4" name="More than 100" value="More than 100" style="margin-left:15px;" />&nbsp;More than 100<br />
+                        <br />
+                    </div>
+                    <input type="checkbox" id="chkBusiness" class="classcheckbox" name="Business" value="Business" onclick="clickBusiness();" />&nbsp;Business<br />
+
+                    <div id="divBusiness" style="display:none;">
+                        Gross Revenue(Select one or all that apply to you)<br />
+                        <input type="checkbox" class="classcheckbox" id="chkBusiness1" name="Up to $1,000,000" value="Up to $1,000,000" style="margin-left:15px;" />&nbsp;Up to $1,000,000<br />
+                        <input type="checkbox" class="classcheckbox" id="chkBusiness2" name="$1,000,001 and $5,000,000" value="$1,000,001 and $5,000,000" style="margin-left:15px;" />&nbsp;$1,000,001 and $5,000,000<br />
+                        <input type="checkbox" class="classcheckbox" id="chkBusiness3" name="$5,000,001 and $10,000,000" value="$5,000,001 and $10,000,000" style="margin-left:15px;" />&nbsp;$5,000,001 and $10,000,000<br />
+                        <input type="checkbox" class="classcheckbox" id="chkBusiness4" name="Over $10,000,001" value="Over $10,000,001" style="margin-left:15px;" />&nbsp;Over $10,000,001<br />
+                        <br />
+                    </div>
+                    <input type="checkbox" id="chkLife" class="classcheckbox" name="Life" value="Life" onclick="clickLife();" />&nbsp;Life<br />
+
+                    <div id="divLife" style="display:none;">
+                        Coverage Amount(Select one or all that apply to you)<br />
+                        <input type="checkbox" class="classcheckbox" id="chkLife1" name="$250,000 or less" value="$250,000 or less" style="margin-left:15px;" />&nbsp;$250,000 or less<br />
+                        <input type="checkbox" class="classcheckbox" id="chkLife2" name="$250,001 to $500,000" value="$250,001 to $500,000" style="margin-left:15px;" />&nbsp;$250,001 to $500,000<br />
+                        <input type="checkbox" class="classcheckbox" id="chkLife3" name="$500,001 to $1,000,000" value="$500,001 to $1,000,000" style="margin-left:15px;" />&nbsp;$500,001 to $1,000,000<br />
+                        <input type="checkbox" class="classcheckbox" id="chkLife4" name="More than $1,000,000" value="More than $1,000,000" style="margin-left:15px;" />&nbsp;More than $1,000,000<br />
+                        <br />
+                    </div>
+                </div>
+                <br />
+                <span><label for="lblErrorMessage" id="lblErrorMessage" style="color:red;margin-left:20px;"></label></span>
+                <div class="modal-footer" style="padding: 5px; text-align:center;">
+                    <button type="button" class="btn btn-default" onclick="clickOK();">Done</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="ModalError" role="dialog" style="overflow-y:hidden;">
+        <div class="modal-dialog" style="padding:5%">
+            <div class="modal-content">
+                <div class="modal-header" style="padding-top: 3px; padding-bottom: 3px;">
+                    <img id="" src="~/Images/NewAssets/closepopup.png" style="float: right;margin-top: 3%;cursor:pointer;" data-dismiss="modal" />
+                    <h4 class="modal-title" style="color: black;font-size:30px;margin-top:10px;margin-bottom:10px;text-align: left;margin:2.5%;font-weight:bold;font-family:open sans;">Message</h4>
+                </div>
+                <div class="modal-body" style="padding-top: 0px;padding-bottom: 0px;font-weight:100;">
+                    <br />
+                    <span><label for="lblError" id="lblError" style="color:red;margin-left:20px;font-size: 16px;line-height: 1;"></label></span>
+
+                    <br />
+                </div>
+                <div class="modal-footer" style="padding: 5px;text-align:center;">
+
+                    <button id="btnOK" data-dismiss="modal" style="margin-bottom: 10px;margin-bottom: 10px;background-color:#17d1ff;color: #fff;background-color: rgb(72,205,258);height: 40px;width: 20%;border: none;border-radius: 30px;">
+                        <span style="font-size: 20px;">OK</span>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>    
+</footer>*@
+
+
+@*<script src="~/js/HomeJs/jquery-2.2.4.min.js"></script>*@
+@*<script src="~/js/HomeJs/main-a63a635ec9.bundle.js"></script>*@

@@ -1,0 +1,1721 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BrokerDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <ComplexType Name="ParseCommaDelimitedString_Result">
+    <Property Name="Id" Type="Int32" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="AutoInsuranceDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="VehicleType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsInsured" Type="Boolean" />
+    <Property Name="InsuranceCompany" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CoverageExpires" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="longitude" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="latitude" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Path" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DeclarationDocBase64" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AutoTypeMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AutoType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="BenefitsInsuranceDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsInsured" Type="Boolean" />
+    <Property Name="InsuranceCompany" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EmployeeStrength" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CoverageExpires" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="longitude" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="latitude" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IndustryId" Type="Int32" />
+    <Property Name="SubIndustryId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SubIndustrySICCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Path" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DeclarationDocBase64" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BrokerAvailability">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="IsAvailable" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="BrokerPayment">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="PaymentId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PaymentDate" Type="DateTime" Precision="3" />
+    <Property Name="IsPaid" Type="Boolean" />
+    <Property Name="PaymentMode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="BusinessInsuranceDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsInsured" Type="Boolean" />
+    <Property Name="InsuranceCompany" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="SICCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Revenue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CoverageExpires" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="longitude" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="latitude" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IndustryId" Type="Int32" />
+    <Property Name="SubIndustryId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SubIndustrySICCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Path" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DeclarationDocBase64" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CompanyMaster">
+    <Key>
+      <PropertyRef Name="CompanyId" />
+    </Key>
+    <Property Name="CompanyId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Logo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="ErrorLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="ErrorType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ErrorMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PageName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ErrorDate" Type="DateTime" Precision="3" />
+    <Property Name="IPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HomeInsuranceDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="EstimatedValue" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsInsured" Type="Boolean" />
+    <Property Name="CompanyName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CoverageExpires" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="longitude" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="latitude" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Path" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DeclarationDocBase64" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="IndustryMaster">
+    <Key>
+      <PropertyRef Name="IndustryId" />
+    </Key>
+    <Property Name="IndustryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IndustryName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IndustrySICCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="CompanyId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="InsuranceTypeMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InsuranceName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="LifeInsuranceDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="IsInsured" Type="Boolean" />
+    <Property Name="InsuranceCompany" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Language" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FaceValue" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="CoverageExpires" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="longitude" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="latitude" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="Path" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DeclarationDocBase64" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PaymentMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Amount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DateOfEffect" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="SubIndustryMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IndustryId" Type="Int32" />
+    <Property Name="SICCode" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SubIndustryName" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="CompanyId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EmailId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="State" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PinCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MobNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DOB" Type="DateTime" Precision="3" />
+    <Property Name="ProfilePicture" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="UserType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="RegisteredDate" Type="DateTime" Precision="3" />
+    <Property Name="RegisterdType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsUpdateProfile" Type="Boolean" />
+    <Property Name="HouseType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AddressofHouse" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="IsHavingCar" Type="Boolean" />
+    <Property Name="NoOfCars" Type="Int32" />
+    <Property Name="TypeOfEmployment" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Resume" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Designation" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Languages" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Specialities" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="RegistrationCode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsEmailIdVerified" Type="Boolean" />
+    <Property Name="IsAvailable" Type="Boolean" />
+    <Property Name="Awards" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Skills" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Recomendations" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="License" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ExpiryDate" Type="DateTime" Precision="3" />
+    <Property Name="longitude" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="latitude" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="ProfilePictureImg" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ResumeDoc" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsPaymentDone" Type="Boolean" />
+    <Property Name="ForgetPasswordRanNum" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DeviceId" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="HomeValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="AutoType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Revenue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Employees" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CoverageAmt" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyLogo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IndustryId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SubIndustryId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Bio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="RegisteredFor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NoofEmployee" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="EstPremium" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Website" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsAdmin" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="UserBroker">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="BrokerId" Type="Int32" />
+    <Property Name="SearchDate" Type="DateTime" Precision="3" />
+    <Property Name="InsuranceType" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UserExperience">
+    <Key>
+      <PropertyRef Name="ExpId" />
+    </Key>
+    <Property Name="ExpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Designation" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DurationFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DurationTo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Bio" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyLogo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="UserIndustry">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="IndustryId" Type="Int32" />
+    <Property Name="SubIndustryId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="WebsiteLog">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LogMessage" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="LogDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="BrokerMessage">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="BrokerId" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BrokerId" Type="Int32" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ContactDate" Type="DateTime" Precision="3" />
+    <Property Name="IsRead" Type="Boolean" />
+    <Property Name="CustomerMsgId" Type="Int32" />
+    <Property Name="LocalDateTime" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="DeclarationDocPath" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DeclarationDocBase64" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Config">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ConfigName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ConfigValue" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CustomerBrokerChat">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BrokerMsgId" Type="Int32" />
+    <Property Name="CustMsgId" Type="Int32" />
+    <Property Name="BrokerId" Type="Int32" />
+    <Property Name="CustomerId" Type="Int32" />
+    <Property Name="BrokerMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CustomerMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MessageDate" Type="DateTime" Precision="3" />
+    <Property Name="IsRead" Type="Boolean" />
+    <Property Name="LocalDateTime" Type="DateTime" Precision="3" />
+    <Property Name="IsDeletedByCustomer" Type="Boolean" />
+    <Property Name="IsDeletedByBroker" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="CustomerMessage">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="BrokerId" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="BrokerId" Type="Int32" Nullable="false" />
+    <Property Name="ContactDate" Type="DateTime" Precision="3" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="BrokerMsgId" Type="Int32" />
+    <Property Name="LocalDateTime" Type="DateTime" Precision="3" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="IsRead" Type="Boolean" />
+    <Property Name="IsRatingGiven" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="UserEducation">
+    <Key>
+      <PropertyRef Name="EduId" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="EduId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="UniversityName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CourseName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DurationFrom" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DurationTo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="EducationLogo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="BrokerDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AutoInsuranceDetails" EntityType="Self.AutoInsuranceDetail" />
+    <EntitySet Name="AutoTypeMasters" EntityType="Self.AutoTypeMaster" />
+    <EntitySet Name="BenefitsInsuranceDetails" EntityType="Self.BenefitsInsuranceDetail" />
+    <EntitySet Name="BrokerAvailabilities" EntityType="Self.BrokerAvailability" />
+    <EntitySet Name="BrokerPayments" EntityType="Self.BrokerPayment" />
+    <EntitySet Name="BusinessInsuranceDetails" EntityType="Self.BusinessInsuranceDetail" />
+    <EntitySet Name="CompanyMasters" EntityType="Self.CompanyMaster" />
+    <EntitySet Name="ErrorLogs" EntityType="Self.ErrorLog" />
+    <EntitySet Name="HomeInsuranceDetails" EntityType="Self.HomeInsuranceDetail" />
+    <EntitySet Name="IndustryMasters" EntityType="Self.IndustryMaster" />
+    <EntitySet Name="InsuranceTypeMasters" EntityType="Self.InsuranceTypeMaster" />
+    <EntitySet Name="LifeInsuranceDetails" EntityType="Self.LifeInsuranceDetail" />
+    <EntitySet Name="PaymentMasters" EntityType="Self.PaymentMaster" />
+    <EntitySet Name="SubIndustryMasters" EntityType="Self.SubIndustryMaster" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="UserBrokers" EntityType="Self.UserBroker" />
+    <EntitySet Name="UserExperiences" EntityType="Self.UserExperience" />
+    <EntitySet Name="UserIndustries" EntityType="Self.UserIndustry" />
+    <EntitySet Name="WebsiteLogs" EntityType="Self.WebsiteLog" />
+    <EntitySet Name="BrokerMessages" EntityType="Self.BrokerMessage" />
+    <EntitySet Name="Configs" EntityType="Self.Config" />
+    <EntitySet Name="CustomerBrokerChats" EntityType="Self.CustomerBrokerChat" />
+    <EntitySet Name="CustomerMessages" EntityType="Self.CustomerMessage" />
+    <EntitySet Name="UserEducations" EntityType="Self.UserEducation" />
+    <FunctionImport Name="ParseCommaDelimitedString" IsComposable="true" ReturnType="Collection(BrokerDBModel.ParseCommaDelimitedString_Result)">
+      <Parameter Name="CommaSeparatedStr" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spErrorLog">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="ErrorType" Mode="In" Type="String" />
+      <Parameter Name="ErrorMessage" Mode="In" Type="String" />
+      <Parameter Name="PageName" Mode="In" Type="String" />
+      <Parameter Name="IPAddress" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spGetUserDetails" ReturnType="Collection(BrokerDBModel.spGetUserDetails_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spRegisterUser" ReturnType="Collection(BrokerDBModel.spRegisterUser_Result)">
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="EmailId" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="String" />
+      <Parameter Name="PinCode" Mode="In" Type="String" />
+      <Parameter Name="MobNo" Mode="In" Type="String" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+      <Parameter Name="UserType" Mode="In" Type="String" />
+      <Parameter Name="RegisterdType" Mode="In" Type="String" />
+      <Parameter Name="IsUpdateProfile" Mode="In" Type="Boolean" />
+      <Parameter Name="RegistrationCode" Mode="In" Type="String" />
+      <Parameter Name="RegisteredFor" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spUpdateBroker" ReturnType="Collection(String)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="String" />
+      <Parameter Name="PinCode" Mode="In" Type="String" />
+      <Parameter Name="MobNo" Mode="In" Type="String" />
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="Resume" Mode="In" Type="String" />
+      <Parameter Name="Designation" Mode="In" Type="String" />
+      <Parameter Name="Languages" Mode="In" Type="String" />
+      <Parameter Name="Specialities" Mode="In" Type="String" />
+      <Parameter Name="DOB" Mode="In" Type="String" />
+      <Parameter Name="ProfilePicture" Mode="In" Type="String" />
+      <Parameter Name="PhoneNo" Mode="In" Type="String" />
+      <Parameter Name="Awards" Mode="In" Type="String" />
+      <Parameter Name="Skills" Mode="In" Type="String" />
+      <Parameter Name="Recomendations" Mode="In" Type="String" />
+      <Parameter Name="License" Mode="In" Type="String" />
+      <Parameter Name="ExpiryDate" Mode="In" Type="String" />
+      <Parameter Name="Exp_Designation" Mode="In" Type="String" />
+      <Parameter Name="Exp_CompanyName" Mode="In" Type="String" />
+      <Parameter Name="Exp_DurationFrom" Mode="In" Type="String" />
+      <Parameter Name="Exp_DurationTo" Mode="In" Type="String" />
+      <Parameter Name="Edu_UniversityName" Mode="In" Type="String" />
+      <Parameter Name="Edu_CourseName" Mode="In" Type="String" />
+      <Parameter Name="Edu_DurationFrom" Mode="In" Type="String" />
+      <Parameter Name="Edu_DurationTo" Mode="In" Type="String" />
+      <Parameter Name="UpdateTable" Mode="In" Type="String" />
+      <Parameter Name="ProfilePicImagePath" Mode="In" Type="String" />
+      <Parameter Name="ResumeImagePath" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spUpdateCustomer" ReturnType="Collection(String)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="String" />
+      <Parameter Name="PinCode" Mode="In" Type="String" />
+      <Parameter Name="MobNo" Mode="In" Type="String" />
+      <Parameter Name="HouseType" Mode="In" Type="String" />
+      <Parameter Name="AddressOfHouse" Mode="In" Type="String" />
+      <Parameter Name="IsHavingCar" Mode="In" Type="Boolean" />
+      <Parameter Name="NoOfCars" Mode="In" Type="String" />
+      <Parameter Name="TypeOfEmployment" Mode="In" Type="String" />
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+      <Parameter Name="ProfilePicture" Mode="In" Type="String" />
+      <Parameter Name="PhoneNo" Mode="In" Type="String" />
+      <Parameter Name="DOB" Mode="In" Type="String" />
+      <Parameter Name="ProfilePicImagePath" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spUpdateCustomerForWeb" ReturnType="Collection(BrokerDBModel.spUpdateCustomerForWeb_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="ZipCode" Mode="In" Type="String" />
+      <Parameter Name="HouseType" Mode="In" Type="String" />
+      <Parameter Name="IsHavingCars" Mode="In" Type="String" />
+      <Parameter Name="NoOfCars" Mode="In" Type="Int32" />
+      <Parameter Name="Occupation" Mode="In" Type="String" />
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+      <Parameter Name="ProfilePicture" Mode="In" Type="String" />
+      <Parameter Name="ProfilePictureImg" Mode="In" Type="String" />
+      <Parameter Name="IsProfileUpdated" Mode="In" Type="String" />
+      <Parameter Name="NoofEmployee" Mode="In" Type="String" />
+      <Parameter Name="EstPremium" Mode="In" Type="String" />
+      <Parameter Name="Website" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spUpdateUser">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="StateId" Mode="In" Type="Int32" />
+      <Parameter Name="CountryId" Mode="In" Type="Int32" />
+      <Parameter Name="PinCode" Mode="In" Type="String" />
+      <Parameter Name="MobNo" Mode="In" Type="String" />
+      <Parameter Name="IsActive" Mode="In" Type="Boolean" />
+      <Parameter Name="UserType" Mode="In" Type="String" />
+      <Parameter Name="IsUpdateProfile" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="spWebsiteLog">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="Type" Mode="In" Type="String" />
+      <Parameter Name="LogMessage" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspBrokerMessages">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="BrokerId" Mode="In" Type="Int32" />
+      <Parameter Name="InsuranceType" Mode="In" Type="String" />
+      <Parameter Name="Note" Mode="In" Type="String" />
+      <Parameter Name="LocalDateTime" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspCheckBrokerLogin" ReturnType="Collection(Int32)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspCheckForValidEmailId" ReturnType="Collection(BrokerDBModel.uspCheckForValidEmailId_Result)">
+      <Parameter Name="EmailId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspContactBroker">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="BrokerId" Mode="In" Type="Int32" />
+      <Parameter Name="InsuranceType" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspDeleteBrokerDetails">
+      <Parameter Name="EmailId" Mode="In" Type="String" />
+      <Parameter Name="TableName" Mode="In" Type="String" />
+      <Parameter Name="ArrayList" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspDeleteBrokerSubDetailsWeb">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="TableName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspDeleteIndustryId">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="uspDeleteMessage">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="MessageId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="uspDeleteMultipleChatMessages">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="MessageId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspDeleteMultipleMessages">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="MessageId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspForgetPasswordRanNum">
+      <Parameter Name="EmailId" Mode="In" Type="String" />
+      <Parameter Name="ForgetPasswordRanNum" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetBrokerDetails" ReturnType="Collection(BrokerDBModel.uspGetBrokerDetails_Result)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetBrokersAvailabilty" ReturnType="Collection(BrokerDBModel.uspGetBrokersAvailabilty_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetBrokersList" ReturnType="Collection(BrokerDBModel.uspGetBrokersList_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="ZipCode" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="Language" Mode="In" Type="String" />
+      <Parameter Name="Speciality" Mode="In" Type="String" />
+      <Parameter Name="Longitude" Mode="In" Type="String" />
+      <Parameter Name="Latitude" Mode="In" Type="String" />
+      <Parameter Name="Withinmiles" Mode="In" Type="String" />
+      <Parameter Name="SearchCriteria" Mode="In" Type="String" />
+      <Parameter Name="IndustryId" Mode="In" Type="Int32" />
+      <Parameter Name="SubIndustryId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetChatMessages" ReturnType="Collection(BrokerDBModel.uspGetChatMessages_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="TimeSpan" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetChatMessages1" ReturnType="Collection(BrokerDBModel.uspGetChatMessages1_Result)">
+      <Parameter Name="MessageID" Mode="In" Type="Int32" />
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="IsRead" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetChatMessagesByMessageId" ReturnType="Collection(BrokerDBModel.uspGetChatMessagesByMessageId_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="MessageID" Mode="In" Type="Int32" />
+      <Parameter Name="TimeStamp" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetCompanyMaster" ReturnType="Collection(BrokerDBModel.uspGetCompanyMaster_Result)" />
+    <FunctionImport Name="uspGetContactedBrokersList" ReturnType="Collection(BrokerDBModel.uspGetContactedBrokersList_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetContactedList" ReturnType="Collection(BrokerDBModel.uspGetContactedList_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="TimeStamp" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetCurrentTimeSpan" ReturnType="Collection(BrokerDBModel.uspGetCurrentTimeSpan_Result)" />
+    <FunctionImport Name="uspGetIndustryMaster" ReturnType="Collection(BrokerDBModel.uspGetIndustryMaster_Result)">
+      <Parameter Name="CompanyId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetPaymentAmount" ReturnType="Collection(BrokerDBModel.uspGetPaymentAmount_Result)" />
+    <FunctionImport Name="uspGetSubIndustryMaster" ReturnType="Collection(BrokerDBModel.uspGetSubIndustryMaster_Result)">
+      <Parameter Name="IndustryId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetUnreadChatMessages" ReturnType="Collection(BrokerDBModel.uspGetUnreadChatMessages_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="MessageID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetUnreadMsgCount">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="uspgetUnreadMsgCountByDeviceid">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="uspGetUserAndPaymentList" ReturnType="Collection(BrokerDBModel.uspGetUserAndPaymentList_Result)" />
+    <FunctionImport Name="uspHomeInsuranceDetails">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="ZipCode" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="EstimatedValue" Mode="In" Type="String" />
+      <Parameter Name="IsInsured" Mode="In" Type="Boolean" />
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+      <Parameter Name="CoverageExpires" Mode="In" Type="String" />
+      <Parameter Name="Language" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="Longitude" Mode="In" Type="String" />
+      <Parameter Name="Latitude" Mode="In" Type="String" />
+      <Parameter Name="Path" Mode="In" Type="String" />
+      <Parameter Name="DeclarationDocBase64" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspInsertIndustryId">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="IndustryId" Mode="In" Type="Int32" />
+      <Parameter Name="SubIndustryId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="uspInsertNewPayment">
+      <Parameter Name="Amount" Mode="In" Type="Decimal" />
+      <Parameter Name="DateOfEffect" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="uspInsertPaymentDetails" ReturnType="Collection(BrokerDBModel.uspInsertPaymentDetails_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="PaymentId" Mode="In" Type="String" />
+      <Parameter Name="ItemName" Mode="In" Type="String" />
+      <Parameter Name="Description" Mode="In" Type="String" />
+      <Parameter Name="Amount" Mode="In" Type="Decimal" />
+      <Parameter Name="IsPaid" Mode="In" Type="Boolean" />
+      <Parameter Name="PaymentMode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspResetPassword">
+      <Parameter Name="EmailId" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveAutoInsuranceDetails">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="ZipCode" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="VehicleType" Mode="In" Type="String" />
+      <Parameter Name="IsInsured" Mode="In" Type="Boolean" />
+      <Parameter Name="InsuranceCompany" Mode="In" Type="String" />
+      <Parameter Name="CoverageExpires" Mode="In" Type="String" />
+      <Parameter Name="Language" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="Longitude" Mode="In" Type="String" />
+      <Parameter Name="Latitude" Mode="In" Type="String" />
+      <Parameter Name="DocPath" Mode="In" Type="String" />
+      <Parameter Name="DeclarationDocBase64" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveBenefitsInsuranceDetails">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="ZipCode" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="IsInsured" Mode="In" Type="String" />
+      <Parameter Name="InsuranceCompany" Mode="In" Type="String" />
+      <Parameter Name="EmployeeStrength" Mode="In" Type="String" />
+      <Parameter Name="CoverageExpires" Mode="In" Type="String" />
+      <Parameter Name="Language" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="Longitude" Mode="In" Type="String" />
+      <Parameter Name="Latitude" Mode="In" Type="String" />
+      <Parameter Name="IndustryId" Mode="In" Type="Int32" />
+      <Parameter Name="SubIndustryId" Mode="In" Type="String" />
+      <Parameter Name="DocPath" Mode="In" Type="String" />
+      <Parameter Name="DeclarationDocBase64" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveBrokerBasicDetails" ReturnType="Collection(BrokerDBModel.uspSaveBrokerBasicDetails_Result)">
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="ZipCode" Mode="In" Type="String" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+      <Parameter Name="Language" Mode="In" Type="String" />
+      <Parameter Name="Specialities" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="RegistrationCode" Mode="In" Type="String" />
+      <Parameter Name="CompanyLogoPath" Mode="In" Type="String" />
+      <Parameter Name="ProfilePicPath" Mode="In" Type="String" />
+      <Parameter Name="HomeValue" Mode="In" Type="String" />
+      <Parameter Name="AutoType" Mode="In" Type="String" />
+      <Parameter Name="Revenue" Mode="In" Type="String" />
+      <Parameter Name="Employees" Mode="In" Type="String" />
+      <Parameter Name="CoverageAmt" Mode="In" Type="String" />
+      <Parameter Name="IndustryId" Mode="In" Type="String" />
+      <Parameter Name="SubIndustryId" Mode="In" Type="String" />
+      <Parameter Name="longitude" Mode="In" Type="String" />
+      <Parameter Name="latitude" Mode="In" Type="String" />
+      <Parameter Name="Bio" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveBrokerChat" ReturnType="Collection(BrokerDBModel.uspSaveBrokerChat_Result)">
+      <Parameter Name="BrokerMsgId" Mode="In" Type="Int32" />
+      <Parameter Name="BrokerId" Mode="In" Type="Int32" />
+      <Parameter Name="CustomerId" Mode="In" Type="Int32" />
+      <Parameter Name="BrokerMessage" Mode="In" Type="String" />
+      <Parameter Name="CustomerMsgId" Mode="In" Type="Int32" />
+      <Parameter Name="LocalDateTime" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveBrokerCompanyDetails">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="ExpComp" Mode="In" Type="String" />
+      <Parameter Name="ExpDesig" Mode="In" Type="String" />
+      <Parameter Name="ExpFromMonth" Mode="In" Type="String" />
+      <Parameter Name="ExpFromYear" Mode="In" Type="String" />
+      <Parameter Name="ExpToMonth" Mode="In" Type="String" />
+      <Parameter Name="ExpToYear" Mode="In" Type="String" />
+      <Parameter Name="ExpLogoPath" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveBrokerCompanyDetailsNew">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="CompanyId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveBrokerEducationDetails">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="Education" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveBrokerEducationDetailsNew">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="School" Mode="In" Type="String" />
+      <Parameter Name="Degree" Mode="In" Type="String" />
+      <Parameter Name="Year" Mode="In" Type="String" />
+      <Parameter Name="EduLogoPath" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveBrokerFiles">
+      <Parameter Name="FileName" Mode="In" Type="String" />
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="FieldName" Mode="In" Type="String" />
+      <Parameter Name="FieldName1" Mode="In" Type="String" />
+      <Parameter Name="RenamedImageName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveBrokerIndustryDetails">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="IndustryId" Mode="In" Type="String" />
+      <Parameter Name="SubIndustryId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveBusinessInsuranceDetails">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="ZipCode" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="IsInsured" Mode="In" Type="String" />
+      <Parameter Name="InsuranceCompany" Mode="In" Type="String" />
+      <Parameter Name="SICCode" Mode="In" Type="String" />
+      <Parameter Name="Revenue" Mode="In" Type="String" />
+      <Parameter Name="CoverageExpires" Mode="In" Type="String" />
+      <Parameter Name="Language" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="Longitude" Mode="In" Type="String" />
+      <Parameter Name="Latitude" Mode="In" Type="String" />
+      <Parameter Name="IndustryId" Mode="In" Type="Int32" />
+      <Parameter Name="SubIndustryId" Mode="In" Type="String" />
+      <Parameter Name="DocPath" Mode="In" Type="String" />
+      <Parameter Name="DeclarationDocBase64" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveLifeInsuranceDetails">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="ZipCode" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="IsInsured" Mode="In" Type="Boolean" />
+      <Parameter Name="InsuranceCompany" Mode="In" Type="String" />
+      <Parameter Name="Language" Mode="In" Type="String" />
+      <Parameter Name="FaceValue" Mode="In" Type="String" />
+      <Parameter Name="CoverageExpires" Mode="In" Type="String" />
+      <Parameter Name="Notes" Mode="In" Type="String" />
+      <Parameter Name="Longitude" Mode="In" Type="String" />
+      <Parameter Name="Latitude" Mode="In" Type="String" />
+      <Parameter Name="DocPath" Mode="In" Type="String" />
+      <Parameter Name="DeclarationDocBase64" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSetBrokerAvailabilityWithZipCode" ReturnType="Collection(BrokerDBModel.uspSetBrokerAvailabilityWithZipCode_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="Availability" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="uspSetBrokersAvailabilty">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="Availability" Mode="In" Type="Boolean" />
+    </FunctionImport>
+    <FunctionImport Name="uspSetDeviceId">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="DeviceId" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSetIsRead">
+      <Parameter Name="MessageId" Mode="In" Type="String" />
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="MainMessageId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="uspUpdateBrokerBasicDetails">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+      <Parameter Name="Area" Mode="In" Type="String" />
+      <Parameter Name="ZipCode" Mode="In" Type="String" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+      <Parameter Name="Language" Mode="In" Type="String" />
+      <Parameter Name="Specialities" Mode="In" Type="String" />
+      <Parameter Name="CompanyLogoPath" Mode="In" Type="String" />
+      <Parameter Name="ProfilePicPath" Mode="In" Type="String" />
+      <Parameter Name="HomeValue" Mode="In" Type="String" />
+      <Parameter Name="AutoType" Mode="In" Type="String" />
+      <Parameter Name="Revenue" Mode="In" Type="String" />
+      <Parameter Name="Employees" Mode="In" Type="String" />
+      <Parameter Name="CoverageAmt" Mode="In" Type="String" />
+      <Parameter Name="IndustryId" Mode="In" Type="String" />
+      <Parameter Name="SubIndustryId" Mode="In" Type="String" />
+      <Parameter Name="IsProfilePhotoChanged" Mode="In" Type="String" />
+      <Parameter Name="IsCompanyLogoChanged" Mode="In" Type="String" />
+      <Parameter Name="longitude" Mode="In" Type="String" />
+      <Parameter Name="latitude" Mode="In" Type="String" />
+      <Parameter Name="Bio" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspUpdateBrokerForAndroid" ReturnType="Collection(String)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="String" />
+      <Parameter Name="PinCode" Mode="In" Type="String" />
+      <Parameter Name="MobNo" Mode="In" Type="String" />
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+      <Parameter Name="Title" Mode="In" Type="String" />
+      <Parameter Name="Resume" Mode="In" Type="String" />
+      <Parameter Name="Designation" Mode="In" Type="String" />
+      <Parameter Name="Languages" Mode="In" Type="String" />
+      <Parameter Name="Specialities" Mode="In" Type="String" />
+      <Parameter Name="DOB" Mode="In" Type="String" />
+      <Parameter Name="ProfilePicture" Mode="In" Type="String" />
+      <Parameter Name="PhoneNo" Mode="In" Type="String" />
+      <Parameter Name="Awards" Mode="In" Type="String" />
+      <Parameter Name="Skills" Mode="In" Type="String" />
+      <Parameter Name="Recomendations" Mode="In" Type="String" />
+      <Parameter Name="License" Mode="In" Type="String" />
+      <Parameter Name="ExpiryDate" Mode="In" Type="String" />
+      <Parameter Name="Exp_Designation" Mode="In" Type="String" />
+      <Parameter Name="Exp_CompanyName" Mode="In" Type="String" />
+      <Parameter Name="Exp_DurationFrom" Mode="In" Type="String" />
+      <Parameter Name="Exp_DurationTo" Mode="In" Type="String" />
+      <Parameter Name="Exp_Bio" Mode="In" Type="String" />
+      <Parameter Name="Edu_UniversityName" Mode="In" Type="String" />
+      <Parameter Name="Edu_CourseName" Mode="In" Type="String" />
+      <Parameter Name="Edu_DurationFrom" Mode="In" Type="String" />
+      <Parameter Name="Edu_DurationTo" Mode="In" Type="String" />
+      <Parameter Name="UpdateTable" Mode="In" Type="String" />
+      <Parameter Name="ProfilePicImagePath" Mode="In" Type="String" />
+      <Parameter Name="ResumeImagePath" Mode="In" Type="String" />
+      <Parameter Name="IsProfilePicUpdated" Mode="In" Type="String" />
+      <Parameter Name="longitude" Mode="In" Type="String" />
+      <Parameter Name="latitude" Mode="In" Type="String" />
+      <Parameter Name="HomeValue" Mode="In" Type="String" />
+      <Parameter Name="AutoType" Mode="In" Type="String" />
+      <Parameter Name="Revenue" Mode="In" Type="String" />
+      <Parameter Name="Employees" Mode="In" Type="String" />
+      <Parameter Name="CoverageAmt" Mode="In" Type="String" />
+      <Parameter Name="IsCompanyLogoUpdated" Mode="In" Type="String" />
+      <Parameter Name="CompanyLogoPath" Mode="In" Type="String" />
+      <Parameter Name="Edu_Logo" Mode="In" Type="String" />
+      <Parameter Name="IndustryId" Mode="In" Type="String" />
+      <Parameter Name="SubIndustryId" Mode="In" Type="String" />
+      <Parameter Name="UserBio" Mode="In" Type="String" />
+      <Parameter Name="Exp_Logo" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspUpdateBrokerPaymentDoneFlag">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="uspUpdateCustomerForAndroid" ReturnType="Collection(String)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="City" Mode="In" Type="String" />
+      <Parameter Name="State" Mode="In" Type="String" />
+      <Parameter Name="Country" Mode="In" Type="String" />
+      <Parameter Name="PinCode" Mode="In" Type="String" />
+      <Parameter Name="MobNo" Mode="In" Type="String" />
+      <Parameter Name="HouseType" Mode="In" Type="String" />
+      <Parameter Name="AddressOfHouse" Mode="In" Type="String" />
+      <Parameter Name="IsHavingCar" Mode="In" Type="Boolean" />
+      <Parameter Name="NoOfCars" Mode="In" Type="String" />
+      <Parameter Name="TypeOfEmployment" Mode="In" Type="String" />
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+      <Parameter Name="ProfilePicture" Mode="In" Type="String" />
+      <Parameter Name="PhoneNo" Mode="In" Type="String" />
+      <Parameter Name="DOB" Mode="In" Type="String" />
+      <Parameter Name="ProfilePicImagePath" Mode="In" Type="String" />
+      <Parameter Name="IsProfilePicUpdated" Mode="In" Type="String" />
+      <Parameter Name="NoOfEmp" Mode="In" Type="String" />
+      <Parameter Name="Website" Mode="In" Type="String" />
+      <Parameter Name="EstPremium" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspUpdateEducationDetails">
+      <Parameter Name="EduId" Mode="In" Type="Int32" />
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+      <Parameter Name="Edu_UniversityName" Mode="In" Type="String" />
+      <Parameter Name="Edu_CourseName" Mode="In" Type="String" />
+      <Parameter Name="Edu_DurationFrom" Mode="In" Type="String" />
+      <Parameter Name="Edu_DurationTo" Mode="In" Type="String" />
+      <Parameter Name="Edu_Logo" Mode="In" Type="String" />
+      <Parameter Name="IsUpdated" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspVerifyEmailId" ReturnType="Collection(BrokerDBModel.uspVerifyEmailId_Result)">
+      <Parameter Name="EmailId" Mode="In" Type="String" />
+      <Parameter Name="RegistrationCode" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspViewUserProfile" ReturnType="Collection(BrokerDBModel.uspViewUserProfile_Result)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveCustomerChat" ReturnType="Collection(BrokerDBModel.uspSaveCustomerChat_Result)">
+      <Parameter Name="CustMsgId" Mode="In" Type="Int32" />
+      <Parameter Name="CustomerId" Mode="In" Type="Int32" />
+      <Parameter Name="BrokerId" Mode="In" Type="Int32" />
+      <Parameter Name="CustomerMessage" Mode="In" Type="String" />
+      <Parameter Name="BrokerMsgId" Mode="In" Type="Int32" />
+      <Parameter Name="LocalDateTime" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="UserSerchedZipCodes" EntityType="BrokerDBModel.UserSerchedZipCode" />
+    <EntitySet Name="UserZipCodes" EntityType="BrokerDBModel.UserZipCode" />
+    <FunctionImport Name="spCheckUserExist" ReturnType="Collection(BrokerDBModel.spCheckUserExist_Result)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="uspSaveCustomerBasicDetails" ReturnType="Collection(BrokerDBModel.uspSaveCustomerBasicDetails_Result)">
+      <Parameter Name="FirstName" Mode="In" Type="String" />
+      <Parameter Name="LastName" Mode="In" Type="String" />
+      <Parameter Name="Phone" Mode="In" Type="String" />
+      <Parameter Name="Email" Mode="In" Type="String" />
+      <Parameter Name="Address" Mode="In" Type="String" />
+      <Parameter Name="ZipCode" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+      <Parameter Name="RegistrationCode" Mode="In" Type="String" />
+      <Parameter Name="HouseType" Mode="In" Type="String" />
+      <Parameter Name="IsHavingCars" Mode="In" Type="String" />
+      <Parameter Name="NoOfCars" Mode="In" Type="Int32" />
+      <Parameter Name="Occupation" Mode="In" Type="String" />
+      <Parameter Name="CompanyName" Mode="In" Type="String" />
+      <Parameter Name="NoofEmployee" Mode="In" Type="String" />
+      <Parameter Name="EstPremium" Mode="In" Type="String" />
+      <Parameter Name="Website" Mode="In" Type="String" />
+      <Parameter Name="RegisteredFor" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spCheckUserLogin" ReturnType="Collection(BrokerDBModel.spCheckUserLogin_Result)">
+      <Parameter Name="UserName" Mode="In" Type="String" />
+      <Parameter Name="Password" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="BrokerBriefcases" EntityType="BrokerDBModel.BrokerBriefcase" />
+    <EntitySet Name="WatchedVideoHistories" EntityType="BrokerDBModel.WatchedVideoHistory" />
+    <FunctionImport Name="uspGetDeviceId" ReturnType="Collection(String)">
+      <Parameter Name="UserId" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="spGetUserDetails_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PinCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobNo" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DOB" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ProfilePicture" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="String" Name="UserType" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="RegisteredDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="RegisterdType" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsUpdateProfile" Nullable="true" />
+    <Property Type="String" Name="HouseType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AddressofHouse" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsHavingCar" Nullable="true" />
+    <Property Type="Int32" Name="NoOfCars" Nullable="true" />
+    <Property Type="String" Name="TypeOfEmployment" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Resume" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Designation" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Languages" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Specialities" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="RegistrationCode" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="IsEmailIdVerified" Nullable="true" />
+    <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+    <Property Type="String" Name="Awards" Nullable="true" />
+    <Property Type="String" Name="Skills" Nullable="true" />
+    <Property Type="String" Name="Recomendations" Nullable="true" />
+    <Property Type="String" Name="License" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ExpiryDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="longitude" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="latitude" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ProfilePictureImg" Nullable="true" />
+    <Property Type="String" Name="ResumeDoc" Nullable="true" />
+    <Property Type="Boolean" Name="IsPaymentDone" Nullable="true" />
+    <Property Type="String" Name="ForgetPasswordRanNum" Nullable="true" />
+    <Property Type="String" Name="DeviceId" Nullable="true" />
+    <Property Type="String" Name="HomeValue" Nullable="true" />
+    <Property Type="String" Name="AutoType" Nullable="true" />
+    <Property Type="String" Name="Revenue" Nullable="true" />
+    <Property Type="String" Name="Employees" Nullable="true" />
+    <Property Type="String" Name="CoverageAmt" Nullable="true" />
+    <Property Type="String" Name="CompanyLogo" Nullable="true" />
+    <Property Type="String" Name="IndustryId" Nullable="true" />
+    <Property Type="String" Name="SubIndustryId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="spRegisterUser_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProfilePicture" Nullable="true" />
+    <Property Type="String" Name="UserType" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="String" Name="RegisterdType" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsUpdateProfile" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PinCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobNo" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DOB" Nullable="true" Precision="23" />
+    <Property Type="String" Name="HouseType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AddressofHouse" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsHavingCar" Nullable="true" />
+    <Property Type="Int32" Name="NoOfCars" Nullable="true" />
+    <Property Type="String" Name="TypeOfEmployment" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProfilePictureImg" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="spUpdateCustomerForWeb_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PinCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="HouseType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AddressofHouse" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ProfilePicture" Nullable="true" />
+    <Property Type="String" Name="ProfilePictureImg" Nullable="true" />
+    <Property Type="Boolean" Name="IsHavingCar" Nullable="true" />
+    <Property Type="Int32" Name="NoOfCars" Nullable="true" />
+    <Property Type="String" Name="TypeOfEmployment" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="uspCheckForValidEmailId_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PinCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobNo" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DOB" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ProfilePicture" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="String" Name="UserType" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="RegisteredDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="RegisterdType" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsUpdateProfile" Nullable="true" />
+    <Property Type="String" Name="HouseType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AddressofHouse" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsHavingCar" Nullable="true" />
+    <Property Type="Int32" Name="NoOfCars" Nullable="true" />
+    <Property Type="String" Name="TypeOfEmployment" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Resume" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Designation" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Languages" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Specialities" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="RegistrationCode" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="IsEmailIdVerified" Nullable="true" />
+    <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+    <Property Type="String" Name="Awards" Nullable="true" />
+    <Property Type="String" Name="Skills" Nullable="true" />
+    <Property Type="String" Name="Recomendations" Nullable="true" />
+    <Property Type="String" Name="License" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ExpiryDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="longitude" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="latitude" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ProfilePictureImg" Nullable="true" />
+    <Property Type="String" Name="ResumeDoc" Nullable="true" />
+    <Property Type="Boolean" Name="IsPaymentDone" Nullable="true" />
+    <Property Type="String" Name="ForgetPasswordRanNum" Nullable="true" />
+    <Property Type="String" Name="DeviceId" Nullable="true" />
+    <Property Type="String" Name="HomeValue" Nullable="true" />
+    <Property Type="String" Name="AutoType" Nullable="true" />
+    <Property Type="String" Name="Revenue" Nullable="true" />
+    <Property Type="String" Name="Employees" Nullable="true" />
+    <Property Type="String" Name="CoverageAmt" Nullable="true" />
+    <Property Type="String" Name="CompanyLogo" Nullable="true" />
+    <Property Type="String" Name="IndustryId" Nullable="true" />
+    <Property Type="String" Name="SubIndustryId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uspGetBrokerDetails_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PinCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobNo" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DOB" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ProfilePicture" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="String" Name="UserType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RegisterdType" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsUpdateProfile" Nullable="true" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Designation" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Languages" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Specialities" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+    <Property Type="String" Name="Awards" Nullable="true" />
+    <Property Type="String" Name="Skills" Nullable="true" />
+    <Property Type="String" Name="Recomendations" Nullable="true" />
+    <Property Type="String" Name="License" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ExpiryDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Resume" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ProfilePictureImg" Nullable="true" />
+    <Property Type="String" Name="ResumeDoc" Nullable="true" />
+    <Property Type="Boolean" Name="IsPaymentDone" Nullable="true" />
+    <Property Type="String" Name="longitude" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="latitude" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="HomeValue" Nullable="true" />
+    <Property Type="String" Name="AutoType" Nullable="true" />
+    <Property Type="String" Name="Revenue" Nullable="true" />
+    <Property Type="String" Name="Employees" Nullable="true" />
+    <Property Type="String" Name="CoverageAmt" Nullable="true" />
+    <Property Type="String" Name="CompanyLogo" Nullable="true" />
+    <Property Type="String" Name="IndustryId" Nullable="true" />
+    <Property Type="String" Name="SubIndustryId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uspGetBrokersAvailabilty_Result">
+    <Property Type="Boolean" Name="IsAvailable" Nullable="false" />
+    <Property Type="String" Name="longitude" Nullable="false" MaxLength="200" />
+    <Property Type="String" Name="latitude" Nullable="false" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="uspGetBrokersList_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PinCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobNo" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DOB" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ProfilePicture" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="String" Name="UserType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RegisterdType" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsUpdateProfile" Nullable="true" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Designation" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Languages" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Specialities" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Awards" Nullable="true" />
+    <Property Type="String" Name="Skills" Nullable="true" />
+    <Property Type="String" Name="Recomendations" Nullable="true" />
+    <Property Type="String" Name="License" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ExpiryDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="longitude" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="latitude" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ProfilePictureImg" Nullable="true" />
+    <Property Type="String" Name="DeviceId" Nullable="false" />
+    <Property Type="String" Name="CompanyLogo" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uspGetChatMessages_Result">
+    <Property Type="Int32" Name="ChatId" Nullable="false" />
+    <Property Type="Int32" Name="CustMsgId" Nullable="true" />
+    <Property Type="Int32" Name="BrokerMsgId" Nullable="true" />
+    <Property Type="Int32" Name="CustomerId" Nullable="true" />
+    <Property Type="Int32" Name="BrokerId" Nullable="true" />
+    <Property Type="String" Name="CustomerMessage" Nullable="true" />
+    <Property Type="String" Name="BrokerMessage" Nullable="true" />
+    <Property Type="DateTime" Name="MessageDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="101" />
+    <Property Type="DateTime" Name="LocalDateTime" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="uspGetChatMessages1_Result">
+    <Property Type="Int32" Name="ChatId" Nullable="false" />
+    <Property Type="Int32" Name="CustMsgId" Nullable="true" />
+    <Property Type="Int32" Name="CustomerId" Nullable="true" />
+    <Property Type="Int32" Name="BrokerId" Nullable="true" />
+    <Property Type="String" Name="CustomerMessage" Nullable="true" />
+    <Property Type="String" Name="BrokerMessage" Nullable="true" />
+    <Property Type="DateTime" Name="MessageDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsRead" Nullable="true" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProfilePicture" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="uspGetChatMessagesByMessageId_Result">
+    <Property Type="Int32" Name="ChatId" Nullable="false" />
+    <Property Type="Int32" Name="CustMsgId" Nullable="true" />
+    <Property Type="Int32" Name="BrokerMsgId" Nullable="true" />
+    <Property Type="Int32" Name="CustomerId" Nullable="true" />
+    <Property Type="Int32" Name="BrokerId" Nullable="true" />
+    <Property Type="String" Name="CustomerMessage" Nullable="true" />
+    <Property Type="String" Name="BrokerMessage" Nullable="true" />
+    <Property Type="DateTime" Name="MessageDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="101" />
+    <Property Type="Boolean" Name="IsRead" Nullable="true" />
+    <Property Type="DateTime" Name="LocalDateTime" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsDeletedByCustomer" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uspGetCompanyMaster_Result">
+    <Property Type="Int32" Name="CompanyId" Nullable="false" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Logo" Nullable="true" MaxLength="200" />
+  </ComplexType>
+  <ComplexType Name="uspGetContactedBrokersList_Result">
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+    <Property Type="Int32" Name="BrokerId" Nullable="true" />
+    <Property Type="String" Name="InsuranceType" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="uspGetContactedList_Result">
+    <Property Type="Int32" Name="MessageId" Nullable="false" />
+    <Property Type="Int32" Name="BrokerId" Nullable="false" />
+    <Property Type="Int32" Name="CustomerId" Nullable="false" />
+    <Property Type="String" Name="Message" Nullable="true" />
+    <Property Type="DateTime" Name="ContactDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="CustomerName" Nullable="true" MaxLength="101" />
+    <Property Type="String" Name="DeviceId" Nullable="true" />
+    <Property Type="String" Name="ProfilePicture" Nullable="true" />
+    <Property Type="String" Name="ProfilePictureImg" Nullable="true" />
+    <Property Type="Int32" Name="CustomerMsgId" Nullable="true" />
+    <Property Type="DateTime" Name="LocalDateTime" Nullable="true" Precision="23" />
+    <Property Type="String" Name="DeviceId1" Nullable="false" />
+    <Property Type="Boolean" Name="IsRead" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="uspGetCurrentTimeSpan_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PinCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobNo" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DOB" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ProfilePicture" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="String" Name="UserType" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="RegisteredDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="RegisterdType" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsUpdateProfile" Nullable="true" />
+    <Property Type="String" Name="HouseType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AddressofHouse" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsHavingCar" Nullable="true" />
+    <Property Type="Int32" Name="NoOfCars" Nullable="true" />
+    <Property Type="String" Name="TypeOfEmployment" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Resume" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Designation" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Languages" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Specialities" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="RegistrationCode" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="IsEmailIdVerified" Nullable="true" />
+    <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+    <Property Type="String" Name="Awards" Nullable="true" />
+    <Property Type="String" Name="Skills" Nullable="true" />
+    <Property Type="String" Name="Recomendations" Nullable="true" />
+    <Property Type="String" Name="License" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ExpiryDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="longitude" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="latitude" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ProfilePictureImg" Nullable="true" />
+    <Property Type="String" Name="ResumeDoc" Nullable="true" />
+    <Property Type="Boolean" Name="IsPaymentDone" Nullable="true" />
+    <Property Type="String" Name="ForgetPasswordRanNum" Nullable="true" />
+    <Property Type="String" Name="DeviceId" Nullable="true" />
+    <Property Type="String" Name="HomeValue" Nullable="true" />
+    <Property Type="String" Name="AutoType" Nullable="true" />
+    <Property Type="String" Name="Revenue" Nullable="true" />
+    <Property Type="String" Name="Employees" Nullable="true" />
+    <Property Type="String" Name="CoverageAmt" Nullable="true" />
+    <Property Type="String" Name="CompanyLogo" Nullable="true" />
+    <Property Type="String" Name="IndustryId" Nullable="true" />
+    <Property Type="String" Name="SubIndustryId" Nullable="true" />
+    <Property Type="DateTime" Name="TimeSpan" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="uspGetIndustryMaster_Result">
+    <Property Type="Int32" Name="IndustryId" Nullable="false" />
+    <Property Type="String" Name="IndustrySICCode" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="IndustryName" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="uspGetPaymentAmount_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="DateOfEffect" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="uspGetSubIndustryMaster_Result">
+    <Property Type="Int32" Name="IndustryId" Nullable="true" />
+    <Property Type="Int32" Name="SubIndustryId" Nullable="false" />
+    <Property Type="String" Name="SICCode" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="SubIndustryName" Nullable="true" MaxLength="500" />
+  </ComplexType>
+  <ComplexType Name="uspGetUnreadChatMessages_Result">
+    <Property Type="Int32" Name="ChatId" Nullable="false" />
+    <Property Type="Int32" Name="CustMsgId" Nullable="true" />
+    <Property Type="Int32" Name="BrokerMsgId" Nullable="true" />
+    <Property Type="Int32" Name="CustomerId" Nullable="true" />
+    <Property Type="Int32" Name="BrokerId" Nullable="true" />
+    <Property Type="String" Name="CustomerMessage" Nullable="true" />
+    <Property Type="String" Name="BrokerMessage" Nullable="true" />
+    <Property Type="DateTime" Name="MessageDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Name" Nullable="true" MaxLength="101" />
+    <Property Type="DateTime" Name="LocalDateTime" Nullable="true" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="uspGetUserAndPaymentList_Result">
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PinCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="UserType" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="uspInsertPaymentDetails_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="UserId" Nullable="true" />
+    <Property Type="String" Name="PaymentId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ItemName" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Description" Nullable="true" MaxLength="200" />
+    <Property Type="Decimal" Name="Amount" Nullable="true" Precision="18" Scale="2" />
+    <Property Type="DateTime" Name="PaymentDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsPaid" Nullable="true" />
+    <Property Type="String" Name="PaymentMode" Nullable="true" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="uspSaveBrokerBasicDetails_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PinCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobNo" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DOB" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ProfilePicture" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="String" Name="UserType" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="RegisteredDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="RegisterdType" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsUpdateProfile" Nullable="true" />
+    <Property Type="String" Name="HouseType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AddressofHouse" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsHavingCar" Nullable="true" />
+    <Property Type="Int32" Name="NoOfCars" Nullable="true" />
+    <Property Type="String" Name="TypeOfEmployment" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Resume" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Designation" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Languages" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Specialities" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="RegistrationCode" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="IsEmailIdVerified" Nullable="true" />
+    <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+    <Property Type="String" Name="Awards" Nullable="true" />
+    <Property Type="String" Name="Skills" Nullable="true" />
+    <Property Type="String" Name="Recomendations" Nullable="true" />
+    <Property Type="String" Name="License" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ExpiryDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="longitude" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="latitude" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ProfilePictureImg" Nullable="true" />
+    <Property Type="String" Name="ResumeDoc" Nullable="true" />
+    <Property Type="Boolean" Name="IsPaymentDone" Nullable="true" />
+    <Property Type="String" Name="ForgetPasswordRanNum" Nullable="true" />
+    <Property Type="String" Name="DeviceId" Nullable="true" />
+    <Property Type="String" Name="HomeValue" Nullable="true" />
+    <Property Type="String" Name="AutoType" Nullable="true" />
+    <Property Type="String" Name="Revenue" Nullable="true" />
+    <Property Type="String" Name="Employees" Nullable="true" />
+    <Property Type="String" Name="CoverageAmt" Nullable="true" />
+    <Property Type="String" Name="CompanyLogo" Nullable="true" />
+    <Property Type="String" Name="IndustryId" Nullable="true" />
+    <Property Type="String" Name="SubIndustryId" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uspSaveBrokerChat_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="BrokerMsgId" Nullable="true" />
+    <Property Type="Int32" Name="CustMsgId" Nullable="true" />
+    <Property Type="Int32" Name="BrokerId" Nullable="true" />
+    <Property Type="Int32" Name="CustomerId" Nullable="true" />
+    <Property Type="String" Name="BrokerMessage" Nullable="true" />
+    <Property Type="String" Name="CustomerMessage" Nullable="true" />
+    <Property Type="DateTime" Name="MessageDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsRead" Nullable="true" />
+    <Property Type="DateTime" Name="LocalDateTime" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsDeletedByCustomer" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeletedByBroker" Nullable="true" />
+    <Property Type="DateTime" Name="MessageTime" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="uspSetBrokerAvailabilityWithZipCode_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProfilePicture" Nullable="true" />
+    <Property Type="String" Name="UserType" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="String" Name="RegisterdType" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsUpdateProfile" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PinCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobNo" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DOB" Nullable="true" Precision="23" />
+    <Property Type="String" Name="HouseType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AddressofHouse" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsHavingCar" Nullable="true" />
+    <Property Type="Int32" Name="NoOfCars" Nullable="true" />
+    <Property Type="String" Name="TypeOfEmployment" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProfilePictureImg" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uspVerifyEmailId_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProfilePicture" Nullable="true" />
+    <Property Type="String" Name="UserType" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="String" Name="RegisterdType" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsUpdateProfile" Nullable="true" />
+    <Property Type="Boolean" Name="IsEmailIdVerified" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uspViewUserProfile_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PinCode" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobNo" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DOB" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ProfilePicture" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="String" Name="UserType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="RegisterdType" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsUpdateProfile" Nullable="true" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Designation" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Languages" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Specialities" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Awards" Nullable="true" />
+    <Property Type="String" Name="Skills" Nullable="true" />
+    <Property Type="String" Name="Recomendations" Nullable="true" />
+    <Property Type="String" Name="License" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ExpiryDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="Resume" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="ProfilePictureImg" Nullable="true" />
+    <Property Type="String" Name="ResumeDoc" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="uspSaveCustomerChat_Result">
+    <Property Type="Int32" Name="Id" Nullable="false" />
+    <Property Type="Int32" Name="BrokerMsgId" Nullable="true" />
+    <Property Type="Int32" Name="CustMsgId" Nullable="true" />
+    <Property Type="Int32" Name="BrokerId" Nullable="true" />
+    <Property Type="Int32" Name="CustomerId" Nullable="true" />
+    <Property Type="String" Name="BrokerMessage" Nullable="true" />
+    <Property Type="String" Name="CustomerMessage" Nullable="true" />
+    <Property Type="DateTime" Name="MessageDate" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsRead" Nullable="true" />
+    <Property Type="DateTime" Name="LocalDateTime" Nullable="true" Precision="23" />
+    <Property Type="Boolean" Name="IsDeletedByCustomer" Nullable="true" />
+    <Property Type="Boolean" Name="IsDeletedByBroker" Nullable="true" />
+    <Property Type="DateTime" Name="MessageTime" Nullable="false" Precision="23" />
+  </ComplexType>
+  <EntityType Name="UserSerchedZipCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="ZipCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="UserZipCode">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="ZipCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Longitude" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Latitude" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <ComplexType Name="spCheckUserExist_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProfilePicture" Nullable="true" />
+    <Property Type="String" Name="UserType" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="String" Name="RegisterdType" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsUpdateProfile" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PinCode" Nullable="true" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobNo" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DOB" Nullable="true" Precision="23" />
+    <Property Type="String" Name="HouseType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AddressofHouse" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsHavingCar" Nullable="true" />
+    <Property Type="Int32" Name="NoOfCars" Nullable="true" />
+    <Property Type="String" Name="TypeOfEmployment" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="ProfilePictureImg" Nullable="true" />
+    <Property Type="Boolean" Name="IsEmailIdVerified" Nullable="true" />
+    <Property Type="String" Name="RegisteredFor" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NoOfEmp" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="EstPremium" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Website" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="uspSaveCustomerBasicDetails_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailId" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Password" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="true" MaxLength="300" />
+    <Property Type="String" Name="City" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Country" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="PinCode" Nullable="true" />
+    <Property Type="String" Name="PhoneNo" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="MobNo" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="DOB" Nullable="true" Precision="23" />
+    <Property Type="String" Name="ProfilePicture" Nullable="true" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="String" Name="UserType" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="RegisteredDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="RegisterdType" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsUpdateProfile" Nullable="true" />
+    <Property Type="String" Name="HouseType" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="AddressofHouse" Nullable="true" MaxLength="200" />
+    <Property Type="Boolean" Name="IsHavingCar" Nullable="true" />
+    <Property Type="Int32" Name="NoOfCars" Nullable="true" />
+    <Property Type="String" Name="TypeOfEmployment" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="CompanyName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="Title" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Resume" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Designation" Nullable="true" MaxLength="150" />
+    <Property Type="String" Name="Languages" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="Specialities" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="RegistrationCode" Nullable="true" MaxLength="100" />
+    <Property Type="Boolean" Name="IsEmailIdVerified" Nullable="true" />
+    <Property Type="Boolean" Name="IsAvailable" Nullable="true" />
+    <Property Type="String" Name="Awards" Nullable="true" />
+    <Property Type="String" Name="Skills" Nullable="true" />
+    <Property Type="String" Name="Recomendations" Nullable="true" />
+    <Property Type="String" Name="License" Nullable="true" MaxLength="50" />
+    <Property Type="DateTime" Name="ExpiryDate" Nullable="true" Precision="23" />
+    <Property Type="String" Name="longitude" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="latitude" Nullable="true" MaxLength="200" />
+    <Property Type="String" Name="ProfilePictureImg" Nullable="true" />
+    <Property Type="String" Name="ResumeDoc" Nullable="true" />
+    <Property Type="Boolean" Name="IsPaymentDone" Nullable="true" />
+    <Property Type="String" Name="ForgetPasswordRanNum" Nullable="true" />
+    <Property Type="String" Name="DeviceId" Nullable="true" />
+    <Property Type="String" Name="HomeValue" Nullable="true" />
+    <Property Type="String" Name="AutoType" Nullable="true" />
+    <Property Type="String" Name="Revenue" Nullable="true" />
+    <Property Type="String" Name="Employees" Nullable="true" />
+    <Property Type="String" Name="CoverageAmt" Nullable="true" />
+    <Property Type="String" Name="CompanyLogo" Nullable="true" />
+    <Property Type="String" Name="IndustryId" Nullable="true" />
+    <Property Type="String" Name="SubIndustryId" Nullable="true" />
+    <Property Type="String" Name="Bio" Nullable="true" />
+    <Property Type="String" Name="RegisteredFor" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="NoofEmployee" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="EstPremium" Nullable="true" MaxLength="100" />
+    <Property Type="String" Name="Website" Nullable="true" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="spCheckUserLogin_Result">
+    <Property Type="Int32" Name="UserId" Nullable="false" />
+    <Property Type="String" Name="FirstName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="LastName" Nullable="true" MaxLength="50" />
+    <Property Type="String" Name="EmailId" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ProfilePicture" Nullable="false" />
+    <Property Type="String" Name="UserType" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsActive" Nullable="true" />
+    <Property Type="String" Name="RegisterdType" Nullable="true" MaxLength="50" />
+    <Property Type="Boolean" Name="IsUpdateProfile" Nullable="true" />
+    <Property Type="String" Name="Address" Nullable="false" MaxLength="300" />
+    <Property Type="String" Name="City" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="State" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="Country" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="PinCode" Nullable="false" />
+    <Property Type="String" Name="PhoneNo" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="MobNo" Nullable="false" MaxLength="50" />
+    <Property Type="DateTime" Name="DOB" Nullable="false" Precision="23" />
+    <Property Type="String" Name="HouseType" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="AddressofHouse" Nullable="false" MaxLength="200" />
+    <Property Type="Boolean" Name="IsHavingCar" Nullable="true" />
+    <Property Type="Int32" Name="NoOfCars" Nullable="false" />
+    <Property Type="String" Name="TypeOfEmployment" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="CompanyName" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="ProfilePictureImg" Nullable="false" />
+    <Property Type="Boolean" Name="IsEmailIdVerified" Nullable="true" />
+    <Property Type="String" Name="RegisteredFor" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="NoOfEmp" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="EstPremium" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="Website" Nullable="false" MaxLength="100" />
+    <Property Type="Boolean" Name="IsAdmin" Nullable="false" />
+  </ComplexType>
+  <EntityType Name="BrokerBriefcase">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Url" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="IsActivated" Type="Boolean" />
+    <Property Name="IsDeleted" Type="Boolean" />
+    <Property Name="UploadedBy" Type="Int32" />
+    <Property Name="CreateDate" Type="DateTime" Precision="3" />
+    <Property Name="DateFrom" Type="DateTime" Precision="3" />
+    <Property Name="DateTo" Type="DateTime" Precision="3" />
+    <Property Name="AssignedCompany" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="LastUpdateDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="WatchedVideoHistory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="VideoId" Type="Int32" />
+    <Property Name="IsWatched" Type="Boolean" />
+  </EntityType>
+</Schema>

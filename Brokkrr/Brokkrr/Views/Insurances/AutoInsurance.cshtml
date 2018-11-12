@@ -1,0 +1,256 @@
+﻿@model BrokerMVC.Models.AutoInsurance
+@{
+    ViewBag.Title = "AutoInsurance";
+    Layout = "~/Views/Shared/View_CustomerProfileLayout.cshtml";
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home and Auto Insurance</title>
+
+
+    <script type="text/javascript">
+
+        function SubmitAutoInsurance(vtype) {
+
+            var zip, city, lat, lng;
+            city = $('#City').val();
+            zip = $('#ZipCode').val();
+            lng = $('#Longitude').val();
+            lat = $('#Latitude').val();
+
+            if (zip != "") {
+
+                $.ajax({
+                    url: '@Url.Action("VehiclePost", "Insurances")',
+                    type: 'GET',
+                    dataType: 'json',
+                    cache: false,
+                    data: { vtype: vtype, zip: zip, lng: lng, lat: lat, city: city },
+                    success: function (data) {
+                        //  alert(data.Success);
+
+                        window.location.href = '/Insurances/SubAutoInsurance';
+
+                    }
+                });
+            }
+            else {
+                $('#requireZip').css("display", "block");
+                // alert('Please enter Zip');
+            }
+            if (city != "") {
+                $('#requireCity').css("display", "none");
+            }
+            else { $('#requireCity').css("display", "block"); }
+            //alert(vtype);
+        }
+
+        function GetInsCity(e) {
+            // alert("Called " + $("#ZipCode").val());
+            var zipaddress = $("#ZipCode").val();
+            var cityvalue = $('#City').val;
+            if (zipaddress.length >= 5) {
+                $('#requireZip').css("display", "none");
+                $.ajax({
+                    url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + zipaddress + '',
+                    success: function (data) {
+
+                        lat = data.results[0].geometry.location.lat;
+                        lng = data.results[0].geometry.location.lng;
+                        $('#Latitude').val(lat);
+                        $('#Longitude').val(lng);
+
+                        for (var i = 0; i < data.results[0].address_components.length; i++) {
+
+                            for (var b = 0; b < data.results[0].address_components[i].types.length; b++) {
+                                if (data.results[0].address_components[i].types[b] == "postal_code") {
+                                    var zip = data.results[0].address_components[i].long_name;
+                                }
+                                if (data.results[0].address_components[i].types[b] == "locality") {
+                                    localCity = data.results[0].address_components[i].long_name;
+                                    $('#City').val(localCity);
+                                }
+                            }
+                        }
+                        if (cityvalue != "") {
+                            $('#requireCity').css("display", "none");
+                        }
+                        else { $('#requireCity').css("display", "block"); }
+
+                    },
+                    error: function (error) {
+                        //   alert('error; ' + eval(error));
+
+                        $('#requireCity').css("display", "block");
+                    }
+                });
+            }
+            else {
+                $('#requireZip').css("display", "block");
+
+                $('#City').val("");
+            }
+        }
+    </script>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var ZipCode = '@ViewBag.ZipCode';
+            if (ZipCode != "") {
+                //alert("In If");
+                $("#ZipCode").val(ZipCode);
+                GetInsCity($("#ZipCode"));
+            }
+            $('#footerLayout').hide();
+            $('#noresults').hide();
+        };
+    </script>
+
+    <style type="text/css">
+        .red-border-left {
+            border-left: 2px solid #FF0000 !important;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container clearfix">
+
+        <div class="row">
+            <br />
+            <div class="col-lg-12 brokerTag" style="font-weight: bold;font-size: 25px;text-align: center;">
+                <span>HOME AND AUTO INSURANCE</span>
+            </div>
+        </div>
+
+
+        <div class="row" style="padding-bottom:2%;">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs">
+                    <li><a href="~/Insurances/HomeInsurance"><img src="~/Images/Insurance/homeblack.png"></a></li>
+                    <li class="active"><a href="#"><img src="~/Images/Insurance/carblue.png"></a></li>
+                </ul>
+                <div class="cleardiv"></div>
+            </div>
+        </div>
+
+        @using (Html.BeginForm("AutoInsurance", "InsurancesController", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+
+            @*====================================== (Start) ZipCode ========================================*@
+
+            <div class="row">
+                <div class="col-sm-12" style="padding-left:30%;padding-right:22.5%;">
+
+                    <div class="col-sm-4" style="padding-top:2%;padding-left:1%;">@Html.LabelFor(model => model.ZipCode, htmlAttributes: new { @class = "control-label col-md-12 " })</div>
+                    <div class="col-sm-8">
+
+                        <div class="col-sm-6 hrlabel">
+                            @*@Html.TextBoxFor(Model => Model.ZipCode, htmlAttributes: new { @class = "control-label col-md-12 red-border-left", placeholder = "Garage Zip Code", onkeyup = "GetInsCity(this)" })*@
+                            @Html.TextBoxFor(Model => Model.ZipCode, new { @class = "control-label col-md-12 red-border-left", placeholder = "Garage Zip Code", @maxlength = 5, onkeyup = "GetInsCity(this)" })
+                            <div id="requireZip" style="display:none;color:red">
+                                Please enter Valid Zip
+                            </div>
+                        </div>
+                        <div class="col-sm-6 lable">
+                            @*<input data-wrapper-class="city" value="" type="text" id="txtcity" disabled placeholder="City">*@
+                        @Html.TextBoxFor(Model => Model.City, htmlAttributes: new { @class = "control-label col-md-12 city red-border-left", placeholder = "City", @readonly = true })
+                        <div id="requireCity" style="display:none;color:red">City Required</div>
+                    </div>
+
+                    @Html.HiddenFor(Model => Model.Longitude)
+                    @Html.HiddenFor(Model => Model.Latitude)
+                    @*<textarea id="txtlat" style="display:none;" rows="50" cols="50"></textarea>
+                        <textarea id="txtlang" style="display:none;" rows="50" cols="50"></textarea>*@
+                </div>
+            </div>
+        </div>
+
+            @*====================================== (End) ZipCode ========================================*@
+
+
+            <div class="row">
+                <div class="col-md-12" style="padding-left:30%;padding-right:30%;padding-bottom:4%;padding-top:3%;">
+                    <img src="~/Images/Insurance/typeofauto.png" alt="Type of auto" style="width:100%" />
+                </div>
+            </div>
+
+            <div class="row" style="padding-bottom:4%;">
+                <div class="col-sm-12 col-xs-12" align="center"><img src="~/Images/Insurance/icon.png" class="iconimg"></div>
+            </div>
+
+            <div class="row" style="padding-left:25%;padding-right:25%;">
+                <div class="col-md-6 col-sm-6 col-xs-6 lable" style="padding-bottom:4%;">
+
+                    @*<a href="~/Insurances/SubAutoInsurance" id="SelectEconomy"   data-transition="slide">*@
+                    <img src="~/Images/Insurance/Economy.png" class="imgBorder" onclick="SubmitAutoInsurance('Economy')" alt="" style="width:100%; height:80;cursor:pointer;">
+                    @*</a>*@
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 hrlabel" style="padding-bottom:4%">
+                    @*<a href="~/Insurances/SubAutoInsurance" id="SelectStandard"  data-transition="slide">*@
+                    <img src="~/Images/Insurance/standard.png" onclick="SubmitAutoInsurance('Standard')" class="imgBorder" alt=""
+                         style="width:100%; height:80;cursor:pointer;">
+                    @*</a>*@
+                </div>
+            </div>
+            <div class="row" style="padding-left:25%;padding-right:25%;padding-bottom:20%"><!--18April RS padding-bottom:20%-->
+                <div class="col-md-6 col-sm-6 col-xs-6 lable" style="padding-bottom:4%">
+                    @*<a href="~/Insurances/SubAutoInsurance" id="SelectLuxury"  data-transition="slide">*@
+                    <img src="~/Images/Insurance/Luxury.png" onclick="SubmitAutoInsurance('Luxury')" class="imgBorder" alt=""
+                         style="width:100%; height:80;cursor:pointer;">
+                    @*</a>*@
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 hrlabel" style="padding-bottom:4%">
+                    @*<a href="~/Insurances/SubAutoInsurance" id="SelectCollectible"  data-transition="slide">*@
+                    <img src="~/Images/Insurance/collectable.png" onclick="SubmitAutoInsurance('Collectible')"
+                         class="imgBorder" alt="" style="width:100%; height:80;cursor:pointer;">
+                    @*</a>*@
+                </div>
+            </div>
+    <div class="cleardiv"></div>
+        }
+    </div>
+    <script>
+    $(window).scroll(function () {
+        $('#footerLayout').hide();
+        $('#noresults').hide();
+    });
+
+    </script>
+    <footer class="footer-distributed" style="position:fixed;bottom:0;">
+        <div class="container" style="width:100%;">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="padding:0;">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6" style="padding:0;">
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="text-align:center;">
+                            <p class="footer-company-about">
+                                <div class="social-icons" style="margin-bottom:0px;">
+                                    <a href="#"><span class="facebook"></span></a>
+                                    <a href="#"><span class="twitter"></span></a>
+                                    <a href="#"><span class="linkedin"></span></a>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 col-sm-6 col-xs-6" style="margin-bottom: 0%;text-align:center;padding-right: 0;">
+                        <div class="footer-right-header">
+                            @*<div class="copyright">*@
+                            <div>
+                                <p style="display: block;color: #666666;font-size: 16px;font-weight: 800;font-family:'Varela Round',sans-serif;padding-top:2%;">© 2018 brokkrr Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+
+</html>

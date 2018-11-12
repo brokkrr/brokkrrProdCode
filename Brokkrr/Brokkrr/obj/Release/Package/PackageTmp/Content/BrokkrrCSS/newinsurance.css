@@ -1,0 +1,403 @@
+﻿body {
+    font-family: 'Open Sans' !important;
+    margin: 0;
+}
+
+.lines {
+    border-left: solid 1px white;
+    padding-left: 1% !important;
+}
+
+.question-div {
+    height: auto;
+}
+
+.main {
+    height: 30px;
+    /*  padding-left:1%;*/
+    /* border-left:solid 1px white;*/
+}
+
+.next-question-div {
+    padding-top: 2%;
+}
+
+.next-question-button {
+    /* padding-right:2%;*/ /*3Oct17*/
+    cursor: pointer;
+}
+
+.answer {
+    /*width: 300px;
+    height: 120px;
+    border: solid 3px white;
+    float: left;
+    text-align: center;
+    margin: 1%;  
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;*/
+    width: 300px;
+    height: 120px;
+    /*border: solid 3px white;*/
+    border: solid 1px rgb(153,153,153);
+    float: left;
+    text-align: center;
+    margin: 1%;
+    /* padding-top:32px;*/ /*3Oct17*/
+    font-size: 24px;
+    /*3Oct17*/
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(30,172,226);
+}
+
+.answer-small-button {
+    /*width: 121px;
+    height: 50px;
+    border: solid 3px white;
+    float: left;
+    text-align: center;
+    margin: 1%;
+    padding-top: 8px;
+    font-size: 21px;
+    padding-right: 0% !important;*/
+    width: 121px;
+    height: 50px;
+    /*border: solid 3px white;*/
+    border: solid 3px rgb(30,172,226);
+    float: left;
+    text-align: center;
+    margin: 1%;
+    padding-top: 8px;
+    font-size: 21px;
+    padding-right: 0% !important;
+}
+
+
+.extra {
+    width: 235px !important;
+    height: 130px !important;
+    /* padding-top: 48px;*/
+}
+
+ul {
+    line-height: 28px !important;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+li.main {
+    display: flex;
+    flex-flow: row;
+    min-height: 40px;
+    position: relative;
+    height: auto;
+}
+
+.bullet {
+    /*margin-right: 10px;
+    text-align: center;
+    width: 0.5em;
+    height: 0.5em;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 1;
+    margin-top: 9px;*/
+
+    margin-right: 10px;
+    text-align: center;
+    width: 0.5em;
+    height: 0.5em;
+    background-color: rgb(30,172,226);
+    border-radius: 50%;
+    z-index: 1;
+    margin-top: 9px;
+}
+
+.bulletactive {
+    /*margin-right: 10px;
+    text-align: center;
+    width: 0.6em;
+    height: 0.6em;
+    background-color: white;
+    box-shadow: 0px 0px 5px 5px rgb(240,240,240);
+    border-radius: 50%;
+    z-index: 1;*/
+
+     margin-right: 10px;
+    text-align: center;
+    width: 0.6em;
+    height: 0.6em;
+    background-color: rgb(30,172,226);
+    box-shadow: 0px 0px 0px 5px rgb(156,217,242); 
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.line {
+    /*position: absolute;
+    height: 100%;
+    border: solid white 0.4px;
+    top: 0.5em;
+    left: 0.20em;*/
+
+     position: absolute;
+    height: 100%;
+    border: solid rgb(30,172,226) 0.4px;
+    top: 0.5em;
+    left: 0.20em;
+}
+
+li:last-child span.line {
+    display: none;
+}
+
+.blob {
+}
+
+.qusetion {
+    /*font-size: 35px;
+    cursor: pointer;*/
+
+    font-size: 35px;
+    cursor: pointer;
+    color: rgb(30,172,226) !important;
+}
+
+.selectedquestion {
+    font-size: 15px !important;
+}
+
+.selectedanswer {
+    /*font-size: 15px;
+    display: none;
+    cursor: pointer;*/
+
+     font-size: 15px;
+    display: none;
+    cursor: pointer;
+    color: rgb(30,172,226); 
+}
+
+.selected-answer-location {
+    /*font-size: 15px;
+    cursor: pointer;*/
+    font-size: 15px;
+    cursor: pointer;
+    color: rgb(30,172,226) !important;
+}
+
+.select-insurance {
+    /*width: 30%;
+    color: white;
+    border: none;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    padding: 0;
+    font-size: 19px !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 2px 2px 2px 2px;
+    background: transparent url("../../Images/NewAssets/arrow-203-16.png") no-repeat 330px center;*/
+
+     /*width: 30%;*/             /* 16-feb-2018 R.Shah*/
+    /*color: white;*/
+    color: rgb(30,172,226); /* 16-feb-2018 R.Shah*/
+    border: none;
+    /*border-bottom: 1px solid white;*/
+    border-bottom: 1px solid rgb(30,172,226); /* 16-feb-2018 R.Shah*/
+    background-color: transparent;
+    padding: 0;
+    font-size: 19px !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 2px 58px 2px 2px;
+    /*background: transparent url("../../Images/NewAssets/arrow-203-16.png") no-repeat 330px center;*/
+     background: transparent url("../../Images/Insurance/down.png") no-repeat 250px center;
+}
+
+.contactinfo {
+    /*background-color: transparent;
+    border: none !important;
+    border-bottom: 2px solid white !important;
+    width: 70% !important;
+    font-size: 18px !important;*/
+
+     background-color: transparent;
+    border: none !important;
+    /*border-bottom: 2px solid white !important;*/
+    border-bottom: 2px solid rgb(153,153,153) !important; /* 16-feb-2018 R.Shah*/
+    width: 70% !important;
+    font-size: 18px !important;
+}
+
+
+.hideline {
+    display: none;
+}
+
+select.select-insurance option {
+    /*  background-color: #FFF;
+    color: black;*/
+    color: white;
+    background-color: rgb(72,205,255);
+}
+
+.ui-igcombo-fieldholder input[type="text"] {
+    /*border: 0;
+    background: none !important;
+    font-size: 19px !important;
+    color: white;
+    padding-bottom: 10px;
+    padding: 0px;
+    margin: 0;*/
+
+     border: 0;
+    background: none !important;
+    font-size: 19px !important;
+    color: rgb(30,172,226);                             /*20-Feb-2018 R.Shah*/
+    padding-bottom: 10px;
+    padding: 0px;
+    margin: 0;
+}
+
+.messageClass {
+    display: block;
+    width: 50%;
+    /*border: 1px solid white;*/
+    border-radius: 21px;
+    font-size: 15px;
+    text-align: left;
+    display: block;
+    padding-top: 2%;
+    font-weight: bold;
+}
+
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    //color: #fff !important;
+     color: rgb(153,153,153); /* 16-feb-2018 R.Shah*/
+    opacity: 3.5;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    /*color: #fff !important;*/
+     color: rgb(153,153,153); /* 16-feb-2018 R.Shah*/
+    opacity: 3.5;
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+    /*color: #fff !important;*/
+    color: rgb(153,153,153); /* 16-feb-2018 R.Shah*/
+    opacity: 3.5;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+    /*color: #fff !important;*/
+      color: rgb(153,211,212); /* 16-feb-2018 R.Shah*/
+    opacity: 3.5;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    /*color: #fff !important;*/
+     color: rgb(153,153,153); /* 16-feb-2018 R.Shah*/
+    opacity: 3.5;
+}
+
+.validationerror {
+    border-bottom-color: red !important;
+}
+
+
+
+
+.isinsured {
+    /*font-size: 30px !important;
+    margin-bottom: 2%;*/
+
+      font-size: 30px !important;
+    margin-bottom: 2%;
+    color: rgb(30,172,226); /* 16-feb-2018 R.Shah*/
+}
+
+.fontsize20 {
+    /*font-size: 20px;*/
+    font-size: 20px;
+    color: rgb(30,172,226); /* 16-feb-2018 R.Shah*/
+}
+
+
+.contactbtn {
+    border: none;
+    background-color: rgb(72,205,255);
+    color: #fff;
+    height: 40px;
+    width: 100%;
+    border-radius: 21px;
+    font-family: open sans;
+    font-size: 20px;
+}
+
+.typeofinsurance {
+    font-size: 20px;
+    margin: 15px;
+}
+
+
+
+#loading {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    display: block;
+    /*opacity: 0.5;
+   background-color: #fff;*/
+    z-index: 99;
+    text-align: center;
+    display: none;
+}
+
+#loading-image {
+    position: absolute;
+    top: 40%;
+    left: 45%;
+    z-index: 100;
+}
+
+.Insurancemain {
+    /*font-size: 20px;
+    padding-left: 10%;
+    padding-top: 2%;
+    min-height: 900px;
+    max-height: 1100px;
+    height: auto;
+  
+    color: white;*/
+
+     font-size: 20px;
+    /*padding-left: 10%;*/
+    padding-top: 2%;
+    /*min-height: 900px;
+    max-height: 1100px;*/
+    /*height: auto;*/
+    /*background-color:rgb(72,205,255);*/
+    /*background-image: url(../../Images/NewAssets/Insurance_bg.png) !important;
+    background-repeat: no-repeat;*/
+    /*color: white;*/
+    color: rgb(30,172,226); /* 16-feb-2018 R.Shah*/
+    padding-left:0px;
+}
+
+.Insurancemainblur {
+    opacity: 0.5 !important;
+    background-color: white !important;
+}

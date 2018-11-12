@@ -1,0 +1,607 @@
+﻿@{
+    ViewBag.Title = "Terms and Conditions";
+    //Layout = "~/Views/Shared/View_CustomerProfileLayout.cshtml";
+    Layout = "~/Views/Shared/_TermsandPolicyLayout.cshtml";
+    //Layout = null;
+}
+
+
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<!-- /css links -->
+<script type="text/javascript" src="~/Scripts/Scripts2/jquery.min.js"></script>
+<script src="~/Scripts/Scripts2/bootstrap.min.js"></script>
+
+@*<script src="~/Scripts/Scripts1/jquery-1.10.2.js"></script>
+
+    <script src="~/Scripts/Scripts1/jquery-ui.js"></script>*@
+
+
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+<style type="text/css">
+    .meinekelogo {
+        padding-top: 20px;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    @@media only screen and (min-width:2880px) {
+        .profilefooter {
+            margin-bottom: 20%;
+        }
+
+        .meinekelogo {
+            padding-top: 60px;
+            padding-right: 0;
+            text-align: center;
+        }
+    }
+
+    @@media only screen and (min-width:3840px) {
+        .profilefooter {
+            margin-bottom: 21% !important;
+        }
+
+        .meinekelogo {
+            padding-top: 68px;
+            padding-right: 0;
+            text-align: center;
+        }
+    }
+</style>
+
+<style type="text/css">
+    .modal-open {
+        overflow-y: scroll !important;
+    }
+
+    /*Square Images (Start)*/
+    .imageClass {
+        object-fit: cover;
+        -webkit-object-fit: cover !important;
+        -moz-object-fit: cover;
+        -ms-object-fit: cover;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+
+    .circular--square {
+        border-radius: 50%;
+    }
+
+    .circular--square {
+        border-top-left-radius: 50% 50%;
+        border-top-right-radius: 50% 50%;
+        border-bottom-right-radius: 50% 50%;
+        border-bottom-left-radius: 50% 50%;
+    }
+
+    /*Square Images (End)*/
+
+
+    /*landscape Images (Start)*/
+
+    .circular--landscape {
+        display: inline-block;
+        position: relative;
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+
+        .circular--landscape img {
+            width: auto;
+            height: 100%;
+            margin-left: -50px;
+        }
+
+    /*landscape Images (End)*/
+
+    /*portrait Images (Start)*/
+
+    .circular--portrait {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+
+        .circular--portrait img {
+            width: 100%;
+            height: auto;
+        }
+
+
+    /*portrait Images (End)*/
+
+
+    .myprofiletag {
+        margin: 5%;
+        margin-bottom: 2%;
+        font-size: 40px;
+    }
+
+    #profileImage1 {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        background: rgb(235,235,235);
+        font-size: 60px;
+        color: #fff;
+        text-align: center;
+        line-height: 135px;
+        /*margin: 20px 0;*/
+    }
+
+    .detailslabel {
+        font-size: 12px;
+        color: rgb(153,153,153);
+        font-weight: 300;
+    }
+
+    .input {
+        border: none;
+        margin-top: 2%;
+        font-size: 18px;
+        border-bottom: 2px;
+        width: 100%;
+    }
+
+    .hr {
+        margin-top: 5px;
+        margin-bottom: 0px;
+        border-top: 2px solid rgb(204,204,204);
+    }
+
+    .hrRequired {
+        margin-top: 5px;
+        margin-bottom: 0px;
+        border-top: 2px solid red;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $(".notification").css("display", "none");
+
+        $("#ZipCode").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        });
+
+    });
+</script>
+
+<script>
+    window.onload = function () {
+
+        $('#footerLayout').hide();
+        $('#username').css('display', 'none');
+        $('#usernamedropdown').css('display', 'none');
+
+    };
+
+</script>
+
+<script type="text/javascript">
+    function openfileDialog() {
+        $("#fileToUpload").click();
+
+        $("#fileToUpload").change(function () {
+
+            if (this.files[0].size / 1024 <= 4096) {
+                $("#ProfilePhoto1").val($(this).val());
+                $("#IsProfilePhotoChanged").val("Yes");
+
+                //var data = new FormData();
+                //var files = $("#fileToUpload").get(0).files;
+                //if (files.length > 0) {
+                //    data.append("HelpSectionImages", files[0]);
+                //}
+
+                //$.ajax({
+                //    url: "/Profile/UploadProfilePicture",
+                //    type: "POST",
+                //    processData: false,
+                //    contentType: false,
+                //    data: data,
+                //    success: function (response) {
+                //        $('#profilepicprofile').css('display', 'block');
+                //        $('#profileImage1').css('display', 'none');
+                //        $("#profilepicprofile").fadeOut(600, function () {
+                //            $('#profilepicprofile').attr("src", response.ImagePath).fadeIn(600);
+                //        });
+
+                //    },
+                //    error: function (er) {
+                //    }
+
+                //});
+            }
+            else {
+                //alert("Called start");
+                $("#fileToUpload").val('');
+                $("#ProfilePhoto1").val('');
+                $("#IsProfilePhotoChanged").val("No");
+
+                $("#lblError").text('File Size Should not greater than 4 MB.');
+                //alert("Called End");
+                $("#ModalError").modal('show');
+
+            }
+        });
+
+    }
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#profilepicprofile')
+                    .attr('src', e.target.result);
+                $('#profilepicprofile').css('display', 'block');
+                $('#profileImage1').css('display', 'none');
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    function CheckValidation() {
+
+        //alert("Called CheckValidation()");
+
+
+
+        var IsValidFirstName = false;
+        var IsValidLastName = false;
+        var IsValidPhoneNo = false;
+        var IsValidZipCode = false;
+        var IsValidEmailId = false;
+
+        var FirstName = $("#FirstName").val();
+        var LastName = $("#LastName").val();
+        var PhoneNo = $("#PhoneNo").val();
+        var ZipCode = $("#ZipCode").val();
+        var EmailId = $("#EmailId").val();
+
+        if (FirstName != "") {
+            //alert("inside fn if");
+            IsValidFirstName = true;
+            //$("#hrFirstName").removeClass("hrRequired");
+            //$("#hrFirstName").addClass("hr");
+        }
+        else {
+            //alert("else fn if");
+            IsValidFirstName = false;
+            //$("#hrFirstName").removeClass("hr");
+            //$("#hrFirstName").addClass("hrRequired");
+        }
+
+        if (LastName != "") {
+
+            IsValidLastName = true;
+            //$("#hrLastName").removeClass("hrRequired");
+            //$("#hrLastName").addClass("hr");
+        }
+        else {
+
+            IsValidLastName = false;
+            //$("#hrLastName").removeClass("hr");
+            //$("#hrLastName").addClass("hrRequired");
+        }
+
+        if (PhoneNo != "") {
+
+            IsValidPhoneNo = true;
+            //$("#hrPhoneno").removeClass("hrRequired");
+            //$("#hrPhoneno").addClass("hr");
+        }
+        else {
+
+            IsValidPhoneNo = false;
+            //$("#hrPhoneNo").removeClass("hr");
+            // $("#hrPhoneNo").addClass("hrRequired");
+        }
+
+        if (ZipCode != "") {
+            if (ZipCode.length < 5) {
+                IsValidZipCode = false;
+                //$("#hrZipCode").removeClass("hr");
+                //$("#hrZipCode").addClass("hrRequired");
+            }
+            else {
+                IsValidZipCode = true;
+                //$("#hrZipCode").removeClass("hrRequired");
+                //$("#hrZipCode").addClass("hr");
+            }
+        }
+        else {
+
+            IsValidZipCode = false;
+            //$("#hrZipCode").removeClass("hr");
+            //$("#hrZipCode").addClass("hrRequired");
+        }
+
+        if (EmailId != "") {
+
+            IsValidEmailId = true;
+            //$("#hrEmailId").removeClass("hrRequired");
+            //$("#hrEmailId").addClass("hr");
+        }
+        else {
+
+            IsValidEmailId = false;
+            //$("#hrEmailId").removeClass("hr");
+            //$("#hrEmailId").addClass("hrRequired");
+        }
+
+        if (IsValidFirstName == true && IsValidLastName == true && IsValidPhoneNo == true && IsValidZipCode == true && IsValidEmailId == true) {
+            $("#btnSave").prop("disabled", "disabled");
+            $("#btnSave").css("opacity", "0.2");
+            return true;
+        }
+        else {
+            //alert("False");
+            return false;
+        }
+    }
+
+
+
+</script>
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="~/Images/Assets/brokkrIcon24x24.png">
+    <title>Terms and Conditions</title>
+</head>
+<body>
+    <div class="container profilefooter">
+        <div class="row">
+            <div class="col-lg-12 col-md-12" style="margin-top: 10px; margin-bottom: 10px;">
+                <div class="col-lg-1 col-md-1"></div>
+                <div class="col-lg-10 col-md-10">
+                    <div style="font-size: 28px;">
+                        Terms and Conditions
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1"></div>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:25px;">
+            <div class="col-lg-12 col-md-12">
+                <div class="col-lg-1 col-md-1"></div>
+                <div class="col-lg-10 col-md-10">
+                    @*@*<div style="font-size: 28px;">
+                            Terms and Conditions
+                        </div>*@
+                    LAST REVISED: October 9, 2018<br /><br />
+                    PLEASE READ THESE TERMS OF SERVICE CAREFULLY. BY ACCESSING OR USING THE BROKKRR APPLICATIONS OR ANY SERVICES PROVIDED BY US, YOU AGREE TO BE BOUND BY THESE TERMS OF SERVICE AND OUR PRIVACY POLICY. IF YOU DO NOT AGREE TO ALL OF THESE TERMS AND CONDITIONS, DO NOT ACCESS OR USE THE BROKKRR APPLICATION OR ANY SERVICES PROVIDED BY US.<br /><br />
+                    THESE TERMS INCLUDE AN AGREEMENT TO MANDATORY ARBITRATION, WHICH MEANS THAT YOU AGREE TO SUBMIT ANY DISPUTE RELATED TO YOUR USE OF ANY OF THE SITES TO BINDING ARBITRATION RATHER THAN A COURT. THE BINDING ARBITRATION PROVISION ALSO INCLUDES A CLASS ACTION WAIVER, WHICH MEANS THAT YOU AGREE TO PROCEED WITH ANY ARBITRATION INDIVIDUALLY AND NOT AS PART OF A CLASS.<br /><br />
+                    These terms of service (these “Terms”) apply to your access and use of the mobile applications, websites, emails, text messages and social media accounts (collectively, the “Application”) owned, operated or provided by brokkrr, Inc. (“brokkrr”, “we”, “our” or “us”) and any feature, content, tools and services accessible by means of the Application as well as seeking insurance agents or brokers through the Service. The Application and these services are collectively referred to as the “Service.” These Terms do not alter in any way the terms or conditions of any other agreement you may have with brokkrr for the Service (or any part thereof). If you are using the Service on behalf of an entity, you represent and warrant that you are authorized to accept these Terms on the entity’s behalf, and that the entity agrees to be responsible to brokkrr if you violate these Terms.<br /><br />
+                    Your use of the Service is conditioned upon the version of these Terms in force at the time of your use. We reserve the right to change these Terms at any time and you waive any right you may have to receive specific notice of such changes or modifications. All changes to these Terms are effective immediately when we post them and apply to use of the Application and Services thereafter. If you continue to access or use the Service following our posting of any changes to these Terms, we will consider that you have accepted the changes. Therefore, you must regularly review these Terms to ensure you understand the terms and conditions that apply to your access and use of the Service. If you do not agree to the changed Terms, you must stop accessing or using the Service. We also recommend you regularly update to the most recent version of our mobile applications to allow you to
+                    take advantage of new functionality and to ensure you have access to the most recent terms of service and promotional offer terms (changes thereto aren’t viewable until you update the apps). You recognize that changes to the terms and/or promotional offers may occur and that you will be bound to these changes, notwithstanding the fact that you were not aware of them due to your failure to update the app. Your use of the app, and failure to update to the most recent version, constitutes your agreement that brokkrr shall have no liability to you, and you release brokkrr, and its parent, officers, directors employees and agents, from and against any liability, for any changes to terms of service or promotional offers which were available but that which you were not aware of due to your failure to update the app.<br /><br />
+                    If you have any questions regarding the use of the Service, please email us at <u>info@brokkrr.com</u>.<br /><br />
+
+                    <b>PRIVACY POLICY</b><br /><br />
+                    Please refer to our <a href="@Url.Action("PrivacyPolicy", "Home")">Privacy Policy</a>, which also governs your use of the Application, to understand our practices, including how we collect, use and disclose personally identifiable information from our users.<br /><br />
+
+                    <b>DEVICE USAGE TERMS AND CONDITIONS</b> <br /><br />
+                    You acknowledge and agree that your use of the Service must also be in accordance with the usage rules established by your mobile device platform or service provider.<br /><br />
+
+                    <b>REGISTRATION DATA; ELIGIBILITY </b><br /><br />
+                    To access certain areas and features of the Service, you may be required to register with brokkrr. If you register, you will (i) provide accurate, current and complete information about you as may be prompted by any signup, login and/or registration forms made available via the Service (the “Registration Data“); (ii) maintain and promptly update the Registration Data, and any other information you provide to brokkrr, in order to keep it accurate, current and complete; and (iii) accept all risk of unauthorized access to the Registration Data and any other information you provide to brokkrr.
+                    brokkrr is under no obligation to retain a record of your account or any data or information that you may have stored by means of your account or your use of the Service. You are only authorized to create and use one account for the Service and are prohibited from using alter egos or other disguised identities when using the Service. You are under no obligation to use or continue to use the Service and may stop using the Service without notice to brokkrr.<br /><br />
+                    You may not use the Service if you are under 18 years of age (or the age of majority in your jurisdiction).<br /><br />
+
+                    <b>GRANT AND RESTRICTIONS </b><br /><br />
+                    Subject to the terms, conditions and limitations set forth in these Terms, brokkrr grants you a non-exclusive, non-transferable and revocable license to use the Application on any mobile device that you own or control. The terms of the license will also govern any upgrades provided by brokkrr that replace and/or supplement the original Application, unless the upgrade is accompanied by a separate license, in which case the terms of that license will govern.
+                    You will not do, and will not authorize or permit any third party to do, any of the following: (i) distribute or make the Application available over a network where it could be used by multiple devices at the same time; (ii) rent, lease, lend, sell, redistribute or sublicense the Application; (iii) copy, decompile, reverse engineer, disassemble, attempt to derive the source code of, modify or create derivative works of the Application, any updates or any part thereof (except as and only to the extent any of the foregoing restrictions are prohibited by applicable law) or (iv) remove, alter or obscure any copyright, trademark or other proprietary rights notice on or in the Application. If you violate any of the foregoing restrictions, your right to use of the Application will immediately cease, and you will have infringed the copyright and other rights of brokkrr, which may subject you to prosecution and damages. brokkrr reserves all rights not expressly granted to you in these Terms.<br /><br />
+
+                    <b>CONSENT TO USE OF DATA AND MOBILE COMMUNICATIONS</b><br /><br />
+                    In exchange for brokkrr providing you with access to the Service, you consent to brokkrr collecting and using technical data, personal information and related information in connection with your use of the Service, including, but not limited to, contact information and technical information about your device, system and application software, and peripherals, that are gathered periodically to facilitate the features and functionality of the Service and of software updates, product support and other services. You also consent to our communicating with you about the Service.<br /><br />
+
+                    <b>COMPATIBILITY WITH MOBILE DEVICES</b><br /><br />
+                    brokkrr does not warrant that the Service will be compatible or interoperable with your mobile device or any other hardware, software or equipment installed on or used in connection with your mobile device.<br /><br />
+
+                    <b>CARRIER CHARGES</b><br /><br />
+                    The Service requires and uses phone service, data access and text messaging capabilities. Carrier rates for phone, data and text messaging may apply, and you are responsible for all of these charges.<br /><br />
+
+                    <b>PRODUCT DESCRIPTIONS</b><br /><br />
+                    brokkrr attempts to be as accurate as possible. If you have reason to believe that the agent through the Service or other product or feature does not meet the claims advertised within the Service, you must contact brokkrr immediately (and in any case no later than three business days following the issue). Your failure to contact us within this period may affect our ability to investigate and resolve your claim.<br /><br />
+
+                    <b>OBTAINING INSURANCE SERVICES THROUGH THE BROKKRR SERVICE</b><br /><br />
+                    When you obtain insurance through an agent or broker using the Service, you are representing that any information you supply is true and complete.<br /><br />
+
+                    <b>ELECTRONIC COMMUNICATIONS</b><br /><br />
+                    When you use the Service or send emails to us, you are communicating with us electronically, and you consent to receive communications from us electronically. We will communicate with you by email or providing notices via the Service. You agree that all agreements, notices, disclosures and other communications that we provide to you electronically satisfy any legal requirement that these communications be in writing. Electronic communications from us, including emails, may include marketing and promotional content.<br /><br />
+
+                    <b>THIRD-PARTY INTERACTIONS</b><br /><br />
+                    Your use of the Service and your contact, interaction or dealings with any third parties arising out of your use of the Service is solely at your own risk. The agents of brokkrr are independent contractors and not agents or employees of brokkrr. brokkrr is not responsible for, and will not be held liable for, the acts, errors, omissions, representations, warranties, breaches or negligence of any of these agents for any personal injuries, death, property damage, loss, theft or other damages or expenses resulting therefrom.<br /><br />
+
+                    <b>USER CONTENT AND YOUR CONDUCT</b><br /><br />
+                    The Service includes forums and other interactive areas or services (“Interactive Areas”) in which you or other users can create, post or share content, materials, data, information, text, photos and/or other materials (“User Content”). You are solely responsible for your use of such Interactive Areas and the User Content you share. You hereby grant brokkrr a perpetual, irrevocable license to (i) use, adapt, modify, create derivative works from and publicly display any User Content you post, upload or otherwise provide to brokkrr and (ii) use the name and profile picture associated with your User Content submission. You acknowledge that brokkrr may choose to provide attribution of your User Content at our discretion.<br /><br />
+
+                    You agree not to post, upload to, transmit, distribute, store, create or otherwise publish through the Service any of the following:<br /><br />
+                    • User Content that is libelous, defamatory, profane, obscene, pornographic, sexually explicit, indecent, lewd, vulgar, suggestive, violent, harassing, hateful, threatening, offensive, discriminatory, bigoted, abusive, inflammatory, fraudulent, deceptive or otherwise objectionable;<br />
+                    • User Content that is illegal or unlawful, that would constitute, encourage or provide instructions for a criminal offense, or that would otherwise create liability or violate any local, state, provincial, national or international law;<br />
+                    • User Content that may infringe or violate any patent, trademark, trade secret, copyright, right of privacy, right of publicity or other intellectual property right, or any other right, of any party;<br />
+                    • Unsolicited promotions, political campaigning or commercial messages (SPAM), or any chain messages or User Content designed to deceive or trick a user of the Service;<br />
+                    • Private information of any third party including, but not limited to, addresses, phone numbers, email addresses, Social Security numbers and credit card numbers; and<br />
+                    • Viruses, corrupted data or other harmful, disruptive or destructive files or code, script or other software designed to automate any functionality on the Service without brokkrr’s express written consent.<br />
+                    You further agree that you are solely responsible for your conduct while using the Service and that you will not do any of the following in connection with the Service or its users:
+                    • Use the Service in any manner that could interfere with, disrupt, negatively affect or inhibit other users from fully enjoying the Service or that could damage, disable, overburden or impair the functioning of the Service in any manner;<br />
+                    • Harass, threaten, or intimidate Service employees with inappropriate language or behavior;<br />
+                    • Collect any personally identifiable information about other users (except as specifically authorized by brokkrr), or intimidate, threaten, stalk or otherwise harass or cause discomfort to other users of the Service;<br />
+                    • Use the Service for any commercial purpose;<br />
+                    • Use the Service for any illegal or unauthorized purpose or engage in, encourage or promote any illegal activity or any activity that violates these Terms or any other rules or policies established from time-to-time by brokkrr;<br />
+                    • Create an account, post any content, or otherwise use the Service if you are not at least 18 years of age;<br />
+                    • Modify, adapt, hack or emulate the Service;<br />
+                    • Circumvent or attempt to circumvent any filtering, security measures or other
+                    features designed to protect the Service or users of the Service or third- parties; and<br />
+                    • Infringe upon or violate the rights of brokkrr, our users or any third party.
+                    brokkrr takes no responsibility and assumes no liability for any user conduct or for any User Content posted, stored or made available via the Service. brokkrr will not be liable for any mistakes, defamation, slander, libel, omissions, falsehoods, obscenity, pornography or profanity you may encounter through the Service. Your use of the Service, including any Interactive Areas, is at your own risk. Enforcement of the user content and conduct rules set forth in these Terms is solely at brokkrr’s discretion, and failure to enforce such rules in some instances does not constitute a waiver of our right to enforce such rules in other instances. In addition, these rules do not create any private right of action on the part of any third party or any reasonable expectation that the Service will not contain any content that is prohibited by these rules.<br /><br />
+
+                    <b>THIRD-PARTY CONTENT</b><br /><br />
+                    brokkrr may provide third-party content via the Service and may provide links to webpages and content of third parties (collectively, “Third-Party Content”) as a service to those interested in this information. brokkrr does not control, endorse or adopt any Third-Party Content and makes no representation or warranties of any kind regarding Third-Party Content including, but not limited to, its accuracy or completeness. brokkrr is not responsible or liable in any manner for any Third-Party Content and undertakes no responsibility to update or review any Third-Party Content. Users use Third-Party Content at their own risk.<br /><br />
+
+                    <b>ADVERTISEMENTS AND PROMOTIONS; THIRD-PARTY PRODUCTS AND SERVICES</b><br /><br />
+                    brokkrr may run advertisements and promotions from third parties via the Service or may otherwise provide information about or links to third-party products or services via the Service. Your business dealings or correspondence with, or participation in promotions of, these third parties, and any terms, conditions, warranties or representations associated with such dealings or promotions, are solely between you and those third parties. brokkrr is not responsible or liable for any loss or damage incurred as the result of any such dealings or promotions or as the result of the presence of non-brokkrr advertisers or third-party information accessible via the Service.<br /><br />
+
+                    <b>OWNERSHIP</b><br /><br />
+                    The Service (including, but not limited to, the Application) contains the valuable proprietary content of brokkrr and our licensors and is protected by copyright and other intellectual property laws and treaties. You will not use the
+                    Service (including, but not limited to, the Application) except in its intended manner in accordance with the terms and conditions of these Terms.<br /><br />
+
+                    <b>TERMINATION OR MODIFICATION OF APPLICATION</b><br /><br />
+                    brokkrr reserves the right to change, suspend, remove, discontinue or disable access to the Service (including, but not limited to, the Application) at any time without notice. In no event will brokkrr be liable for the removal of or disabling of access to any portion or feature of the Service (including, but not limited to, the Application).<br /><br />
+
+                    <b>TERMINATION</b><br /><br />
+                    If you breach any of the terms or conditions of these Terms or brokkrr discontinues the Application, these Terms will automatically terminate. In the event of the termination of these Terms for any reason, the license granted to you in these Terms will immediately terminate and you must immediately stop all use of the Service (including the Application) and destroy or erase all copies of the Application in your possession or control. All of the sections of these Terms that by their nature should survive termination will survive any termination of these Terms. For avoidance of doubt, the License section will not survive termination of these Terms. Any use of the Service after termination is unlicensed and is in violation of the copyright and other rights of brokkrr. brokkrr and our affiliates reserve the right to refuse service, terminate accounts, remove or edit content or cancel orders in our sole discretion.<br /><br />
+
+                    <b>UNLAWFUL ACTIVITY</b><br /><br />
+                    We reserve the right to investigate complaints or reported violations of these Terms and to take any action we deem appropriate, including, but not limited to, reporting any suspected unlawful activity to law enforcement officials, regulators or other third parties, and disclosing any information necessary or appropriate to such persons or entities relating to your Registration Data, usage history, posted materials, IP addresses and traffic information.<br /><br />
+
+                    <b>INFORMATION AND PRESS RELEASES</b><br /><br />
+                    The Site may contain information and press releases about us. We disclaim any duty or obligation to update this information. Information about companies other than ours contained in any press release or otherwise should not be relied upon as being provided or endorsed by us.<br /><br />
+
+                    <b>DISCLAIMERS</b><br /><br />
+                    TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SERVICE (INCLUDING, BUT NOT LIMITED TO, THE APPLICATION) IS PROVIDED ON AN “AS IS” AND “AS AVAILABLE” BASIS. BROKKRR DISCLAIMS ANY AND ALL WARRANTIES AND REPRESENTATIONS (EXPRESS OR IMPLIED, ORAL OR WRITTEN) WITH RESPECT TO THESE
+                    TERMS AND THE SERVICE (INCLUDING, BUT NOT LIMITED TO, THE APPLICATION) WHETHER ALLEGED TO ARISE BY OPERATION OF LAW, BY REASON OF CUSTOM OR USAGE IN THE TRADE, BY COURSE OF DEALING OR OTHERWISE, INCLUDING ANY AND ALL: (I) WARRANTIES OF MERCHANTABILITY; (II) WARRANTIES OF FITNESS OR SUITABILITY FOR ANY PURPOSE (WHETHER OR NOT BROKKRR KNOWS, HAS REASON TO KNOW, HAS BEEN ADVISED OR IS OTHERWISE AWARE OF ANY SUCH PURPOSE); AND (III) WARRANTIES OF NON-INFRINGEMENT OR CONDITION OF TITLE. BROKKRR DOES NOT WARRANT THAT THE FUNCTIONS CONTAINED IN THE APPLICATION WILL BE ACCURATE OR MEET YOUR REQUIREMENTS, THAT THE OPERATION OF THE APPLICATION WILL BE UNINTERRUPTED OR ERROR-FREE, OR THAT DEFECTS IN THE APPLICATION WILL BE CORRECTED. NO ORAL OR WRITTEN INFORMATION, GUIDELINES OR ADVICE GIVEN BY BROKKRR OR OUR AUTHORIZED REPRESENTATIVES WILL CREATE A WARRANTY.<br /><br />
+
+                    <b>INDEMNIFICATION</b><br /><br />
+                    You will defend, indemnify and hold us, our independent contractors, service providers and consultants, and their respective directors, employees and agents, harmless from and against any and all actual or threatened third-party suits, actions, proceedings (at law or in equity), claims, damages, payments, deficiencies, fines, judgments, settlements, liabilities, losses, costs and expenses (including, but not limited to, reasonable attorney fees, costs, penalties, interest and disbursements) caused by, arising out of, resulting from, attributable to or in any way incidental to (i) your conduct; (ii) your violation of these Terms or your violation of the rights of any third party; or (iii) any User Content you share.<br /><br />
+
+                    <b>LIMITATION OF LIABILITY</b><br /><br />
+                    TO THE EXTENT NOT PROHIBITED BY LAW, IN NO EVENT WILL BROKKRR BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INCIDENTAL, SPECIAL, INDIRECT, CONSEQUENTIAL, EXEMPLARY OR PUNITIVE DAMAGES WHATSOEVER (INCLUDING, BUT NOT LIMITED TO, DAMAGES FOR LOSS OF PROFITS, GOODWILL, BUSINESS, CONTRACTS, REVENUE OR ANTICIPATED SAVINGS; LOSS OR CORRUPTION OF DATA; BUSINESS INTERRUPTION OR ANY OTHER COMMERCIAL DAMAGES OR LOSSES) ARISING OUT OF OR RELATED TO YOUR USE OF OR INABILITY TO USE THE SERVICE (INCLUDING, BUT NOT LIMITED TO, THE APPLICATION), HOWEVER CAUSED, REGARDLESS OF THE THEORY OF LIABILITY (CONTRACT, WARRANTY, TORT (INCLUDING NEGLIGENCE, WHETHER ACTIVE, PASSIVE OR
+                    IMPUTED), PRODUCT LIABILITY, STRICT LIABILITY OR OTHER THEORY) AND EVEN IF BROKKRR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OR LIMITATION OF INCIDENTAL OR CONSEQUENTIAL DAMAGES, SO THIS LIMITATION MAY NOT APPLY TO YOU. IN NO EVENT WILL BROKKRR’S TOTAL LIABILITY, WHETHER IN CONTRACT, WARRANTY, TORT (INCLUDING NEGLIGENCE, WHETHER ACTIVE, PASSIVE OR IMPUTED), PRODUCT LIABILITY, STRICT LIABILITY OR OTHER THEORY, ARISING OUT OF OR RELATING TO THE USE OF OR INABILITY TO USE THE SERVICE (INCLUDING, BUT NOT LIMITED TO THE APPLICATION) EXCEED $100.00 UNITED STATES DOLLARS.<br /><br />
+                    THE FOREGOING LIMITATIONS OF LIABILITY ARE NOT APPLICABLE TO RESIDENTS OF NEW JERSEY. WITH RESPECT TO RESIDENTS OF NEW JERSEY, BROKKRR WILL NOT BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DAMAGES ARISING OUT OF OR RELATED TO YOUR USE OF OR INABILITY TO USE THE SERVICE UNLESS SUCH DAMAGES ARE THE RESULT OF OUR NEGLIGENT, RECKLESS OR INTENTIONAL ACTS OR OMISSIONS.<br /><br />
+
+                    <b>BINDING ARBITRATION</b><br /><br />
+                    You agree that any controversy or claim arising out of or relating to the Sites, use of the Sites, and/or these Terms of Use shall be settled by binding arbitration in a location determined by the arbitrator as set forth herein (provided that such location is reasonably convenient for you), or at such other location as may be mutually agreed upon by the parties, in accordance with the applicable procedural rules set forth in the then prevailing Comprehensive Arbitration Rules and Procedures of JAMS (“JAMS Rules and Procedures”), and judgment upon the award rendered by the arbitrator(s) may be entered in any court having jurisdiction thereof. The JAMS Rules and Procedures are available at www.jamsadr.com or by calling (800) 352-5267. The arbitrator shall be selected pursuant to the JAMS Rules and Procedures. Alternatively, you may assert your claims in small claims court if your claims qualify and so long as the matter remains in such court and advances only on an individual (non-class, non-representative) basis. The arbitrator shall apply California law consistent with the Federal Arbitration Act and applicable statutes of limitations, and shall honor claims of privilege recognized at law. If you initiate arbitration against brokkrr, you will not be responsible for professional fees for the arbitrator’s services or any other JAMS fees. In the event that the claimant is able to demonstrate that the costs of arbitration will be cost-prohibitive or greater than the costs of litigation, brokkrr will pay as much of the claimant’s filing and hearing fees in connection with the arbitration
+                    as the arbitrator deems necessary to prevent the arbitration from being cost-prohibitive or more expensive than the cost of litigation. If any part of this arbitration provision is deemed to be invalid, unenforceable or illegal (other than that claims will not be arbitrated on a class or representative basis), or otherwise conflicts with the rules and procedures established by JAMS, then the balance of this arbitration provision shall remain in effect and shall be construed in accordance with its terms as if the invalid, unenforceable, illegal or conflicting provision were not contained herein. If, however, the portion that is deemed invalid, unenforceable or illegal is that claims will not be arbitrated on a class or representative basis, then the entirety of this arbitration provision shall be null and void, and neither claimant nor brokkrr shall be entitled to arbitrate their dispute. THE ARBITRATION OF DISPUTES PURSUANT TO THIS PARAGRAPH SHALL BE IN YOUR INDIVIDUAL CAPACITY, AND NOT AS A PLAINTIFF OR CLASS MEMBER IN ANY PURPORTED CLASS OR REPRESENTATIVE PROCEEDING. THE ARBITRATOR MAY NOT CONSOLIDATE OR JOIN THE CLAIMS OF OTHER PERSONS OR PARTIES WHO MAY BE SIMILARLY SITUATED.<br /><br />
+
+                    BY AGREEING TO THE ARBITRATION OF DISPUTES AS SET FORTH HEREIN, YOU AGREE THAT YOU ARE WAIVING YOUR RIGHT TO A JURY TRIAL AND LIMITING YOUR RIGHT TO APPEAL AND YOU UNDERSTAND THAT YOU ARE WAIVING YOUR RIGHTS TO MAINTAIN OTHER AVAILABLE RESOLUTION PROCESSES, SUCH AS A COURT ACTION.<br /><br />
+
+                    <b>REPEAT INFRINGER POLICY</b><br /><br />
+                    In accordance with the Digital Millennium Copyright Act (“DMCA”) and other applicable law, brokkrr has adopted a policy of terminating, in appropriate circumstances and at brokkrr’s sole discretion, subscribers or account holders who are deemed to be repeat infringers. brokkrr may also at our sole discretion limit access to the Service and/or terminate the accounts of any users who infringe any intellectual property rights of others, whether or not there is any repeat infringement.<br /><br />
+
+                    <b>COPYRIGHT COMPLAINTS</b><br /><br />
+                    If you believe that any material made available via the Service infringes upon any copyright which you own or control, or that any link made available via the Service directs users to material that infringes upon any copyright which you own or control, you may file a notification of such infringement with our Designated Agent as set forth below.<br /><br />
+
+                    Name of Agent Designated to receive notification of claimed infringement: Copyright Agent<br />
+                    Full address of Designated Agent to which notification should be sent: 111 Corporate Drive, #200, Ladera Ranch, CA 92694.<br /><br />
+                    Email Address of Designated Agent: <u>info@brokkrr.com</u><br /><br />
+
+                    See 17 U.S.C. § 512(c)(3) for the requirements of a proper notification. If you knowingly misrepresent in your notification that the material or activity is infringing, you will be liable for any damages including, but not limited to, costs and attorneys’ fees, incurred by us or the alleged infringer as the result of our relying upon such misrepresentation in removing or disabling access to the material or activity claimed to be infringing.<br /><br />
+
+                    <b>APPLICABLE LAW AND VENUE</b><br /><br />
+                    The Terms and your use of the Service, including, but not limited to, the Application will be governed by and construed in accordance with the laws of the State of California, applicable to agreements made and to be entirely performed within the State of California, without resort to its conflict of law provisions. In the event of any matter or dispute arising out of or in connection with these Terms that is not subject to binding arbitration, you and brokkrr will submit to the exclusive jurisdiction of the state and federal courts in the State of California.<br /><br />
+                    
+                    <b>EXPORT LIMITATIONS</b><br /><br />
+                    You may not use or otherwise export or re-export the Application except as authorized by United States law and the laws of the jurisdiction in which the Application was obtained. In particular, but without limitation, the Application may not be exported or re-exported into any U.S. embargoed countries or to anyone on the U.S. Treasury Department’s list of Specially Designated Nationals or the U.S. Department of Commerce Denied Person’s List or Entity List. By using the Application, you represent and warrant that you are not located in any such country or on any such list. You also agree that you will not use the Application for any purposes prohibited by United States law, including, but not limited to, the development, design, manufacture or production of nuclear missiles, or chemical or biological weapons.<br /><br />
+                    
+                    <b>US GOVERNMENT RIGHTS</b><br /><br />
+                    The Application and related documentation are “Commercial Items,” as that term is defined in 48 C.F.R. § 2.101, consisting of “Commercial Computer Software” and “Commercial Computer Software Documentation,” as these terms are used in 48 C.F.R. § 12.212 or 48 C.F.R. § 227.7202, as applicable. Consistent with 48 C.F.R. § 12.212 or 48 C.F.R. § 227.7202-1 through § 227.7202-4, as applicable, the Commercial Computer Software and Commercial Computer Software Documentation are being licensed to U.S. Government end users only as Commercial Items and with only those rights
+                    as are granted to all other end users pursuant to the terms and conditions herein. Unpublished rights are reserved under the copyright laws of the United States.<br /><br />
+                    
+                    <b>MISCELLANEOUS</b><br /><br />
+                    Only you and brokkrr are entitled to enforce these Terms. No third party will be entitled to enforce any of the terms and conditions herein.<br /><br />
+                    
+                    <b>OUR CORPORATE ADDRESS</b><br /><br />
+                    brokkrr, Inc.<br />
+                    111 Corporate Drive, #200<br />
+                    Ladera Ranch, CA 92694<br />
+                    U.S.A.<br /><br />
+
+                    *You may also contact our member support team at <u>info@brokkrr.com</u>
+
+                </div>
+                <div class="col-lg-1 col-md-1"></div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <footer class="footer-distributed" style="position: relative;background-image:none;">
+        <div class="container" style="width:100%">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-right:0;">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 allrightalign" style="">
+                        <p style="display: block;color: #666666;font-size: 16px;font-family:open sans;text-align: center;">
+                            © 2018 brokkrr. All rights reserved.
+                        </p>
+                    </div>
+
+                    <div class="col-sm-3 col-md-2 text-center" style="padding-left:0;">
+                        <p class="footer-company-about">
+                            <div class="social-icons socialiconsalign" style="">
+                                <a style="cursor:default;"><span class="facebook"></span></a>
+                                <a style="cursor:default;"><span class="twitter"></span></a>
+                                <a style="cursor:default;"><span class="linkedin"></span></a>
+                            </div>
+                        </p>
+                    </div>
+                    <div class="col-sm-2 col-md-5" style="margin-bottom:0%;text-align: center;margin-top: 25px;font-size: 16px;">
+
+                    </div>
+                    <div class="col-sm-1 col-md-1" style="margin-bottom: 0%;">
+                        <div style="padding-right:4%;text-align:center">
+                            <img src="~/Images/NewAssets/footer-logo.png" alt="logo" />
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1" style="margin-bottom:0%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<div class="container" style="width:100%">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-right:0;">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 meinekelogo" >
+                            <p style="display: block;color: #666666;font-size: 16px;font-family:open sans;text-align: center;">
+                                <img src="~/Images/MeinekeDealers/logo-MDA.png" class="img-responsive" />
+                            </p>
+                        </div>
+
+                        <div class="col-sm-3 col-md-2 text-center" style="padding-left:0;">
+                            <p class="footer-company-about">
+                                <div class="social-icons" style="margin-bottom:0px;margin-top: 15px;">
+
+                                </div>
+                            </p>
+                        </div>
+                        <div class="col-sm-4 col-md-4" style="margin-bottom:0%;">
+                        </div>
+                        <div class="col-sm-3 col-md-3" style="margin-bottom: 0%;margin-top: 1.5%;">
+                            <div class="col-sm-2 col-md-2">
+                            </div>
+                            <div class="col-sm-8 col-md-8" style="padding-left:6px;">
+                                <img src="~/Images/MeinekeDealers/brokkrr-logo-powered-by.png" class="img-responsive" />
+                            </div>
+                            <div class="col-sm-2 col-md-2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+    </footer>
+</body>
+</html>

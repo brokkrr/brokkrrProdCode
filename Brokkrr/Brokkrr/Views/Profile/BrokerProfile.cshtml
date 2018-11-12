@@ -1,0 +1,628 @@
+﻿@model BrokerMVC.Models.BrokerProfile
+@{
+    ViewBag.Title = "BrokerProfile";
+    Layout = "~/Views/Shared/View_BrokerProfileLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Broker Profile</title>
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>*@
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/jquery-1.12.4.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <style type="text/css">
+         .companynamelbl {
+            padding-top: 3%;
+        }
+
+        @@media only screen and (min-width:3840px) {
+            .Insfooterlogo {
+                margin-bottom: 0%;
+             
+                padding-left: 0%;
+                margin-top: 1.5% !important;
+            }
+
+            .profilefooter {
+                margin-bottom: 21% !important;
+            }
+
+            .dropdown-content {
+                margin-top: 18% !important;
+                left: 46% !important;
+            }
+
+             .companynamelbl {
+            padding-top: 1.5%;
+        }
+        }
+
+        @@media only screen and (min-width:2880px) {
+            .Insfooterlogo {
+                margin-bottom: 0%;
+               
+                padding-left: 0%;
+                margin-top: 1.5% !important;
+            }
+
+            .dropdown-content {
+                margin-top: 21%;
+                left: -2%;
+            }
+
+             .companynamelbl {
+            padding-top: 2%;
+        }
+        }
+    </style>
+
+   <style type="text/css">
+        @@Media screen and (max-width:640px) {
+            .notification {
+                background-color: rgb(0,109,183);
+                width: 180px;
+                margin-right: 48px;
+                height: 40px;
+                /*padding: 8px 0 0 8px;*/
+                position: fixed;
+                z-index: 1;
+                bottom: 0;
+                cursor: pointer;
+            }
+        }
+
+        @@media screen and (min-width:641px) and (max-width:980px) {
+            .notification {
+                /* Add this */
+                background-color: rgb(41,171,228);
+                width: 400px;
+                margin-right: 60px;
+                height: 40px;
+                /*padding: 8px 0 0 8px;*/
+                position: fixed;
+                z-index: 1;
+                bottom: 0;
+                cursor: pointer;
+            }
+        }
+
+        @@media screen and (min-width:981px) {
+            .notification {
+                /* Add this */
+                background-color: rgb(41,171,228);
+                width: 400px;
+                margin-right: 60px;
+                height: 40px;
+                /*padding: 8px 0 0 8px;*/
+                position: fixed;
+                z-index: 1;
+                bottom: 0;
+                cursor: pointer;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-container {
+            /* ... */
+            display: flex;
+            justify-content: flex-end;
+        }
+
+
+
+        .chatname {
+            color: #fff;
+            /*font-family: OpenSans-Regular !important;*/
+            font-weight: bold;
+            padding: 0 0 0 16px;
+            width: 80%;
+            display: inline-block;
+            padding: 8px 0 0 8px;
+        }
+
+        #img {
+            float: right;
+            padding: 12px 8px;
+        }
+
+        /* Make the badge float in the top right corner of the button */
+        .badge-warning {
+            background-color: red;
+            width: 30px;
+            color: #fff;
+            border-radius: 32px;
+            height: 20px;
+            /*padding: 0px 3px;*/
+            display: inline-block;
+            margin: -39px -7px -33px -10px;
+            position: relative;
+            top: -16px;
+            text-align: center;
+        }
+    </style>
+
+    <style type="text/css">
+        /*Square Images (Start)*/
+
+        .circular--square {
+            /*  border-radius: 50%;*/
+        }
+
+        .circular--square {
+            border-top-left-radius: 50% 50%;
+            border-top-right-radius: 50% 50%;
+            border-bottom-right-radius: 50% 50%;
+            border-bottom-left-radius: 50% 50%;
+        }
+
+        /*Square Images (End)*/
+
+
+        /*landscape Images (Start)*/
+
+        .circular--landscape {
+            display: inline-block;
+            position: relative;
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+
+            .circular--landscape img {
+                width: auto;
+                height: 100%;
+                margin-left: -50px;
+            }
+
+        /*landscape Images (End)*/
+
+        /*portrait Images (Start)*/
+
+        .circular--portrait {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+
+            .circular--portrait img {
+                width: 100%;
+                height: auto;
+            }
+
+
+
+
+        /*portrait Images (End)*/
+    </style>
+
+    <script src="~/js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript">
+
+        // $('#ProfileModal').show();
+
+        $(document).ready(function () {
+
+            //Show unread message count on notification bar
+
+            var count = 0;
+            var UserId = '@Session["UserId"]';
+            var WeServiceUrl = '@Session["WebServiceURL"]';
+
+            setInterval(function () {
+
+               if (UserId != "") {
+                    $.ajax({
+                        type: "POST",
+                        url: WeServiceUrl,
+                        data: { UserId: UserId, ActionName: "DoGetUnreadMsgCount" },
+                        success: function (data) {
+
+                            var obj = JSON.parse(data);
+                            var issuccess = obj.IsSuccess;
+                            var ErrorMessage = obj.ErrorMessage;
+                            var UnreadMsgCnt = obj.UnreadMsgCnt;
+
+                            if (issuccess == true) {
+                                //alert("UnreadMsgCnt - " + UnreadMsgCnt);
+                                if (UnreadMsgCnt.length > 0) {
+                                    $.each(UnreadMsgCnt, function (i, res) {
+                                        if (res.UnreadMsgCnt > 0) {
+                                            //alert(res.UnreadMsgCnt);
+                                            $("div.badge-warning").text(res.UnreadMsgCnt);
+                                        }
+                                        else {
+                                            $("div.badge-warning").text(0);
+                                        }
+                                    });
+                                }
+                            }
+                        },
+                        error: function (XMLHttpRequest, textStatus, errorThrown) { }
+
+                    });
+                }
+            }, 4000);
+
+
+            //Set updated Profile Pic
+
+            var ProfilePic = '@ViewBag.ProfilePic';
+
+            if (ProfilePic != "") {
+                var Time = '@ViewBag.Time';
+                $('#profilepicprofile').attr("src", ProfilePic + "?" + Time);
+            }
+            else {
+                var p = "../../Images/Profile/customer.jpg";
+                $('#profilepicprofile').attr("src", p);
+            }
+
+            $(".SetAvailability").click(function () {
+
+                var contentAvailable = document.getElementsByTagName("span")[0].getAttribute("id");
+                //alert(contentAvailable);
+                //$('#available').empty();
+                //$('#available').append(contentAvailable);
+                if (contentAvailable == 'available') {
+
+                    $.ajax({
+                        url: '@Url.Action("SetBrokerAvailability", "Profile")',
+                        type: 'GET',
+                        dataType: 'json',
+                        cache: false,
+                        data: { Availability: false },
+                        success: function (data) {
+                            if (data.Success) {
+
+                                contentAvailable = ' <img src="/Images/Profile/unavailable.png" id="unavailable" style="text-align:center !important;" data-toggle="modal" data-target="#ProfileModal" />';
+                                $('#available').empty();
+                                $('#available').append(contentAvailable);
+                                contentAvailable = document.getElementsByTagName("span")[0].setAttribute("id", "unavailable");
+
+                                $('#Message').empty();
+                                var message = 'You are unavailable now.<br/>(You are no longer visible to customers who are looking for brokers like you.)';
+                                $('#Message').append(message);
+                                $('#ProfileModal').modal('show');
+                            }
+                            else {
+                                alert('Faild,Try again!');
+                            }
+
+                        }
+                    });
+                }
+                else {
+
+                    $.ajax({
+                        url: '@Url.Action("SetBrokerAvailability", "Profile")',
+                        type: 'GET',
+                        dataType: 'json',
+                        cache: false,
+                        data: { Availability: true },
+                        success: function (data) {
+                            if (data.Success) {
+
+                                contentAvailable = '<img src="/Images/Profile/available.png" id="available" style="text-align:center !important;" data-toggle="modal" data-target="#ProfileModal"/>';
+                                $('#unavailable').empty();
+                                $('#unavailable').append(contentAvailable);
+                                contentAvailable = document.getElementsByTagName("span")[0].setAttribute("id", "available");
+
+                                $('#Message').empty();
+                                var message = 'You are available now.<br/>(Now customers can contact you.)';
+                                $('#Message').append(message);
+
+                                $('#ProfileModal').modal('show');
+
+                            }
+                            else {
+                                alert('Faild,Try again!');
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- 18April17 RS-->
+    <script type="text/javascript">
+        window.onload = function () {
+
+            $('#footerLayout').hide();
+
+        };
+
+        function RedirectMessage() {
+
+            //location.href = "../../CustomerRegistration/Index";
+            location.href = "../../Message/BrokerMessage";
+        }
+
+    </script>
+
+
+</head>
+<body>
+    <div id="notificationbar" class='menu-container'>
+
+        <div class='notification' style="display:block !important;">
+            @*<div class="button__badge">2</div>*@
+            <div class="badge-warning">
+                0
+            </div>
+            <div class='chatname' onclick="RedirectMessage();">Chat with customer</div>
+            <div id="img"><img src="~/Images/Assets/if_close15_216468.png" class="img-responsive" style="cursor:pointer;" onclick="closenotification();" /></div>
+        </div>
+
+    </div>
+    <div class="container-fluid profilefooter">
+        <div class="row" style="margin-left: 13%;margin-right: 13%;">
+            <div class=" col-md-12 col-sm-12 col-xs-12 brokertag" style="font-weight: bold;text-align:left;font-size:25px;padding-top:1.5%;">
+                MY PROFILE
+                <a href="@Url.Action("EditBroker", "BrokerRegistration")" style="float:right;">Edit</a>
+            </div>
+        </div>
+
+        <br />
+        <div class="clearboth"></div>
+        @{  var cnt = 0; var cnt1 = 0; var cnt2 = 0; var itemimg = "";}
+        @foreach (var item in ViewBag.userdetails)
+        {
+            cnt++;
+            var id = item[0];
+
+
+            <div class="container-fluid" style="background-color:rgb(247,247,247);width: 75%;">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class=" col-md-6" style="padding-top:5%;padding-bottom:5%;text-align:center;">
+                            <div class=" col-md-2"></div>
+
+                            <div class=" col-md-8">
+                                <img class="imageFit circular--landscape circular--square circular--portrait " src='' id="profilepicprofile" style="height:140px !important;width:140px !important" />
+                            </div>
+                            <div class=" col-md-2"></div>
+                        </div>
+                        <div class="col-md-6" style="padding-top:5%;padding-bottom:5%;text-align:center;">
+                            <h3>
+                                @{
+            var itemdet = @item[1] + " " + @item[2]; //First Name, LastNAme
+
+                                }
+                                @itemdet
+                            </h3>
+                            <br />
+                            <div style="text-align:center !important;font-size: 18px !important;">
+                                @item[5] Area
+                            </div>
+                            <br />
+                            <div style="text-align:center !important;">
+                                @if (ViewBag.IsAvailable)
+                                {
+                                    <span class="SetAvailability" id="available">
+                                        <img src="~/Images/Profile/available.png" id="available" data-toggle="modal" data-target="#ProfileModal" />
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="SetAvailability" id="unavailable">
+                                        <img src="/Images/Profile/unavailable.png" id="unavailable" data-toggle="modal" data-target="#ProfileModal" />
+                                    </span>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-11 col-xs-11" style="margin-left: 16%;">
+                    <div class="row" style="width: 75%;">
+                        @*<div class="col-md-2 col-xs-2"></div>*@
+                        <div class="col-md-12 col-xs-12">
+                            <h4 style="text-align:left;">Company</h4>
+                            @{
+                                //var itemDet = @item[31] + " at " + @item[17]; //DEsignation, Company
+                                var complogo = "";
+                                if (item[39] is System.DBNull)
+                                {
+                                    complogo = "../../Images/Profile/companydefaultlogo.jpg";
+
+                                }
+                                else if (item[39] != "")
+                                {
+                                    complogo = item[39];@* Profile pic*@
+                                }
+                                else
+                                {
+                                    complogo = "../../Images/Profile/companydefaultlogo.jpg";
+                                }
+
+
+                                if (@item[18] == "" && @item[17] == "")
+                                {
+                                    <div style="margin-left: 14px;">No company added</div>
+                                }
+                                else
+                                { 
+
+                                <div class="col-md-12 col-xs-12" style="text-align:left;">
+
+                                    <div class="col-md-6 col-sm-9 col-xs-9">
+                                        <img src='@{ @complogo}' id="profilepicprofile" class="imageFitSize" />
+                                    </div>
+                                    <div class="col-md-6 col-sm-3 col-xs-3 companynamelbl">
+                                        <span style="text-align:justify;"> @item[18] at @item[17]</span>
+                                    </div>
+                                </div>
+                                }
+
+                            }
+
+                        </div>
+                        @*<div class="col-md-2 col-xs-2"></div>*@
+                    </div>
+                </div>
+                <div class="col-md-11 col-xs-11" style="margin-left: 16%;">
+                    <div class="row" style="width: 75%;">
+
+                        <div class="col-md-12 col-xs-12">
+                            <h4 style="text-align:left;">Bio</h4>
+
+                            <div class="col-md-12 col-xs-12" style="text-align:left;">
+                                @{
+            if (item[42] is System.DBNull || item[42] == "")
+            {
+                <span>No bio available</span>
+            }
+            else
+            {
+                @item[42]
+            }
+                                }
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-md-11 col-xs-11" style="margin-left: 16%;">
+                    <div class="row" style="padding-top:20px;width: 75%;">
+
+                        <div class="col-md-12 col-xs-12">
+                            <h4 style="text-align:left;">Prior Employment</h4>
+
+                            @{
+            if (@ViewBag.Experiencedetails.Count == 0)
+            {
+                <div style="margin-left: 14px;">No experience added</div>
+            }
+                            }
+                            @foreach (var item1 in ViewBag.Experiencedetails)
+                            {
+                                var id1 = item1[1];
+                                var Compnylogo = "";
+
+                                cnt1++;
+                                <div>
+                                    @{
+                                if (id1 == id)
+                                {
+                                    if (item1[6] is System.DBNull)
+                                    {
+                                        Compnylogo = "../../Images/Insurance/companydefaultlogo.jpg";
+                                    }
+                                    else if (item1[6] != "")
+                                    {
+                                        Compnylogo = item1[6];
+                                    }
+                                    else
+                                    {
+                                        Compnylogo = "../../Images/Insurance/companydefaultlogo.jpg";
+                                    }
+                                    <div class="col-md-12 col-xs-12" style="text-align:left;margin-bottom:3%;">
+                                        <div class="col-md-6 col-sm-9 col-xs-9">
+                                            <img src='@{ @Compnylogo}' id="profilepicprofile" class="imageFitSize" />
+                                        </div>
+                                        <div class="col-md-6 col-sm-3 col-xs-3 companynamelbl" >
+                                            <span style="text-align:justify;">@item1[2] at @item1[3]</span><br />
+                                            <span style="text-align:justify;">@item1[4] to @item1[5]</span>
+                                        </div>
+                                    </div>
+
+                                }
+                                    }
+                                </div>
+                                <br />
+                            }
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-11 col-xs-11" style="margin-left: 16%;">
+                    <div class="row" style="width: 75%;">
+                        <div class="col-md-12 col-xs-12" style="margin-bottom:5%;">
+                            <h4 style="text-align:left;">Education</h4>
+
+                            @{
+            if (@ViewBag.Educationdetails.Count == 0)
+            {
+                <div style="margin-left: 14px;">No education added</div>
+            }
+                            }
+
+                            @foreach (var item2 in ViewBag.Educationdetails)
+                            {
+                                var id2 = item2[1];
+                                var EduLogo = "";
+
+                                cnt2++;
+                                <div>
+                                    @{
+                                if (id2 == id)
+                                {
+                                    if (item2[6] is System.DBNull)
+                                    {
+                                        EduLogo = "../../Images/profile/education.png";
+                                    }
+                                    else if (item2[6] != "")
+                                    {
+
+                                        EduLogo = item2[6];
+                                    }
+                                    else
+                                    {
+                                        EduLogo = "../../Images/profile/education.png";
+                                    }
+                                    <div class="col-md-12 col-xs-12" style="text-align:left;margin-bottom:3%;">
+                                        <div class="col-md-6 col-sm-9 col-xs-9">
+                                            <img src='@{ @EduLogo}' id="profilepicprofile" class="imageFitSize" />
+                                        </div>
+                                        <div class="col-md-6 col-sm-3 col-xs-3 companynamelbl">
+                                            <span style="text-align:justify;">@item2[2] @item2[3] @item2[4]</span>
+                                        </div>
+                                    </div>
+                                }
+                                    }
+                                </div>
+                                <br />
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="modal fade col-md-12 col-xs-12" id="ProfileModal" role="dialog" style="overflow-x:hidden;margin-top:15%;">
+        <div class="modal-dialog" style="text-align:center;">
+
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 style="text-align:center;">Information<button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="float:right;margin-top: -6px;font-size: 40px;color: rgb(23,209,255);opacity:1!important;font-weight:100;">&times;</button></h3>
+                </div>
+                <div class="modal-body ">
+                    <div id="Message">
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,431 @@
+﻿@{
+    ViewBag.Title = "Broker Chat";
+    Layout = "~/Views/Shared/View_BrokerProfileLayout.cshtml";
+}
+
+<link href="~/Content/BrokkrrCSS/ProgressBar1.css" rel="stylesheet" />
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script type="text/javascript" src="~/Scripts/Scripts2/jquery.min.js"></script>
+<link href="~/Content/BrokkrrCSS/ModelPopUp.css" rel="stylesheet" />
+
+<link href="~/Content/BrokkrrCSS/jquery-ui.css" rel="stylesheet" />
+
+<script src="~/Scripts/Scripts1/jquery-1.10.2.js"></script>
+
+<script src="~/Scripts/Scripts1/jquery-ui.js"></script>
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+@*  *@
+<script src="~/js/bootstrap-multiselect.js"></script>
+<script src="~/js/bootstrapForMultiSelect.min.js"></script>
+@*
+    <link href="~/Content/BrokkrrCSS/CSS1/bootstrapForMultiSelect.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/BrokkrrCSS/CSS1/bootstrap-multiselect.css" rel="stylesheet" type="text/css">*@
+@*<script src="~/js/JQuery.browser.min.js"></script>*@
+@*  *@
+<script src="~/js/BrokerChatMessages.js"></script>
+<script>
+    window.onload = function () {
+        var WebServiceURL = '@ViewBag.WebServiceURL';
+        var BrokerMessageId = '@ViewBag.BrokerMessageId';
+        var CustomerMessageId = '@ViewBag.CustomerMessageId';
+        var BrokerId = '@ViewBag.BrokerId';
+        var CustomerId = '@ViewBag.CustomerId';
+        var CustomerName = '@ViewBag.CustomerName';
+        var MainMessage = '@ViewBag.MainMessage';
+        var IsRead = '@ViewBag.IsRead';
+
+        var FirstName = '@ViewBag.FirstName';
+        var LastName = '@ViewBag.LastName';
+        var LocalDateTime = '@ViewBag.LocalDateTime';
+        //$("#lblCustomerName").text(CustomerName);
+
+        pageBeforeLoad(WebServiceURL, BrokerMessageId, CustomerMessageId, BrokerId, CustomerId, CustomerName, MainMessage);
+        //alert("After pageBeforeLoad");
+        getWebServiceURL(WebServiceURL, BrokerMessageId, CustomerMessageId, BrokerId, CustomerId, CustomerName, MainMessage, IsRead, FirstName, LastName, LocalDateTime);
+
+    };
+
+
+
+
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#brokerChatEnter').off("click").on("click", function () {
+            var chatcontent = $('#brokerChatcontent').val();
+
+            if (chatcontent != "") {
+                SaveBrokerChat(chatcontent);
+            }
+            $('#brokerChatcontent').val('');
+            $('#brokerChatcontent').focus();
+        });
+
+        $(document).keypress(function (e) {
+            //alert("Called");
+            if (e.which == 13) {
+                var chatcontent = $('#brokerChatcontent').val();
+
+                if (chatcontent != "") {
+                    SaveBrokerChat(chatcontent);
+                }
+                $('#brokerChatcontent').val('');
+                $('#brokerChatcontent').focus();
+            }
+        });
+
+        $('#Okbtn').off("click").on("click", function () {
+            $('#Infopopup').popup('close');
+        });
+
+        $("#deletemultiplemsg").click(function (e) {
+            $("#myModal").modal('show');
+        });
+
+        $("#deletemessagesconfirm").click(function (e) {
+            DeleteChatMessages();
+            $('#deletemultiplemsg').hide();
+            $('#myModal').modal('hide');
+        });
+
+        $("#deleteconfirmpopupclose").click(function (e) {
+            CancelDeleteChatMessages();
+           
+            $('#deletemultiplemsg').hide();
+            $('#myModal').modal('hide');
+        });
+    });    
+
+</script>
+
+<style type="text/css">
+    .RemoveElt {
+        /*background-color:lightgray;*/
+        opacity: 0.2;
+    }
+
+    /*#chat1 {
+        height: 450px;
+        overflow-y: scroll;
+    }*/
+
+    body {
+        max-height: 900px;
+    }
+
+    p.speech {
+        margin-top: 2%;
+        margin-bottom: 2%;
+        float: left;
+        clear: both;
+        margin-left: 4%;
+        position: relative;
+        display: table;
+        max-width: 80%;
+        min-width: 10%;
+        /* text-align: center;
+      line-height: 100px;*/
+        background-color: #f2f2f2; /*#d6f7ff*/
+        border: 2px solid #f2f2f2; /*#666,#fff*/
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-box-shadow: 2px 2px 4px #888;
+        -moz-box-shadow: 2px 2px 4px #888;
+        box-shadow: 2px 2px 4px #888;
+        border-top-left-radius: 0 !important;
+        padding: .5% !important;
+        text-shadow: none !important;
+    }
+
+        p.speech:before {
+            content: ' ';
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: -2px;
+            left: -14px;
+            border-style: solid;
+            border-width: 0 15px 15px 0;
+            border-color: transparent #f2f2f2 transparent transparent; /*#666,#fff*/
+            text-shadow: none !important;
+        }
+
+        p.speech:after {
+            content: ' ';
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 0px;
+            left: -9px;
+            border-style: solid;
+            border-width: 0 14px 14px 0;
+            border-color: transparent #f2f2f2 transparent transparent;
+            text-shadow: none !important;
+        }
+
+        p.speech span {
+            margin-bottom: -2% !important;
+        }
+
+    p.speechright {
+        /*color:#fff;*/
+        margin-right: 2%;
+        padding: .5% !important;
+        position: relative;
+        display: table;
+        max-width: 65%;
+        min-width: 10%;
+        text-align: left;
+        background-color: #d6f7ff; /*  def7a1  17d1ff*/
+        border: 2px solid #d6f7ff; /*#666*/
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        border-radius: 5px;
+        -webkit-box-shadow: 2px 2px 4px #888;
+        -moz-box-shadow: 2px 2px 4px #888;
+        box-shadow: 2px 2px 4px #888;
+        border-top-right-radius: 0 !important;
+        text-shadow: none !important;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+        p.speechright span {
+            padding-bottom: 0;
+        }
+
+        p.speechright:before {
+            content: ' ';
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: -2px;
+            right: -14px;
+            border-style: solid;
+            border-width: 15px 15px 0 0;
+            border-color: #d6f7ff transparent transparent transparent; /*#666*/
+            text-shadow: none !important;
+        }
+
+        p.speechright:after {
+            content: ' ';
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: 0px;
+            right: -9px;
+            border-style: solid;
+            border-width: 14px 14px 0 0;
+            border-color: #d6f7ff transparent transparent transparent;
+            text-shadow: none !important;
+        }
+
+    .msgRight {
+        float: right;
+        clear: both;
+    }
+
+
+    .msgdatetime {
+        font-size: 10px !important;
+        /*color:#ddd!important;*/
+        margin-bottom: -2% !important;
+        opacity: 0.3;
+    }
+
+    .chatBg {
+        background: #fff;
+        /*background-image:url(../images/ChatBG.png);
+        background-repeat: repeat-y !important;
+        border:none!important;
+        box-shadow:none!important;
+    /*	repeat:no-repeat !important;*/
+        height: 100%;
+    }
+
+    .fontcolorchat {
+        color: black !important;
+        font-weight: normal;
+    }
+
+    .Chat {
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+
+    #chat1 {
+        max-height: 420px;
+        overflow: auto;
+          min-height:420px;
+        /*width: 250px;
+        float: right;*/
+    }
+
+
+
+    p.speechleft {
+        /*color:#fff;*/
+        float: left;
+        margin-right: 2%;
+        padding: .5% !important;
+        position: relative;
+        display: table;
+        max-width: 65%;
+        min-width: 10%;
+        text-align: left;
+        background-color: #d6f7ff; /*  def7a1  17d1ff*/
+        border: 2px solid #d6f7ff; /*#666*/
+        -webkit-border-radius: 30px;
+        -moz-border-radius: 30px;
+        border-radius: 5px;
+        -webkit-box-shadow: 2px 2px 4px #888;
+        -moz-box-shadow: 2px 2px 4px #888;
+        box-shadow: 2px 2px 4px #888;
+        border-top-right-radius: 0 !important;
+        text-shadow: none !important;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+</style>
+
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="~/Images/Assets/brokkrIcon24x24.png">
+    <title>Broker Chat</title>
+
+</head>
+<body>
+    <div class="container" style="padding-left: 18%; padding-right: 18%;height:600px;" id="pageone">
+
+        <!--Chatting Window Header-->
+        <div class="row" style="padding-top:1%;">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="background-color:#17d1ff;border:1px solid black;border-bottom: 1px solid #17d1ff !important;height:100%;padding:0;font-size:20px;padding-top: 1%;padding-bottom: 1%;">
+
+                <div class="col-md-2 col-sm-2 col-xs-2" style="text-align:center;padding-right:0;color:#fff;">
+                    <span><a href="@Url.Action("BrokerMessage", "Message")"><img src="~/Images/Assets/backbtn.png" /></a> </span>
+                </div>
+
+                <div class="col-md-8 col-sm-8 col-xs-8" style="color:#fff;text-align:center;">
+                    <span><label for="lblCustomerName" id="lblCustomerName"></label></span>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-2" style="color:#fff;text-align:center;">
+                    <img src="../Images/Assets/delete.png" style="display:none;" id="deletemultiplemsg" />
+                </div>
+            </div>
+
+        </div>
+        <!--End of Chatting Window Header-->
+        <!-- Main chatting Window-->
+        <div class="row" style="border:1px solid black;background:#f5f5f5;margin-bottom:1%;min-height:450px;">
+          
+            <div class="col-md-12 col-sm-12 frame" id="chat1">
+                @*<ul id="ulChatMessages">
+
+                </ul>*@
+            </div>
+            <div class="col-md-12 col-sm-12" id="divTextArea">
+
+                <div class="col-md-10 col-sm-10 col-xs-10" style="padding-right:0px;margin-top:0px;">
+                    <input id="brokerChatcontent" alt="" style="float:right; width: 100%;height: 38px;margin-bottom: 1%;margin-top: 1%;border-radius: 5px;border: 1px solid #17d1ff;" placeholder="Write your message here" />
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-1" style="padding-top: 1%;">
+                    <a href="#" id="brokerChatEnter" style="text-decoration: none;">
+                        <img src="../Images/Assets/Chatimg.png">
+                    </a>
+                </div>
+                <div class="col-md-1 col-sm-1 col-xs-1">
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-12" id="divCustMsgDeleted" style="display:none;">
+                @*<textarea rows="1" name="comment" id="brokerChatcontentError"></textarea>*@
+                <label for="brokerChatcontentError" id="brokerChatcontentError" style="margin-left:20px;"></label>
+            </div>
+
+        </div>
+        <!--End of Main chatting Window-->
+        <!--Footer of chating window-->
+        @*<div class="row">
+                <div class="col-md-12 col-sm-12">
+
+                    <div class="col-md-11 col-sm-11">
+                        <input id="Messagetextbox" alt="" style="float:right; width: 100%;height: 38px;margin-bottom: 1%;margin-top: 1%;border-radius: 5px;border: 1px solid #17d1ff;" placeholder="Write your message here" />
+                    </div>
+                    <div class="col-md-1 col-sm-1" style="padding-top: 1%;">
+                        <a href="#" id="customerChatEnter" style="text-decoration: none;">
+                            <img src="../Images/Assets/Chatimg.png">
+                        </a>
+                    </div>
+
+                </div>
+            </div>*@
+        <!--End of Footer of chating window-->
+        <div class="modal fade" id="ModalError" role="dialog">
+            <div class="modal-dialog" style="padding:5%">
+                <div class="modal-content">
+                    <div class="modal-header" style="padding-top: 3px; padding-bottom: 3px;">
+                        <button type="button" class="close" data-dismiss="modal" style="color: red;margin-top:10px;">&times;</button>
+                        <h4 class="modal-title" style="font-size: 16px;margin-top:10px;margin-bottom:10px;">Message</h4>
+                    </div>
+                    <div class="modal-body" style="padding-top: 0px;padding-bottom: 0px;font-weight:100;">
+                        <br />
+                        <span><label for="lblError" id="lblError" style="color:red;margin-left:20px;"></label></span>
+                        <br />
+                    </div>
+                    <div class="modal-footer" style="padding: 5px;text-align:center;">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" style="width:70px;">OK</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="myModal" class="modal fade col-md-12 col-sm-12 col-xs-12" style="margin-top:15%;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        @*<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>*@
+                        <h2 class="modal-title">Information</h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="text-align:center;height:50px;font-size: 18px;">
+                            Are you sure to delete chat messages?
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-3 col-sm-3 col-xs-2">
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-4">
+                                    <a href="#" id="deletemessagesconfirm" style="text-decoration:none;" data-transition="slide">
+                                        <div class="Messagebtn1"> Confirm</div>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-4">
+                                    <a href="#" id="deleteconfirmpopupclose" style="text-decoration:none;" data-transition="slide">
+                                        <div class="Messagebtn1"> Cancel</div>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-2">
+                                </div>
+                                <div class="clearboth"></div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

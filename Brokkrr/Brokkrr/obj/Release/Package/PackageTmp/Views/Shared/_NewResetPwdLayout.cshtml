@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+    <link rel="shortcut icon" href="~/Images/Assets/brokkrIcon24x24.png">
+    <title>brokkrr Inc.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- font links -->
+    <link href="~/Content/BrokkrrCSS/OpenSans.css" rel="stylesheet" />
+
+    @*<link href="~/Content/BrokkrrCSS/CSS1/Home.css" rel="stylesheet" />
+    <link href="~/Content/HomeCSS/Hub-442016f18c.css" rel="stylesheet" />*@
+    <link href="~/Content/BrokkrrCSS/CSS2/style.css" rel="stylesheet" />
+    <!-- css links -->
+    <link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+
+
+    <!-- /css links -->
+    <!-- js links -->
+    <script src="~/Scripts/Scripts2/jquery.min.js"></script>
+    <script src="~/Scripts/Scripts2/bootstrap.min.js"></script>
+    
+    <!-- /js links -->
+
+    <script>
+        var count = 0;
+        /* When the user clicks on the button,
+        toggle between hiding and showing the dropdown content */
+        function myFunction() {
+
+            if (count == 0) {
+                $('#myDropdown').fadeIn('slow');
+                count++;
+
+            }
+            else {
+                $('#myDropdown').fadeOut('slow');
+                count--;
+
+            }
+
+        }
+        window.onclick = function (event) {
+            $('#myDropdown').fadeOut('slow');
+        }
+    </script>
+
+    <style>
+        .dropbtn {
+            /*background-color: #4CAF50;*/
+            background-color: #f1f1f1;
+            /*color: white;*/
+            color: rgb(72,205,255);
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+            .dropbtn:hover, .dropbtn:focus {
+                background-color: #3e8e41;
+                /*background-color:rgb(72,205,255);*/
+                color: #fff;
+            }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            color: rgb(72,205,255);
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                /*color: black;*/
+                color: rgb(72,205,255);
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+        .dropdown a:hover {
+            /*background-color: #f1f1f1;*/
+            background-color: rgb(72,205,255);
+            color: #fff;
+        }
+
+        .show {
+            display: block;
+        }
+
+
+      
+
+       
+    </style>
+</head>
+<body style="overflow-x:hidden;">
+
+
+    <div class="row" style="height:auto;background-color:rgb(72,205,255);">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+           
+            <div class="col-md-6 col-sm-6 col-xs-6" style="padding:1.5%;padding-left:7%;">
+                <a href="@Url.Action("Index", "Home")"><img src="~/Images/NewAssets/logo.png" alt="Logo" class="img-responsive" /></a>
+            </div>
+
+        </div>
+    </div>
+
+
+    @RenderBody() 
+
+    @*<footer class="footer-distributed" style="position: relative;background-image:none;">
+        <div class="container" style="width:100%">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-right:0;">
+                <div class="row">                 
+                    <div class="col-md-3 col-sm-3" style="padding-top: 20px;padding-right:0;padding-left:3%;">
+                        <p style="display: block;color: #666666;font-size:16px;font-family:open sans;text-align:center;">
+                            © 2018 Brokkrr. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-sm-2 text-center" style="padding-left:0;">
+                        <p class="footer-company-about">
+                            <div class="social-icons img-responsive" style="margin-bottom:0px;margin-top: 15px;">
+                                <a href="#"><span class="facebook"></span></a>
+                                <a href="#"><span class="twitter"></span></a>
+                                <a href="#"><span class="linkedin"></span></a>
+                            </div>
+                        </p>
+                    </div>
+                    <div class="col-md-5 col-sm-5" style="margin-bottom:0%;">
+                    </div>
+                    <div class="col-md-1 col-sm-1" style="margin-bottom: 0%;margin-top: 1.5%;">
+                        <div style="padding-right:4%;text-align:center">
+                            <img src="~/Images/NewAssets/footer-logo.png" alt="logo" />
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1" style="margin-bottom:0%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>*@
+</body>
+
+</html>

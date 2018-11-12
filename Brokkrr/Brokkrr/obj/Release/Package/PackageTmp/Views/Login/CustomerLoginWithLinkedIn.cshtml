@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "CustomerLoginWithLinkedIn";
+    Layout = "~/Views/Shared/View_BrokkrrLoginLayout.cshtml";
+}
+
+<script src="~/js/jquery-1.12.4.js"></script>
+<script src="~/js/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        //alert("Called");
+        var SiteUrl = '@ViewBag.SiteUrl';
+
+        if (SiteUrl != "") {
+            //location.href = "https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=75buq9yv6kgp1a&redirect_uri=http://localhost:59993/Login/LinkedINAuth&state=987654321&scope=r_basicprofile,r_emailaddress";
+
+            location.href = "https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=75buq9yv6kgp1a&redirect_uri=" + SiteUrl + "Login/LinkedINAuth&state=987654321&scope=r_basicprofile,r_emailaddress";
+        }
+    });
+</script>
+<body>
+    <div class="container-fluid" style="height:100%;">
+        <div class="row">
+            <br />
+          <span>Please Wait....</span>
+           
+        </div>
+    </div>
+</body>
+

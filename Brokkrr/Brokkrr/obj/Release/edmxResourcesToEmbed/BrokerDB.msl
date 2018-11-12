@@ -1,0 +1,1294 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BrokerDBModelStoreContainer" CdmEntityContainer="BrokerDBEntities">
+    <EntitySetMapping Name="AutoInsuranceDetails">
+      <EntityTypeMapping TypeName="BrokerDBModel.AutoInsuranceDetail">
+        <MappingFragment StoreEntitySet="AutoInsuranceDetails">
+          <ScalarProperty Name="DeclarationDocBase64" ColumnName="DeclarationDocBase64" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+          <ScalarProperty Name="IsInsured" ColumnName="IsInsured" />
+          <ScalarProperty Name="InsuranceCompany" ColumnName="InsuranceCompany" />
+          <ScalarProperty Name="CoverageExpires" ColumnName="CoverageExpires" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AutoTypeMasters">
+      <EntityTypeMapping TypeName="BrokerDBModel.AutoTypeMaster">
+        <MappingFragment StoreEntitySet="AutoTypeMaster">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="AutoType" ColumnName="AutoType" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BenefitsInsuranceDetails">
+      <EntityTypeMapping TypeName="BrokerDBModel.BenefitsInsuranceDetail">
+        <MappingFragment StoreEntitySet="BenefitsInsuranceDetails">
+          <ScalarProperty Name="DeclarationDocBase64" ColumnName="DeclarationDocBase64" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="IsInsured" ColumnName="IsInsured" />
+          <ScalarProperty Name="InsuranceCompany" ColumnName="InsuranceCompany" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="EmployeeStrength" ColumnName="EmployeeStrength" />
+          <ScalarProperty Name="CoverageExpires" ColumnName="CoverageExpires" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+          <ScalarProperty Name="SubIndustryId" ColumnName="SubIndustryId" />
+          <ScalarProperty Name="SubIndustrySICCode" ColumnName="SubIndustrySICCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BrokerAvailabilities">
+      <EntityTypeMapping TypeName="BrokerDBModel.BrokerAvailability">
+        <MappingFragment StoreEntitySet="BrokerAvailability">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BrokerPayments">
+      <EntityTypeMapping TypeName="BrokerDBModel.BrokerPayment">
+        <MappingFragment StoreEntitySet="BrokerPayment">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BusinessInsuranceDetails">
+      <EntityTypeMapping TypeName="BrokerDBModel.BusinessInsuranceDetail">
+        <MappingFragment StoreEntitySet="BusinessInsuranceDetails">
+          <ScalarProperty Name="DeclarationDocBase64" ColumnName="DeclarationDocBase64" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="IsInsured" ColumnName="IsInsured" />
+          <ScalarProperty Name="InsuranceCompany" ColumnName="InsuranceCompany" />
+          <ScalarProperty Name="SICCode" ColumnName="SICCode" />
+          <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+          <ScalarProperty Name="CoverageExpires" ColumnName="CoverageExpires" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+          <ScalarProperty Name="SubIndustryId" ColumnName="SubIndustryId" />
+          <ScalarProperty Name="SubIndustrySICCode" ColumnName="SubIndustrySICCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CompanyMasters">
+      <EntityTypeMapping TypeName="BrokerDBModel.CompanyMaster">
+        <MappingFragment StoreEntitySet="CompanyMaster">
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ErrorLogs">
+      <EntityTypeMapping TypeName="BrokerDBModel.ErrorLog">
+        <MappingFragment StoreEntitySet="ErrorLog">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ErrorType" ColumnName="ErrorType" />
+          <ScalarProperty Name="ErrorMessage" ColumnName="ErrorMessage" />
+          <ScalarProperty Name="PageName" ColumnName="PageName" />
+          <ScalarProperty Name="ErrorDate" ColumnName="ErrorDate" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HomeInsuranceDetails">
+      <EntityTypeMapping TypeName="BrokerDBModel.HomeInsuranceDetail">
+        <MappingFragment StoreEntitySet="HomeInsuranceDetails">
+          <ScalarProperty Name="DeclarationDocBase64" ColumnName="DeclarationDocBase64" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="EstimatedValue" ColumnName="EstimatedValue" />
+          <ScalarProperty Name="IsInsured" ColumnName="IsInsured" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="CoverageExpires" ColumnName="CoverageExpires" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IndustryMasters">
+      <EntityTypeMapping TypeName="BrokerDBModel.IndustryMaster">
+        <MappingFragment StoreEntitySet="IndustryMaster">
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+          <ScalarProperty Name="IndustryName" ColumnName="IndustryName" />
+          <ScalarProperty Name="IndustrySICCode" ColumnName="IndustrySICCode" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InsuranceTypeMasters">
+      <EntityTypeMapping TypeName="BrokerDBModel.InsuranceTypeMaster">
+        <MappingFragment StoreEntitySet="InsuranceTypeMaster">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="InsuranceName" ColumnName="InsuranceName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LifeInsuranceDetails">
+      <EntityTypeMapping TypeName="BrokerDBModel.LifeInsuranceDetail">
+        <MappingFragment StoreEntitySet="LifeInsuranceDetails">
+          <ScalarProperty Name="DeclarationDocBase64" ColumnName="DeclarationDocBase64" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="IsInsured" ColumnName="IsInsured" />
+          <ScalarProperty Name="InsuranceCompany" ColumnName="InsuranceCompany" />
+          <ScalarProperty Name="Language" ColumnName="Language" />
+          <ScalarProperty Name="FaceValue" ColumnName="FaceValue" />
+          <ScalarProperty Name="CoverageExpires" ColumnName="CoverageExpires" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PaymentMasters">
+      <EntityTypeMapping TypeName="BrokerDBModel.PaymentMaster">
+        <MappingFragment StoreEntitySet="PaymentMaster">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DateOfEffect" ColumnName="DateOfEffect" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubIndustryMasters">
+      <EntityTypeMapping TypeName="BrokerDBModel.SubIndustryMaster">
+        <MappingFragment StoreEntitySet="SubIndustryMaster">
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+          <ScalarProperty Name="SICCode" ColumnName="SICCode" />
+          <ScalarProperty Name="SubIndustryName" ColumnName="SubIndustryName" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="BrokerDBModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="EstPremium" ColumnName="EstPremium" />
+          <ScalarProperty Name="NoofEmployee" ColumnName="NoofEmployee" />
+          <ScalarProperty Name="RegisteredFor" ColumnName="RegisteredFor" />
+          <ScalarProperty Name="Bio" ColumnName="Bio" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="MobNo" ColumnName="MobNo" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="RegisteredDate" ColumnName="RegisteredDate" />
+          <ScalarProperty Name="RegisterdType" ColumnName="RegisterdType" />
+          <ScalarProperty Name="IsUpdateProfile" ColumnName="IsUpdateProfile" />
+          <ScalarProperty Name="HouseType" ColumnName="HouseType" />
+          <ScalarProperty Name="AddressofHouse" ColumnName="AddressofHouse" />
+          <ScalarProperty Name="IsHavingCar" ColumnName="IsHavingCar" />
+          <ScalarProperty Name="NoOfCars" ColumnName="NoOfCars" />
+          <ScalarProperty Name="TypeOfEmployment" ColumnName="TypeOfEmployment" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Resume" ColumnName="Resume" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Languages" ColumnName="Languages" />
+          <ScalarProperty Name="Specialities" ColumnName="Specialities" />
+          <ScalarProperty Name="RegistrationCode" ColumnName="RegistrationCode" />
+          <ScalarProperty Name="IsEmailIdVerified" ColumnName="IsEmailIdVerified" />
+          <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+          <ScalarProperty Name="Awards" ColumnName="Awards" />
+          <ScalarProperty Name="Skills" ColumnName="Skills" />
+          <ScalarProperty Name="Recomendations" ColumnName="Recomendations" />
+          <ScalarProperty Name="License" ColumnName="License" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="ProfilePictureImg" ColumnName="ProfilePictureImg" />
+          <ScalarProperty Name="ResumeDoc" ColumnName="ResumeDoc" />
+          <ScalarProperty Name="IsPaymentDone" ColumnName="IsPaymentDone" />
+          <ScalarProperty Name="ForgetPasswordRanNum" ColumnName="ForgetPasswordRanNum" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="HomeValue" ColumnName="HomeValue" />
+          <ScalarProperty Name="AutoType" ColumnName="AutoType" />
+          <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+          <ScalarProperty Name="Employees" ColumnName="Employees" />
+          <ScalarProperty Name="CoverageAmt" ColumnName="CoverageAmt" />
+          <ScalarProperty Name="CompanyLogo" ColumnName="CompanyLogo" />
+          <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+          <ScalarProperty Name="SubIndustryId" ColumnName="SubIndustryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserBrokers">
+      <EntityTypeMapping TypeName="BrokerDBModel.UserBroker">
+        <MappingFragment StoreEntitySet="UserBroker">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="BrokerId" ColumnName="BrokerId" />
+          <ScalarProperty Name="SearchDate" ColumnName="SearchDate" />
+          <ScalarProperty Name="InsuranceType" ColumnName="InsuranceType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserExperiences">
+      <EntityTypeMapping TypeName="BrokerDBModel.UserExperience">
+        <MappingFragment StoreEntitySet="UserExperience">
+          <ScalarProperty Name="CompanyLogo" ColumnName="CompanyLogo" />
+          <ScalarProperty Name="Bio" ColumnName="Bio" />
+          <ScalarProperty Name="ExpId" ColumnName="ExpId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="DurationFrom" ColumnName="DurationFrom" />
+          <ScalarProperty Name="DurationTo" ColumnName="DurationTo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserIndustries">
+      <EntityTypeMapping TypeName="BrokerDBModel.UserIndustry">
+        <MappingFragment StoreEntitySet="UserIndustry">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+          <ScalarProperty Name="SubIndustryId" ColumnName="SubIndustryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WebsiteLogs">
+      <EntityTypeMapping TypeName="BrokerDBModel.WebsiteLog">
+        <MappingFragment StoreEntitySet="WebsiteLog">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="LogMessage" ColumnName="LogMessage" />
+          <ScalarProperty Name="LogDate" ColumnName="LogDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BrokerMessages">
+      <EntityTypeMapping TypeName="BrokerDBModel.BrokerMessage">
+        <MappingFragment StoreEntitySet="BrokerMessages">
+          <ScalarProperty Name="DeclarationDocBase64" ColumnName="DeclarationDocBase64" />
+          <ScalarProperty Name="DeclarationDocPath" ColumnName="DeclarationDocPath" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BrokerId" ColumnName="BrokerId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="ContactDate" ColumnName="ContactDate" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="CustomerMsgId" ColumnName="CustomerMsgId" />
+          <ScalarProperty Name="LocalDateTime" ColumnName="LocalDateTime" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Configs">
+      <EntityTypeMapping TypeName="BrokerDBModel.Config">
+        <MappingFragment StoreEntitySet="Config">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ConfigName" ColumnName="ConfigName" />
+          <ScalarProperty Name="ConfigValue" ColumnName="ConfigValue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerBrokerChats">
+      <EntityTypeMapping TypeName="BrokerDBModel.CustomerBrokerChat">
+        <MappingFragment StoreEntitySet="CustomerBrokerChat">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BrokerMsgId" ColumnName="BrokerMsgId" />
+          <ScalarProperty Name="CustMsgId" ColumnName="CustMsgId" />
+          <ScalarProperty Name="BrokerId" ColumnName="BrokerId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="BrokerMessage" ColumnName="BrokerMessage" />
+          <ScalarProperty Name="CustomerMessage" ColumnName="CustomerMessage" />
+          <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="LocalDateTime" ColumnName="LocalDateTime" />
+          <ScalarProperty Name="IsDeletedByCustomer" ColumnName="IsDeletedByCustomer" />
+          <ScalarProperty Name="IsDeletedByBroker" ColumnName="IsDeletedByBroker" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerMessages">
+      <EntityTypeMapping TypeName="BrokerDBModel.CustomerMessage">
+        <MappingFragment StoreEntitySet="CustomerMessages">
+          <ScalarProperty Name="IsRatingGiven" ColumnName="IsRatingGiven" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="BrokerId" ColumnName="BrokerId" />
+          <ScalarProperty Name="ContactDate" ColumnName="ContactDate" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="BrokerMsgId" ColumnName="BrokerMsgId" />
+          <ScalarProperty Name="LocalDateTime" ColumnName="LocalDateTime" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserEducations">
+      <EntityTypeMapping TypeName="BrokerDBModel.UserEducation">
+        <MappingFragment StoreEntitySet="UserEducation">
+          <ScalarProperty Name="EduId" ColumnName="EduId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UniversityName" ColumnName="UniversityName" />
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+          <ScalarProperty Name="DurationFrom" ColumnName="DurationFrom" />
+          <ScalarProperty Name="DurationTo" ColumnName="DurationTo" />
+          <ScalarProperty Name="EducationLogo" ColumnName="EducationLogo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionName="BrokerDBModel.Store.ParseCommaDelimitedString" FunctionImportName="ParseCommaDelimitedString">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.ParseCommaDelimitedString_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spErrorLog" FunctionName="BrokerDBModel.Store.spErrorLog" />
+    <FunctionImportMapping FunctionImportName="spGetUserDetails" FunctionName="BrokerDBModel.Store.spGetUserDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.spGetUserDetails_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="MobNo" ColumnName="MobNo" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="RegisteredDate" ColumnName="RegisteredDate" />
+          <ScalarProperty Name="RegisterdType" ColumnName="RegisterdType" />
+          <ScalarProperty Name="IsUpdateProfile" ColumnName="IsUpdateProfile" />
+          <ScalarProperty Name="HouseType" ColumnName="HouseType" />
+          <ScalarProperty Name="AddressofHouse" ColumnName="AddressofHouse" />
+          <ScalarProperty Name="IsHavingCar" ColumnName="IsHavingCar" />
+          <ScalarProperty Name="NoOfCars" ColumnName="NoOfCars" />
+          <ScalarProperty Name="TypeOfEmployment" ColumnName="TypeOfEmployment" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Resume" ColumnName="Resume" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Languages" ColumnName="Languages" />
+          <ScalarProperty Name="Specialities" ColumnName="Specialities" />
+          <ScalarProperty Name="RegistrationCode" ColumnName="RegistrationCode" />
+          <ScalarProperty Name="IsEmailIdVerified" ColumnName="IsEmailIdVerified" />
+          <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+          <ScalarProperty Name="Awards" ColumnName="Awards" />
+          <ScalarProperty Name="Skills" ColumnName="Skills" />
+          <ScalarProperty Name="Recomendations" ColumnName="Recomendations" />
+          <ScalarProperty Name="License" ColumnName="License" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="ProfilePictureImg" ColumnName="ProfilePictureImg" />
+          <ScalarProperty Name="ResumeDoc" ColumnName="ResumeDoc" />
+          <ScalarProperty Name="IsPaymentDone" ColumnName="IsPaymentDone" />
+          <ScalarProperty Name="ForgetPasswordRanNum" ColumnName="ForgetPasswordRanNum" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="HomeValue" ColumnName="HomeValue" />
+          <ScalarProperty Name="AutoType" ColumnName="AutoType" />
+          <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+          <ScalarProperty Name="Employees" ColumnName="Employees" />
+          <ScalarProperty Name="CoverageAmt" ColumnName="CoverageAmt" />
+          <ScalarProperty Name="CompanyLogo" ColumnName="CompanyLogo" />
+          <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+          <ScalarProperty Name="SubIndustryId" ColumnName="SubIndustryId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spRegisterUser" FunctionName="BrokerDBModel.Store.spRegisterUser">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.spRegisterUser_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="RegisterdType" ColumnName="RegisterdType" />
+          <ScalarProperty Name="IsUpdateProfile" ColumnName="IsUpdateProfile" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="MobNo" ColumnName="MobNo" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="HouseType" ColumnName="HouseType" />
+          <ScalarProperty Name="AddressofHouse" ColumnName="AddressofHouse" />
+          <ScalarProperty Name="IsHavingCar" ColumnName="IsHavingCar" />
+          <ScalarProperty Name="NoOfCars" ColumnName="NoOfCars" />
+          <ScalarProperty Name="TypeOfEmployment" ColumnName="TypeOfEmployment" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="ProfilePictureImg" ColumnName="ProfilePictureImg" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spUpdateBroker" FunctionName="BrokerDBModel.Store.spUpdateBroker" />
+    <FunctionImportMapping FunctionImportName="spUpdateCustomer" FunctionName="BrokerDBModel.Store.spUpdateCustomer" />
+    <FunctionImportMapping FunctionImportName="spUpdateCustomerForWeb" FunctionName="BrokerDBModel.Store.spUpdateCustomerForWeb">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.spUpdateCustomerForWeb_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="HouseType" ColumnName="HouseType" />
+          <ScalarProperty Name="AddressofHouse" ColumnName="AddressofHouse" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="ProfilePictureImg" ColumnName="ProfilePictureImg" />
+          <ScalarProperty Name="IsHavingCar" ColumnName="IsHavingCar" />
+          <ScalarProperty Name="NoOfCars" ColumnName="NoOfCars" />
+          <ScalarProperty Name="TypeOfEmployment" ColumnName="TypeOfEmployment" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spUpdateUser" FunctionName="BrokerDBModel.Store.spUpdateUser" />
+    <FunctionImportMapping FunctionImportName="spWebsiteLog" FunctionName="BrokerDBModel.Store.spWebsiteLog" />
+    <FunctionImportMapping FunctionImportName="uspBrokerMessages" FunctionName="BrokerDBModel.Store.uspBrokerMessages" />
+    <FunctionImportMapping FunctionImportName="uspCheckBrokerLogin" FunctionName="BrokerDBModel.Store.uspCheckBrokerLogin" />
+    <FunctionImportMapping FunctionImportName="uspCheckForValidEmailId" FunctionName="BrokerDBModel.Store.uspCheckForValidEmailId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspCheckForValidEmailId_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="MobNo" ColumnName="MobNo" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="RegisteredDate" ColumnName="RegisteredDate" />
+          <ScalarProperty Name="RegisterdType" ColumnName="RegisterdType" />
+          <ScalarProperty Name="IsUpdateProfile" ColumnName="IsUpdateProfile" />
+          <ScalarProperty Name="HouseType" ColumnName="HouseType" />
+          <ScalarProperty Name="AddressofHouse" ColumnName="AddressofHouse" />
+          <ScalarProperty Name="IsHavingCar" ColumnName="IsHavingCar" />
+          <ScalarProperty Name="NoOfCars" ColumnName="NoOfCars" />
+          <ScalarProperty Name="TypeOfEmployment" ColumnName="TypeOfEmployment" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Resume" ColumnName="Resume" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Languages" ColumnName="Languages" />
+          <ScalarProperty Name="Specialities" ColumnName="Specialities" />
+          <ScalarProperty Name="RegistrationCode" ColumnName="RegistrationCode" />
+          <ScalarProperty Name="IsEmailIdVerified" ColumnName="IsEmailIdVerified" />
+          <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+          <ScalarProperty Name="Awards" ColumnName="Awards" />
+          <ScalarProperty Name="Skills" ColumnName="Skills" />
+          <ScalarProperty Name="Recomendations" ColumnName="Recomendations" />
+          <ScalarProperty Name="License" ColumnName="License" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="ProfilePictureImg" ColumnName="ProfilePictureImg" />
+          <ScalarProperty Name="ResumeDoc" ColumnName="ResumeDoc" />
+          <ScalarProperty Name="IsPaymentDone" ColumnName="IsPaymentDone" />
+          <ScalarProperty Name="ForgetPasswordRanNum" ColumnName="ForgetPasswordRanNum" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="HomeValue" ColumnName="HomeValue" />
+          <ScalarProperty Name="AutoType" ColumnName="AutoType" />
+          <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+          <ScalarProperty Name="Employees" ColumnName="Employees" />
+          <ScalarProperty Name="CoverageAmt" ColumnName="CoverageAmt" />
+          <ScalarProperty Name="CompanyLogo" ColumnName="CompanyLogo" />
+          <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+          <ScalarProperty Name="SubIndustryId" ColumnName="SubIndustryId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspContactBroker" FunctionName="BrokerDBModel.Store.uspContactBroker" />
+    <FunctionImportMapping FunctionImportName="uspDeleteBrokerDetails" FunctionName="BrokerDBModel.Store.uspDeleteBrokerDetails" />
+    <FunctionImportMapping FunctionImportName="uspDeleteBrokerSubDetailsWeb" FunctionName="BrokerDBModel.Store.uspDeleteBrokerSubDetailsWeb" />
+    <FunctionImportMapping FunctionImportName="uspDeleteIndustryId" FunctionName="BrokerDBModel.Store.uspDeleteIndustryId" />
+    <FunctionImportMapping FunctionImportName="uspDeleteMessage" FunctionName="BrokerDBModel.Store.uspDeleteMessage" />
+    <FunctionImportMapping FunctionImportName="uspDeleteMultipleChatMessages" FunctionName="BrokerDBModel.Store.uspDeleteMultipleChatMessages" />
+    <FunctionImportMapping FunctionImportName="uspDeleteMultipleMessages" FunctionName="BrokerDBModel.Store.uspDeleteMultipleMessages" />
+    <FunctionImportMapping FunctionImportName="uspForgetPasswordRanNum" FunctionName="BrokerDBModel.Store.uspForgetPasswordRanNum" />
+    <FunctionImportMapping FunctionImportName="uspGetBrokerDetails" FunctionName="BrokerDBModel.Store.uspGetBrokerDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspGetBrokerDetails_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="MobNo" ColumnName="MobNo" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="RegisterdType" ColumnName="RegisterdType" />
+          <ScalarProperty Name="IsUpdateProfile" ColumnName="IsUpdateProfile" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Languages" ColumnName="Languages" />
+          <ScalarProperty Name="Specialities" ColumnName="Specialities" />
+          <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+          <ScalarProperty Name="Awards" ColumnName="Awards" />
+          <ScalarProperty Name="Skills" ColumnName="Skills" />
+          <ScalarProperty Name="Recomendations" ColumnName="Recomendations" />
+          <ScalarProperty Name="License" ColumnName="License" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="Resume" ColumnName="Resume" />
+          <ScalarProperty Name="ProfilePictureImg" ColumnName="ProfilePictureImg" />
+          <ScalarProperty Name="ResumeDoc" ColumnName="ResumeDoc" />
+          <ScalarProperty Name="IsPaymentDone" ColumnName="IsPaymentDone" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="HomeValue" ColumnName="HomeValue" />
+          <ScalarProperty Name="AutoType" ColumnName="AutoType" />
+          <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+          <ScalarProperty Name="Employees" ColumnName="Employees" />
+          <ScalarProperty Name="CoverageAmt" ColumnName="CoverageAmt" />
+          <ScalarProperty Name="CompanyLogo" ColumnName="CompanyLogo" />
+          <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+          <ScalarProperty Name="SubIndustryId" ColumnName="SubIndustryId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetBrokersAvailabilty" FunctionName="BrokerDBModel.Store.uspGetBrokersAvailabilty">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspGetBrokersAvailabilty_Result">
+          <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetBrokersList" FunctionName="BrokerDBModel.Store.uspGetBrokersList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspGetBrokersList_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="MobNo" ColumnName="MobNo" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="RegisterdType" ColumnName="RegisterdType" />
+          <ScalarProperty Name="IsUpdateProfile" ColumnName="IsUpdateProfile" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Languages" ColumnName="Languages" />
+          <ScalarProperty Name="Specialities" ColumnName="Specialities" />
+          <ScalarProperty Name="Awards" ColumnName="Awards" />
+          <ScalarProperty Name="Skills" ColumnName="Skills" />
+          <ScalarProperty Name="Recomendations" ColumnName="Recomendations" />
+          <ScalarProperty Name="License" ColumnName="License" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="ProfilePictureImg" ColumnName="ProfilePictureImg" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="CompanyLogo" ColumnName="CompanyLogo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetChatMessages" FunctionName="BrokerDBModel.Store.uspGetChatMessages">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspGetChatMessages_Result">
+          <ScalarProperty Name="ChatId" ColumnName="ChatId" />
+          <ScalarProperty Name="CustMsgId" ColumnName="CustMsgId" />
+          <ScalarProperty Name="BrokerMsgId" ColumnName="BrokerMsgId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="BrokerId" ColumnName="BrokerId" />
+          <ScalarProperty Name="CustomerMessage" ColumnName="CustomerMessage" />
+          <ScalarProperty Name="BrokerMessage" ColumnName="BrokerMessage" />
+          <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LocalDateTime" ColumnName="LocalDateTime" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetChatMessages1" FunctionName="BrokerDBModel.Store.uspGetChatMessages1">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspGetChatMessages1_Result">
+          <ScalarProperty Name="ChatId" ColumnName="ChatId" />
+          <ScalarProperty Name="CustMsgId" ColumnName="CustMsgId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="BrokerId" ColumnName="BrokerId" />
+          <ScalarProperty Name="CustomerMessage" ColumnName="CustomerMessage" />
+          <ScalarProperty Name="BrokerMessage" ColumnName="BrokerMessage" />
+          <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetChatMessagesByMessageId" FunctionName="BrokerDBModel.Store.uspGetChatMessagesByMessageId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspGetChatMessagesByMessageId_Result">
+          <ScalarProperty Name="ChatId" ColumnName="ChatId" />
+          <ScalarProperty Name="CustMsgId" ColumnName="CustMsgId" />
+          <ScalarProperty Name="BrokerMsgId" ColumnName="BrokerMsgId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="BrokerId" ColumnName="BrokerId" />
+          <ScalarProperty Name="CustomerMessage" ColumnName="CustomerMessage" />
+          <ScalarProperty Name="BrokerMessage" ColumnName="BrokerMessage" />
+          <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="LocalDateTime" ColumnName="LocalDateTime" />
+          <ScalarProperty Name="IsDeletedByCustomer" ColumnName="IsDeletedByCustomer" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetCompanyMaster" FunctionName="BrokerDBModel.Store.uspGetCompanyMaster">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspGetCompanyMaster_Result">
+          <ScalarProperty Name="CompanyId" ColumnName="CompanyId" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetContactedBrokersList" FunctionName="BrokerDBModel.Store.uspGetContactedBrokersList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspGetContactedBrokersList_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="BrokerId" ColumnName="BrokerId" />
+          <ScalarProperty Name="InsuranceType" ColumnName="InsuranceType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetContactedList" FunctionName="BrokerDBModel.Store.uspGetContactedList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspGetContactedList_Result">
+          <ScalarProperty Name="MessageId" ColumnName="MessageId" />
+          <ScalarProperty Name="BrokerId" ColumnName="BrokerId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="ContactDate" ColumnName="ContactDate" />
+          <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="ProfilePictureImg" ColumnName="ProfilePictureImg" />
+          <ScalarProperty Name="CustomerMsgId" ColumnName="CustomerMsgId" />
+          <ScalarProperty Name="LocalDateTime" ColumnName="LocalDateTime" />
+          <ScalarProperty Name="DeviceId1" ColumnName="DeviceId1" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetCurrentTimeSpan" FunctionName="BrokerDBModel.Store.uspGetCurrentTimeSpan">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspGetCurrentTimeSpan_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="MobNo" ColumnName="MobNo" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="RegisteredDate" ColumnName="RegisteredDate" />
+          <ScalarProperty Name="RegisterdType" ColumnName="RegisterdType" />
+          <ScalarProperty Name="IsUpdateProfile" ColumnName="IsUpdateProfile" />
+          <ScalarProperty Name="HouseType" ColumnName="HouseType" />
+          <ScalarProperty Name="AddressofHouse" ColumnName="AddressofHouse" />
+          <ScalarProperty Name="IsHavingCar" ColumnName="IsHavingCar" />
+          <ScalarProperty Name="NoOfCars" ColumnName="NoOfCars" />
+          <ScalarProperty Name="TypeOfEmployment" ColumnName="TypeOfEmployment" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Resume" ColumnName="Resume" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Languages" ColumnName="Languages" />
+          <ScalarProperty Name="Specialities" ColumnName="Specialities" />
+          <ScalarProperty Name="RegistrationCode" ColumnName="RegistrationCode" />
+          <ScalarProperty Name="IsEmailIdVerified" ColumnName="IsEmailIdVerified" />
+          <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+          <ScalarProperty Name="Awards" ColumnName="Awards" />
+          <ScalarProperty Name="Skills" ColumnName="Skills" />
+          <ScalarProperty Name="Recomendations" ColumnName="Recomendations" />
+          <ScalarProperty Name="License" ColumnName="License" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="ProfilePictureImg" ColumnName="ProfilePictureImg" />
+          <ScalarProperty Name="ResumeDoc" ColumnName="ResumeDoc" />
+          <ScalarProperty Name="IsPaymentDone" ColumnName="IsPaymentDone" />
+          <ScalarProperty Name="ForgetPasswordRanNum" ColumnName="ForgetPasswordRanNum" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="HomeValue" ColumnName="HomeValue" />
+          <ScalarProperty Name="AutoType" ColumnName="AutoType" />
+          <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+          <ScalarProperty Name="Employees" ColumnName="Employees" />
+          <ScalarProperty Name="CoverageAmt" ColumnName="CoverageAmt" />
+          <ScalarProperty Name="CompanyLogo" ColumnName="CompanyLogo" />
+          <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+          <ScalarProperty Name="SubIndustryId" ColumnName="SubIndustryId" />
+          <ScalarProperty Name="TimeSpan" ColumnName="TimeSpan" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetIndustryMaster" FunctionName="BrokerDBModel.Store.uspGetIndustryMaster">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspGetIndustryMaster_Result">
+          <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+          <ScalarProperty Name="IndustrySICCode" ColumnName="IndustrySICCode" />
+          <ScalarProperty Name="IndustryName" ColumnName="IndustryName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetPaymentAmount" FunctionName="BrokerDBModel.Store.uspGetPaymentAmount">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspGetPaymentAmount_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="DateOfEffect" ColumnName="DateOfEffect" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetSubIndustryMaster" FunctionName="BrokerDBModel.Store.uspGetSubIndustryMaster">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspGetSubIndustryMaster_Result">
+          <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+          <ScalarProperty Name="SubIndustryId" ColumnName="SubIndustryId" />
+          <ScalarProperty Name="SICCode" ColumnName="SICCode" />
+          <ScalarProperty Name="SubIndustryName" ColumnName="SubIndustryName" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetUnreadChatMessages" FunctionName="BrokerDBModel.Store.uspGetUnreadChatMessages">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspGetUnreadChatMessages_Result">
+          <ScalarProperty Name="ChatId" ColumnName="ChatId" />
+          <ScalarProperty Name="CustMsgId" ColumnName="CustMsgId" />
+          <ScalarProperty Name="BrokerMsgId" ColumnName="BrokerMsgId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="BrokerId" ColumnName="BrokerId" />
+          <ScalarProperty Name="CustomerMessage" ColumnName="CustomerMessage" />
+          <ScalarProperty Name="BrokerMessage" ColumnName="BrokerMessage" />
+          <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LocalDateTime" ColumnName="LocalDateTime" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspGetUnreadMsgCount" FunctionName="BrokerDBModel.Store.uspGetUnreadMsgCount" />
+    <FunctionImportMapping FunctionImportName="uspgetUnreadMsgCountByDeviceid" FunctionName="BrokerDBModel.Store.uspgetUnreadMsgCountByDeviceid" />
+    <FunctionImportMapping FunctionImportName="uspGetUserAndPaymentList" FunctionName="BrokerDBModel.Store.uspGetUserAndPaymentList">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspGetUserAndPaymentList_Result">
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="MobNo" ColumnName="MobNo" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspHomeInsuranceDetails" FunctionName="BrokerDBModel.Store.uspHomeInsuranceDetails" />
+    <FunctionImportMapping FunctionImportName="uspInsertIndustryId" FunctionName="BrokerDBModel.Store.uspInsertIndustryId" />
+    <FunctionImportMapping FunctionImportName="uspInsertNewPayment" FunctionName="BrokerDBModel.Store.uspInsertNewPayment" />
+    <FunctionImportMapping FunctionImportName="uspInsertPaymentDetails" FunctionName="BrokerDBModel.Store.uspInsertPaymentDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspInsertPaymentDetails_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="PaymentId" ColumnName="PaymentId" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="PaymentDate" ColumnName="PaymentDate" />
+          <ScalarProperty Name="IsPaid" ColumnName="IsPaid" />
+          <ScalarProperty Name="PaymentMode" ColumnName="PaymentMode" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspResetPassword" FunctionName="BrokerDBModel.Store.uspResetPassword" />
+    <FunctionImportMapping FunctionImportName="uspSaveAutoInsuranceDetails" FunctionName="BrokerDBModel.Store.uspSaveAutoInsuranceDetails" />
+    <FunctionImportMapping FunctionImportName="uspSaveBenefitsInsuranceDetails" FunctionName="BrokerDBModel.Store.uspSaveBenefitsInsuranceDetails" />
+    <FunctionImportMapping FunctionImportName="uspSaveBrokerBasicDetails" FunctionName="BrokerDBModel.Store.uspSaveBrokerBasicDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspSaveBrokerBasicDetails_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="MobNo" ColumnName="MobNo" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="RegisteredDate" ColumnName="RegisteredDate" />
+          <ScalarProperty Name="RegisterdType" ColumnName="RegisterdType" />
+          <ScalarProperty Name="IsUpdateProfile" ColumnName="IsUpdateProfile" />
+          <ScalarProperty Name="HouseType" ColumnName="HouseType" />
+          <ScalarProperty Name="AddressofHouse" ColumnName="AddressofHouse" />
+          <ScalarProperty Name="IsHavingCar" ColumnName="IsHavingCar" />
+          <ScalarProperty Name="NoOfCars" ColumnName="NoOfCars" />
+          <ScalarProperty Name="TypeOfEmployment" ColumnName="TypeOfEmployment" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Resume" ColumnName="Resume" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Languages" ColumnName="Languages" />
+          <ScalarProperty Name="Specialities" ColumnName="Specialities" />
+          <ScalarProperty Name="RegistrationCode" ColumnName="RegistrationCode" />
+          <ScalarProperty Name="IsEmailIdVerified" ColumnName="IsEmailIdVerified" />
+          <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+          <ScalarProperty Name="Awards" ColumnName="Awards" />
+          <ScalarProperty Name="Skills" ColumnName="Skills" />
+          <ScalarProperty Name="Recomendations" ColumnName="Recomendations" />
+          <ScalarProperty Name="License" ColumnName="License" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="ProfilePictureImg" ColumnName="ProfilePictureImg" />
+          <ScalarProperty Name="ResumeDoc" ColumnName="ResumeDoc" />
+          <ScalarProperty Name="IsPaymentDone" ColumnName="IsPaymentDone" />
+          <ScalarProperty Name="ForgetPasswordRanNum" ColumnName="ForgetPasswordRanNum" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="HomeValue" ColumnName="HomeValue" />
+          <ScalarProperty Name="AutoType" ColumnName="AutoType" />
+          <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+          <ScalarProperty Name="Employees" ColumnName="Employees" />
+          <ScalarProperty Name="CoverageAmt" ColumnName="CoverageAmt" />
+          <ScalarProperty Name="CompanyLogo" ColumnName="CompanyLogo" />
+          <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+          <ScalarProperty Name="SubIndustryId" ColumnName="SubIndustryId" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspSaveBrokerChat" FunctionName="BrokerDBModel.Store.uspSaveBrokerChat">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspSaveBrokerChat_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BrokerMsgId" ColumnName="BrokerMsgId" />
+          <ScalarProperty Name="CustMsgId" ColumnName="CustMsgId" />
+          <ScalarProperty Name="BrokerId" ColumnName="BrokerId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="BrokerMessage" ColumnName="BrokerMessage" />
+          <ScalarProperty Name="CustomerMessage" ColumnName="CustomerMessage" />
+          <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="LocalDateTime" ColumnName="LocalDateTime" />
+          <ScalarProperty Name="IsDeletedByCustomer" ColumnName="IsDeletedByCustomer" />
+          <ScalarProperty Name="IsDeletedByBroker" ColumnName="IsDeletedByBroker" />
+          <ScalarProperty Name="MessageTime" ColumnName="MessageTime" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspSaveBrokerCompanyDetails" FunctionName="BrokerDBModel.Store.uspSaveBrokerCompanyDetails" />
+    <FunctionImportMapping FunctionImportName="uspSaveBrokerCompanyDetailsNew" FunctionName="BrokerDBModel.Store.uspSaveBrokerCompanyDetailsNew" />
+    <FunctionImportMapping FunctionImportName="uspSaveBrokerEducationDetails" FunctionName="BrokerDBModel.Store.uspSaveBrokerEducationDetails" />
+    <FunctionImportMapping FunctionImportName="uspSaveBrokerEducationDetailsNew" FunctionName="BrokerDBModel.Store.uspSaveBrokerEducationDetailsNew" />
+    <FunctionImportMapping FunctionImportName="uspSaveBrokerFiles" FunctionName="BrokerDBModel.Store.uspSaveBrokerFiles" />
+    <FunctionImportMapping FunctionImportName="uspSaveBrokerIndustryDetails" FunctionName="BrokerDBModel.Store.uspSaveBrokerIndustryDetails" />
+    <FunctionImportMapping FunctionImportName="uspSaveBusinessInsuranceDetails" FunctionName="BrokerDBModel.Store.uspSaveBusinessInsuranceDetails" />
+    <FunctionImportMapping FunctionImportName="uspSaveLifeInsuranceDetails" FunctionName="BrokerDBModel.Store.uspSaveLifeInsuranceDetails" />
+    <FunctionImportMapping FunctionImportName="uspSetBrokerAvailabilityWithZipCode" FunctionName="BrokerDBModel.Store.uspSetBrokerAvailabilityWithZipCode">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspSetBrokerAvailabilityWithZipCode_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="RegisterdType" ColumnName="RegisterdType" />
+          <ScalarProperty Name="IsUpdateProfile" ColumnName="IsUpdateProfile" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="MobNo" ColumnName="MobNo" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="HouseType" ColumnName="HouseType" />
+          <ScalarProperty Name="AddressofHouse" ColumnName="AddressofHouse" />
+          <ScalarProperty Name="IsHavingCar" ColumnName="IsHavingCar" />
+          <ScalarProperty Name="NoOfCars" ColumnName="NoOfCars" />
+          <ScalarProperty Name="TypeOfEmployment" ColumnName="TypeOfEmployment" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="ProfilePictureImg" ColumnName="ProfilePictureImg" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspSetBrokersAvailabilty" FunctionName="BrokerDBModel.Store.uspSetBrokersAvailabilty" />
+    <FunctionImportMapping FunctionImportName="uspSetDeviceId" FunctionName="BrokerDBModel.Store.uspSetDeviceId" />
+    <FunctionImportMapping FunctionImportName="uspSetIsRead" FunctionName="BrokerDBModel.Store.uspSetIsRead" />
+    <FunctionImportMapping FunctionImportName="uspUpdateBrokerBasicDetails" FunctionName="BrokerDBModel.Store.uspUpdateBrokerBasicDetails" />
+    <FunctionImportMapping FunctionImportName="uspUpdateBrokerForAndroid" FunctionName="BrokerDBModel.Store.uspUpdateBrokerForAndroid" />
+    <FunctionImportMapping FunctionImportName="uspUpdateBrokerPaymentDoneFlag" FunctionName="BrokerDBModel.Store.uspUpdateBrokerPaymentDoneFlag" />
+    <FunctionImportMapping FunctionImportName="uspUpdateCustomerForAndroid" FunctionName="BrokerDBModel.Store.uspUpdateCustomerForAndroid" />
+    <FunctionImportMapping FunctionImportName="uspUpdateEducationDetails" FunctionName="BrokerDBModel.Store.uspUpdateEducationDetails" />
+    <FunctionImportMapping FunctionImportName="uspVerifyEmailId" FunctionName="BrokerDBModel.Store.uspVerifyEmailId">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspVerifyEmailId_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="RegisterdType" ColumnName="RegisterdType" />
+          <ScalarProperty Name="IsUpdateProfile" ColumnName="IsUpdateProfile" />
+          <ScalarProperty Name="IsEmailIdVerified" ColumnName="IsEmailIdVerified" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspViewUserProfile" FunctionName="BrokerDBModel.Store.uspViewUserProfile">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspViewUserProfile_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="MobNo" ColumnName="MobNo" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="RegisterdType" ColumnName="RegisterdType" />
+          <ScalarProperty Name="IsUpdateProfile" ColumnName="IsUpdateProfile" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Languages" ColumnName="Languages" />
+          <ScalarProperty Name="Specialities" ColumnName="Specialities" />
+          <ScalarProperty Name="Awards" ColumnName="Awards" />
+          <ScalarProperty Name="Skills" ColumnName="Skills" />
+          <ScalarProperty Name="Recomendations" ColumnName="Recomendations" />
+          <ScalarProperty Name="License" ColumnName="License" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="Resume" ColumnName="Resume" />
+          <ScalarProperty Name="ProfilePictureImg" ColumnName="ProfilePictureImg" />
+          <ScalarProperty Name="ResumeDoc" ColumnName="ResumeDoc" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspSaveCustomerChat" FunctionName="BrokerDBModel.Store.uspSaveCustomerChat">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspSaveCustomerChat_Result">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BrokerMsgId" ColumnName="BrokerMsgId" />
+          <ScalarProperty Name="CustMsgId" ColumnName="CustMsgId" />
+          <ScalarProperty Name="BrokerId" ColumnName="BrokerId" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+          <ScalarProperty Name="BrokerMessage" ColumnName="BrokerMessage" />
+          <ScalarProperty Name="CustomerMessage" ColumnName="CustomerMessage" />
+          <ScalarProperty Name="MessageDate" ColumnName="MessageDate" />
+          <ScalarProperty Name="IsRead" ColumnName="IsRead" />
+          <ScalarProperty Name="LocalDateTime" ColumnName="LocalDateTime" />
+          <ScalarProperty Name="IsDeletedByCustomer" ColumnName="IsDeletedByCustomer" />
+          <ScalarProperty Name="IsDeletedByBroker" ColumnName="IsDeletedByBroker" />
+          <ScalarProperty Name="MessageTime" ColumnName="MessageTime" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="UserSerchedZipCodes">
+      <EntityTypeMapping TypeName="BrokerDBModel.UserSerchedZipCode">
+        <MappingFragment StoreEntitySet="UserSerchedZipCodes">
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserZipCodes">
+      <EntityTypeMapping TypeName="BrokerDBModel.UserZipCode">
+        <MappingFragment StoreEntitySet="UserZipCode">
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spCheckUserExist" FunctionName="BrokerDBModel.Store.spCheckUserExist">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.spCheckUserExist_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="RegisterdType" ColumnName="RegisterdType" />
+          <ScalarProperty Name="IsUpdateProfile" ColumnName="IsUpdateProfile" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="MobNo" ColumnName="MobNo" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="HouseType" ColumnName="HouseType" />
+          <ScalarProperty Name="AddressofHouse" ColumnName="AddressofHouse" />
+          <ScalarProperty Name="IsHavingCar" ColumnName="IsHavingCar" />
+          <ScalarProperty Name="NoOfCars" ColumnName="NoOfCars" />
+          <ScalarProperty Name="TypeOfEmployment" ColumnName="TypeOfEmployment" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="ProfilePictureImg" ColumnName="ProfilePictureImg" />
+          <ScalarProperty Name="IsEmailIdVerified" ColumnName="IsEmailIdVerified" />
+          <ScalarProperty Name="RegisteredFor" ColumnName="RegisteredFor" />
+          <ScalarProperty Name="NoOfEmp" ColumnName="NoOfEmp" />
+          <ScalarProperty Name="EstPremium" ColumnName="EstPremium" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="uspSaveCustomerBasicDetails" FunctionName="BrokerDBModel.Store.uspSaveCustomerBasicDetails">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.uspSaveCustomerBasicDetails_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="MobNo" ColumnName="MobNo" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="RegisteredDate" ColumnName="RegisteredDate" />
+          <ScalarProperty Name="RegisterdType" ColumnName="RegisterdType" />
+          <ScalarProperty Name="IsUpdateProfile" ColumnName="IsUpdateProfile" />
+          <ScalarProperty Name="HouseType" ColumnName="HouseType" />
+          <ScalarProperty Name="AddressofHouse" ColumnName="AddressofHouse" />
+          <ScalarProperty Name="IsHavingCar" ColumnName="IsHavingCar" />
+          <ScalarProperty Name="NoOfCars" ColumnName="NoOfCars" />
+          <ScalarProperty Name="TypeOfEmployment" ColumnName="TypeOfEmployment" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Resume" ColumnName="Resume" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="Languages" ColumnName="Languages" />
+          <ScalarProperty Name="Specialities" ColumnName="Specialities" />
+          <ScalarProperty Name="RegistrationCode" ColumnName="RegistrationCode" />
+          <ScalarProperty Name="IsEmailIdVerified" ColumnName="IsEmailIdVerified" />
+          <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+          <ScalarProperty Name="Awards" ColumnName="Awards" />
+          <ScalarProperty Name="Skills" ColumnName="Skills" />
+          <ScalarProperty Name="Recomendations" ColumnName="Recomendations" />
+          <ScalarProperty Name="License" ColumnName="License" />
+          <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="ProfilePictureImg" ColumnName="ProfilePictureImg" />
+          <ScalarProperty Name="ResumeDoc" ColumnName="ResumeDoc" />
+          <ScalarProperty Name="IsPaymentDone" ColumnName="IsPaymentDone" />
+          <ScalarProperty Name="ForgetPasswordRanNum" ColumnName="ForgetPasswordRanNum" />
+          <ScalarProperty Name="DeviceId" ColumnName="DeviceId" />
+          <ScalarProperty Name="HomeValue" ColumnName="HomeValue" />
+          <ScalarProperty Name="AutoType" ColumnName="AutoType" />
+          <ScalarProperty Name="Revenue" ColumnName="Revenue" />
+          <ScalarProperty Name="Employees" ColumnName="Employees" />
+          <ScalarProperty Name="CoverageAmt" ColumnName="CoverageAmt" />
+          <ScalarProperty Name="CompanyLogo" ColumnName="CompanyLogo" />
+          <ScalarProperty Name="IndustryId" ColumnName="IndustryId" />
+          <ScalarProperty Name="SubIndustryId" ColumnName="SubIndustryId" />
+          <ScalarProperty Name="Bio" ColumnName="Bio" />
+          <ScalarProperty Name="RegisteredFor" ColumnName="RegisteredFor" />
+          <ScalarProperty Name="NoofEmployee" ColumnName="NoofEmployee" />
+          <ScalarProperty Name="EstPremium" ColumnName="EstPremium" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spCheckUserLogin" FunctionName="BrokerDBModel.Store.spCheckUserLogin">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BrokerDBModel.spCheckUserLogin_Result">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EmailId" ColumnName="EmailId" />
+          <ScalarProperty Name="ProfilePicture" ColumnName="ProfilePicture" />
+          <ScalarProperty Name="UserType" ColumnName="UserType" />
+          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+          <ScalarProperty Name="RegisterdType" ColumnName="RegisterdType" />
+          <ScalarProperty Name="IsUpdateProfile" ColumnName="IsUpdateProfile" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="MobNo" ColumnName="MobNo" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="HouseType" ColumnName="HouseType" />
+          <ScalarProperty Name="AddressofHouse" ColumnName="AddressofHouse" />
+          <ScalarProperty Name="IsHavingCar" ColumnName="IsHavingCar" />
+          <ScalarProperty Name="NoOfCars" ColumnName="NoOfCars" />
+          <ScalarProperty Name="TypeOfEmployment" ColumnName="TypeOfEmployment" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="ProfilePictureImg" ColumnName="ProfilePictureImg" />
+          <ScalarProperty Name="IsEmailIdVerified" ColumnName="IsEmailIdVerified" />
+          <ScalarProperty Name="RegisteredFor" ColumnName="RegisteredFor" />
+          <ScalarProperty Name="NoOfEmp" ColumnName="NoOfEmp" />
+          <ScalarProperty Name="EstPremium" ColumnName="EstPremium" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="BrokerBriefcases">
+      <EntityTypeMapping TypeName="BrokerDBModel.BrokerBriefcase">
+        <MappingFragment StoreEntitySet="BrokerBriefcase">
+          <ScalarProperty Name="LastUpdateDate" ColumnName="LastUpdateDate" />
+          <ScalarProperty Name="AssignedCompany" ColumnName="AssignedCompany" />
+          <ScalarProperty Name="DateTo" ColumnName="DateTo" />
+          <ScalarProperty Name="DateFrom" ColumnName="DateFrom" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="UploadedBy" ColumnName="UploadedBy" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="IsActivated" ColumnName="IsActivated" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WatchedVideoHistories">
+      <EntityTypeMapping TypeName="BrokerDBModel.WatchedVideoHistory">
+        <MappingFragment StoreEntitySet="WatchedVideoHistory">
+          <ScalarProperty Name="IsWatched" ColumnName="IsWatched" />
+          <ScalarProperty Name="VideoId" ColumnName="VideoId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="uspGetDeviceId" FunctionName="BrokerDBModel.Store.uspGetDeviceId" />
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,358 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="~/Images/Assets/brokkrIcon24x24.png">
+    <script src="~/js/Login.js"></script>
+    <title>brokkrr Inc.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+
+    <!------Script for Map End Here---->
+    <!-- font links -->
+    <link href="~/Content/BrokkrrCSS/OpenSans.css" rel="stylesheet" />
+    <link href="~/Content/BrokkrrCSS/Raleway.css" rel="stylesheet" />
+    <link href="~/Content/BrokkrrCSS/Francois.css" rel="stylesheet" />
+    <!-- /font links -->
+    <!-- css links -->
+    <link href="~/Content/BrokkrrCSS/CSS1/style.css" rel="stylesheet" />
+    <link href="~/Content/BrokkrrCSS/CSS2/style.css" rel="stylesheet" />
+    <link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/Content/BrokkrrCSS/Site.css" rel="stylesheet" />
+
+
+    <!-- /css links -->
+    <!-- js links -->
+
+    <script src="~/Scripts/Scripts2/jquery.min.js"></script>
+    <script src="~/Scripts/Scripts2/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        body {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+    </style>
+
+
+    <script>
+        //$(document).ready(function () {
+        //    $("#owl-demo").owlCarousel({
+        //        items: 5,
+        //        lazyLoad: true,
+        //        autoPlay: true,
+        //        pagination: false,
+        //    });
+        //});
+    </script>
+    <!-- js for portfolio  -->
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" style="overflow-x: hidden;">
+
+    <nav class="navbar navbar-inverse header" style="background-color:white;margin-bottom:0px!important;">
+        <div class="col-md-12 selected" style="background:rgb(40,61,69);padding-left: 0;padding-right: 0;">
+            <div class="col-md-12 " style="height: 81px;padding-left:5.9%;">
+                <div class="col-md-8 col-sm-8">
+                    <a class="logo" href="#" style="margin-left:0px!important;">
+                        <img src="~/Images/Assets/logo-1.png" class="img-responsive" style="max-width:42%;margin-top:2%" />
+                    </a>
+                </div>
+
+                <div class="col-xs-1" style="float:right;top:25%;width:8%;padding:0px;margin-left:1%;">
+                    <a href="@Url.Action("CustomerLogout", "Login")"><img src="~/Images/Insurance/logout.png" title="Logout" style="width:35px;height:35px;" /></a>
+                </div>
+                <div class="col-xs-1" style="float:right;top:25%;width:auto;padding:0px;margin-left:1%;">
+                    <a href="@Url.Action("CustomerProfile", "Profile")"><img src="~/Images/Insurance/Profileicon copy.png" class="img-responsive" title="View Profile" style="width:35px;height:35px;" /></a>
+                </div>
+                <div class="col-xs-1" style="float:right;top:25% !important;;top:12px;width:auto;padding:0px;margin-left:1%;">
+                    <a href="@Url.Action("Index", "Insurances")"><img src="~/Images/Insurance/search broker.png" class="img-responsive" style="width:35px;height:35px;" title="Search Broker" /></a>
+                </div>
+                <div class="col-xs-1" style="float:right;top:25% !important;top:12px;width:auto;padding:0px;margin-left:1%;display:block;">
+                    <a href="@Url.Action("CustomerMessage", "Message")"><img src="~/Images/Assets/messagelogo.png" class="img-responsive" title="View Message" style="width:35px;height:35px;" /></a>
+                </div>
+
+
+            </div>
+        </div>
+    </nav>
+
+    @RenderBody()
+
+
+    <!-- Footer -->
+    @*<footer class="footer-distributed" style="position: absolute;" id="footerLayout">
+        <div class="container" style="width:100%">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-sm-6" style="padding-top: 20px;">
+                        <div class="col-sm-6" style="text-align:center;">
+                            <p class="footer-company-about">
+                                <div class="social-icons" style="margin-bottom:0px;">
+                                    <a href="#"><span class="facebook"></span></a>
+                                    <a href="#"><span class="twitter"></span></a>
+                                    <a href="#"><span class="linkedin"></span></a>
+                                </div>
+                            </p>
+                        </div>
+                        <div class="col-sm-6">
+
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-6" style="margin-bottom: 0%;text-align:center;padding-right: 0;">
+                        <div class="footer-right-header">
+                            <div class="copyright">
+                                <p style="display: block;color: #666666;font-size: 16px;font-weight: 800;font-family:'Varela Round',sans-serif;">© 2016 Brokkrr Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog" style="padding:5%">
+
+                        <div class="modal-content">
+                            <div class="modal-header" style="padding-top: 3px; padding-bottom: 3px;">
+                                <button type="button" class="close" data-dismiss="modal" style="color: red;">&times;</button>
+                                <h4 class="modal-title" style="font-size: 16px;">Message</h4>
+                            </div>
+                            <div class="modal-body" style="padding-top: 0px;padding-bottom: 0px;font-weight:100;">
+                                <p style="font-size: 16px;">Thank you, Your contact request sent successfully !</p>
+                            </div>
+                            <div class="modal-footer" style="padding: 5px;">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+                <div class="modal fade" id="myModalError" role="dialog">
+                    <div class="modal-dialog" style="padding:5%">
+
+                        <div class="modal-content">
+                            <div class=" modal-header" style="padding-top:3px;padding-bottom: 3px;">
+                                <button type="button" class="close" data-dismiss="modal" style="color:red;">&times;</button>
+                                <h4 class="modal-title" style="font-size: 16px;">Message</h4>
+                            </div>
+                            <div class="modal-body" style="padding-top:0px;padding-bottom: 0px;font-weight: 100;">
+                                <p style="font-size: 16px;color: red;">Please fill details before contact!</p>
+                            </div>
+                            <div class="modal-footer" style="padding:5px;">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <div class="modal fade" id="myLoader" role="dialog">
+                    <div class="modal-dialog" style="padding:5%">
+
+                        <div id="loader">
+                            <img src="~/Images/Assets/default(2).gif" class="img-responsive" style="padding:40%;padding-top:20%;background:none;" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </footer>*@
+
+    <footer class="footer-distributed" style="position:fixed;bottom:0;margin-top:3%;" id="footerLayout">
+        <div class="container" style="width:100%;">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="padding:0;">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6" style="padding:0;">
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="text-align:center;">
+                            <p class="footer-company-about">
+                                <div class="social-icons" style="margin-bottom:0px;">
+                                    <a style="cursor:default;"><span class="facebook"></span></a>
+                                    <a style="cursor:default;"><span class="twitter"></span></a>
+                                    <a style="cursor:default;"><span class="linkedin"></span></a>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 col-sm-6 col-xs-6" style="margin-bottom: 0%;text-align:center;padding-right: 0;">
+                        <div class="footer-right-header">
+                            @*<div class="copyright">*@
+                            <div>
+                                <p style="display: block;color: #666666;font-size: 16px;font-weight: 800;font-family:'Varela Round',sans-serif;padding-top:2%;">© 2018 brokkrr Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog" style="padding:5%">
+
+                        <div class="modal-content">
+                            <div class="modal-header" style="padding-top: 3px; padding-bottom: 3px;">
+                                <button type="button" class="close" data-dismiss="modal" style="color: red;">&times;</button>
+                                <h4 class="modal-title" style="font-size: 16px;">Message</h4>
+                            </div>
+                            <div class="modal-body" style="padding-top: 0px;padding-bottom: 0px;font-weight:100;">
+                                <p style="font-size: 16px;">Thank you, Your contact request sent successfully !</p>
+                            </div>
+                            <div class="modal-footer" style="padding: 5px;">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+                <div class="modal fade" id="myModalError" role="dialog">
+                    <div class="modal-dialog" style="padding:5%">
+
+                        <div class="modal-content">
+                            <div class=" modal-header" style="padding-top:3px;padding-bottom: 3px;">
+                                <button type="button" class="close" data-dismiss="modal" style="color:red;">&times;</button>
+                                <h4 class="modal-title" style="font-size: 16px;">Message</h4>
+                            </div>
+                            <div class="modal-body" style="padding-top:0px;padding-bottom: 0px;font-weight: 100;">
+                                <p style="font-size: 16px;color: red;">Please fill details before contact!</p>
+                            </div>
+                            <div class="modal-footer" style="padding:5px;">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+
+
+
+        <div class="col-md-12">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <div class="modal fade" id="myLoader" role="dialog">
+                    <div class="modal-dialog" style="padding:5%">
+
+                        <div id="loader">
+                            <img src="~/Images/Assets/default(2).gif" class="img-responsive" style="padding:40%;padding-top:20%;background:none;" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </footer>
+
+    <!-- /Footer -->
+    <!-- js for portfolio popup -->
+    <script>
+        //$(document).ready(function () {
+        //    $('.popup-with-zoom-anim').magnificPopup({
+        //        type: 'inline',
+        //        fixedContentPos: false,
+        //        fixedBgPos: true,
+        //        overflowY: 'auto',
+        //        closeBtnInside: true,
+        //        preloader: false,
+        //        midClick: true,
+        //        removalDelay: 300,
+        //        mainClass: 'my-mfp-zoom-in'
+        //    });
+
+        //});
+    </script>
+    <script src="~/Scripts/BrokerrJS/owl.carousel.js"></script>
+    <script src="~/Scripts/BrokerrJS/jquery.magnific-popup.js" type="text/javascript"></script>
+    <!-- /js for portfolio popup -->
+    <!-- nav sliding -->
+    <script>
+        $(document).ready(function () {
+            // Add smooth scrolling to all links in navbar + footer link
+            $(".navbar a, footer a[href='#myPage']").on('click', function (event) {
+
+                // Store hash
+                var hash = this.hash;
+
+                // Using jQuery's animate() method to add smooth page scroll
+                // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+                $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                }, 900, function () {
+
+                    // Add hash (#) to URL when done scrolling (default click behavior)
+                    window.location.hash = hash;
+                });
+            });
+        })
+    </script>
+    <!-- /nav sliding -->
+    <!-- Slide-To-Top JavaScript (No-Need-To-Change) -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                containerOnClickID: 'toTopClick',
+                scrollSpeed: 100,
+                easingType: 'linear'
+            };
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+    </script>
+    <a href="#myPage" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"></span><span id="toTopClick" style="opacity: 1;"></span></a>
+    <!-- //Slide-To-Top JavaScript -->
+
+</body>
+</html>

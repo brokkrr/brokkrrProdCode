@@ -1,0 +1,32 @@
+﻿body 
+{
+    background-color: #e295fc;
+    color: #1A1A1A;
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    margin: 1.5em;
+    padding: 0;
+}
+
+.PGrid 
+{
+    margin:2%;
+    border-collapse:collapse;
+    width:95%;
+}
+.Header 
+{
+    font-weight:bold;
+    background-color:#60acf6;
+    color:#ff6a00;
+    text-decoration:none;
+}
+.PGrid th, .PGrid td
+{
+    border:1px solid #0094ff;
+    padding:5px;
+}
+.altRow {
+    color:brown;
+    background-color:#808080;
+}

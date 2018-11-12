@@ -1,0 +1,1113 @@
+﻿@model BrokerMVC.Models.BrokkrrBriefcase
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/View_BrokerProfileLayout.cshtml";
+    //Layout = "";
+}
+
+<link href="~/Content/BrokkrrCSS/MediaQueries.css" rel="stylesheet" />
+<script src="~/js/date.format.js"></script>
+<script src="~/Scripts/Scripts2/bootstrap.min.js"></script>
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script type="text/javascript" src="~/Scripts/Scripts2/jquery.min.js"></script>
+
+
+
+<script src="~/Scripts/Scripts1/jquery-1.10.2.js"></script>
+<script src="~/Scripts/Scripts1/jquery-ui.js"></script>
+
+<link href="~/Content/bootstrap-datepicker3.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<script src="~/js/JQuery.browser.min.js"></script>
+
+<script src="~/js/bootstrap-multiselect.js"></script>
+<script src="~/js/bootstrapForMultiSelect.min.js"></script>
+
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrapForMultiSelect.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrap-multiselect.css" rel="stylesheet" type="text/css">
+
+<style type="text/css">
+     .editpop {
+        width: 700px;
+        height:500px;
+    }
+
+    @@media only screen and (min-width:2880px) {
+        .dropdown-content {
+            margin-top: 21%;
+            left: -2%;
+        }
+
+        .width100per {
+            width:100%;
+        }
+
+         .editpop {
+        width: 950px;
+        height:600px;
+    }
+
+          input[type="text"] {
+            font-size: 0.6vw !important;
+            height: 41px !important;
+        }
+
+        textarea{
+             font-size: 0.6vw !important;
+             height: 115px;
+        }
+         .lbl {
+            font-size: 0.6vw !important;
+        }
+    }
+
+    @@media only screen and (min-width:3840px) {
+        .dropdown-content {
+            margin-top: 18% !important;
+            left: 46% !important;
+        }
+        .width100per {
+            width:100%;
+        }
+
+         .editpop {
+        width: 1050px;
+        height:650px;
+    }
+
+          input[type="text"] {
+            font-size: 0.5vw !important;
+            height: 41px !important;
+        }
+
+        textarea{
+             font-size: 0.5vw !important;
+             height: 115px;
+        }
+         .lbl {
+            font-size: 0.5vw !important;
+        }
+    }
+</style>
+
+
+<style type="text/css">
+    .multiselect {
+        width: 428px;
+        text-align: left;
+    }
+
+      .multiselect .caret{
+        float:right;
+        margin-top: 8px !important;
+    }
+
+    .multiselect-container {
+        width: 428px;
+    }
+
+    #Upload {
+        font-weight: bold;
+        color: #fff;
+        font-size: 15px;
+        background-color: rgb(72,205,248);
+        height: 40px;
+        width: 120px;
+        border-radius: 30px;
+        border: none;
+        line-height: 12px;
+        margin: 0;
+    }
+
+    #Upload {
+        font-weight: bold;
+        color: #fff;
+        font-size: 15px;
+        background-color: rgb(72,205,248);
+        height: 40px;
+        width: 120px;
+        border-radius: 30px;
+        border: none;
+        line-height: 12px;
+        margin: 0;
+    }
+
+    .playlist {
+        font-weight: bold;
+        font-size: 2.5vw;
+    }
+
+    .lbl {
+        font-size: 1.5vw;
+    }
+
+    .top {
+        top: 8px;
+    }
+
+    .title1 {
+        /*text-align:center;*/
+        margin: 5px 4px 5px 0;
+        font-size: 16px;
+        font-weight: bold;
+       
+        max-height: 70px;
+        overflow-y: auto;
+    }
+
+        /* Scroll Css */
+
+        .title1::-webkit-scrollbar {
+            width: 6px;
+            direction: ltr;
+        }
+        /* Track */
+
+        .title1::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+
+        .title1::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background: rgb(69,205,243);
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+        }
+
+
+        .title1::-moz-webkit-scrollbar-thumb:window-inactive {
+            background: rgba(243,243,243,243);
+        }
+
+        .title1::-webkit-scrollbar-thumb:window-inactive {
+            background: rgba(243,243,243,243);
+        }
+
+    .description {
+        margin: 5px 0 15px 0;
+        word-wrap: break-word;
+        min-height: 100px;
+        max-height: 100px;
+        overflow-y: auto;
+    }
+
+        /* Scroll Css */
+
+        .description::-webkit-scrollbar {
+            width: 6px;
+            direction: ltr;
+        }
+        /* Track */
+
+        .description::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+
+        .description::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background: rgb(69,205,243);
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+        }
+
+
+        .description::-moz-webkit-scrollbar-thumb:window-inactive {
+            background: rgba(243,243,243,243);
+        }
+
+        .description::-webkit-scrollbar-thumb:window-inactive {
+            background: rgba(243,243,243,243);
+        }
+</style>
+
+<script>
+    //$(function () {
+    //    $('#assignedcomp').multiselect({
+    //        includeSelectAllOption: true
+    //    });
+    //});
+    function submit() {
+        $("#save").modal('show');
+    }
+
+    function showpopup() {
+
+        $('#ModalVideo').modal({ backdrop: 'static', keyboard: false });
+        $("#ModalVideo").modal('show');
+        Clear();
+        $('#Submit').css('display', 'block');
+        $('#Update').css('display', 'none');
+
+        $("#ModalVideo").on('shown.bs.modal', function () {
+            $(this).find('#Url').focus();
+            $(this).scrollTop(0);
+        });
+    }
+
+    function cleartodate() {
+        //s  alert('hii');
+        startDate = $("#FromDate").val();
+        var today = new Date();
+        var dd = today.getDate();
+
+        var mm = today.getMonth() + 1;
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+        finaldate = mm + "/" + dd + "/" + yyyy
+
+        //alert(finaldate + " " + "todayTime");
+        if (startDate < finaldate) {
+            //   alert("if");
+            $("#lblError").text("From date should be greater than or equal to today's date");
+            $("#ModalError").modal('show');
+            $("#FromDate").val("");
+            SetFocusfield = "FromDate";
+        }
+        endDate = $("#ToDate").val();
+        if (startDate > endDate && endDate != "") {
+            // alert("hii");
+            $("#lblError").text("From date should not be greater than to date.");
+            $("#ModalError").modal('show');
+            $("#FromDate").val("");
+            SetFocusfield = "FromDate";
+        }
+
+    }
+
+
+
+    function setfocus() {
+        //alert("SetFocusfield-" + SetFocusfield);
+        //if (SetFocusfield == "FromDate") {
+        //    $("#FromDate").focus();
+
+        //}
+        //else if (SetFocusfield == "ToDate") {
+        //    $("#ToDate").focus();
+        //}
+        //else {
+
+        //}
+        $("#ModalError").modal('hide');
+       // GetVideos();
+
+    }
+
+    function checkdate() {
+        //  alert("Hiii..");
+        var startDate, endDate;
+        startDate = $("#FromDate").val();
+        //    alert("startDate" + " " + startDate);
+        endDate = $("#ToDate").val();
+        //    alert("endDate" + " " + endDate);
+        if (startDate > endDate) {            // alert("To Date should be less than from date");
+            $("#lblError").text("To date should be greater than or equal to from date.");
+            $("#ModalError").modal('show');
+            $("#ToDate").val("");
+            SetFocusfield = "ToDate";
+
+        }
+    }
+
+    $(document).ready(function () {
+        var SetFocusfield = "";
+        var DeleteId = "";
+
+        @*var UsersForVideoEmail = '@ViewBag.UsersForVideoEmail';
+        alert("UsersForVideoEmail - "+UsersForVideoEmail)
+        if (UsersForVideoEmail=="Yes")
+        {
+            $.ajax({
+                url: "/BrokkrrBriefcase/SendVideoEmail",
+                type: "GET",
+                success: function (data) {
+                }
+            });
+        }*@
+
+        $("#Id").val("0");
+        $("#close").click(function () {
+            $("#Url").val("");
+            $("#title").val("");
+            $("#description").val("");
+            $("#FromDate").val("");
+            $("#ToDate").val("");
+            $("#assignedcomp").val("");
+        });
+
+        $(function () {
+            $('#chkCompany').multiselect({
+                includeSelectAllOption: true,
+                fontsize: '1.2vw'
+            });
+
+            $('#chkCompany').multiselect('rebuild');
+        });
+
+        var Auth = '@ViewBag.User';
+        var Comp = '@ViewBag.Company';
+
+        if (Auth == "Authorize") {
+            if (Comp == "Meineke") {
+                $("#MeinekeHomePageImage").css("display", "block");
+                $("#aSerchBrokerMeineke").css("display", "block");
+
+                $("#MenuHomePage").css("display", "none");
+                $("#MenuMeinekeHomePage").css("display", "block");
+                $("#MenuAPSPHomePage").css("display", "none");
+
+                $("#MenuCustomerProfile").css("display", "none");
+                $("#MenuMeinekeCustomerProfile").css("display", "block");
+                $("#MenuAPSPCustomerProfile").css("display", "none");
+
+            }
+            else if (Comp == "Brokkrr") {
+                $("#HomePageImage").css("display", "block");
+                $("#aSerchBrokerBrokkrr").css("display", "block");
+
+                $("#MenuHomePage").css("display", "block");
+                $("#MenuMeinekeHomePage").css("display", "none");
+                $("#MenuAPSPHomePage").css("display", "none");
+
+                $("#MenuCustomerProfile").css("display", "block");
+                $("#MenuMeinekeCustomerProfile").css("display", "none");
+                $("#MenuAPSPCustomerProfile").css("display", "none");
+            }
+            else if (Comp == "APSP") {
+                $("#APSPHomePageImage").css("display", "block");
+                $("#aSerchBrokerAPSP").css("display", "block");
+
+                $("#MenuHomePage").css("display", "none");
+                $("#MenuMeinekeHomePage").css("display", "none");
+                $("#MenuAPSPHomePage").css("display", "block");
+
+                $("#MenuCustomerProfile").css("display", "none");
+                $("#MenuMeinekeCustomerProfile").css("display", "none");
+                $("#MenuAPSPCustomerProfile").css("display", "block");
+            }
+
+            GetVideos();
+
+            /*Set all videos are seen by user*/
+
+            var UserId = '@Session["UserId"]';
+            var WeServiceUrl = '@Session["WebServiceURL"]';
+
+            if (UserId != "") {
+                //alert("UserId- " + UserId + " WeServiceUrl- " + WeServiceUrl)
+                $.ajax({
+                    type: "POST",
+                    url: WeServiceUrl,
+                    data: { UserId: UserId, ActionName: "DoSetAllVideoWatchedForWeb" },
+                    success: function (data) {
+
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) { }
+
+                });
+            }
+        }
+    });
+
+    function GetVideos() {
+        $('#list').empty();
+        $.ajax({
+            url: "/BrokkrrBriefcase/GetVideoData",
+            type: "GET",
+            success: function (data) {
+                var dataarray = [];
+                var Expired = "";
+                if (data.result.length > 0) {
+                    for (var i in data.result) {
+
+                        var url = data.result[i].Url;
+                        //alert("data.result[i].IsExpired - " + data.result[i].IsExpired)
+                        if (data.result[i].IsExpired == "Yes") {
+                            Expired = '<button id="Expired" style="background-color: gray;border: none;color: #fff;padding: 5px;border-radius: 3px;" onclick="return Edit(\'' + data.result[i].Id + '\',\'' + data.result[i].Url + '\',\'' + data.result[i].DateFrom + '\',\'' + data.result[i].DateTo + '\',\'' + data.result[i].AssignedCompany + '\')">Expired</button>';
+                        }
+                        else {
+                            Expired = "";
+                        }
+
+
+
+                        var videolist = '<div id=' + data.result[i].Id + ' class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="padding-right: 0;">'
+            + ' <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 briefcasevideo">'
+                 + '<iframe src="' + url + '?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width:100%;height:100%;"></iframe>'
+            + ' </div>'
+            + ' <div class="clearboth">'
+            + ' </div>'
+            + ' <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-right: 0;display: flex;align-items: center;">'
+               + '  <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">'
+                + ' </div>'
+                + ' <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-top:4px;">'
+                + '   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding-left:0px;">'
+                     + Expired
+                   + '  </div>'
+                + '     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding-left:0px;">'
+                 + '        <button class="width100per" id="Delete" style="background-color: #48CDFF; border: none; color: #fff; padding: 5px; border-radius: 3px;" onclick="DeletePopup(' + data.result[i].Id + ')">Delete</button>'
+                 + '    </div>'
+                  + '   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding-right:0px;">'
+                    + '     <button id="Edit" style="width: 100%;background-color: #48CDFF;border: none;color: #fff;padding: 5px;border-radius: 3px;" onclick="return Edit(\'' + data.result[i].Id + '\',\'' + data.result[i].Url + '\',\'' + data.result[i].DateFrom + '\',\'' + data.result[i].DateTo + '\',\'' + data.result[i].AssignedCompany + '\')">Edit</button>'
+                   + '  </div>'
+                + ' </div>'
+           + '  </div>'
+           + '  <div class="clearboth"></div>'
+            + '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="word-wrap:break-word;">'
+              + '   <div class="title1" id="title' + data.result[i].Id + '">' + data.result[i].Title + '</div>'
+            + ' </div>'
+            + ' <div class="clearboth"></div>'
+           + '  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-right:0;">'
+           + '      <div class="description" id="description' + data.result[i].Id + '"> ' + data.result[i].Description + '</div>'
+           + '  </div>'
+       + '  </div>'
+
+                        $('#list').append(videolist);
+
+                    }
+                }
+                else {
+                    var message = "<span style='font-size:20px;'>Videos not available.<span>";
+                    $('#list').append(message);
+                }
+            },
+            error: function (er) {
+            }
+
+        });
+    }
+
+    function SaveVideo() {
+        var IsValidUrl = "false";
+        var IsValidTitle = "false";
+        var IsValidCompany = "false";
+        var title = "";
+
+        document.getElementById('Actionsname').value = "Submit";
+
+        var action = document.getElementById('Actionsname').value;
+
+        if ($('#Url').val() != undefined && $('#Url').val() != "") {
+            var url = $('#Url').val();
+            $("#Urllblerror").css("display", "none");
+            IsValidUrl = "true";
+        }
+        else {
+            $("#Urllblerror").css("display", "block");
+            $("#Urllblerror").css("color", "Red");
+            $("#Urllblerror").text("Please enter url");
+            IsValidUrl = "false";
+        }
+        if ($('#title').val() != undefined && $('#title').val() != "") {
+            title = $('#title').val();
+            //var description = $('textarea#description').val();
+
+            var smartchr = ["’", "‘", "“", "”", "–", "—", "…", " ", '„', '‚', '«', '»', '‹', '›'];
+            var correctchr = ["'", "'", '"', '"', '-', '-', '...', ' ', '"', "'", '"', '"', "'", "'"];
+
+            var regex;
+            for (var i = 0; i < smartchr.length; i++) {
+                regex = new RegExp(smartchr[i], "g");
+                title = title.replace(regex, correctchr[i]);
+            }
+
+            title = title.replace(/"/g, "&quot;");
+            title = title.replace(/'/g, "&apos;");
+
+            $("#Titlelblerror").css("display", "none");
+            IsValidTitle = "true";
+        }
+        else {
+            $("#Titlelblerror").css("display", "block");
+            $("#Titlelblerror").css("color", "Red");
+            $("#Titlelblerror").text("Please enter Title");
+            IsValidTitle = "false";
+        }
+        if ($('#chkCompany').val() != undefined && $('#chkCompany').val() != "") {
+            var chkCompany = $('#chkCompany').val();
+            $("#Companylblerror").css("display", "none");
+            IsValidCompany = "true";
+        }
+        else {
+            $("#Companylblerror").css("display", "block");
+            $("#Companylblerror").css("color", "Red");
+            $("#Companylblerror").text("Please select atleast one company");
+            IsValidCompany = "false";
+        }
+
+        if ($('textarea#description').val() != undefined && $('textarea#description').val() != "") {
+            var description = $('textarea#description').val();
+        }
+        else {
+            var description = "";
+        }
+
+        var smartchr = ["’", "‘", "“", "”", "–", "—", "…", " ", '„', '‚', '«', '»', '‹', '›'];
+        var correctchr = ["'", "'", '"', '"', '-', '-', '...', ' ', '"', "'", '"', '"', "'", "'"];
+
+        var regex;
+        for (var i = 0; i < smartchr.length; i++) {
+            regex = new RegExp(smartchr[i], "g");
+            description = description.replace(regex, correctchr[i]);
+        }
+
+        description = description.replace(/"/g, "&quot;");
+        description = description.replace(/'/g, "&apos;");
+
+        if ($('#FromDate').val() != undefined && $('#FromDate').val() != "") {
+            var FromDate = $('#FromDate').val();
+        }
+        else {
+            var FromDate = "";
+        }
+
+
+        if ($('#ToDate').val() != undefined && $('#ToDate').val() != "") {
+            var ToDate = $('#ToDate').val();
+        }
+        else {
+            var ToDate = "";
+        }
+
+        //if ($('#Url').val() != undefined && $('#Url').val() != "" && $('#title').val() != undefined && $('#title').val() != "" && $('#chkCompany').val() != undefined && $('#chkCompany').val() != "") {
+        if (IsValidUrl == "true" && IsValidTitle == "true" && IsValidCompany == "true") {
+            $("#Submit").css("display", "none");
+            $("#SubmitLoader").css("display", "block");
+            var data = {
+                Actionsname: action,
+                Url: url,
+                Title: title,
+                Description: description,
+                DateFrom: FromDate,
+                DateTo: ToDate,
+                chkCompany: chkCompany
+            };
+            $.ajax({
+                url: "/BrokkrrBriefcase/Index",
+                type: "POST",
+                data: data,
+                success: function (data) {
+                    //alert(data + " " + "response");
+                    Clear();
+                    $("#SubmitLoader").css("display", "none");
+                    $("#ModalVideo").modal('hide');
+                    $("#lblError").css("color", "green");
+                    SetFocusfield = "";
+                    $("#lblError").text("Video saved successfully.");
+                    $("#ModalError").modal('show');
+                    GetVideos();
+                    $.ajax({
+                        url: "/BrokkrrBriefcase/SendVideoEmail",
+                        type: "GET",
+                        success: function (data) {
+                        }
+                    });
+                   
+                }
+            });
+        }
+        else {
+
+        }
+
+    }
+
+    function UpdateVideo() {
+        var IsValidUrl = "false";
+        var IsValidTitle = "false";
+        var IsValidCompany = "false";
+        var title = "";
+
+        document.getElementById('Actionsname').value = "Update";
+
+        var action = document.getElementById('Actionsname').value;
+
+        if ($('#Url').val() != undefined && $('#Url').val() != "") {
+            var url = $('#Url').val();
+            $("#Urllblerror").css("display", "none");
+            IsValidUrl = "true";
+        }
+        else {
+            $("#Urllblerror").css("display", "block");
+            $("#Urllblerror").css("color", "Red");
+            $("#Urllblerror").text("Please enter url");
+            IsValidUrl = "false";
+        }
+        if ($('#title').val() != undefined && $('#title').val() != "") {
+            title = $('#title').val();
+            //var description = $('textarea#description').val();
+
+            var smartchr = ["’", "‘", "“", "”", "–", "—", "…", " ", '„', '‚', '«', '»', '‹', '›'];
+            var correctchr = ["'", "'", '"', '"', '-', '-', '...', ' ', '"', "'", '"', '"', "'", "'"];
+
+            var regex;
+            for (var i = 0; i < smartchr.length; i++) {
+                regex = new RegExp(smartchr[i], "g");
+                title = title.replace(regex, correctchr[i]);
+            }
+
+            title = title.replace(/"/g, "&quot;");
+            title = title.replace(/'/g, "&apos;");
+
+            $("#Titlelblerror").css("display", "none");
+            IsValidTitle = "true";
+        }
+        else {
+            $("#Titlelblerror").css("display", "block");
+            $("#Titlelblerror").css("color", "Red");
+            $("#Titlelblerror").text("Please enter Title");
+            IsValidTitle = "false";
+        }
+        if ($('#chkCompany').val() != undefined && $('#chkCompany').val() != "") {
+            var chkCompany = $('#chkCompany').val();
+            $("#Companylblerror").css("display", "none");
+            IsValidCompany = "true";
+        }
+        else {
+            $("#Companylblerror").css("display", "block");
+            $("#Companylblerror").css("color", "Red");
+            $("#Companylblerror").text("Please select atleast one company");
+            IsValidCompany = "false";
+        }
+
+        var description = "", description1 = "";
+
+        if ($('textarea#description').val() != undefined && $('textarea#description').val() != "") {
+            description = $('textarea#description').val();
+        }
+        else {
+            description = "";
+        }
+
+        var smartchr = ["’", "‘", "“", "”", "–", "—", "…", " ", '„', '‚', '«', '»', '‹', '›'];
+        var correctchr = ["'", "'", '"', '"', '-', '-', '...', ' ', '"', "'", '"', '"', "'", "'"];
+
+        var regex;
+        for (var i = 0; i < smartchr.length; i++) {
+            regex = new RegExp(smartchr[i], "g");
+            description = description.replace(regex, correctchr[i]);
+        }
+
+        description = description.replace(/"/g, "&quot;");
+        description = description.replace(/'/g, "&apos;");
+
+        //alert("description-" + description);
+
+
+        if ($('#FromDate').val() != undefined && $('#FromDate').val() != "") {
+            var FromDate = $('#FromDate').val();
+        }
+        else {
+            var FromDate = "";
+        }
+
+
+        if ($('#ToDate').val() != undefined && $('#ToDate').val() != "") {
+            var ToDate = $('#ToDate').val();
+        }
+        else {
+            var ToDate = "";
+        }
+
+        //alert("title - " + title);
+        //if ($('#Url').val() != undefined && $('#Url').val() != "" && $('#title').val() != undefined && $('#title').val() != "" && $('#chkCompany').val() != undefined && $('#chkCompany').val() != "") {
+        if (IsValidUrl == "true" && IsValidTitle == "true" && IsValidCompany == "true") {
+            $("#Update").css("display", "none");
+            $("#SubmitLoader").css("display", "block");
+            var data1 = {
+                Actionsname: action,
+                Url: url,
+                Title: title,
+                Description: description,
+                DateFrom: FromDate,
+                DateTo: ToDate,
+                chkCompany: chkCompany,
+                Id: $("#Id").val()
+            };
+            //alert("data-" +JSON.stringify(data1))
+            $.ajax({
+                url: "/BrokkrrBriefcase/Index",
+                type: "POST",
+                data: data1,
+                //contentType: "application/x-www-form-urlencoded; charset=UTF-8",
+                success: function (data2) {
+                    //alert(data + " " + "response");
+                    Clear();
+                    $("#SubmitLoader").css("display", "none");
+                    $("#ModalVideo").modal('hide');
+                    $("#lblError").css("color", "green");
+                    SetFocusfield = "";
+                    $("#lblError").text("Video updated successfully.");
+                    $("#ModalError").modal('show');
+                    GetVideos();
+                    $.ajax({
+                        url: "/BrokkrrBriefcase/SendVideoEmail",
+                        type: "GET",
+                        success: function (data) {
+                        }
+                    });
+                }
+            });
+        }
+        else {
+
+        }
+
+    }
+
+    function DeletePopup(id) {
+        DeleteId = id;
+        $('#ModalDelete').modal({ backdrop: 'static', keyboard: false });
+        $('#ModalDelete').modal('show');
+    }
+
+    //$("#deletevideoconfirm").click(function (e) {
+    //    $('#ModalDelete').modal('hide');
+    //    DeleteVideo();
+    //});
+
+    function DeleteVideoConfirm() {
+        $('#ModalDelete').modal('hide');
+        DeleteVideo();
+    }
+
+    function ClosePopupofDelete() {
+        $('#ModalDelete').modal('hide');
+    }
+
+    function DeleteVideo() {
+        //alert("DeleteId - " + DeleteId);
+        SetFocusfield = "";
+        var data = {
+            VideoId: DeleteId
+        };
+
+        $.ajax({
+
+            url: "/BrokkrrBriefcase/DeleteVideo",
+            type: "POST",
+            data: data,
+            success: function (data) {
+                //alert("Here");
+                $('#' + DeleteId).hide();
+                $("#lblError").css("color", "green");
+                $("#lblError").text("Video deleted successfully.");
+                $("#ModalError").modal('show');
+            }
+
+        });
+    }
+
+    function Edit(id, url, fromdate, toDate, Company) {
+
+        $("#ModalVideo").on('shown.bs.modal', function () {
+            $(this).find('#Url').focus();
+            $(this).scrollTop(0);
+        });
+
+        $('#Submit').css('display', 'none');
+        $('#Update').css('display', 'block');
+        $('#Id').val(id);
+        $('#Url').val(url);
+
+        var t = $("#title" + id).html();
+        //$('#title').val(t);
+        var s = t.replace("</button>", "");
+        $('#title').val(t.replace(/<br *\/?>/gi, '\n'));
+
+        var Desc = $("#description" + id).html();
+        //$('textarea#description').val(Desc);
+        var str = Desc.replace("</button>", "");
+        $('textarea#description').val(str.replace(/<br *\/?>/gi, '\n'));
+
+        var dataarray = Company.split(",");
+
+        i = 0, size = dataarray.length;
+        for (i; i < size; i++) {
+            $('#chkCompany').multiselect('select', dataarray[i]);
+            $("#chkCompany").multiselect("refresh");
+        }
+
+        if (fromdate != "null") {
+            var date = fromdate;
+            var nowDate = new Date(parseInt(date.substr(6)));
+            var result = "";
+            result += nowDate.format("mm/dd/yyyy");
+            $('#FromDate').val(result);
+        }
+
+        if (toDate != "null") {
+            var date1 = toDate;
+            var nowDate1 = new Date(parseInt(date1.substr(6)));
+            var result1 = "";
+            result1 += nowDate1.format("mm/dd/yyyy");
+            $('#ToDate').val(result1);
+        }
+
+        $('#ModalVideo').modal({ backdrop: 'static', keyboard: false });
+        $('#ModalVideo').modal('show');
+    }
+
+    function Clear() {
+        $('#Url').val("");
+        $('#title').val("");
+        $('textarea#description').val("");
+        $('#FromDate').val("");
+        $('#ToDate').val("");
+        $("#chkCompany").val("").multiselect("refresh");
+    }
+</script>
+
+<div class="container-fluid" style="min-height:100%;">
+    @if (Session["Company"] == "APSP")
+    {
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 3% 0 0 3%;">
+                <a href="@Url.Action("APSPHomePage", "Home")"><img src="~/Images/APSP/aqualine-logo.png" alt="Logo" class="img-responsive" /></a>
+            </div>
+        </div>
+    }
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 playlist" style="padding-left:1px;">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding: 3%;">
+                Playlists
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" style="padding-left:0px;padding: 3%;">
+                <div class="col-lg-5 col-md-5 col-sm-53 col-xs53">
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2" style="">
+                </div>
+                <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5" style="padding-left:0px;">
+                    <input type="button" value="Upload" id="Upload" name="Upload" class="btn" onclick="showpopup();" style="font-size:20px;" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="clearboth">
+
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="list" style="padding-left: 42px;">
+
+            @*<iframe width="350" height="175" src="https://www.youtube.com/embed/9cKsq14Kfsw?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>*@
+
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="ModalVideo" role="dialog" style="overflow-y:hidden;">
+    <div class="modal-dialog editpop" >
+        <div class="modal-content " >
+            <div class="modal-header" style="padding-top: 3px; padding-bottom: 3px;">
+                <img id="close" src="~/Images/NewAssets/closepopup.png" style="float: right;margin-top: 3%;cursor:pointer;" data-dismiss="modal" onclick="Clear()" />
+                <h4 class="modal-title" style="font-size:30px;margin-top:10px;margin-bottom:10px;text-align: left;margin:2.5%;font-weight:bold;font-family:open sans;">Upload Video</h4>
+            </div>
+
+            @*@using (Html.BeginForm("Index", "BrokkrrBriefcase", FormMethod.Post
+                , new { enctype = "multipart/form-data" }))
+                    {*@
+
+            <div class="modal-body" style="padding-top: 0px;padding-bottom: 0px;font-weight:100;max-height:300px;overflow-y:auto;">
+                <br />
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 top">
+                                <span class="lbl">Youtube link :</span>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                @Html.HiddenFor(model => model.Actionsname, new { @id = "Actionsname", @style = "display:none" })
+                                @Html.HiddenFor(model => model.Id, new { @id = "Id", @style = "display:none" })
+                                @Html.TextBoxFor(model => model.Url, new { @id = "Url", @style = "margin-bottom:0px;" })
+
+                                <label id="Urllblerror" style="display:none;"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 top">
+                                <span class="lbl">Title :</span>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                @Html.TextBoxFor(model => model.Title, new { @id = "title", @style = "margin-bottom:0px;", @maxlength = "100" })
+                                <label id="Titlelblerror" style="display:none;"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <span class="lbl">Description :</span>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                @Html.TextAreaFor(model => model.Description, new { @id = "description", @style = "padding: 4px 6px;" })
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <span class="lbl">Company :</span>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+                                <select id="chkCompany" multiple="multiple" name="chkCompany" style="font-size:1vw !important;">
+                                    <option value="Brokkrr">Brokkrr</option>
+                                    <option value="Meineke">Meineke</option>
+                                    <option value="APSP">APSP</option>
+                                </select>
+                                <label id="Companylblerror" style="display:none;"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                <span class="lbl">Availability :</span>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9" style="padding:0;">
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right:0;padding-left:0;">
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 top" style="padding-right:0;">
+                                        <span>From Date :</span>
+                                    </div>
+                                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                                        @Html.TextBoxFor(model => model.DateFrom, new { @id = "FromDate", data_provide = "datepicker", @onchange = "cleartodate()" })
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" style="padding-right:0;padding-left:0;">
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 top" style="padding-right:0;">
+                                        <span style="padding-left: 16px;">To Date :</span>
+                                    </div>
+                                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                                        @Html.TextBoxFor(model => model.DateTo, new { @id = "ToDate", data_provide = "datepicker", @onchange = "checkdate()" })
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                </div>
+                <br />
+            </div>
+
+            <div class="modal-footer" id="Submit" style="padding:20px;text-align:center;">
+                <input type="submit" value="Submit" name="Submit" style="margin-bottom: 10px;margin-bottom: 10px;background-color:#17d1ff;color: #fff;background-color: rgb(72,205,258);height: 45px;width: 20%;border: none;border-radius: 30px;font-size: 20px;" onclick="SaveVideo()" />
+            </div>
+            <div class="modal-footer" id="Update" style="padding:20px;text-align:center;">
+                <input type="submit" value="Update" name="Update" style="margin-bottom: 10px;margin-bottom: 10px;background-color:#17d1ff;color: #fff;background-color: rgb(72,205,258);height: 45px;width: 20%;border: none;border-radius: 30px;font-size: 20px;text-align:center;" onclick="UpdateVideo()" />
+            </div>
+            <div class="modal-footer" id="SubmitLoader" style="padding:20px;text-align:center;display:none;">
+                <img src="~/Images/Assets/loadingimg.gif" style="height:41px;width:41px;" />
+            </div>
+            @*}*@
+        </div>
+
+    </div>
+</div>
+
+<div id="ModalDelete" class="modal fade col-md-12 col-sm-12 col-xs-12" style="margin-top:10%;overflow-y:hidden;">
+    <div class="modal-dialog" style="width:35%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" style="text-align:left;">Information</h2>
+            </div>
+            <div class="modal-body">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="text-align:center;height:50px;font-size: 18px;">
+                    Are you sure to delete video?
+                </div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-md-3 col-sm-3 col-xs-2">
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-4">
+                            <a href="#" onclick="DeleteVideoConfirm()" id="deletevideoconfirm" style="text-decoration:none;" data-transition="slide">
+                                <div class="Messagebtn1"> Confirm</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-4">
+                            <a href="#" onclick="ClosePopupofDelete()" id="deletevideopopupclose" style="text-decoration:none;" data-transition="slide">
+                                <div class="Messagebtn1"> Cancel</div>
+                            </a>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-2">
+                        </div>
+                        <div class="clearboth"></div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@*/*--- Footer----*/*@
+
+
+<div class="col-md-12">
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-8">
+        <div class="modal fade" id="ModalError" role="dialog">
+            <div class="modal-dialog" style="padding:5%">
+                <div class="modal-content">
+                    <div class="modal-header" style="padding-top: 3px; padding-bottom: 3px;">
+                        <button type="button" class="close" data-dismiss="modal" style="color: red;margin-top:3px;font-size: 35px;" onclick="setfocus();">&times;</button>
+                        <h4 class="modal-title" style="font-size: 16px;margin-top:10px;margin-bottom:10px;">Message</h4>
+                    </div>
+                    <div class="modal-body" style="padding-top: 0px;padding-bottom: 0px;font-weight:100;">
+                        <br />
+                        <span><label for="lblError" id="lblError" style="color:red;margin-left:20px;"></label></span>
+                        <br />
+                    </div>
+                    <div class="modal-footer" style="padding: 5px;text-align:center;">
+                        <button type="button" class="btn btn-default" onclick="setfocus();" style=" width:70px;">OK</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+    </div>
+</div>
+
+<script>
+    //$(document).ready(function () {
+    //    $("#APSPfooter").css("display", "none");
+    //    $("#meinekefotter").css("display", "none");
+    //    $("#footerLayout1").css("display", "none");
+    //});
+</script>
+<script src="~/Scripts/bootstrap-datepicker.js"></script>
+
+

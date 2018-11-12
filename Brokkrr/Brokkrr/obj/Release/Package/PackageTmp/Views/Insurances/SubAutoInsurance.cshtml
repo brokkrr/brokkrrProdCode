@@ -1,0 +1,292 @@
+﻿@model BrokerMVC.Models.AutoInsurance
+@{
+    ViewBag.Title = "SubAutoInsurance";
+    Layout = "~/Views/Shared/View_CustomerProfileLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Auto Insurance</title>
+
+    <script type="text/javascript">
+
+        $.ajax({
+            url: '@Url.Action("GetCompany", "Insurances")',
+            type: 'GET',
+            dataType: 'json',
+            cache: false,
+            // data: { id: id },
+            success: function (data) {
+                var obj = JSON.parse(data);
+                var issuccess1 = obj.IsSuccess;
+                var ErrorMessage = obj.ErrorMessage;
+
+                var company1;
+
+                if (issuccess1 == true) {
+                    company1 = obj.CompanyList;
+
+                    var selectedDeviceModel = $('#InsuranceCompany');
+                    selectedDeviceModel.empty();
+
+                    selectedDeviceModel.append(
+                            $('<option/>', {
+                                value: "0",
+                                text: "--Select--"
+                            })
+                        );
+
+                    $.each(company1, function (i, cmp) {
+
+                        // alert(cmp.CompanyId);
+                        selectedDeviceModel.append(
+                            $('<option/>', {
+                                value: cmp.CompanyId,
+                                text: cmp.CompanyName
+                            })
+                        );
+
+                    });
+
+
+                }
+            }
+        });
+
+        function FillCompany() {
+
+            InsuranceCompany();
+        }
+
+
+        function InsuranceCompany() {
+
+            if ($('#IsInsured').val() == "") {
+                $("#InsComapny").css("display", "none");
+            }
+            else if ($('#IsInsured').val() == "Acquisition") {
+                $("#InsComapny").css("display", "none");
+            }
+            else if ($('#IsInsured').val() == "Currently Insured") {
+
+                $("#InsComapny").css("display", "block");
+            }
+        }
+
+        function SubmitAutoInsurance() {
+            // alert("Called : " + $('#IsInsured').val() + " ," + $('#InsuranceCompany').val());
+
+            if ($('#IsInsured').val() == "Currently Insured") {
+                if ($('#InsuranceCompany').val() == "0") {
+                    $("#lblErrorMessage").text('Please select value');
+                    return false;
+                }
+                else {
+                    $("#lblErrorMessage").text('');
+                    return true;
+                }
+            }
+            else {
+                $("#lblErrorMessage").text('');
+                return true;
+            }
+        }
+
+    </script>
+
+    <style type="text/css">
+        .red-border-left {
+            border-left: 2px solid #FF0000 !important;
+        }
+    </style>
+
+    <!-- 18April17 RS-->
+    <script type="text/javascript">
+        window.onload = function () {
+
+            $('#footerLayout').hide();
+
+        };
+
+    </script>
+
+
+
+
+
+
+
+</head>
+
+<body>
+    <div class="container" style="height:100%;">
+
+
+
+        <div class="row">
+            <br />
+            <div class="col-lg-12 brokerTag" style="font-weight: bold;padding-bottom:1.2%;font-size: 25px;text-align:center;">
+                <span>AUTO INSURANCE</span>
+            </div>
+        </div>
+
+        @using (Html.BeginForm("SubAutoInsurance", "Insurances", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @*====================================== (Start) IsInsured ========================================*@
+
+
+            <div class="row" style="padding-bottom:0.8%;">
+                <div class="col-sm-12" style="padding-left:10%;padding-right:22%;">
+                    <div class="col-sm-6" style="padding-top:2%;padding-left:1%;">@Html.LabelFor(model => model.IsInsured, htmlAttributes: new { @class = "control-label col-md-12 " })</div>
+                    <div class="col-sm-6">
+
+                        @Html.DropDownListFor(m => m.IsInsured, new List<SelectListItem> {
+                                        new SelectListItem {Value="", Text ="--Select--", Selected = true},
+                                        new SelectListItem {Value="Acquisition", Text ="New purchase"},
+                                        new SelectListItem { Value = "Currently Insured", Text = "Currently Insured"}
+
+                                        }, new { @class = "DropdownBG red-border-left", @onchange = "FillCompany()" })
+                        @Html.ValidationMessageFor(Model => Model.IsInsured, "", new { @class = "RequiredField" })
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="InsComapny" class="row Hiddenfield" style="padding-bottom:0.8%;">
+                <div class="col-sm-12" style="padding-left:10%;padding-right:22%;">
+                    <div class="col-sm-6" style="padding-top:2%;padding-left:1%;">@Html.LabelFor(model => model.InsuranceCompany, htmlAttributes: new { @class = "control-label col-md-12 " })</div>
+                    <div class="col-sm-6">
+
+                        @Html.DropDownListFor(m => m.InsuranceCompany, new List<SelectListItem>
+           {
+
+           }, new { @class = "DropdownBG red-border-left" })
+
+                    </div>
+                    <span><label for="lblErrorMessage" id="lblErrorMessage" style="font-family:Helvetica;font-size:14px;color:red;margin-left:2%;font-weight:100;"></label></span>
+                </div>
+            </div>
+
+            @*====================================== (End) IsInsured ========================================*@
+
+
+            @*====================================== (Start) CoverageExpires ========================================*@
+
+
+            <div class="row" style="padding-bottom:0.8%;">
+                <div class="col-sm-12" style="padding-left:10%;padding-right:22%;">
+                    <div class="col-sm-6" style="padding-top:2%;padding-left:1%;">@Html.LabelFor(model => model.CoverageExpires, htmlAttributes: new { @class = "control-label col-md-12 " })</div>
+                    <div class="col-sm-6">
+                        @Html.DropDownListFor(m => m.CoverageExpires, new List<SelectListItem> {
+                                        new SelectListItem {Value="", Text ="--Select--", Selected = true},
+                                        new SelectListItem {Value="Now", Text ="Now"},
+                                        new SelectListItem { Value = "Coverage expires after 30 days", Text = "Coverage expires after 30 days"},
+
+                                        }, new { @class = "DropdownBG red-border-left" })
+                        @Html.ValidationMessageFor(Model => Model.CoverageExpires, "", new { @class = "RequiredField" })
+                    </div>
+
+                </div>
+            </div>
+
+
+            @*====================================== (End) CoverageExpires ========================================*@
+
+
+            @*====================================== (Start) Language ========================================*@
+
+
+            <div class="row" style="padding-bottom:0.8%;">
+                <div class="col-sm-12" style="padding-left:10%;padding-right:22%;">
+                    <div class="col-sm-6" style="padding-top:2%;padding-left:1%;">@Html.LabelFor(model => model.Language, htmlAttributes: new { @class = "control-label col-md-12 " })</div>
+                    <div class="col-sm-6">
+                        @*<select id="chkLanguages" multiple="multiple" name="chkLanguages">*@
+                        @Html.DropDownListFor(m => m.Language, new List<SelectListItem> {
+                                        new SelectListItem {Value="English", Text ="English", Selected = true},
+                                        new SelectListItem { Value = "Spanish", Text = "Spanish"},
+                                        new SelectListItem { Value = "Chinese(Cantonese)", Text = "Chinese(Cantonese)"},
+                                        new SelectListItem { Value = "Chinese(Mandarin)", Text = "Chinese(Mandarin)"},
+                                        new SelectListItem { Value = "Korean", Text = "Korean"},
+                                        new SelectListItem { Value = "Vietnamese", Text = "Vietnamese"},
+
+                                        }, new { @class = "DropdownBG" })
+
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            @*====================================== (End) Language ========================================*@
+
+            @*====================================== (Start) Notes ========================================*@
+
+
+            <div class="row" style="padding-bottom:5%;">
+                <div class="col-sm-12" style="padding-left:10%;padding-right:22%;">
+                    <div class="col-sm-6" style="padding-top:2%;padding-left:1%;">@Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label col-md-12 " })</div>
+                    <div class="col-sm-6">
+                        @Html.TextAreaFor(Model => Model.Notes, htmlAttributes: new { @class = "control-label col-md-12 ", placeholder = "Enter any notes" })
+                    </div>
+                </div>
+            </div>
+
+
+            @*====================================== (End) Notes ========================================*@
+
+            @*====================================== (Start) submit to brokkrr ========================================*@
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-md-12 col-xs-12" style="text-align:center;">
+                        <input type="submit" value="Submit to Brokkrrs" name="SubmittoBrokkrrs" onclick="return SubmitAutoInsurance();" id="UpdateInfo" class="btn btn-default" style="position: relative;background-color:#17d1ff;color: white;" />
+                    </div>
+                </div>
+            </div>
+            @*====================================== (End) submit to brokkrr ========================================*@
+
+        }
+    </div>
+
+    <!-- 18April17 RS-->
+    <script>
+    $(window).scroll(function () {
+        $('#footerLayout').hide();
+        $('#noresults').hide();
+    });
+
+    </script>
+    <footer class="footer-distributed" style="position:fixed;bottom:0;">
+        <div class="container" style="width:100%;">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="padding:0;">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6" style="padding:0;">
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="text-align:center;">
+                            <p class="footer-company-about">
+                                <div class="social-icons" style="margin-bottom:0px;">
+                                    <a href="#"><span class="facebook"></span></a>
+                                    <a href="#"><span class="twitter"></span></a>
+                                    <a href="#"><span class="linkedin"></span></a>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 col-sm-6 col-xs-6" style="margin-bottom: 0%;text-align:center;padding-right: 0;">
+                        <div class="footer-right-header">
+                            @*<div class="copyright">*@
+                            <div>
+                                <p style="display: block;color: #666666;font-size: 16px;font-weight: 800;font-family:'Varela Round',sans-serif;padding-top:2%;">© 2016 Brokkrr Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "PaymentSuccess";
+    Layout = "~/Views/Shared/View_BrokkrrMainLayout.cshtml";
+}
+
+<div class="container" style="height: 85.3%;">
+    <div class="row" style="padding-left:20%;padding-right:20%">
+        <br />
+        <div class="col-md-12">
+            <h3>Payment done successfully.</h3>
+            <br />
+            <h3>You are registered successfully but yet not activated.</h3>
+            <h3>Please accept your verification email.</h3>
+            <br />
+            <hr />
+            Status : @ViewBag.Status
+            <br /><br />
+            Tranaction Id : @ViewBag.TransactionId
+            <br /><br />
+            Amount : @ViewBag.Amount
+
+            <br /><br />
+        </div>
+    </div>
+</div>
+
+

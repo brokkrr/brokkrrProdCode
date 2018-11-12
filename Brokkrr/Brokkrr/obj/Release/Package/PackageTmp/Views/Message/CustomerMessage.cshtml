@@ -1,0 +1,884 @@
+﻿@{
+    ViewBag.Title = "Customer Chat";
+    // Layout = "~/Views/Shared/View_CustomerProfileLayout.cshtml";
+    Layout = "~/Views/Shared/_NewCustomerLayout.cshtml";
+}
+
+<link href="~/Content/BrokkrrCSS/ProgressBar1.css" rel="stylesheet" />
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script type="text/javascript" src="~/Scripts/Scripts2/jquery.min.js"></script>
+<script src="~/Scripts/Scripts2/bootstrap.min.js"></script>
+<link href="~/Content/BrokkrrCSS/ModelPopUp.css" rel="stylesheet" />
+
+<link href="~/Content/BrokkrrCSS/jquery-ui.css" rel="stylesheet" />
+
+<script src="~/Scripts/Scripts1/jquery-1.10.2.js"></script>
+
+<script src="~/Scripts/Scripts1/jquery-ui.js"></script>
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+<style type="text/css">
+    @@media only screen and (min-width:3840px) {
+        .Insfooterlogo {
+            margin-bottom: 0%;          
+            padding-left: 0%;
+            margin-top: 1.5% !important;
+        }
+    }
+
+    @@media only screen and (min-width:2880px) {
+        .Insfooterlogo {
+            margin-bottom: 0%;          
+            padding-left: 0%;
+            margin-top: 1.5% !important;
+        }
+    }
+</style>
+
+<script type="text/javascript">
+    function back() {
+     
+        $('#customerMeassage').css("display", "block");
+        $('#list').css("display", "block");
+        $('#Edit').css("display", "block");
+        $('#textenter').css("display", "none");
+        $('#backdiv').css("display", "none");
+        $('#customerChatMessage').css("display", "none");
+           }
+
+    $(document).ready(function () {
+
+        $("#notificationbar").css("display", "none");
+
+        var Auth = '@ViewBag.User';
+        var Comp = '@ViewBag.Company';
+
+       
+
+        if (Auth == "Authorize") {
+            if (Comp == "Meineke") {
+                //alert("Auth Meineke");
+                $("#MeinekeHomePageImage").css("display", "block");
+                $("#HomePageImage").css("display", "none");
+
+                $("#MenuMeinekeHomePage").css("display", "block");
+                $("#MenuHomePage").css("display", "none");
+                $("#MenuMeinekeCustomerProfile").css("display", "block");
+                $("#MenuCustomerProfile").css("display", "none");
+
+                $("#footerBrokerLogo").css("display", "none");
+                $("#footerMeinekeLogo").css("display", "block");
+
+                $("#aSerchBrokerMeineke").css("display", "block");
+                $("#aSerchBrokerBrokkrr").css("display", "none");
+
+                $("#footerLayout1").css("display", "none");
+                $("#meinekefotter").css("display", "block");
+                $("#APSPfooter").css("display", "none");
+            }
+            else if (Comp == "Brokkrr") {
+                //alert("Auth Brokkrr");
+                $("#MeinekeHomePageImage").css("display", "none");
+                $("#HomePageImage").css("display", "block");
+
+                $("#MenuMeinekeHomePage").css("display", "none");
+                $("#MenuHomePage").css("display", "block");
+                $("#MenuMeinekeCustomerProfile").css("display", "none");
+                $("#MenuCustomerProfile").css("display", "block");
+
+                $("#footerBrokerLogo").css("display", "block");
+                $("#footerMeinekeLogo").css("display", "none");
+
+                $("#aSerchBrokerMeineke").css("display", "none");
+                $("#aSerchBrokerBrokkrr").css("display", "block");
+
+                $("#meinekefotter").css("display", "none");
+                $("#footerLayout1").css("display", "block");
+                $("#APSPfooter").css("display", "none");
+            }
+            else if (Comp == "APSP") {
+                $("#APSPHomePageImage").css("display", "block");
+                $("#MenuAPSPHomePage").css("display", "block");
+                $("#MenuAPSPCustomerProfile").css("display", "block");
+                $("#aSerchBrokerAPSP").css("display", "block");
+                $("#footerAPSPLogo").css("display", "block");
+
+                $("#HomePageImage").css("display", "none");
+                $("#MenuHomePage").css("display", "none");
+                $("#MenuCustomerProfile").css("display", "none");
+                $("#aSerchBrokerBrokkrr").css("display", "none");
+
+                $("#meinekefotter").css("display", "none");
+                $("#footerLayout1").css("display", "none");
+                $("#APSPfooter").css("display", "block");
+            }
+        }
+        else {
+            if (Comp == "Meineke") {
+                //alert("UnAuth Meineke");
+            }
+            else {
+                //alert("UnAuth Brokkrr");
+            }
+        }
+
+        //Show loader when loading messages
+        $('#loadMessages').show();
+        $('.bodyMessages').addClass('bodyblur');
+
+        $('#brokerChatEnter').off("click").on("click", function () {
+            //alert("Called Customer Chat");
+            var chatcontent = $('#brokerChatcontent').val();
+
+            if (chatcontent != "") {
+                //alert(chatcontent);
+                SaveBrokerChat(chatcontent);
+            }
+            $('#brokerChatcontent').val('');
+            $('#brokerChatcontent').focus();
+        });
+
+        $(document).keypress(function (e) {
+            //alert("Called");
+            if (e.which == 13) {
+                var chatcontent = $('#brokerChatcontent').val();
+
+                if (chatcontent != "") {
+                    //alert(chatcontent);
+                    SaveBrokerChat(chatcontent);
+                }
+                $('#brokerChatcontent').val('');
+                $('#brokerChatcontent').focus();
+            }
+        });
+
+        $("#deletemultiplechatmsg").click(function (e) {
+            $("#myModal").modal('show');
+        });
+
+        $("#deletemessagesconfirm").click(function (e) {
+            DeleteChatMessages();
+            $('#deletemultiplechatmsg').hide();
+            $('#myModal').modal('hide');
+        });
+
+        $("#deleteconfirmpopupclose").click(function (e) {
+            CancelDeleteChatMessages();
+
+            $('#deletemultiplechatmsg').hide();
+            $('#myModal').modal('hide');
+        });
+    });
+
+</script>
+
+
+<style type="text/css">
+      .modal-open  {
+            overflow-y: scroll !important;
+        }
+
+    #loading-messages {
+        position: absolute;
+        top: 40%;
+        left: 45%;
+        z-index: 100;
+    }
+
+    .bodyblur {
+        opacity: 0.5 !important;
+        background-color: white !important;
+    }
+
+    .RemoveElt {
+        /*background-color:lightgray;*/
+        opacity: 0.2;
+    }
+
+    html, body {
+        overflow: auto;
+    }
+
+
+    .chat {
+        float: left;
+        position: relative;
+        width: 403px;
+    }
+
+        .chat .show-message {
+            background: -webkit-linear-gradient(rgb(242, 242, 243) 15%, rgb(240, 243, 241) 36%, rgb(241, 240, 241) 58%, rgb(236, 236, 236) 81%);
+            background: -moz-linear-gradient(rgb(242, 242, 243) 15%, rgb(240, 243, 241) 36%, rgb(241, 240, 241) 58%, rgb(236, 236, 236) 81%);
+            border-bottom: 1px solid #D3D3D3;
+            padding-bottom: 30px;
+        }
+
+        .chat .type-text {
+            background: -webkit-linear-gradient(rgb(251, 251, 254) 18%, rgb(250, 251, 253) 51%, rgb(251, 251, 252) 78%);
+            background: -moz-linear-gradient(rgb(251, 251, 254) 18%, rgb(250, 251, 253) 51%, rgb(251, 251, 252) 78%);
+            padding-bottom: 13px;
+        }
+
+    input[type='text'] {
+        border: 1px solid #CED3D9;
+        margin: 13px 0 0 28px;
+        padding: 10px;
+        outline: 0;
+        border-radius: 5px;
+        width: 235px;
+        /*color:rgb(204,204,204);*/
+        font-size: 18px;
+    }
+
+    button[type='submit'] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: -webkit-linear-gradient(rgb(32, 199, 127) 21%, rgb(30, 180, 115) 52%, rgb(28, 160, 101) 79%);
+        background: -moz-linear-gradient(rgb(32, 199, 127) 21%, rgb(30, 180, 115) 52%, rgb(28, 160, 101) 79%);
+        background: -ms-linear-gradient(rgb(32, 199, 127) 21%, rgb(30, 180, 115) 52%, rgb(28, 160, 101) 79%);
+        box-shadow: inset 0 0 2px 1px #DDD7D7;
+        border: 1px solid #A0A0A0;
+        padding: 2px 22px 10px 20px;
+        margin: 0px 0 0 25px;
+        border-radius: 4px;
+    }
+
+        button[type='submit']:hover {
+            cursor: pointer;
+        }
+
+            button[type='submit']:hover #i {
+                color: #fff;
+            }
+
+    .friend {
+        float: left;
+        /*margin: 30px 0 0 0px;*/
+    }
+
+    .me {
+        float: right;
+        /*margin: 20px 15px 0 0;*/
+    }
+
+        .friend img, .me img {
+            border-radius: 50%;
+            width: 40px !important;
+        }
+
+    .friend img {
+        float: left;
+        margin: 10px 0 0 7px;
+    }
+
+    .me img {
+        float: right;
+        margin: 10px 7px 0;
+    }
+
+    .friend .message {
+        /*border: 1px solid rgb(233,233,233);*/
+        margin: 2px 0 0 55px;
+        padding: 10px;
+        background: rgb(233,233,233);
+        border-radius: 6px;
+        width: 70%;
+        position: relative;
+        margin-top: 10px;
+    }
+
+    .me .message {
+        /*padding: 10px;
+        background: rgb(69,205,243);
+        border-radius: 6px;
+        position: relative;
+        float: right;
+        width: 70%;*/
+        margin-top: 10px;
+        margin: 2px 0 0 0px;
+        padding: 10px;
+        background: rgb(69,205,243);
+        border-radius: 6px;
+        width: 70%;
+        position: relative;
+        float: right;
+    }
+
+    .friend p, .me p {
+        font-size: 16px;
+        line-height: 1.2em;
+        font-family: open sans;
+    }
+
+    .me p {
+        color: #fff;
+    }
+
+    .friend p {
+        color: black;
+    }
+
+    #i {
+        font-size: 25px;
+        color: #E8E8E8;
+        display: block;
+        margin-top: 4px;
+        -webkit-transition: all .25s ease;
+        -moz-transition: all .25s ease;
+    }
+
+    label:hover {
+        cursor: pointer;
+    }
+
+    input[type='radio'] {
+        display: none;
+    }
+
+        input[type='radio']:checked + label {
+            color: #767968;
+        }
+
+        input[type='radio']#one:checked ~ .all {
+            margin-left: 0px;
+            -webkit-transition: all .5s ease-in-out;
+            -moz-transition: all .5s ease-in-out;
+        }
+
+
+    /* Scroll Css */
+
+    .list::-webkit-scrollbar {
+        width: 6px;
+        direction: ltr;
+    }
+    /* Track */
+
+    .list::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+    }
+
+    /* Handle */
+
+    .list::-webkit-scrollbar-thumb {
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        background: rgb(69,205,243);
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    }
+
+
+    .list::-moz-webkit-scrollbar-thumb:window-inactive {
+        background: rgba(243,243,243,243);
+    }
+
+    .list::-webkit-scrollbar-thumb:window-inactive {
+        background: rgba(243,243,243,243);
+    }
+</style>
+
+<style type="text/css">
+    @@media screen and (max-width: 640px) {
+
+         #loading-messages {
+        position: absolute;
+        top: 40%;
+        left: 20%;
+        z-index: 100;
+    }
+
+        .RemoveElt {
+            /*background-color:lightgray;*/
+            opacity: 0.2;
+        }
+
+        html, body {
+            overflow: auto;
+        }
+
+
+        .chat {
+            float: left;
+            position: relative;
+            width: 403px;
+        }
+
+            .chat .show-message {
+                background: -webkit-linear-gradient(rgb(242, 242, 243) 15%, rgb(240, 243, 241) 36%, rgb(241, 240, 241) 58%, rgb(236, 236, 236) 81%);
+                background: -moz-linear-gradient(rgb(242, 242, 243) 15%, rgb(240, 243, 241) 36%, rgb(241, 240, 241) 58%, rgb(236, 236, 236) 81%);
+                border-bottom: 1px solid #D3D3D3;
+                padding-bottom: 30px;
+            }
+
+            .chat .type-text {
+                background: -webkit-linear-gradient(rgb(251, 251, 254) 18%, rgb(250, 251, 253) 51%, rgb(251, 251, 252) 78%);
+                background: -moz-linear-gradient(rgb(251, 251, 254) 18%, rgb(250, 251, 253) 51%, rgb(251, 251, 252) 78%);
+                padding-bottom: 13px;
+            }
+
+        input[type='text'] {
+            border: 1px solid #CED3D9;
+            margin: 13px 0 0 28px;
+            padding: 10px;
+            outline: 0;
+            border-radius: 5px;
+            width: 235px;
+            /*color:rgb(204,204,204);*/
+            font-size: 18px;
+        }
+
+        button[type='submit'] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background: -webkit-linear-gradient(rgb(32, 199, 127) 21%, rgb(30, 180, 115) 52%, rgb(28, 160, 101) 79%);
+            background: -moz-linear-gradient(rgb(32, 199, 127) 21%, rgb(30, 180, 115) 52%, rgb(28, 160, 101) 79%);
+            background: -ms-linear-gradient(rgb(32, 199, 127) 21%, rgb(30, 180, 115) 52%, rgb(28, 160, 101) 79%);
+            box-shadow: inset 0 0 2px 1px #DDD7D7;
+            border: 1px solid #A0A0A0;
+            padding: 2px 22px 10px 20px;
+            margin: 0px 0 0 25px;
+            border-radius: 4px;
+        }
+
+            button[type='submit']:hover {
+                cursor: pointer;
+            }
+
+                button[type='submit']:hover #i {
+                    color: #fff;
+                }
+
+        .friend {
+            float: left;
+            /*margin: 30px 0 0 0px;*/
+        }
+
+        .me {
+            float: right;
+            /*margin: 20px 15px 0 0;*/
+        }
+
+            .friend img, .me img {
+                border-radius: 50%;
+                width: 40px !important;
+            }
+
+        .friend img {
+            float: left;
+            margin: 10px 0 0 7px;
+        }
+
+        .me img {
+            float: right;
+            margin: 10px 7px 0;
+        }
+
+        .friend .message {
+            /*border: 1px solid rgb(233,233,233);*/
+            margin: 2px 0 0 55px;
+            padding: 10px;
+            background: rgb(233,233,233);
+            border-radius: 6px;
+            width: 70%;
+            position: relative;
+            margin-top: 10px;
+        }
+
+        .me .message {
+            /*padding: 10px;
+        background: rgb(69,205,243);
+        border-radius: 6px;
+        position: relative;
+        float: right;
+        width: 70%;*/
+            margin-top: 10px;
+            /*margin: 2px 0 0 55px;*/ /*6 OCt 2017 RS*/
+            padding: 10px;
+            background: rgb(69,205,243);
+            border-radius: 6px;
+            width: 70%;
+            position: relative;
+            float: right;
+        }
+
+        .friend p, .me p {
+            font-size: 12px;
+            line-height: 1.2em;
+            font-family: open sans;
+        }
+
+        .me p {
+            color: #fff;
+        }
+
+        .friend p {
+            color: black;
+        }
+
+        #i {
+            font-size: 25px;
+            color: #E8E8E8;
+            display: block;
+            margin-top: 4px;
+            -webkit-transition: all .25s ease;
+            -moz-transition: all .25s ease;
+        }
+
+        label:hover {
+            cursor: pointer;
+        }
+
+        input[type='radio'] {
+            display: none;
+        }
+
+            input[type='radio']:checked + label {
+                color: #767968;
+            }
+
+            input[type='radio']#one:checked ~ .all {
+                margin-left: 0px;
+                -webkit-transition: all .5s ease-in-out;
+                -moz-transition: all .5s ease-in-out;
+            }
+
+
+        /* Scroll Css */
+
+        .list::-webkit-scrollbar {
+            width: 6px;
+            direction: ltr;
+        }
+        /* Track */
+
+        .list::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+
+        .list::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background: rgb(69,205,243);
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+        }
+
+
+        .list::-moz-webkit-scrollbar-thumb:window-inactive {
+            background: rgba(243,243,243,243);
+        }
+
+        .list::-webkit-scrollbar-thumb:window-inactive {
+            background: rgba(243,243,243,243);
+        }
+    }
+</style>
+
+<script type="text/javascript">
+
+    function test() {
+        $("#id1").click(function (event) {
+            //   alert("called");
+            // alert($(this).attr("id"));
+            $("#id1").css("border-right", "0px solid white");
+            $("#id2").css("border-right", "2px solid rgb(248,248,248)");
+
+        });
+        $("#id2").click(function (event) {
+            //   alert("called");
+            //  alert($(this).attr("id"));
+            $("#id2").css("border-right", "0px solid white");
+            $("#id1").css("border-right", "2px solid rgb(248,248,248)");
+
+        });
+    }
+
+</script>
+
+
+<style type="text/css">
+    .meinekeasscalign {
+        padding-top: 20px;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    @@media only screen and (min-width:2880px) {
+        .meinekeasscalign {
+            padding-top: 47px !important;
+            padding-right: 0;
+            text-align: center;
+        }
+    }
+
+    @@media only screen and (min-width:3840px) {
+        .meinekeasscalign {
+            padding-top: 64px !important;
+            padding-right: 0;
+            text-align: center;
+        }
+    }
+</style>
+
+<link href="~/Content/BrokkrrCSS/MediaQueries.css" rel="stylesheet" />
+<script src="~/js/CustomerMessage.js"></script>
+<script>
+    window.onload = function () {
+        // $('#Nocontent').text('Loading.....');
+        var userId = '@Session["UserId"]';
+        var WeServiceUrl = '@Session["WebServiceURL"]';
+        var ProfilePic = '@Session["ProfilePic"]';
+        var CustName = '@ViewBag.UserName';
+        //alert("UserId - " + userId + " , WeServiceUrl - " + WeServiceUrl);
+        GetCustomerMessages(userId, WeServiceUrl, ProfilePic, CustName);
+        $('#footerLayout').hide();
+
+        //alert(window.screen.width);
+        if (window.screen.width >= 320 && window.screen.width <= 1920) {
+
+            $('#backdiv').css("display", "none");
+
+
+        }
+
+        if (window.screen.width > 640 && window.screen.width <= 1024) {
+
+            $('#brokerChatcontent').css("width", "74%");
+
+
+        }
+
+        if(window.screen.width <= 640)
+        {
+            $('#brokerChatcontent').css("width", "63%");
+            $('#brokerChatcontent').css("padding", "0");
+            $('#brokerChatcontent').css("margin-left", "5px");
+            $('#brokerChatcontent').css("height", "40px");
+            $('#brokerChatcontent').css("margin-top", "27px");
+
+
+
+            $('#brokerChatEnter').css("width", "80px");
+            $('#brokerChatEnter').css("padding", "0px");
+            $('#brokerChatEnter').css("margin", "0px");
+        }
+
+    };
+</script>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="~/Images/Assets/brokkrIcon24x24.png">
+    <title>Customer Messages</title>
+
+</head>
+<body style="overflow:hidden;" class="bodyMessages">
+    @if (Session["Company"] == "APSP")
+    {
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 3% 0% 0 4%;">
+                <a href="@Url.Action("APSPHomePage", "Home")"><img src="~/Images/APSP/aqualine-logo.png" alt="Logo" class="img-responsive" /></a>
+            </div>
+        </div>
+    }
+    else
+    {
+
+    }
+    <div class="container" style="padding-left: 15%; padding-right: 12%;height:100%;" id="pageone">
+        <div class="row">
+            <div class="col-md-12  col-sm-12 col-xs-12" style="padding:0;">
+                <div class="col-md-2 col-sm-2 col-xs-2" id="backdiv" style="padding-left: 0;padding-top: 7%;display:none;"><input id="backbutton" type="image" src="~/Images/NewAssets/if_arrow-left_2555166.png" value="Back" onclick="back();" /></div>
+                <div class="col-md-9 col-sm-9 col-xs-9" style="padding:3%;padding-left: 0;font-size: 36px;font-weight: bold;font-family: open sans;">
+                    Messages
+                </div>
+            </div>
+        </div>
+        <div id="loadMessages" style="display:none;">
+            <img id="loading-messages" src="~/Images/NewAssets/loader.gif"/>
+        </div>
+        <div class="row" id="divNoMessage" style="display:none;">
+            <div class="col-md-12  col-sm-12 col-xs-12" style="padding:0;">
+                <div style="padding:3%;padding-left: 0;font-size: 25px;font-family: open sans;text-align:center;">
+                    No Messages Found
+                </div>
+            </div>
+        </div>
+        <div class="row" id="divEditDeleteButton">
+            <div id="Edit" class="col-md-12  col-sm-12 col-xs-12" style="padding:0;">
+                <div>
+                    @*<img src="../Images/Assets/delete.png"  id="deletemultiplemsg" />*@
+                    <a id="Editmainmsg" class="editlbl" style="">Edit</a>
+                    <a id="deletemultiplemainmsg" class="editlbl">Delete</a>@*style="float: left;cursor:pointer;margin-left:10px;display:none;"*@
+
+                    <a id="deletemultiplechatmsg" style="float: right;display:none;cursor:pointer;">Delete</a>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding-top:1%;height:450px;" id="divMessageBox">
+            <div class="col-md-12 col-sm-12 col-xs-12 chatbox" style="">
+                <div id="list" class="col-md-4 col-sm-12 col-xs-12 list" style="word-wrap: break-word;padding-left:0px;padding:0px;overflow-y:auto;height:100%;cursor:pointer;background-color:rgb(248,248,248);">
+                    <div id="customerMeassage">
+                    </div>
+                </div>
+
+                <div id="customerChatMessage" class="col-md-8 col-sm-12 col-xs-12 list custmsgChatBox" style="">
+
+                </div>
+                <div class="cleardiv"></div>
+                <div id="textenter" style="direction:ltr;">
+                    <div id="divTextArea" style="display:none;">
+                        <input id="brokerChatcontent" class="placeholder" type="text" placeholder="Write Message" style="height: 70px !important;width:50%;margin-right:1%;" />
+                        <input id="brokerChatEnter" type="button" value="Send" style=" width: 100px;font-size:15px; height:35px; border-radius: 53px; background-color: darkturquoise; color: #fff; border: none;" />
+                    </div>
+                    <div id="divCustMsgDeleted" style="display:none;font-size:19px;margin-top:3%;">
+                        @*<label for="brokerChatcontentError" id="brokerChatcontentError" style="font-weight:normal;margin-top: 10px;"></label>*@
+                        <p id="brokerChatcontentError" style="font-size:19px;"></p>
+                    </div>
+
+                </div>
+                <div class="cleardiv"></div>
+            </div>
+
+        </div>
+
+        <!--End of Footer of chating window-->
+        <div class="modal fade" id="ModalError" role="dialog" style="overflow-y: hidden;">
+            <div class="modal-dialog" style="padding:5%">
+                <div class="modal-content">
+                    <div class="modal-header" style="padding-top: 3px; padding-bottom: 3px;">
+                        <a href="#" data-dismiss="modal"><img src="~/Images/NewAssets/closepopup.png" style="float:right;" /> </a>
+                        <h4 class="modal-title" style="font-size: 16px;margin-top:10px;margin-bottom:10px;">Message</h4>
+                    </div>
+                    <div class="modal-body" style="padding-top: 0px;padding-bottom: 0px;font-weight:100;">
+                        <br />
+                        <span><label for="lblError" id="lblError" style="color:red;margin-left:20px;"></label></span>
+                        <br />
+                    </div>
+                    <div class="modal-footer" style="padding: 5px;text-align:center;">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" style="width:70px;">OK</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="myModal" class="modal fade col-md-12 col-sm-12 col-xs-12" style="margin-top:15%;overflow-y:hidden;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 class="modal-title">Information</h2>
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="text-align:center;height:50px;font-size: 18px;">
+                            Are you sure to delete chat messages?
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-3 col-sm-3 col-xs-2">
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-4">
+                                    <a href="#" id="deletemessagesconfirm" style="text-decoration:none;" data-transition="slide">
+                                        <div class="Messagebtn1"> Confirm</div>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-4">
+                                    <a href="#" id="deleteconfirmpopupclose" style="text-decoration:none;" data-transition="slide">
+                                        <div class="Messagebtn1"> Cancel</div>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-2">
+                                </div>
+                                <div class="clearboth"></div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div id="myModalMessage" class="modal fade col-md-12 col-sm-12 col-xs-12" style="margin-top:15%;overflow-y:hidden;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header" style="padding:0px !important;">
+                        @*<img id="" src="~/Images/NewAssets/closepopup.png" style="float: right;margin-top: 3%;cursor:pointer;" data-dismiss="modal" />*@
+                        <h4 class="modal-title" style="font-size:30px;margin-top:10px;margin-bottom:10px;text-align: left;margin:2.5%;font-weight:bold;font-family:open sans;">Information</h4>
+
+                    </div>
+                    <div class="modal-body">
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="text-align:center;height:50px;font-size: 18px;">
+                            Are you sure to delete messages?
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-3 col-sm-3 col-xs-2">
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-4">
+                                    <a href="#" id="deletemultiplemessagesconfirm" style="text-decoration:none;" data-transition="slide">
+                                        <div class="Messagebtn1"> Confirm</div>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-4">
+                                    <a href="#" id="deletemultipleconfirmpopupclose" data-dismiss="modal" style="text-decoration:none;" data-transition="slide">
+                                        <div class="Messagebtn1"> Cancel</div>
+                                    </a>
+                                </div>
+                                <div class="col-md-3 col-sm-3 col-xs-2">
+                                </div>
+                                <div class="clearboth"></div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <footer class="footer-distributed" style="position: relative;background-image:none;" id="footerLayout">
+        <div class="container" style="width:100%">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-right:0;">
+                <div class="row">
+                    <!-- 23 May 2018 R.Shah-->
+                    <div class="col-md-3 col-sm-3 meinekeasscalign">
+                        <p style="display: block;color: #666666;font-size: 16px;font-family:open sans;text-align:center;">
+                            © 2018 brokkrr. All rights reserved.
+                        </p>
+                    </div>
+
+                    <div class="col-sm-3 col-md-2 text-center" style="padding-left:0;">
+                        <p class="footer-company-about">
+                            <div class="social-icons" style="margin-bottom:0px;margin-top: 15px;">
+                                <a style="cursor:default;"><span class="facebook"></span></a>
+                                <a style="cursor:default;"><span class="twitter"></span></a>
+                                <a style="cursor:default;"><span class="linkedin"></span></a>
+                            </div>
+                        </p>
+                    </div>
+                    <div class="col-sm-2 col-md-5" style="margin-bottom:0%;">
+                    </div>
+                    <div class="col-sm-1 col-md-1" style="margin-bottom: 0%;margin-top: 1.5%;">
+                        <div style="padding-right:4%;text-align:center">
+                            <img src="~/Images/NewAssets/footer-logo.png" alt="logo" />
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1" style="margin-bottom:0%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

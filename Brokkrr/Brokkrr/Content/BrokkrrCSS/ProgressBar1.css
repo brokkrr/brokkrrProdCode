@@ -1,0 +1,91 @@
+﻿.one, .two, .three {
+    position: absolute;
+    margin-top: -15px;
+    z-index: 1;
+    height: 40px;
+    width: 40px;
+    border-radius: 25px;
+}
+
+.one {
+    left: 20%;
+}
+
+.two {
+    left: 65%;
+}
+/*.three{
+	left:75%;
+}*/
+.primary-color {
+    background-color: #4989bd;
+}
+
+.success-color {
+    background-color: #5cb85c;
+}
+
+.danger-color {
+    background-color: #d9534f;
+}
+
+.warning-color {
+    background-color: #f0ad4e;
+}
+
+.info-color {
+    background-color: #5bc0de;
+}
+
+.no-color {
+    background-color: inherit;
+}
+
+.brokerTag {
+    text-align: center;
+    width: 100%;
+    padding-left: 41%;
+    padding-right: 40%;
+    font-size: 25px;
+}
+
+.progress-Text {
+    /*text-align: center;
+   
+   */
+    padding-right: 13px;
+    padding-bottom: 13px;
+    padding-left: 15px;
+    padding-top: 10px;
+    z-index: 45;
+    color: rgb(255, 255, 255);
+    position: absolute;
+    font-weight: 900;
+}
+
+.textbelowPB{
+    text-align:center;
+}
+
+/*=========================Form CSS Start Here========================*/
+.formtext{
+    top:10px;
+}
+/*=========================Form CSS Start Here========================*/
+
+.calendertxtBox{
+   background-image: url("../../Images/Assets/glyphicons-46-calendar.png");
+background-repeat: no-repeat;
+background-position: right center;
+display: block;
+width: 100%;
+height: 34px;
+padding: 6px;
+font-size: 14px;
+line-height: 1.42857;
+color: rgb(85, 85, 85);
+background-color: rgb(255, 255, 255);
+border: 1px solid rgb(204, 204, 204);
+/*border-radius: 4px;*/
+transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}

@@ -1,0 +1,310 @@
+﻿@model BrokerMVC.Models.ResetPassword
+@{
+    ViewBag.Title = "Verify Email";
+    Layout = "~/Views/Shared/_NewResetPwdLayout.cshtml";
+}
+
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<!-- /css links -->
+<script type="text/javascript" src="~/Scripts/Scripts2/jquery.min.js"></script>
+<!-- js links -->
+<link href="~/Content/BrokkrrCSS/ModelPopUp.css" rel="stylesheet" />
+
+<script src="~/Scripts/Scripts2/bootstrap.min.js"></script>
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+@*<script src="//code.jquery.com/jquery-1.10.2.js"></script>*@
+
+<script src="~/Scripts/Scripts1/jquery-1.10.2.js"></script>
+
+@*<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>*@
+<link rel="stylesheet" href="/resources/demos/style.css">
+<link href="~/Content/BrokkrrCSS/CSS1/style.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+<style type="text/css">
+    .red-border-left {
+        border-left: 2px solid #FF0000;
+    }
+
+    .ErrorMsg {
+        margin-bottom: 0px;
+    }
+
+    .myprofiletag {
+        margin: 5%;
+        margin-bottom: 2%;
+        font-size: 40px;
+    }
+
+    .hr {
+        margin-top: 5px;
+        margin-bottom: 0px;
+        border-top: 2px solid rgb(204,204,204);
+    }
+
+    .hrRequired {
+        margin-top: 5px;
+        margin-bottom: 0px;
+        border-top: 2px solid red;
+    }
+</style>
+
+
+<script>
+    window.onload = function () {
+
+        $('#footerLayout').hide();
+       // $("#ModalError").modal();
+
+    };
+
+</script>
+
+
+
+<style type="text/css">
+    /*Square Images (Start)*/
+    .imageClass {
+        object-fit: cover;
+        -webkit-object-fit: cover !important;
+        -moz-object-fit: cover;
+        -ms-object-fit: cover;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+
+    .circular--square {
+        border-radius: 50%;
+    }
+
+    .circular--square {
+        border-top-left-radius: 50% 50%;
+        border-top-right-radius: 50% 50%;
+        border-bottom-right-radius: 50% 50%;
+        border-bottom-left-radius: 50% 50%;
+    }
+
+    /*Square Images (End)*/
+
+
+    /*landscape Images (Start)*/
+
+    .circular--landscape {
+        display: inline-block;
+        position: relative;
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+
+        .circular--landscape img {
+            width: auto;
+            height: 100%;
+            margin-left: -50px;
+        }
+
+    /*landscape Images (End)*/
+
+    /*portrait Images (Start)*/
+
+    .circular--portrait {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+
+        .circular--portrait img {
+            width: 100%;
+            height: auto;
+        }
+
+
+    /*portrait Images (End)*/
+
+
+    .myprofiletag {
+        margin: 5%;
+        margin-bottom: 2%;
+        font-size: 40px;
+    }
+
+    #profileImage1 {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        background: rgb(235,235,235);
+        font-size: 60px;
+        color: #fff;
+        text-align: center;
+        line-height: 135px;
+        /*margin: 20px 0;*/
+    }
+
+    .detailslabel {
+        font-size: 12px;
+        color: rgb(153,153,153);
+        font-weight: 300;
+    }
+
+    .input {
+        border: none;
+        margin-top: 2%;
+        font-size: 18px;
+        border-bottom: 2px;
+        width: 100%;
+    }
+
+    .hr {
+        margin-top: 5px;
+        margin-bottom: 0px;
+        border-top: 2px solid rgb(204,204,204);
+    }
+
+    .hrRequired {
+        margin-top: 5px;
+        margin-bottom: 0px;
+        border-top: 2px solid red;
+    }
+</style>
+
+
+
+
+<body>
+    <div class="container" style="height:100%">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="myprofiletag">
+                    Create Password
+                </div>
+            </div>
+        </div>
+
+        @using (Html.BeginForm("VerifyEmail", "Home", FormMethod.Post
+                , new { enctype = "multipart/form-data" }))
+        {
+
+            <div class="col-md-12" style="margin-bottom:3%;">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-4">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-8">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-12", Style = "padding: 2%;top:15px;font-size:18px;" })
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4" style="">
+                    <div class="col-md-8">
+                        <div class="" style="margin-bottom: 0px;margin-top: -8px;">
+                            @Html.PasswordFor(model => model.Password, new { @class = "", Style = "border:none;margin-bottom:0px;" })
+                        </div>
+                        <hr class="hr" />
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-2">
+                </div>
+                <div class="col-md-4">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-8">
+                        <div class="editor-label">
+                            @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-12", Style = "padding:2%;top:15px;font-size:18px;" })
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" style="">
+                    <div class="col-md-8" style="margin-bottom: 0px;margin-top: -8px;">
+                        <div class="" style="margin-bottom: 0px;margin-top:1%">
+                            @*@Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control ErrorMsg" })*@
+                            @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "", Style = "border:none;margin-bottom:0px;" })
+                        </div>
+                        <hr class="hr" />
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-md-12" style="margin-top:8%;margin-bottom:5%;">
+                        <div class="col-md-2">
+                        </div>
+                        <div class="col-md-8" style="padding-left:0%">
+                            <div class="col-md-3"></div>
+                            <div class="col-md-6" style="padding-left: 0px;">
+                                <div class="col-xs-1" style="padding:0%"></div>
+                                <div class="col-xs-12" style="padding-left:0%;padding-right:0%;text-align: center;">
+                                    @*<input type="submit" value="Submit" name="Submit" id="UpdateInfo" class=" btn btn-default" style="position: relative;margin-left: 30%;background-color:rgb(6, 102, 145);color: white;" />*@
+                                    <input type="submit" value="Submit" name="Submit" id="UpdateInfo" style="color: #fff;font-size: 15px;background-color:rgb(72,205,248);width:120px;border-radius: 30px;border: none;" />
+                                </div>
+                                @*<div class="col-xs-5" style="padding-left:0%;padding-right:0%">
+
+                                        <input type="submit" value="Cancel" id="Cancel" style="color: #fff;font-size: 15px;background-color:rgb(72,205,248);height:40px;width:120px;border-radius: 30px;border: none;" />
+                                    </div>*@
+                                <div class="col-xs-1"></div>
+                            </div>
+                            <div class="col-md-3"></div>
+                        </div>
+                        <div class="col-md-2">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+
+    <footer class="footer-distributed" style="position: relative;background-image:none;" >
+        <div class="container" style="width:100%">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-right:0;">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3" style="padding-top: 20px;padding-right:0;text-align: center;">
+                        <p style="display: block;color: #666666;font-size: 16px;font-family:open sans;text-align:center;">
+                            © 2018 brokkrr. All rights reserved.
+                        </p>
+                    </div>
+
+                    <div class="col-sm-3 col-md-2 text-center" style="padding-left:0;">
+                        <p class="footer-company-about">
+                            <div class="social-icons" style="margin-bottom:0px;margin-top: 15px;">
+                                <a style="cursor:default;"><span class="facebook"></span></a>
+                                <a style="cursor:default;"><span class="twitter"></span></a>
+                                <a style="cursor:default;"><span class="linkedin"></span></a>
+                            </div>
+                        </p>
+                    </div>
+                    <div class="col-sm-2 col-md-5" style="margin-bottom:0%;">
+                    </div>
+                    <div class="col-sm-1 col-md-1" style="margin-bottom: 0%;margin-top: 1.5%;">
+                        <div style="padding-right:4%;text-align:center">
+                            <img src="~/Images/NewAssets/footer-logo.png" alt="logo" />
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1" style="margin-bottom:0%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+</body>

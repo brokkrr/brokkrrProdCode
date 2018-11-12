@@ -1,0 +1,303 @@
+﻿@model BrokerMVC.Models.BrokkrrBriefcase
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_NewCustomerLayout.cshtml";
+    //Layout = "";
+}
+
+
+<link href="~/Content/BrokkrrCSS/MediaQueries.css" rel="stylesheet" />
+<link href="~/Content/bootstrap-datepicker3.min.css" rel="stylesheet" />
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+<script src="~/js/JQuery.browser.min.js"></script>
+
+<script src="~/js/bootstrap-multiselect.js"></script>
+<script src="~/js/bootstrapForMultiSelect.min.js"></script>
+
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrapForMultiSelect.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrap-multiselect.css" rel="stylesheet" type="text/css">
+
+
+
+<style type="text/css">
+    #Upload {
+        font-weight: bold;
+        color: #fff;
+        font-size: 15px;
+        background-color: rgb(72,205,248);
+        height: 40px;
+        width: 120px;
+        border-radius: 30px;
+        border: none;
+        line-height: 12px;
+        margin: 0;
+    }
+
+    #Upload {
+        font-weight: bold;
+        color: #fff;
+        font-size: 15px;
+        background-color: rgb(72,205,248);
+        height: 40px;
+        width: 120px;
+        border-radius: 30px;
+        border: none;
+        line-height: 12px;
+        margin: 0;
+    }
+
+    .playlist {
+        font-weight: bold;
+        font-size: 2.5vw;
+    }
+
+    .lbl {
+        font-size: 1.5vw;
+    }
+
+    .top {
+        top: 8px;
+    }
+
+    #title1 {
+        /*text-align:center;*/
+        margin: 5px 0 5px 0;
+        font-size: 16px;
+        font-weight: bold;
+           max-height: 70px;
+        overflow-y: auto;
+    }
+
+    #description {
+        margin: 5px 0 15px 0;
+        word-wrap: break-word;
+        min-height: 100px;
+        max-height: 100px;
+        overflow-y: auto;
+    }
+
+        /* Scroll Css */
+
+        #description::-webkit-scrollbar {
+            width: 6px;
+            direction: ltr;
+        }
+        /* Track */
+
+        #description::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+
+        #description::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background: rgb(69,205,243);
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+        }
+
+
+        #description::-moz-webkit-scrollbar-thumb:window-inactive {
+            background: rgba(243,243,243,243);
+        }
+
+        #description::-webkit-scrollbar-thumb:window-inactive {
+            background: rgba(243,243,243,243);
+        }
+
+        .list
+        {
+            margin-bottom:5px;
+        }
+</style>
+
+<script>
+    $(document).ready(function () {
+
+        var Auth = '@ViewBag.User';
+        var Comp = '@ViewBag.Company';
+       
+        if (Auth == "Authorize") {
+            if (Comp == "Meineke") {
+               
+                $("#MeinekeHomePageImage").css("display", "block");
+                $("#HomePageImage").css("display", "none");
+
+                $("#MenuMeinekeHomePage").css("display", "block");
+                $("#MenuHomePage").css("display", "none");
+                $("#MenuMeinekeCustomerProfile").css("display", "block");
+                $("#MenuCustomerProfile").css("display", "none");
+
+                $("#footerBrokerLogo").css("display", "none");
+                $("#footerMeinekeLogo").css("display", "block");
+
+                $("#aSerchBrokerMeineke").css("display", "block");
+                $("#aSerchBrokerBrokkrr").css("display", "none");
+
+                $("#footerLayout1").css("display", "none");
+                $("#meinekefotter").css("display", "block");
+                $("#APSPfooter").css("display", "none");
+
+            }
+            else if (Comp == "Brokkrr") {
+                $("#MeinekeHomePageImage").css("display", "none");
+                $("#HomePageImage").css("display", "block");
+
+                $("#MenuMeinekeHomePage").css("display", "none");
+                $("#MenuHomePage").css("display", "block");
+                $("#MenuMeinekeCustomerProfile").css("display", "none");
+                $("#MenuCustomerProfile").css("display", "block");
+
+                $("#footerBrokerLogo").css("display", "block");
+                $("#footerMeinekeLogo").css("display", "none");
+
+                $("#aSerchBrokerMeineke").css("display", "none");
+                $("#aSerchBrokerBrokkrr").css("display", "block");
+
+                $("#meinekefotter").css("display", "none");
+                $("#footerLayout1").css("display", "block");
+                $("#APSPfooter").css("display", "none");
+            }
+            else if (Comp == "APSP") {
+                $("#APSPHomePageImage").css("display", "block");
+                $("#MenuAPSPHomePage").css("display", "block");
+                $("#MenuAPSPCustomerProfile").css("display", "block");
+                $("#aSerchBrokerAPSP").css("display", "block");
+                $("#footerAPSPLogo").css("display", "block");
+
+                $("#HomePageImage").css("display", "none");
+                $("#MenuHomePage").css("display", "none");
+                $("#MenuCustomerProfile").css("display", "none");
+                $("#aSerchBrokerBrokkrr").css("display", "none");
+
+                $("#meinekefotter").css("display", "none");
+                $("#footerLayout1").css("display", "none");
+                $("#APSPfooter").css("display", "block");
+            }
+
+         
+          
+
+            $.ajax({
+                url: "/BrokkrrBriefcase/GetVideoData",
+                type: "GET",
+                success: function (data) {
+
+                    var dataarray = [];
+                    if (data.result.length > 0) {
+                        for (var i in data.result) {
+
+                            var url = data.result[i].Url;
+                            //alert(url + " " + "Url");
+
+                            var url2 = url.split("/");
+                            //alert(url2 + " " + "url2");
+                            var url3 = url2.pop();
+
+                            var videolist = '<div id=' + data.result[i].Id + ' class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="padding-right: 0;">'
+                + '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 briefcasevideo">'
+                    + '<iframe src="' + url + '?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="width:100%;height:100%;"></iframe>'
+
+               + ' </div>'
+               + ' <div class="clearboth"></div>'
+               + ' <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="word-wrap:break-word;">'
+                + '    <div id="title1">' + data.result[i].Title + '</div>'
+
+               + ' </div>'
+               + ' <div class="clearboth"></div>'
+               + ' <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-right:0;">'
+
+               + '     <div id="description"> ' + data.result[i].Description + '</div>'
+
+              + '  </div>'
+
+            + '</div>'
+
+                //            var videolist = '<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 list"> '
+                //            + '<iframe width="350" height="175" src="https://youtube.com/embed/' + url3 + '" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>'
+                //            + '<div class="clearboth">'
+                //       + '</div>'
+                //    + '<div id="title1">' + data.result[i].Title + '</div>'
+                //    + '<div id="description"> ' + data.result[i].Description + '</div>'
+                //+ '</div>'
+
+                            $('#list').append(videolist);
+                        }
+                    }
+                    else
+                    {
+                        var message = "<span style='font-size:20px;'>Videos not available.<span>";
+                        $('#list').append(message);
+                    }
+
+                },
+                error: function (er) {
+                }
+
+            });
+
+
+            /*Set all videos are seen by user*/
+
+            var UserId = '@Session["UserId"]';
+            var WeServiceUrl = '@Session["WebServiceURL"]';
+
+            if (UserId != "") {
+                //alert("UserId- " + UserId + " WeServiceUrl- " + WeServiceUrl)
+                $.ajax({
+                    type: "POST",
+                    url: WeServiceUrl,
+                    data: { UserId: UserId, ActionName: "DoSetAllVideoWatchedForWeb" },
+                    success: function (data) {
+
+                    },
+                    error: function (XMLHttpRequest, textStatus, errorThrown) { }
+
+                });
+            }
+
+        }
+    });
+
+</script>
+
+<div class="container-fluid" style="min-height:100%;">
+    @if (Session["Company"] == "APSP")
+    {
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding: 3% 0% 0 3%;">
+                <a href="@Url.Action("APSPHomePage", "Home")"><img src="~/Images/APSP/aqualine-logo.png" alt="Logo" class="img-responsive" /></a>
+            </div>
+        </div>
+    }
+    else
+    {
+
+    }
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 playlist" style="padding: 3%;">
+            Playlists
+        </div>
+    </div>
+    <br />
+    <div class="clearboth">
+
+    </div>
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="list" style="padding-left: 42px;">
+        </div>
+        <div class="clearboth"> </div>
+    </div>
+</div>
+
+<br /><br />
+<br /><br />
+@*/*--- Footer----*/*@
+
+<script src="~/Scripts/bootstrap-datepicker.js"></script>
+
+

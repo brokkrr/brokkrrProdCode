@@ -1,0 +1,160 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+
+    <link rel="shortcut icon" href="~/Images/Assets/brokkrIcon24x24.png">
+    <title>brokkrr Inc.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+   
+
+    <link href="~/Content/BrokkrrCSS/OpenSans.css" rel="stylesheet" />
+    <link href="~/Content/BrokkrrCSS/Raleway.css" rel="stylesheet" />
+    <link href="~/Content/BrokkrrCSS/Francois.css" rel="stylesheet" />
+    <!-- /font links -->
+    <!-- css links -->
+    <link href="~/Content/BrokkrrCSS/CSS1/style.css" rel="stylesheet" />
+    <link href="~/Content/BrokkrrCSS/CSS2/style.css" rel="stylesheet" />
+    <link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/Scripts2/jquery.min.js"></script>
+    <script src="~/Scripts/Scripts2/bootstrap.min.js"></script>
+
+    <link href="~/Content/BrokkrrCSS/Site.css" rel="stylesheet" />
+
+
+    <!-- /css links -->
+    <!-- js links -->
+    <style type="text/css">
+        .profilefooter {
+            margin-bottom: 0%;
+        }
+
+        .allrightalign {
+            padding-top: 20px;
+            padding-right: 0;
+            text-align: center;
+        }
+
+        .socialiconsalign {
+            margin-bottom: 0px;
+            margin-top: 15px;
+        }
+
+        .Insfooterlogo {
+            margin-bottom: 0%;
+            margin-top: 1.5%;
+            padding-left: 0%;
+        }
+
+        @@media screen and (min-width:2880px) {
+
+            .popupwidth {
+                width: 150%;
+            }
+
+            .profilefooter {
+                margin-bottom: 17%;
+            }
+
+
+
+            .allrightalign {
+                padding-top: 47px;
+                padding-right: 0;
+                text-align: center;
+            }
+
+            .socialiconsalign {
+                margin-bottom: 0px;
+                margin-top: 40px;
+            }
+
+            .Insfooterlogo {
+                margin-bottom: 0%;
+                margin-top: 1.7% !important;
+                padding-left: 0%;
+            }
+        }
+
+        @@media only screen and (min-width:3840px) {
+            .popupwidth {
+                width: 210%;
+            }
+
+            .allrightalign {
+                padding-top: 65px;
+                padding-right: 0;
+                text-align: center;
+            }
+
+            .socialiconsalign {
+                margin-bottom: 0px;
+                margin-top: 57px;
+            }
+
+            .Insfooterlogo {
+                margin-bottom: 0%;
+                margin-top: 0.4%;
+                padding-left: 0%;
+            }
+        }
+    </style>
+
+
+
+
+    
+</head>
+<body style="overflow-x:hidden;background:white !important;margin:0;">
+
+
+    <div class="row" style="height:auto;background-color:rgb(72,205,255);">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            @*<div class="col-md-6 col-sm-6 col-xs-6">*@
+            <div class="col-md-6 col-sm-6 col-xs-6" style="padding:1.5%;padding-left:7%;">
+                <a href="@Url.Action("Index", "Home")"><img src="~/Images/NewAssets/logo.png" alt="Logo" class="img-responsive" /></a>
+            </div>
+        
+        </div>
+    </div>
+
+    @RenderBody()
+    
+    <footer class="footer-distributed" style="position: relative;background-image:none;" id="footerLayout">
+        <div class="container" style="width:100%">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-right:0;">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 allrightalign" >
+                        <p style="display: block;color: #666666;font-size: 16px;font-family:open sans;text-align:center;">
+                            © 2018 brokkrr. All rights reserved.
+                        </p>
+                    </div>
+
+                    <div class="col-sm-3 col-md-2 text-center" style="padding-left:0;">
+                        <p class="footer-company-about">
+                            <div class="social-icons socialiconsalign" >
+                                <a style="cursor:default;"><span class="facebook"></span></a>
+                                <a style="cursor:default;"><span class="twitter"></span></a>
+                                <a style="cursor:default;"><span class="linkedin"></span></a>
+                            </div>
+                        </p>
+                    </div>
+                    <div class="col-sm-2 col-md-5" style="margin-bottom:0%;">
+                    </div>
+                    <div class="col-sm-1 col-md-1 Insfooterlogo" >
+                        <div style="padding-right:4%;text-align:center">
+                            <img src="~/Images/NewAssets/footer-logo.png" alt="logo" />
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1" style="margin-bottom:0%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

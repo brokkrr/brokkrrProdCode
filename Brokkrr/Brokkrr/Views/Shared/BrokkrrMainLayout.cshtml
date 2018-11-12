@@ -1,0 +1,821 @@
+﻿@model BrokerMVC.Models.ContactUs
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" href="~/Images/Assets/brokkrIcon24x24.png">
+
+
+
+    <link href="~/Content/BrokkrrCSS/ModelPopUp.css" rel="stylesheet" />
+    <link href="~/Content/BrokkrrCSS/ModalCSS/modal125b.css" rel="stylesheet" /> @*19Sep17*@
+
+    <title>brokkrr Inc.</title>
+
+    <!-- For-Mobile-Apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        .PhoneImgText {
+            position: absolute;
+            z-index: 99;
+            bottom: 45%;
+            font-size: 2.5vw;
+            color: #fff;
+        }
+    </style>
+    @*
+
+
+        <meta name="keywords" content="Estelle a Responsive Web Template, Bootstrap Web Templates, Flat Web Templates, Android Compatible Web Template, Smartphone Compatible Web Template, Free Webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />*@
+
+    @*
+
+
+        <script type="application/x-javascript">
+            addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); }
+        </script>*@
+
+
+
+
+    <!-- Script for perform action after page load-->
+    <script>
+        //$(window).bind("load", function () {
+
+        //    $('input#Name').val('');
+        //    $('input#Subject').val('');
+        //    $('input#Email').val('');
+        //    $('#Message').val('')
+        //});
+    </script>
+    @*<script type="text/javascript">
+            document.addEventListener('touchmove', function (event) {
+                if (event.target.parentNode.className.indexOf('noBounce') != -1
+             || event.target.className.indexOf('noBounce') != -1) {
+                    event.preventDefault();
+                }
+            }, false);
+        </script>*@
+    <script type="text/javascript">
+
+        function submitinfo() {
+
+            //alert($('input#Name').val());
+            //alert($("#lblName").val());
+            //if ($("#lblName").val('')) {
+            //    alert("In If Condition");
+            //    $('#lblName').val('Please Enter Name');
+            //    alert("Value Set");
+            //}
+
+            var ai = {
+                Name: $('#Name').val(),
+                Email: $('#Email').val(),
+                Subject: $('#Subject').val(),
+                Message: $('#Message').val()
+            };
+            var formData = new FormData($('form')[0]);
+            $("#myLoader").modal();
+
+            $.ajax({
+                type: "POST",
+                url: "/Home/Index",
+                dataType: "text",
+                async: false,
+                data: JSON.stringify(ai),
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    //alert("In function");
+                    var a = JSON.parse(data);
+                    $('input#Name').val('');
+                    $('input#Subject').val('');
+                    $('input#Email').val('');
+                    $('#Message').val('');
+
+                    if (a.Success == true) {
+                        //$('#loader').hide();
+                        $("#myLoader").modal('hide');
+                        $("#myModal").modal();
+                    }
+                    else {
+                        //$('#loader').hide();
+                        $("#myLoader").modal('hide');
+                        $("#myModalError").modal();
+                    }
+                }
+
+            });
+
+        }
+    </script>
+
+
+    <script type="text/javascript">
+        function btnClose() {
+            $("#mymodalpop").css("display", "none");
+        }
+
+    </script>
+    <!--Scripts to redirect to pages-->
+    <script type="text/javascript">
+        function RedirectCustomerReg() {
+            //location.href = "../../CustomerRegistration/Index";
+            location.href = "../../Login/CustomerLogin";
+        }
+
+        function RedirectBrokerReg() {
+            //location.href = "../../BrokerRegistration/Index";
+
+            location.href = "../../Login/BrokerLogin";
+        }
+
+        function RedirectLogin() {
+            location.href = "";
+        }
+
+    </script>
+
+
+    <!-- //For-Mobile-Apps -->
+    <!-- Custom-Theme-Files -->
+    <!-- Bootstrap-Core-CSS -->
+    @*
+        <link href="~/Content/BrokkrrCSS/CSS2/bootstrap.min.css" rel="stylesheet">*@
+    <link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Style.CSS -->
+    <link href="~/Content/BrokkrrCSS/CSS2/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/BrokkrrCSS/CSS1/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/BrokkrrCSS/CSS1/Home.css" rel="stylesheet" />
+    <link href="~/Content/BrokkrrCSS/default.css" rel="stylesheet" />
+    <link href="~/Content/BrokkrrCSS/component.css" rel="stylesheet" />
+    <link href="~/Content/BrokkrrCSS/CSS2/navbar.css" rel="stylesheet" />
+    <script src="~/Scripts/Scripts1/modernizr.custom.js"></script> @*19Sep17*@ 
+    <!-- Navbar-CSS -->
+    @*
+        <link rel="stylesheet" type="text/css" href="~/Content/BrokkrrCSS/CSS2/navbar.css" />*@
+    <!-- Slider-CSS -->
+    <link rel="stylesheet" type="text/css" href="~/Content/BrokkrrCSS/CSS2/slider.css" /> @*19Sep17*@
+    <!-- //Custom-Theme-Files -->
+    <!-- Web-Fonts -->
+    <link href='~/Content/BrokkrrCSS/Francois.css' rel='stylesheet' type='text/css'>
+    <link href='~/Content/BrokkrrCSS/OpenSans.css' rel='stylesheet' type='text/css'>
+    <link href='~/Content/BrokkrrCSS/Raleway.css' rel='stylesheet' type='text/css'> @*19Sep17*@ 
+    <!------Script for Map---->
+    @*<script type="text/javascript"
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6v5-2uaq_wusHDktM9ILcqIrlPtnZgEk&sensor=false">
+        </script>*@
+
+
+    <script type="text/javascript"
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOqf7_C8_diQ77Nmeg7UqYYZvJ8pMqbe0&sensor=false">
+    </script>
+
+
+    @*<script src="~/Scripts/Scripts1/Menu.js"></script> 19Sep17*@
+
+    <script type="text/javascript">
+        function RedirectCustomerReg() {
+
+            //location.href = "../../CustomerRegistration/Index";
+            location.href = "../../Login/CustomerLogin";
+        }
+
+        function RedirectBrokerReg() {
+            location.href = "../../Login/BrokerLogin";
+        }
+
+    </script>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            initialize('Brokkrr Inc.', 33.440911, -117.584184);
+            var iPhoneAppPath = '@ViewBag.iPhoneAppPath';
+            var AndroidAppPath = '@ViewBag.AndroidAppPath';
+
+            $("#iPhoneAppPathOnPopup").attr("href", iPhoneAppPath);
+            $("#iPhoneAppPath").attr("href", iPhoneAppPath);
+
+            //$('mymodalpop').show();
+
+        };
+
+        var myLatlng1 = new google.maps.LatLng(33.440344, -117.583902)
+
+        //var myLatlng1 = new google.maps.LatLng(18.508920,73.926026)
+
+        function initialize(strtitle, lat, lon) {
+            var myLatlng = new google.maps.LatLng(lat, lon) // This is used to center the map to show our markers
+            var mapOptions = {
+                center: myLatlng1,
+                zoom: 9,
+                mapTypeId: google.maps.MapTypeId.HYBRID,
+                marker: true
+                //ROADMAP
+            };
+            // var infoWindow = new google.maps.InfoWindow();
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapOptions);
+
+            var marker = new google.maps.Marker({
+                map: map,
+                position: myLatlng,
+                icon: "../../Images/Assets/location.png",
+                title: strtitle
+
+            });
+
+            var boxText = document.createElement("div");
+            boxText.style.cssText = "padding-left:20px;padding-top:10px; height:auto;font-size:14px;border-radius:10px;";
+            boxText.innerHTML = '<strong style="color:darkturquoise">Brokkrr Inc.</strong><br><style="color:#939393">232 Avenida Fabricante <br>#105 San Clemente <br>CA 92672<br><img src="/Images/Assets/call.png" /> (310) 657-4315 <br><img src="/Images/Assets/email.png" /><a href="mailto:info@brokkrr.com" style="color:#939393"> info@brokkrr.com';
+
+
+            var myOptions = {
+                content: boxText
+                , disableAutoPan: false
+                , maxWidth: 0
+                , pixelOffset: new google.maps.Size(10, -160)
+                , zIndex: null
+                , boxStyle: {
+                    opacity: 0.80
+                  , width: "180px"
+                  , height: "140px"
+                  , background: "url('../../Images/Assets/MapArrow.png') no-repeat"
+
+
+                }
+                , closeBoxMargin: "10px 2px 2px 2px"
+                , closeBoxURL: ""
+                , infoBoxClearance: new google.maps.Size(1, 1)
+                , isHidden: false
+                , pane: "floatPane"
+                , enableEventPropagation: false
+            };
+
+            var ib = new InfoBox(myOptions);
+            ib.open(map, marker);
+
+        }
+
+
+    </script>
+
+
+
+    <link href="~/Content/themes/popuo-box.css" rel="stylesheet" />
+    <link href="~/Content/themes/style.css" rel="stylesheet" /> @*19Sep17*@ 
+    <!------Script for Map End Here---->
+    <!-- //Web-Fonts -->
+
+</head>
+
+<body id="PageBody">
+
+    <!-- Pop up on Page load-->
+    
+
+    <!-- End of Pop Up -->
+    <!-- banner -->
+    <!-- Topmost banner -->
+    @*<div class="slideanim about2" style="background:rgb(40, 61, 69) none repeat scroll 0% 0%;">
+            <!-- carousel -->
+            <div id="myCarousel" class="carousel slide">
+                <div class="col-sm-12" style="padding-right: 0px;">
+                    <div class="col-xs-8">
+                        <div class="header-info-left">
+                            <div class="logo" style="margin-left:5%">
+
+
+                                <a href="#myPage"><img src="~/Images/Assets/logo-small.png" class="img-responsive" style="margin-top: 2%;margin-left:0%" /></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xs-4" style="padding-right:0px;">
+                        <div class="header-info-right">
+                            <div class="header">
+                                <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2" style="top:72px;position:absolute;right:0;background-color:rgb(40, 61, 69);opacity:0.8">
+                                    <a class="scroll" href="#myPage">Home</a>
+
+                                    <a class="scroll" style="cursor:pointer;" onclick="RedirectCustomerReg();">Customer</a>
+                                    <a class="scroll" style="cursor:pointer;" onclick="RedirectBrokerReg();">Broker</a>
+                                    <a class="scroll" href="#about">About Us</a>
+                                    <a class="scroll" href="#team">How it Works</a>
+                                    <a class="scroll" href="#contact">Contact Us</a>
+                                </nav>
+                                <!--script-nav -->
+                                <script>
+                                    $("span.menu").click(function () {
+                                        $("ul.navigatoin").slideToggle("300", function () {
+                                        });
+                                    });
+                                </script>
+                                <script type="text/javascript">
+                                    jQuery(document).ready(function ($) {
+                                        $(".scroll").click(function (event) {
+                                            event.preventDefault();
+                                            $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+                                        });
+                                    });
+                                </script>
+
+                                <section class="buttonset" style="border:none;">
+                                    <button id="showRightPush"><img src="~/Images/Assets/1466445168_menu-alt.png" style="width: 85% !important; margin-top: 10%;border:none;" /></button>
+                                </section>
+                                <script src="~/Scripts/Scripts3/classie.js" style="border:none;"></script>
+                                <script>
+                                    var menuRight = document.getElementById('cbp-spmenu-s2'),
+                                        showRightPush = document.getElementById('showRightPush'),
+                                        body = document.body;
+
+                                    showRightPush.onclick = function () {
+                                        classie.toggle(this, 'active');
+                                        classie.toggle(body, 'cbp-spmenu-push-toleft');
+                                        classie.toggle(menuRight, 'cbp-spmenu-open');
+                                        disableOther('showRightPush');
+                                    };
+                                </script>
+
+                                <script type="text/javascript">
+                                    $(document).ready(function () {
+                                        $(document).click(function (event) {
+                                            $("#PageBody").on("click", function () {
+                                                classie.toggle(menuRight, 'cbp-spmenu-open');
+
+                                            });
+
+                                            $(".cbp-spmenu a").on("click", function () {
+                                                classie.toggle(body, 'cbp-spmenu-push-toleft');
+
+                                            });
+
+                                        });
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-inner" role="listbox">
+
+                    <div class="item active">
+                        <img src="~/Images/Assets/baner3.png" alt="Corporate image" class="img-responsive" style="width: 100%;">
+                        <div class="carousel-caption banneretxtSection">
+                            <div class="row">
+                                <div class="col-sm-12 bannerHeaderText text-left">
+                                    Friendly Assistance
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 text-left text-justify" style="font-size:1.6vw">
+                                    We're famous for our friendly, personal help with every area of your financial affairs.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="~/Images/Assets/baner2.png" alt="Corporate image" class="img-responsive" style="width: 100%;">
+                        <div class="carousel-caption banneretxtSection">
+                            <div class="row">
+                                <div class="col-sm-12 bannerHeaderText text-left">
+                                    Insurance Made Easy
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 text-left text-justify" style="font-size:1.6vw">
+                                    Find a Trusted Insurance Brokkrr Near You in Real-Time.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+    <!--End of Topmost banner -->
+    @RenderBody()
+    <!-- App Store -->
+    <!--Apple Link-->
+    @*<div class="Phone">
+        <img src="~/Images/Assets/phone2.png" class="img-responsive PhoneImg">
+        <div class="PhoneImgText">
+            <div class="col-xs-1"></div>
+            <div class="col-xs-5" style="line-height: 100%;">
+                We are available on App Store. Download today and search Brokers for free !
+            </div>
+            <div class="col-xs-6"></div>
+        </div>
+        <div class="AppleWhiteLogo ">
+            <div class="col-xs-6">
+                <div class="col-xs-6"></div>
+                <div class="col-xs-3">
+                    <a href="#" id="iPhoneAppPath" target="_blank"><img src="~/Images/Assets/appStore_white.png" class="img-responsive " style="max-width:20.5vw" /></a>
+                </div>
+                <div class="col-xs-3"></div>
+            </div>
+            <div class="col-xs-6"></div>
+        </div>
+    </div>*@
+
+    <!--/Apple Link-->
+    <!-- /App Store -->
+    <!-- About-us -->
+    <a name="aboutuspoint"></a>
+    @*<div id="about" class="priority" style="background-color: rgb(247, 247, 247)">
+        <div class="container">
+            <div class="text-center">
+                <h4 class=" text-center" style="color: #939393; text-transform: uppercase; font-size: 30px; font-weight: 700; font-family: Intial, sans-serif; padding-bottom: 20px">About Us</h4>
+                <p class="p1" style="color: #8C8C8C; text-align: center; font-family: 'Open Sans', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; padding: 0 25px; padding-bottom: 5vw;">Wherever you are, Brokkrr connects and delivers licensed and insured professionals to you. Brokkrr creates a circle of brokers who are specialized in your need,  your community and who will compete for your business in real time.<br /><br /> Download the app and your broker is few clicks away. Brokkrr is Free and insures your protected transaction up to a $1,000,000. Why take on the liability let the professional compete and earn your business.</p>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>*@
+    <!-- /About-us -->
+    <!-- What We Offer-->
+
+    @*<div class="priority" id="priorities">
+        <div class="container">
+            <div class="text-center">
+                <h4 class="text-center" style="color: #939393; text-transform: uppercase; font-size: 30px; font-weight: 700; font-family: Intial, sans-serif; padding-bottom: 20px">We Offer</h4>
+                <p class="p1" style="color: #8C8C8C; text-align: center; font-family: 'Open Sans', sans-serif; font-size: 17px; font-weight: 300; line-height: 25px; padding: 0 25px; padding-bottom: 5vw;">We offer various insurance services like Home & Auto, Business,Benefits and Life. With over 20 years of experience we'll ensure you always get the best guidance.</p>
+                <div class="clearfix"></div>
+            </div>
+            <div class="col-sm-3 placeholder">
+                <img class="img-circle img-responsive" src="~/Images/Assets/homeAuto.png" alt="Generic placeholder thumbnail" width="140" height="140">
+                <h4 class="text-center slideanim">Home and Auto</h4>
+            </div><!-- /.col-xs-4 -->
+            <div class="col-sm-3 placeholder">
+                <img class="img-circle img-responsive" src="~/Images/Assets/business.png" alt="Generic placeholder thumbnail" width="140" height="140">
+                <h4 class="text-center slideanim">Business</h4>
+            </div><!-- /.col-xs-4 -->
+            <div class="col-sm-3 placeholder">
+                <img class="img-circle img-responsive" src="~/Images/Assets/benefits.png" alt="Generic placeholder thumbnail" width="140" height="140">
+                <h4 class="text-center slideanim">Benefits</h4>
+            </div><!-- /.col-xs-4 -->
+            <div class="col-sm-3 placeholder">
+                <img class="img-circle img-responsive" src="~/Images/Assets/life.png" alt="Generic placeholder thumbnail" width="140" height="140">
+                <h4 class="text-center slideanim">Life</h4>
+            </div><!-- /.col-xs-4 --><!-- /.row -->
+        </div>
+    </div>*@
+
+    <!-- /What We Offer-->
+    <!-- How it Works -->
+
+
+
+    @*<div class="team" id="team" style="background-color:rgb(247, 247, 247);position: relative;">
+        <div class="container" id="How it Works">
+            <h4 class="text-center" style="color: #939393; text-transform: uppercase; font-size: 30px; font-weight: 700; font-family: Intial, sans-serif; padding-bottom: 20px">How it Works</h4>
+            <div id="cbp-fwslider" class="cbp-fwslider carousel-inner">
+                <ul>
+                    <li><a><img src="~/Images/Assets/login315x601.png" alt="img01" /></a></li>
+                    <li><a><img src="~/Images/Assets/c2-315x601.png" alt="img02" /></a></li>
+                    <li><a><img src="~/Images/Assets/c4-315x601.png" alt="img03" /></a></li>
+                    <li><a><img src="~/Images/Assets/c3-315x601.png" alt="img04" /></a></li>
+                    <li><a><img src="~/Images/Assets/ContactBroker.png" alt="img05" /></a></li>
+                    <li><a><img src="~/Images/Assets/c5-315x601.png" alt="img06" /></a></li>
+                    <li><a><img src="~/Images/Assets/message.png" alt="img07" /></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>*@
+
+
+    <!-- End of How it Works-->
+    <!-- Contact -->
+    <!-- Contact -->
+    @*@using (Html.BeginForm("ContactUs", "Home", Model))
+        {*@
+
+
+    
+    @*}*@
+    <!-- /Contact -->
+    <!-- Footer -->
+    @*<footer class="footer-distributed" style="position: relative;">
+        <div class="container" style="width:100%">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-sm-7" style="padding-top: 20px;">
+                        <div class="footer-links " style="margin-left: 0%;margin-right:0%;">
+
+                            <div class="col-sm-2 text-center" style="padding-right:0px;padding-left:0px">
+                                <a href="~/Home/Index" style=" display:block;color:#666666;font-weight:800;font-family:'Varela Round' , sans-serif;"><p style="font-size:14px;">Home</p></a>
+                            </div>
+                            <div class="col-sm-3 text-center" style="padding-right:0px;padding-left:0px">
+                                <a href="~/Home/Index#about" style=" display:block;color:#666666;font-weight:800;font-family:'Varela Round' , sans-serif;"><p style="font-size:14px;">AboutUs</p></a>
+                            </div>
+                            <div class="col-sm-2 text-center" style="padding-right:0px;padding-left:0px">
+                                <a href="~/Login/BrokerLogin" style=" display:block;color:#666666;font-weight:800;font-family:'Varela Round' , sans-serif;"><p style="font-size:14px;">Broker</p></a>
+                            </div>
+                            <div class="col-sm-3 text-center" style="padding-right:0px;padding-left:0px">
+                                <a href="~/Login/CustomerLogin" style=" display:block;color:#666666;font-weight:800;font-family:'Varela Round' , sans-serif;"><p style="font-size:14px;">Customer</p></a>
+                            </div>
+
+                            <div class="col-sm-2 text-center" style="padding-right:0px;padding-left:0px">
+                                <a href="~/Home/Index#contact" style=" display:block;color:#666666;font-weight:800;font-family:'Varela Round' , sans-serif;"><p style="font-size:14px;">ContactUs</p></a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-3  text-center">
+                        <p class="footer-company-about">
+                            <div class="social-icons" style="margin-bottom:0px;margin-top: 15px;">
+                                <a href="#"><span class="facebook"></span></a>
+                                <a href="#"><span class="twitter"></span></a>
+                                <a href="#"><span class="linkedin"></span></a>
+                            </div>
+                        </p>
+                    </div>
+
+                    <div class="col-sm-2" style="margin-bottom: 0%;">
+                        <div class="footer-right-header">
+                            <div class="copyright">
+                                <p style="display: block;color: #666666;font-size: 16px;font-weight: 800;font-family:'Varela Round',sans-serif;">© 2016 Brokkrr Inc.</p>
+                            </div>
+                        </div>
+                    </div>                  
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+                <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog" style="padding:5%">
+
+                        <div class="modal-content">
+                            <div class="modal-header" style="padding-top: 3px; padding-bottom: 3px;">
+                                <button type="button" class="close" data-dismiss="modal" style="color: red;">&times;</button>
+                                <h4 class="modal-title" style="font-size: 16px;">Message</h4>
+                            </div>
+                            <div class="modal-body" style="padding-top: 0px;padding-bottom: 0px;font-weight:100;">
+                                <p style="font-size: 16px;">Thank you, Your contact request sent successfully !</p>
+                            </div>
+                            <div class="modal-footer" style="padding: 5px;">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-4">
+
+            </div>
+            <div class="col-md-4">
+                <div class="modal fade" id="myModalError" role="dialog">
+                    <div class="modal-dialog" style="padding:5%">
+
+                        <div class="modal-content">
+                            <div class=" modal-header" style="padding-top:3px;padding-bottom: 3px;">
+                                <button type="button" class="close" data-dismiss="modal" style="color:red;">&times;</button>
+                                <h4 class="modal-title" style="font-size: 16px;">Message</h4>
+                            </div>
+                            <div class="modal-body" style="padding-top:0px;padding-bottom: 0px;font-weight: 100;">
+                                <p style="font-size: 16px;color: red;">Please fill details before contact!</p>
+                            </div>
+                            <div class="modal-footer" style="padding:5px;">
+                               <input type="button" value="Close" name="Close" data-dismiss="modal" style="position: relative;background-color:rgb(6, 102, 145);color: white;border:none;border-radius: 3px;font-size: 12px;padding: 10px 20px !important;text-transform: uppercase;" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+
+
+
+        <div class="col-md-12">
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-4">
+                <div class="modal fade" id="myLoader" role="dialog">
+                    <div class="modal-dialog" style="padding:5%">                      
+                        <div id="loader">
+                            <img src="~/Images/Assets/default(2).gif" class="img-responsive" style="padding:40%;padding-top:20%;background:none;" />
+                        </div>              
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+            </div>
+        </div>
+    </footer>*@
+    <!-- /Footer -->
+    <!-- Custom-JavaScript-File-Links -->
+    <!-- Default-Supportive-JavaScript -->
+    @*<script type="text/javascript" src="~/Scripts/Scripts2/jquery.min.js"></script>*@
+    <!-- Default-JavaScript-File-For-Bootstrap -->
+    <script type="text/javascript" src="~/Scripts/Scripts2/bootstrap.min.js"></script>
+
+    <!-- Navbar-JavaScript -->
+    @*
+        <script src="js/classie.js"></script>*@
+    <!-- Navbar-JavaScript -->
+    @*
+        <script src="js/borderMenu.js"></script>*@
+
+    <!-- Slider-JavaScript -->
+    <script type="text/javascript" src="~/Scripts/Scripts2/modernizr.custom.28468.js"></script>
+    <script type="text/javascript" src="~/Scripts/Scripts2/jquery.cslider.js"></script>
+    @*<script src="~/Scripts/Scripts1/infobox.js"></script>*@ @*19Sep17*@ 
+
+
+
+
+    <!--===================Script for Banner=================-->
+    <script>
+        $(document).ready(function () {
+            // Activate Carousel
+            $("#myCarousel").carousel({ interval: 5000, pause: "hover" });
+
+            // Enable Carousel Indicators
+            $(".item1").click(function () {
+                $("#myCarousel").carousel(0);
+            });
+            $(".item2").click(function () {
+                $("#myCarousel").carousel(1);
+            });
+            $(".item3").click(function () {
+                $("#myCarousel").carousel(2);
+            });
+            $(".item4").click(function () {
+                $("#myCarousel").carousel(3);
+            });
+
+            // Enable Carousel Controls
+            //$(".left").click(function () {
+            //    $("#myCarousel").carousel("prev");
+            //});
+            //$(".right").click(function () {
+            //    $("#myCarousel").carousel("next");
+            //});
+        });
+    </script>
+    <!-- /carousel -->
+    <!--=================== //End// =================-->
+
+    <script type="text/javascript">
+        $(function () {
+            $('#da-slider').cslider({
+                autoplay: true,
+                bgincrement: 450
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function () {
+            $('#da-slider1').cslider({
+                autoplay: true,
+                bgincrement: 450
+            });
+        });
+    </script>
+    <!-- //Slider-JavaScript -->
+    <!-- js for slider -->
+
+    <script src="~/Scripts/Scripts1/jquery.cbpFWSlider.min.js"></script>
+    <script>
+        $(function () {
+            $('#cbp-fwslider').cbpFWSlider();
+
+            function slideSwitch() {
+                if ($('.cbp-fwdots').find('span:last').hasClass('cbp-fwcurrent')) {
+                    $('.cbp-fwdots').find('span:first-child').click();
+                }
+                else {
+                    $('.cbp-fwnext').click();
+                }
+            }
+            var interval = setInterval(slideSwitch, 3000);
+
+            $('#cbp-fwslider').hover(function () {
+                clearInterval(interval);
+            }, function () {
+                interval = setInterval(slideSwitch, 3000);
+            });
+
+        });
+
+    </script>
+
+    <!-- /js for slider -->
+    <!-- Slide-To-Top JavaScript (No-Need-To-Change) -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                containerOnClickID: 'toTopClick',
+                scrollSpeed: 100,
+                easingType: 'linear'
+            };
+            $().UItoTop({ easingType: 'easeOutQuart' });
+        });
+    </script>
+    <a href="#myPage" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"></span><span id="toTopClick" style="opacity: 1;"></span></a>
+    <!-- //Slide-To-Top JavaScript -->
+    <!-- Smooth-Scrolling-JavaScript -->
+
+    @*<script type="text/javascript" src="~/Scripts/Scripts2/move-top.js"></script>
+    <script type="text/javascript" src="~/Scripts/Scripts2/easing.js"></script>*@ @*19Sep17*@
+
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll, .navbar li a").click(function (event) {
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+
+    <!-- //Smooth-Scrolling-JavaScript -->
+    <!-- //Custom-JavaScript-File-Links -->
+    <script type="text/javascript">
+        $(document).ready(function ($) {
+            $("#one-page-nav a").on("click", function () {
+                $("#one-page-nav").find(".selected").removeClass("selected");
+                $(this).parent().addClass("selected");
+            });
+        });
+    </script>
+
+    <script>
+        // Cache selectors
+        var topMenu = $("#myPage"),
+            topMenuHeight = topMenu.outerHeight() + 15,
+            // All list items
+            menuItems = topMenu.find("a"),
+            // Anchors corresponding to menu items
+            scrollItems = menuItems.map(function () {
+                var item = $($(this).attr("href"));
+                if (item.length) { return item; }
+            });
+
+        // Bind to scroll
+        $(window).scroll(function () {
+            // Get container scroll position
+            var fromTop = $(this).scrollTop() + topMenuHeight;
+
+            // Get id of current scroll item
+            var cur = scrollItems.map(function () {
+                if ($(this).offset().top < fromTop)
+                    return this;
+            });
+            // Get the id of the current element
+            cur = cur[cur.length - 1];
+            var id = cur && cur.length ? cur[0].id : "";
+            // Set/remove active class
+            menuItems
+              .parent().removeClass("selected")
+              .end().filter("[href='#" + id + "']").parent().addClass("selected");
+        });
+    </script>
+
+    <!-----===============HamBurger Menu=================-->
+    <script type="text/javascript">
+        //var flag = true;
+        //$(".cross").hide();
+        //$(".menu").hide();
+        //$(".hamburger").click(function () {
+        //    $(".menu").slideToggle("slow", function () {
+        //        if (flag = true) {
+
+        //            $(".hamburger").Show();
+        //            return false;
+        //        }
+        //        else
+        //            $(".hamburger").hide();
+        //        //$(".cross").show();
+        //    });
+        //});
+
+
+
+        $(".cross").hide();
+        $(".menu").hide();
+        $(".hamburger").click(function () {
+            $(".menu").slideToggle("slow", function () {
+                $(".cross").toggle();
+            });
+        });
+
+
+    </script>
+    <!-----===============// HamBurger Menu=================-->
+</body>
+</html>

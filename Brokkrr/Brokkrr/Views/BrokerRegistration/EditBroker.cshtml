@@ -1,0 +1,2980 @@
+﻿@model BrokerMVC.Models.EditBrokerProfile
+
+@{
+    ViewBag.Title = "Edit Profile";
+    Layout = "~/Views/Shared/View_BrokerProfileLayout.cshtml";
+}
+
+<link href="~/Content/BrokkrrCSS/ProgressBar1.css" rel="stylesheet" />
+<script src="~/Scripts/Scripts2/bootstrap.min.js"></script>
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script type="text/javascript" src="~/Scripts/Scripts2/jquery.min.js"></script>
+<link href="~/Content/BrokkrrCSS/ModelPopUp.css" rel="stylesheet" />
+
+
+<link href="~/Content/BrokkrrCSS/jquery-ui.css" rel="stylesheet" />
+
+<script src="~/Scripts/Scripts1/jquery-1.10.2.js"></script>
+
+<script src="~/Scripts/Scripts1/jquery-ui.js"></script>
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+
+
+@*For Multiselect list for Languages*@
+
+<script src="~/js/bootstrap-multiselect.js"></script>
+<script src="~/js/bootstrapForMultiSelect.min.js"></script>
+
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrapForMultiSelect.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrap-multiselect.css" rel="stylesheet" type="text/css">
+<script src="~/js/JQuery.browser.min.js"></script>
+
+<script>
+    window.onload = function () {
+
+        $('#footerLayout').hide();
+
+    };
+
+</script>
+
+<style type="text/css">
+    .zipcodealign {
+        padding-left: 3% !important;
+    }
+
+    .prioremp {
+        padding-left: 5% !important;
+    }
+
+    .prioremplbl {
+        padding-left: 0% !important;
+    }
+
+    .browsebtn {
+        background-color: #066691;
+        color: white;
+        margin-left: 0%;
+    }
+
+        .browsebtn:hover {
+            background-color: #066691;
+            color: white;
+            margin-left: 0%;
+        }
+
+    @@media only screen and (min-width:2880px) {
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            color: rgb(72,205,255);
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            margin-left: 17%;
+            margin-top: 20%;
+        }
+
+        .zipcodealign {
+            padding-left: 1.3% !important;
+        }
+
+        .prioremp {
+            padding-left: 0% !important;
+        }
+
+        .prioremplbl {
+            padding-left: 5% !important;
+        }
+
+        .browsebtn {
+            background-color: #066691;
+            color: white;
+            margin-left: 4% !important;
+        }
+
+            .browsebtn:hover {
+                background-color: #066691;
+                color: white;
+                margin-left: 4% !important;
+            }
+
+             .popupwidth {
+            width: 150%;
+        }
+    }
+
+    @@media only screen and (min-width:3840px) {
+        .zipcodealign {
+            padding-left: 1% !important;
+        }
+
+        .prioremp {
+            padding-left: 0% !important;
+        }
+
+        .prioremplbl {
+            padding-left: 2% !important;
+        }
+
+        .browsebtn {
+            background-color: #066691;
+            color: white;
+            margin-left: 4% !important;
+        }
+
+            .browsebtn:hover {
+                background-color: #066691;
+                color: white;
+                margin-left: 4% !important;
+            }
+
+             .popupwidth {
+            width: 250%;
+        }
+    }
+</style>
+
+<style type="text/css">
+
+    .ui-datepicker-calendar {
+    display: none;
+    }
+
+    .multiselect {
+        width: 428px;
+        text-align: left;
+    }
+
+        .multiselect .caret {
+            float: right;
+            margin-top: 8px !important;
+        }
+
+    .multiselect-container {
+        width: 428px;
+    }
+
+    #Upload {
+        font-weight: bold;
+        color: #fff;
+        font-size: 15px;
+        background-color: rgb(72,205,248);
+        height: 40px;
+        width: 120px;
+        border-radius: 30px;
+        border: none;
+        line-height: 12px;
+        margin: 0;
+    }
+
+    #Upload {
+        font-weight: bold;
+        color: #fff;
+        font-size: 15px;
+        background-color: rgb(72,205,248);
+        height: 40px;
+        width: 120px;
+        border-radius: 30px;
+        border: none;
+        line-height: 12px;
+        margin: 0;
+    }
+
+    .playlist {
+        font-weight: bold;
+        font-size: 2.5vw;
+    }
+
+    .lbl {
+        font-size: 1.5vw;
+    }
+
+    .top {
+        top: 8px;
+    }
+
+    .title1 {
+        /*text-align:center;*/
+        margin: 5px 4px 5px 0;
+        font-size: 16px;
+        font-weight: bold;
+        max-height: 70px;
+        overflow-y: auto;
+    }
+
+        /* Scroll Css */
+
+        .title1::-webkit-scrollbar {
+            width: 6px;
+            direction: ltr;
+        }
+        /* Track */
+
+        .title1::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+
+        .title1::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background: rgb(69,205,243);
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+        }
+
+
+        .title1::-moz-webkit-scrollbar-thumb:window-inactive {
+            background: rgba(243,243,243,243);
+        }
+
+        .title1::-webkit-scrollbar-thumb:window-inactive {
+            background: rgba(243,243,243,243);
+        }
+
+    .description {
+        margin: 5px 0 15px 0;
+        word-wrap: break-word;
+        min-height: 100px;
+        max-height: 100px;
+        overflow-y: auto;
+    }
+
+        /* Scroll Css */
+
+        .description::-webkit-scrollbar {
+            width: 6px;
+            direction: ltr;
+        }
+        /* Track */
+
+        .description::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+
+        .description::-webkit-scrollbar-thumb {
+            -webkit-border-radius: 10px;
+            border-radius: 10px;
+            background: rgb(69,205,243);
+            -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+        }
+
+
+        .description::-moz-webkit-scrollbar-thumb:window-inactive {
+            background: rgba(243,243,243,243);
+        }
+
+        .description::-webkit-scrollbar-thumb:window-inactive {
+            background: rgba(243,243,243,243);
+        }
+</style>
+<script type="text/javascript">
+    $(function () {
+        $('#chkLanguages').multiselect({
+            includeSelectAllOption: true,
+            buttonWidth: '240px'
+            //enableFiltering: true
+        });
+    });
+
+    $(function () {
+        $('#CompanyName1').multiselect({
+            //includeSelectAllOption: true
+            maxHeight: 300,
+            buttonWidth: '240px',
+
+            onChange: function (element, checked) {
+                if (checked == true) {
+                    var i = 0;
+                    $("select#CompanyName1 option:selected").each(function () {
+                        i = i + 1;
+                        if (i > 7) {
+                            //alert("You can not select more than 7 items");
+                            $("#lblError").text('Sorry! Experience details record entry exceed its limit.');
+                            $("#ModalError").modal();
+                            $('#CompanyName1').multiselect('deselect', $(this).val());
+                        }
+                    });
+                }
+            }
+
+        });
+    });
+
+    $(function () {
+        $('#chkSubIndustry1').multiselect({
+            maxHeight: 300,
+            buttonWidth: '190px',
+
+            onChange: function (element, checked) {
+                if (checked == true) {
+                    var i = 0;
+                    $("select#chkSubIndustry1 option:selected").each(function () {
+                        i = i + 1;
+                        if (i > 5) {
+                            $("#lblError").text('Sorry! NAICS Code selection exceed its limit.');
+                            $("#ModalError").modal();
+                            $('#chkSubIndustry1').multiselect('deselect', $(this).val());
+                        }
+                    });
+                }
+            }
+        });
+    });
+
+    $(function () {
+        $('#chkSubIndustry2').multiselect({
+            maxHeight: 300,
+            buttonWidth: '190px',
+
+            onChange: function (element, checked) {
+                if (checked == true) {
+                    var i = 0;
+                    $("select#chkSubIndustry2 option:selected").each(function () {
+                        i = i + 1;
+                        if (i > 5) {
+                            $("#lblError").text('Sorry! NAICS Code selection exceed its limit.');
+                            $("#ModalError").modal();
+                            $('#chkSubIndustry2').multiselect('deselect', $(this).val());
+                        }
+                    });
+                }
+            }
+        });
+    });
+
+    $(function () {
+        $('#chkSubIndustry3').multiselect({
+            maxHeight: 300,
+            buttonWidth: '190px',
+
+            onChange: function (element, checked) {
+                if (checked == true) {
+                    var i = 0;
+                    $("select#chkSubIndustry3 option:selected").each(function () {
+                        i = i + 1;
+                        if (i > 5) {
+                            $("#lblError").text('Sorry! NAICS Code selection exceed its limit.');
+                            $("#ModalError").modal();
+                            $('#chkSubIndustry3').multiselect('deselect', $(this).val());
+                        }
+                    });
+                }
+            }
+        });
+    });
+
+
+</script>
+
+@*End of Multiselect list for Languages*@
+
+<script>
+
+
+    $('body').on('focus', ".ApplyDatePicker", function () {
+        $(this).datepicker({
+            changeMonth: true,
+            changeYear: true,
+            showButtonPanel: true,
+            dateFormat: 'M-yy',
+            yearRange: '1950:2018',
+            showToday: false,
+            beforeShow: function (input) {
+
+                var tmp = $(this).val().split('-');
+                var mnth = tmp[0];
+
+                if (mnth == "Jan") {
+                    mnth = 0;
+                }
+                else if (mnth == "Feb") {
+                    mnth = 1;
+                }
+                else if (mnth == "Mar") {
+                    mnth = 2;
+                }
+                else if (mnth == "Apr") {
+                    mnth = 3;
+                }
+                else if (mnth == "May")
+                {
+                    mnth = 4;
+                }
+                else if (mnth == "Jun") {
+                    mnth = 5;
+                }
+                else if (mnth == "Jul") {
+                    mnth = 6;
+                }
+                else if (mnth == "Aug") {
+                    mnth = 7;
+                }
+                else if (mnth == "Sep") {
+                    mnth = 8;
+                }
+                else if (mnth == "Oct") {
+                    mnth = 9;
+                }
+                else if (mnth == "Nov") {
+                    mnth = 10;
+                }
+                else if (mnth == "Dec") {
+                    mnth = 11;
+                }
+
+                $(this).datepicker('option', 'defaultDate', new Date(tmp[1], mnth, 1));
+                $(this).datepicker('setDate', new Date(tmp[1], mnth, 1));
+
+                setTimeout(function () {
+                    $(input).datepicker("widget").find(".ui-datepicker-current").hide();
+                    //var clearButton = $(input ).datepicker( "widget" ).find( ".ui-datepicker-close" );
+                    //clearButton.unbind("click").bind("click",function(){$.datepicker._clearDate( input );});
+                    $('<style type="text/css"> .ui-datepicker-current { display: none; } </style>').appendTo("head");
+
+
+
+                }, 1 );
+            },
+            onClose: function (dateText, inst) {
+                //$(this).datepicker('setDate', new Date(inst.selectedYear, inst.selectedMonth, 1));
+                //alert("Called - " + $(this).attr('id'));
+
+                var month = $("#ui-datepicker-div .ui-datepicker-month :selected").val();
+                var year = $("#ui-datepicker-div .ui-datepicker-year :selected").val();
+                $(this).datepicker('setDate', new Date(year, month, 1));
+
+                //$(this).change(); 21May18
+            },
+            onSelect: function (dateText) {
+                //display("Selected date: " + dateText + "; input's current value: " + this.value);
+                //alert("On Select Called")
+            },
+        }).on("change", function () {
+            //alert("On Change Called");
+            var ElementId = $(this).attr('id');
+            var lastChar = ElementId[ElementId.length - 1];
+            //alert("Called - " + lastChar);
+
+            var durFrom = $("#ExpDurationFrom" + lastChar).val();
+            var durTo = $("#ExpDurationTo" + lastChar).val();
+
+            var durFromdt = new Date(durFrom);
+
+            //alert(durFromdt + " to " + durTo)
+
+            var tmpFrom = durFrom.split('-');
+            var IntMonthFrom = GetIntForMonth(tmpFrom[0]);
+
+            var d = new Date(tmpFrom[1], IntMonthFrom, 1, 0, 0, 0, 0);
+
+            var tmpTo = durFrom.split('-');
+            var IntMonthTo = GetIntForMonth(tmpTo[0]);
+
+
+            //alert(IntMonthFrom + " " + d);
+
+
+
+            if (durFrom != "" && durTo != "") {
+
+            }
+            else {
+
+            }
+        });
+    });
+
+    function GetIntForMonth(Month) {
+
+        var mnth = Month;
+
+        if (mnth == "Jan") {
+            mnth = 0;
+        }
+        else if (mnth == "Feb") {
+            mnth = 1;
+        }
+        else if (mnth == "Mar") {
+            mnth = 2;
+        }
+        else if (mnth == "Apr") {
+            mnth = 3;
+        }
+        else if (mnth == "May") {
+            mnth = 4;
+        }
+        else if (mnth == "Jun") {
+            mnth = 5;
+        }
+        else if (mnth == "Jul") {
+            mnth = 6;
+        }
+        else if (mnth == "Aug") {
+            mnth = 7;
+        }
+        else if (mnth == "Sep") {
+            mnth = 8;
+        }
+        else if (mnth == "Oct") {
+            mnth = 9;
+        }
+        else if (mnth == "Nov") {
+            mnth = 10;
+        }
+        else if (mnth == "Dec") {
+            mnth = 11;
+        }
+
+        return mnth;
+    }
+
+</script>
+
+<style type="text/css">
+    .ErrorMsg {
+        margin-bottom: 3%;
+    }
+
+    .dropdown-menu > li > a {
+        white-space: normal;
+    }
+
+    .dropdown-menu {
+        height: 200px !important;
+    }
+</style>
+
+
+@*New Script containg Education and Industry adding and removing code*@
+<script>
+    $(document).ready(function () {
+
+        //$(input).datepicker("widget").find(".ui-datepicker-current").hide();
+
+
+        //$("#ExpDurationFrom1").change(function () {
+        //    alert("Handler for .change() called.");
+        //});
+
+        //function CallChangeEvt(id) {
+        //    alert("Called");
+        //}
+
+        //Change Event of First Industry
+        $("#Industry1").change(function () {
+            //   alert("2");
+            var dropdown = $("#Industry1");
+            var value = dropdown.val();
+            var SubIndustry = $("#chkSubIndustry1");
+
+            $('#chkSubIndustry1').empty();
+            $('#chkSubIndustry1').trigger("chosen:updated");
+            $('#chkSubIndustry1').multiselect('rebuild');
+
+            $.getJSON('@Url.Action("GetSubIndustryMaster", "BrokerRegistration")', { id: value }, function (result) {
+                if (result.result.length > 0) {
+                    for (var i in result.result) {
+                        SubIndustry.append($('<option/>', {
+                            value: result.result[i].Value,
+                            text: result.result[i].Text
+                        }));
+                    }
+                    $('#chkSubIndustry1').trigger("chosen:updated");
+                    $('#chkSubIndustry1').multiselect('rebuild');
+                }
+            });
+
+        });
+
+        //Change Event of Second Industry
+        $("#Industry2").change(function () {
+            // alert("3");
+            var dropdown = $("#Industry2");
+            var value = dropdown.val();
+            var SubIndustry = $("#chkSubIndustry2");
+
+            $('#chkSubIndustry2').empty();
+            $('#chkSubIndustry2').trigger("chosen:updated");
+            $('#chkSubIndustry2').multiselect('rebuild');
+
+            $.getJSON('@Url.Action("GetSubIndustryMaster", "BrokerRegistration")', { id: value }, function (result) {
+                if (result.result.length > 0) {
+                    for (var i in result.result) {
+                        SubIndustry.append($('<option/>', {
+                            value: result.result[i].Value,
+                            text: result.result[i].Text
+                        }));
+                    }
+                    $('#chkSubIndustry2').trigger("chosen:updated");
+                    $('#chkSubIndustry2').multiselect('rebuild');
+                }
+            });
+
+        });
+
+        //Change Event of Third Industry
+        $("#Industry3").change(function () {
+            //alert("4");
+            var dropdown = $("#Industry3");
+            var value = dropdown.val();
+            var SubIndustry = $("#chkSubIndustry3");
+
+            $('#chkSubIndustry3').empty();
+            $('#chkSubIndustry3').trigger("chosen:updated");
+            $('#chkSubIndustry3').multiselect('rebuild');
+
+            $.getJSON('@Url.Action("GetSubIndustryMaster", "BrokerRegistration")', { id: value }, function (result) {
+                if (result.result.length > 0) {
+                    for (var i in result.result) {
+                        SubIndustry.append($('<option/>', {
+                            value: result.result[i].Value,
+                            text: result.result[i].Text
+                        }));
+                    }
+                    $('#chkSubIndustry3').trigger("chosen:updated");
+                    $('#chkSubIndustry3').multiselect('rebuild');
+                }
+            });
+
+        });
+
+        //Sample code for getting selected elements id's
+        $("#GetValues").click(function () {
+            $("select#chkSubIndustry1 option:selected").each(function () {
+                //alert("Values - " + $(this).text());
+            });
+        });
+
+        //End of Adding Industry and SubIndustry
+
+    });
+</script>
+
+@*End of New Script containg Education and Industry adding and removing code*@
+
+
+@*New Script - 30Mar2017*@
+<script>
+    $(document).ready(function () {
+
+        /************ Fill Industry Master***************/
+        var Industry1 = $("#Industry1");
+        $.getJSON('@Url.Action("GetIndustryMaster", "BrokerRegistration")', function (result) {
+            if (result.result.length > 0) {
+                for (var i in result.result) {
+                    Industry1.append($('<option/>', {
+                        width: 250,
+                        maxHeight: 500,
+
+                        value: result.result[i].Value,
+                        text: result.result[i].Text,
+                        title: result.result[i].Text
+                    }));
+                }
+
+            }
+        });
+
+        var Industry2 = $("#Industry2");
+        $.getJSON('@Url.Action("GetIndustryMaster", "BrokerRegistration")', function (result) {
+            if (result.result.length > 0) {
+                for (var i in result.result) {
+                    Industry2.append($('<option/>', {
+                        width: 250,
+                        maxHeight: 500,
+
+                        value: result.result[i].Value,
+                        text: result.result[i].Text,
+                        title: result.result[i].Text
+                    }));
+                }
+
+            }
+        });
+
+        var Industry3 = $("#Industry3");
+        $.getJSON('@Url.Action("GetIndustryMaster", "BrokerRegistration")', function (result) {
+            if (result.result.length > 0) {
+                for (var i in result.result) {
+                    Industry3.append($('<option/>', {
+                        width: 250,
+                        maxHeight: 500,
+
+                        value: result.result[i].Value,
+                        text: result.result[i].Text,
+                        title: result.result[i].Text
+                    }));
+                }
+
+            }
+        });
+        /************ End of Fill Industry Master***************/
+
+
+        var IndustryId = '@ViewBag.IndustryId';
+        var ArrayIndustry = IndustryId.split(',');
+        var IndustryIdsToInsert = ["1", "2", "3"];
+        var NewId1 = "";
+        var iCntIndustry1 = 0;
+
+        setTimeout(function () {
+            //************************ Checked Industry and Sub Industry Ids *****************************************
+
+            if (ArrayIndustry != "") {
+                for (var i = 0; i < ArrayIndustry.length; i++) {
+
+                    NewId1 = IndustryIdsToInsert[0];
+
+                    $('#divIndustry' + NewId1).show();
+                    var mySelect = $('#Industry' + NewId1);
+
+                    $('#Industry' + NewId1 + ' option[value="' + ArrayIndustry[i] + '"]').attr("selected", "selected");
+
+                    $("#txtIsVisibleIndustry" + NewId1).val("true");
+
+                    iCntIndustry1 = iCntIndustry1 + 1;
+                    IndustryIdsToInsert.shift();
+
+                    //Resize IndustryName
+                    if ($.browser.name == 'chrome' || $.browser.name == 'unknown') {
+                        //alert("In If Statement");
+                        var optLen = $('#Industry' + NewId1 + ' option').size();
+                        for (var k = 0; k < optLen; k++) {
+                            //alert("In For Statement");
+                            var txt = $('#Industry' + NewId1 + ' option').eq(k).text();
+                            txt = txt.substring(0, 40);
+                            $('#Industry' + NewId1 + ' option').eq(k).text(txt);
+                        }
+                        //alert("After For Statement");
+                    }
+                    //alert("After If Statement");
+
+
+                }
+            }
+            var txtIsVisibleIndustry1 = $('#txtIsVisibleIndustry1').val();
+            var txtIsVisibleIndustry2 = $('#txtIsVisibleIndustry2').val();
+            var txtIsVisibleIndustry3 = $('#txtIsVisibleIndustry3').val();
+
+            //For Binding SubIndustry1 Data
+            if (txtIsVisibleIndustry1 == "true") {
+                //alert();
+                var SubIndustryNew1 = $("#chkSubIndustry1");
+                $('#chkSubIndustry1').empty();
+                $('#chkSubIndustry1').trigger("chosen:updated");
+                $('#chkSubIndustry1').multiselect('rebuild');
+
+                $.getJSON('@Url.Action("GetSubIndustryMaster", "BrokerRegistration")', { id: ArrayIndustry[0] }, function (result) {
+                    if (result.result.length > 0) {
+                        for (var i in result.result) {
+                            SubIndustryNew1.append($('<option/>', {
+                                value: result.result[i].Value,
+                                text: result.result[i].Text
+                            }));
+                        }
+                        $('#chkSubIndustry1').trigger("chosen:updated");
+                        $('#chkSubIndustry1').multiselect('rebuild');
+                    }
+                });
+
+                setTimeout(function () {
+                    var SubIndustryId11 = '@ViewBag.SubIndustryId1';
+                    var ArraySubIndustryId11 = SubIndustryId11.split(',');
+
+                    for (var i = 0; i < ArraySubIndustryId11.length; i++) {
+                        $('#chkSubIndustry1').multiselect('select', ArraySubIndustryId11[i]);
+                    }
+                }, 2000);
+            }
+
+            //For Binding SubIndustry2 Data
+            if (txtIsVisibleIndustry2 == "true") {
+                var SubIndustryNew2 = $("#chkSubIndustry2");
+                $('#chkSubIndustry2').empty();
+                $('#chkSubIndustry2').trigger("chosen:updated");
+                $('#chkSubIndustry2').multiselect('rebuild');
+
+                $.getJSON('@Url.Action("GetSubIndustryMaster", "BrokerRegistration")', { id: ArrayIndustry[1] }, function (result) {
+                    if (result.result.length > 0) {
+                        for (var i in result.result) {
+                            SubIndustryNew2.append($('<option/>', {
+                                value: result.result[i].Value,
+                                text: result.result[i].Text
+                            }));
+                        }
+                        $('#chkSubIndustry2').trigger("chosen:updated");
+                        $('#chkSubIndustry2').multiselect('rebuild');
+                    }
+                });
+
+                setTimeout(function () {
+                    var SubIndustryId21 = '@ViewBag.SubIndustryId2';
+                    var ArraySubIndustryId21 = SubIndustryId21.split(',');
+
+                    for (var i = 0; i < ArraySubIndustryId21.length; i++) {
+                        $('#chkSubIndustry2').multiselect('select', ArraySubIndustryId21[i]);
+                    }
+                }, 2000);
+            }
+
+            //For Binding SubIndustry3 Data
+            if (txtIsVisibleIndustry3 == "true") {
+                var SubIndustryNew3 = $("#chkSubIndustry3");
+                $('#chkSubIndustry3').empty();
+                $('#chkSubIndustry3').trigger("chosen:updated");
+                $('#chkSubIndustry3').multiselect('rebuild');
+
+                $.getJSON('@Url.Action("GetSubIndustryMaster", "BrokerRegistration")', { id: ArrayIndustry[2] }, function (result) {
+                    if (result.result.length > 0) {
+                        for (var i in result.result) {
+                            SubIndustryNew3.append($('<option/>', {
+                                value: result.result[i].Value,
+                                text: result.result[i].Text
+                            }));
+                        }
+                        $('#chkSubIndustry3').trigger("chosen:updated");
+                        $('#chkSubIndustry3').multiselect('rebuild');
+                    }
+                });
+
+                setTimeout(function () {
+                    var SubIndustryId31 = '@ViewBag.SubIndustryId3';
+                    var ArraySubIndustryId31 = SubIndustryId31.split(',');
+
+                    for (var i = 0; i < ArraySubIndustryId31.length; i++) {
+                        $('#chkSubIndustry3').multiselect('select', ArraySubIndustryId31[i]);
+                    }
+                }, 2000);
+            }
+        }, 2000);
+
+
+
+        $("#btnAddIndustry").bind("click", function () {
+            //$("body").on("click", ".btnClassAddIndustry", function () {
+            //alert("iCntIndustry1 - " + iCntIndustry1);
+            if (iCntIndustry1 < 3) {
+
+                NewId = IndustryIdsToInsert[0];
+                //alert("NewId - " + NewId + " IndustryIdsToInsert - " + IndustryIdsToInsert);
+                $('#divIndustry' + NewId).show();
+                var mySelect = $('#Industry' + NewId);
+
+                //alert(mySelect.val());
+
+                iCntIndustry1 = iCntIndustry1 + 1;
+                // alert("iCntIndustry1 after addition - " + iCntIndustry1);
+                IndustryIdsToInsert.shift();
+
+                //Resize IndustryName
+                if ($.browser.name == 'chrome' || $.browser.name == 'unknown') {
+                    //alert("In If Statement");
+                    var optLen = $('#Industry' + NewId + ' option').size();
+                    for (var i = 0; i < optLen; i++) {
+                        var txt = $('#Industry' + NewId + ' option').eq(i).text();
+                        txt = txt.substring(0, 40);
+                        $('#Industry' + NewId + ' option').eq(i).text(txt);
+                    }
+                }
+
+                //Binding value to SubIndustry
+                var SubIndustry = $("#chkSubIndustry" + NewId);
+                $('#chkSubIndustry' + NewId).empty();
+                $('#chkSubIndustry' + NewId).trigger("chosen:updated");
+                $('#chkSubIndustry' + NewId).multiselect('rebuild');
+
+                $.getJSON('@Url.Action("GetSubIndustryMaster", "BrokerRegistration")', { id: mySelect.val() }, function (result) {
+                    if (result.result.length > 0) {
+                        for (var i in result.result) {
+                            SubIndustry.append($('<option/>', {
+                                value: result.result[i].Value,
+                                text: result.result[i].Text
+                            }));
+                        }
+                        $('#chkSubIndustry' + NewId).trigger("chosen:updated");
+                        $('#chkSubIndustry' + NewId).multiselect('rebuild');
+                    }
+                });
+                $("#txtIsVisibleIndustry" + NewId).val("true");
+            }
+            else {
+                $("#lblError").text('Sorry! Industry and NAICS Code limit exceeded.');
+                $("#ModalError").modal();
+            }
+        });
+
+        $("body").on("click", ".Remove1", function () {
+            var ImgId = this.id;
+            $('#divIndustry' + ImgId).hide();
+            IndustryIdsToInsert.push(ImgId);
+            iCntIndustry1 = iCntIndustry1 - 1;
+            $("#txtIsVisibleIndustry1").val("false");
+        });
+        $("body").on("click", ".Remove2", function () {
+            var ImgId = this.id;
+            $('#divIndustry' + ImgId).hide();
+            IndustryIdsToInsert.push(ImgId);
+            iCntIndustry1 = iCntIndustry1 - 1;
+            $("#txtIsVisibleIndustry2").val("false");
+        });
+        $("body").on("click", ".Remove3", function () {
+            //alert("Called Remove 3");
+            var ImgId = this.id;
+            // alert("1 ImgId - " + ImgId);
+            $('#divIndustry' + ImgId).hide();
+            //alert("2 ImgId - " + ImgId);
+            IndustryIdsToInsert.push(ImgId);
+            // alert("3 ImgId - " + ImgId);
+            iCntIndustry1 = iCntIndustry1 - 1;
+            // alert("4 ImgId - " + ImgId);
+            $("#txtIsVisibleIndustry3").val("false");
+            //alert($("#txtIsVisibleIndustry3").val());
+        });
+
+
+        //********************** Checked the languages which are already saved **********************************
+
+        var Languages = '@ViewBag.Languages';
+        var ArrayLang = Languages.split(',');
+
+        for (var i = 0; i < ArrayLang.length; i++) {
+            $('#chkLanguages').multiselect('select', ArrayLang[i]);
+        }
+
+        //********************* Checked the Companies which are already saved *************************************
+
+        @*var CompanyNameRpt = '@ViewBag.CompanyNameRpt';
+        var ArrayCompanyNameRpt = CompanyNameRpt.split(',');
+
+        for (var i = 0; i < ArrayCompanyNameRpt.length; i++) {
+            $('#CompanyName1').multiselect('select', ArrayCompanyNameRpt[i]);
+        }*@
+
+        //************************* For showing  Education details ************************************************
+
+        //var UserEducationData = '@ViewBag.EducationDetails';
+
+        var s = $("#txtHiddenSchool1").val();
+        //alert("txtHiddenSchool1 - " + s);
+
+        var TotalEducationCount = '@ViewBag.TotalEducationCount';
+        var EducationId = ["1", "2", "3", "4", "5"];
+
+        var EduCnt = 0;
+
+        for (var i = 0; i < TotalEducationCount; i++) {
+            if (EduCnt <= 4) {
+                var NewEduId = EducationId[0];
+                EduCnt = EduCnt + 1;
+                var div = $("<div />");
+                div.html(GetDynamicTextBox(NewEduId));
+                $('#Education1').val("");
+                $("#id1").prepend(div);
+                EducationId.shift();
+                //alert(EducationId);
+            }
+        }
+
+        //var iCnt = 0;
+        $("#btnAdd").bind("click", function () {
+
+            if (EduCnt <= 4) {
+                var NewEduId = EducationId[0];
+                EduCnt = EduCnt + 1;
+                var div = $("<div />");
+                div.html(GetDynamicTextBox(NewEduId));
+                $('#Education1').val("");
+                $("#id1").prepend(div);
+                EducationId.shift();
+                //alert(EducationId);
+            }
+            else {
+                //alert("You Exceeds the limit");
+                $("#lblError").text('Sorry! Education details record entry exceed its limit.');
+                $("#ModalError").modal();
+            }
+        });
+
+        //30April18
+        var ExpCnt = 0;
+        var TotalExpCount = '@ViewBag.TotalExpCount';
+        var ExperienceId = ["1", "2", "3", "4", "5", "6", "7"];
+
+        for (var i = 0; i < TotalExpCount; i++) {
+            if (ExpCnt <= 6) {
+                var NewExpId = ExperienceId[0];
+                ExpCnt = ExpCnt + 1;
+                var div = $("<div />");
+                div.html(GetDynamicTextBoxForExp(NewExpId));
+                $('#Experience1').val("");
+                $("#divExp").prepend(div);
+                ExperienceId.shift();
+                //alert(EducationId);
+            }
+        }
+
+        $("#btnAddExp").bind("click", function () {
+
+            if (ExpCnt <= 6) {
+                var NewExpId = ExperienceId[0];
+                ExpCnt = ExpCnt + 1;
+                var div = $("<div />");
+                div.html(GetDynamicTextBoxForExp(NewExpId));
+                $('#Experience1').val("");
+                $("#divExp").prepend(div);
+                ExperienceId.shift();
+                //alert(EducationId);
+            }
+            else {
+                //alert("You Exceeds the limit");
+                $("#lblError").text('Sorry! Experience details record entry exceed its limit.');
+                $("#ModalError").modal();
+            }
+        });
+
+
+        function GetDynamicTextBoxForExp(value) {
+
+            var HiddenExpCompanyName = $("#txtHiddenExpCompanyName" + value).val();
+            var HiddenExpTitle = $("#txtHiddenExpTitle" + value).val();
+            var HiddenExpDurationFrom = $("#txtHiddenExpDurationFrom" + value).val();
+            var HiddenExpDurationTo = $("#txtHiddenExpDurationTo" + value).val();
+            var HiddenExpLogo = $("#txtHiddenExpLogo" + value).val();
+
+
+
+
+            return '<input name = "ExpCompanyName' + value + '" type="text" value = "' + HiddenExpCompanyName + '" placeholder="Company Name" Style ="width:80%;" />' +
+            '<img src="/Images/Assets/Close_Red.png" id="' + value + '" value="Remove" class="removeExp" /><br/>' +
+            '<input name = "ExpTitle' + value + '" type="text" value = "' + HiddenExpTitle + '" placeholder="Title" Style ="width:80%;" />' +
+            '<input id = "ExpDurationFrom' + value + '" class="ApplyDatePicker changeEvt" name = "ExpDurationFrom' + value + '"  type="text" value = "' + HiddenExpDurationFrom + '" placeholder="Duration From" Style ="width:45%; margin-right:5px;" />' +
+            '<input id = "ExpDurationTo' + value + '" class="ApplyDatePicker changeEvt" name = "ExpDurationTo' + value + '"  type="text" value = "' + HiddenExpDurationTo + '" placeholder="Duration To" Style ="width:40%;" />' +
+
+            '<input name = "ExpLogo' + value + '" id="ExperienceLogo' + value + '" type="text" value = "' + HiddenExpLogo + '" placeholder="Logo" Style ="width:80%;" readonly/>' +
+            '<input type="file" id="fileToUploadExp' + value + '" name="file" style="display:none" accept=".jpe,.jpg,.jpeg,.png,.gif" />' +
+            '<input type="button" value="BROWSE" id="btnUploadEdu" onclick="openfileDialogExperience(' + value + ');" class="btn btn-default browsebtn" /><br/><hr/>'
+        }
+
+
+
+
+
+        $("body").on("click", ".removeExp", function () {
+            //alert("Called 2");
+            var ImgId = this.id;
+            //alert(this.id);
+            $(this).closest("div").remove();
+            ExpCnt = ExpCnt - 1;
+            EducationId.push(ImgId);
+
+            $("#txtHiddenExpCompanyName" + ImgId).val('');
+            $("#txtHiddenExpLogo" + ImgId).val('');
+            $("#txtHiddenExpTitle" + ImgId).val('');
+            $("#txtHiddenExpDurationFrom" + ImgId).val('');
+            $("#txtHiddenExpDurationTo" + ImgId).val('');
+            $("#txtHiddenExpLogoPath" + ImgId).val('');
+            $("#txtHiddenExpLogoIsChanged" + ImgId).val("true");
+            //alert(EducationId);
+        });
+
+
+        $("body").on("click", ".remove", function () {
+            //alert("Called 2");
+            var ImgId = this.id;
+            //alert(this.id);
+            $(this).closest("div").remove();
+            EduCnt = EduCnt - 1;
+            EducationId.push(ImgId);
+
+            $("#txtHiddenSchool" + ImgId).val('');
+            $("#txtHiddenDegree" + ImgId).val('');
+            $("#txtHiddenYear" + ImgId).val('');
+            $("#txtHiddenEducationLogo" + ImgId).val('');
+            $("#txtHiddenEducationLogoPath" + ImgId).val('');
+            $("#txtHiddenEducationLogoIsChanged" + ImgId).val("true");
+            //alert(EducationId);
+        });
+
+        function GetDynamicTextBox(value) {
+
+            var vHiddenSchool = $("#txtHiddenSchool" + value).val();
+            var vHiddenDegree = $("#txtHiddenDegree" + value).val();
+            var vHiddenYear = $("#txtHiddenYear" + value).val();
+            var vHiddenEducationLogo = $("#txtHiddenEducationLogo" + value).val();
+
+            return '<input name = "School' + value + '" type="text" value = "' + vHiddenSchool + '" placeholder="School" Style ="width:80%;" />' +
+            '<img src="/Images/Assets/Close_Red.png" id="' + value + '" value="Remove" class="remove" /><br/>' +
+            '<input name = "Degree' + value + '" type="text" value = "' + vHiddenDegree + '" placeholder="Degree" Style ="width:80%;" />' +
+            '<input name = "Year' + value + '"  type="text" value = "' + vHiddenYear + '" placeholder="Year" Style ="width:80%;" />' +
+            '<input name = "EducationLogo' + value + '" id="EducationLogo' + value + '" type="text" value = "' + vHiddenEducationLogo + '" placeholder="Logo" Style ="width:80%;" readonly/>' +
+            '<input type="file" id="fileToUploadEdu' + value + '" name="file" style="display:none" accept=".jpe,.jpg,.jpeg,.png,.gif" />' +
+            '<input type="button" value="BROWSE" id="btnUploadEdu" onclick="openfileDialogEducation(' + value + ');" class="btn btn-default browsebtn" /><br/><hr/>'
+        }
+
+        //************************ Checked Specialities *****************************************
+
+        var result1 = false;
+        var str1 = "";
+        if ($("#txtSpeciality1").val() != "") {
+            //alert($("#txtSpeciality1").val());
+
+            str1 = $("#txtSpeciality1").val();
+            result1 = str1.indexOf("Home") > -1;
+            //alert("result : "+result);
+            if (result1 == false) {
+                //alert("In Home If");
+                $('#chkHome').attr('checked', false);
+                //clickHome();
+            }
+            else {
+                //alert("In Home Else");
+                var txtHomeValue1 = $("#txtHomeValue1").val();
+                var chkSubOptions = "";
+
+                chkSubOptions = txtHomeValue1.indexOf("$500,000 or less") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkHome1').attr('checked', true);
+                }
+
+                chkSubOptions = txtHomeValue1.indexOf("$501,000 - $1,000,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkHome2').attr('checked', true);
+                }
+
+                chkSubOptions = txtHomeValue1.indexOf("More than $1,000,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkHome3').attr('checked', true);
+                }
+
+                $('#chkHome').attr('checked', true);
+                $("#divHome").show();
+            }
+            result1 = false;
+
+            result1 = str1.indexOf("Auto") > -1;
+            if (result1 == false) {
+                $('#chkAuto').attr('checked', false);
+                //clickAuto();
+            } else {
+                var txtAutoType1 = $("#txtAutoType1").val();
+                var chkSubOptions = "";
+
+                chkSubOptions = txtAutoType1.indexOf("Economy") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkEconomy').attr('checked', true);
+                }
+
+                chkSubOptions = txtAutoType1.indexOf("Standard") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkStandard').attr('checked', true);
+                }
+
+                chkSubOptions = txtAutoType1.indexOf("Luxury") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkLuxury').attr('checked', true);
+                }
+
+                chkSubOptions = txtAutoType1.indexOf("Collectible") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkCollectible').attr('checked', true);
+                }
+
+                $('#chkAuto').attr('checked', true);
+                $("#divAuto").show();
+            }
+
+            result1 = false;
+
+            result1 = str1.indexOf("Benefits") > -1;
+            if (result1 == false) {
+                $('#chkBenefits').attr('checked', false);
+                //clickBenefits();
+            }
+            else {
+
+                var txtEmployees1 = $("#txtEmployees1").val();
+                var chkSubOptions = "";
+
+                chkSubOptions = txtEmployees1.indexOf("1-25") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBenefits1').attr('checked', true);
+                }
+
+                chkSubOptions = txtEmployees1.indexOf("26-50") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBenefits2').attr('checked', true);
+                }
+
+                chkSubOptions = txtEmployees1.indexOf("51-100") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBenefits3').attr('checked', true);
+                }
+
+                chkSubOptions = txtEmployees1.indexOf("More than 100") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBenefits4').attr('checked', true);
+                }
+
+                $('#chkBenefits').attr('checked', true);
+                $("#divBenefits").show();
+            }
+            result1 = false;
+
+            result1 = str1.indexOf("Business") > -1;
+            if (result1 == false) {
+                $('#chkBusiness').attr('checked', false);
+                //clickBusiness();
+            }
+            else {
+                var txtRevenue1 = $("#txtRevenue1").val();
+                var chkSubOptions = "";
+
+                chkSubOptions = txtRevenue1.indexOf("Up to $1,000,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBusiness1').attr('checked', true);
+                }
+
+                chkSubOptions = txtRevenue1.indexOf("$1,000,001 and $5,000,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBusiness2').attr('checked', true);
+                }
+
+                chkSubOptions = txtRevenue1.indexOf("$5,000,001 and $10,000,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBusiness3').attr('checked', true);
+                }
+
+                chkSubOptions = txtRevenue1.indexOf("Over $10,000,001") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBusiness4').attr('checked', true);
+                }
+
+
+                $('#chkBusiness').attr('checked', true);
+                $("#divBusiness").show();
+            }
+            result1 = false;
+
+            result1 = str1.indexOf("Life") > -1;
+            if (result1 == false) {
+                $('#chkLife').attr('checked', false);
+                //clickLife();
+            }
+            else {
+
+                var txtCoverageAmt1 = $("#txtCoverageAmt1").val();
+                var chkSubOptions = "";
+
+                chkSubOptions = txtCoverageAmt1.indexOf("$250,000 or less") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkLife1').attr('checked', true);
+                }
+
+                chkSubOptions = txtCoverageAmt1.indexOf("$250,001 to $500,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkLife2').attr('checked', true);
+                }
+
+                chkSubOptions = txtCoverageAmt1.indexOf("$500,001 to $1,000,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkLife3').attr('checked', true);
+                }
+
+                chkSubOptions = txtCoverageAmt1.indexOf("More than $1,000,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkLife4').attr('checked', true);
+                }
+
+                $('#chkLife').attr('checked', true);
+                $("#divLife").show();
+            }
+            result1 = false;
+
+        }
+
+    });
+</script>
+
+@*Open file dialog on Browse button click*@
+<script type="text/javascript">
+
+
+    function openfileDialog() {
+        $("#fileToUpload").click();
+
+        $("#fileToUpload").change(function () {
+
+            if (this.files[0].size / 1024 <= 4096) {
+                //$("#ProfilePhoto1").val($(this).val()+"-propic");
+                $("#ProfilePhoto1").val($(this).val());
+                $("#txtHiddenProfilePhoto").val("true");
+
+            }
+            else {
+                $("#fileToUpload").val('');
+                //$("#ProfilePhoto1").val('');
+                $("#txtHiddenProfilePhoto").val("false");
+                $("#lblError").text('File Size Should not greater than 4 MB.');
+                $("#ModalError").modal();
+
+            }
+
+        });
+
+    }
+
+    function openfileDialogCompLogo() {
+        $("#UploadCompanyLogo").click();
+
+        $("#UploadCompanyLogo").change(function () {
+
+            if (this.files[0].size / 1024 <= 4096) {
+                //$("#CompLogo1").val($(this).val() + "-complogo");
+                $("#CompLogo1").val($(this).val());
+                $("#txtHiddenCompanyLogo").val("true");
+            }
+            else {
+                $("#UploadCompanyLogo").val('');
+                //$("#CompLogo1").val('');
+                $("#txtHiddenCompanyLogo").val("false");
+                $("#lblError").text('File Size Should not greater than 4 MB.');
+                $("#ModalError").modal();
+
+            }
+
+            //$("#CompLogo1").val($(this).val());
+        });
+
+    }
+
+    function openfileDialogEducation(value) {
+
+        $("#fileToUploadEdu" + value).click();
+
+        $("#fileToUploadEdu" + value).change(function () {
+
+            if (this.files[0].size / 1024 <= 4096) {
+                $("#EducationLogo" + value).val($(this).val());
+                $("#txtHiddenEducationLogoIsChanged" + value).val("true");
+            }
+            else {
+                $("#fileToUploadEdu" + value).val('');
+                //$("#EducationLogo" + value).val('');
+                $("#txtHiddenEducationLogoIsChanged" + value).val("false");
+                $("#lblError").text('File Size Should not greater than 4 MB.');
+                $("#ModalError").modal();
+
+            }
+
+        });
+
+    }
+
+    function openfileDialogExperience(value) {
+
+        $("#fileToUploadExp" + value).click();
+
+        $("#fileToUploadExp" + value).change(function () {
+
+            if (this.files[0].size / 1024 <= 4096) {
+                $("#ExperienceLogo" + value).val($(this).val());
+                $("#txtHiddenExpLogoIsChanged" + value).val("true");
+            }
+            else {
+                $("#fileToUploadExp" + value).val('');
+                //$("#EducationLogo" + value).val('');
+                $("#txtHiddenExpLogoIsChanged" + value).val("false");
+                $("#lblError").text('File Size Should not greater than 4 MB.');
+                $("#ModalError").modal();
+
+            }
+
+        });
+
+    }
+
+
+
+</script>
+
+@*End of Opening file dialog on Browse button click*@
+
+@*Open Popup on Specialities textbox click*@
+<script>
+    $(function () {
+        $('.txtSpeciality1').on('focus', function () {
+            //alert("Called Textbox Click2");
+            $("#lblErrorMessage").text('');
+            var result = false;
+            var str = "";
+            if ($("#txtSpeciality1").val() != "") {
+                //alert($("#txtSpeciality1").val());
+
+                str = $("#txtSpeciality1").val();
+
+                result = str.indexOf("Home") > -1;
+                //alert("result : "+result);
+                if (result == false) {
+                    $('#chkHome').attr('checked', false);
+                    clickHome();
+                }
+                result = false;
+
+                result = str.indexOf("Auto") > -1;
+                if (result == false) {
+                    $('#chkAuto').attr('checked', false);
+                    clickAuto();
+                }
+                result = false;
+
+                result = str.indexOf("Benefits") > -1;
+                if (result == false) {
+                    $('#chkBenefits').attr('checked', false);
+                    clickBenefits();
+                }
+                result = false;
+
+                result = str.indexOf("Business") > -1;
+                if (result == false) {
+                    $('#chkBusiness').attr('checked', false);
+                    clickBusiness();
+                }
+                result = false;
+
+                result = str.indexOf("Life") > -1;
+                if (result == false) {
+                    $('#chkLife').attr('checked', false);
+                    clickLife();
+                }
+                result = false;
+            }
+            //alert("Before showing modal popup");
+            $("#ModalSpecialities").modal();
+
+
+            //$(this).val("Home,Benefits");
+            //$(this).val($('.txtA').val() + " - " + $('.txtB').val());
+        });
+    });
+
+    function clickAll() {
+        var chkAll = document.getElementById("chkAll");
+        if (chkAll.checked) {
+            $('#chkHome').attr('checked', true);
+            $('#chkHome1').attr('checked', true);
+            $('#chkHome2').attr('checked', true);
+            $('#chkHome3').attr('checked', true);
+
+            $('#chkAuto').attr('checked', true);
+            $('#chkStandard').attr('checked', true);
+            $('#chkEconomy').attr('checked', true);
+            $('#chkLuxury').attr('checked', true);
+            $('#chkCollectible').attr('checked', true);
+
+            $('#chkBenefits').attr('checked', true);
+            $('#chkBenefits1').attr('checked', true);
+            $('#chkBenefits2').attr('checked', true);
+            $('#chkBenefits3').attr('checked', true);
+            $('#chkBenefits4').attr('checked', true);
+
+            $('#chkBusiness').attr('checked', true);
+            $('#chkBusiness1').attr('checked', true);
+            $('#chkBusiness2').attr('checked', true);
+            $('#chkBusiness3').attr('checked', true);
+            $('#chkBusiness4').attr('checked', true);
+
+            $('#chkLife').attr('checked', true);
+            $('#chkLife1').attr('checked', true);
+            $('#chkLife2').attr('checked', true);
+            $('#chkLife3').attr('checked', true);
+            $('#chkLife4').attr('checked', true);
+
+            $("#divHome").show();
+            $("#divAuto").show();
+            $("#divBenefits").show();
+            $("#divBusiness").show();
+            $("#divLife").show();
+        }
+        else {
+            $('#chkHome').attr('checked', false);
+            $('#chkHome1').attr('checked', false);
+            $('#chkHome2').attr('checked', false);
+            $('#chkHome3').attr('checked', false);
+
+            $('#chkAuto').attr('checked', false);
+            $('#chkStandard').attr('checked', false);
+            $('#chkEconomy').attr('checked', false);
+            $('#chkLuxury').attr('checked', false);
+            $('#chkCollectible').attr('checked', false);
+
+            $('#chkBenefits').attr('checked', false);
+            $('#chkBenefits1').attr('checked', false);
+            $('#chkBenefits2').attr('checked', false);
+            $('#chkBenefits3').attr('checked', false);
+            $('#chkBenefits4').attr('checked', false);
+
+            $('#chkBusiness').attr('checked', false);
+            $('#chkBusiness1').attr('checked', false);
+            $('#chkBusiness2').attr('checked', false);
+            $('#chkBusiness3').attr('checked', false);
+            $('#chkBusiness4').attr('checked', false);
+
+            $('#chkLife').attr('checked', false);
+            $('#chkLife1').attr('checked', false);
+            $('#chkLife2').attr('checked', false);
+            $('#chkLife3').attr('checked', false);
+            $('#chkLife4').attr('checked', false);
+
+            $("#divHome").hide();
+            $("#divAuto").hide();
+            $("#divBenefits").hide();
+            $("#divBusiness").hide();
+            $("#divLife").hide();
+        }
+    }
+
+    function clickHome() {
+        var chkHome = document.getElementById("chkHome");
+        if (chkHome.checked) {
+            $("#divHome").show();
+        } else {
+            $('#chkHome1').attr('checked', false);
+            $('#chkHome2').attr('checked', false);
+            $('#chkHome3').attr('checked', false);
+
+            $("#divHome").hide();
+            $('#chkAll').attr('checked', false);
+        }
+    }
+
+    function clickAuto() {
+        var chkAuto = document.getElementById("chkAuto");
+        if (chkAuto.checked) {
+            $("#divAuto").show();
+        } else {
+            $('#chkStandard').attr('checked', false);
+            $('#chkEconomy').attr('checked', false);
+            $('#chkLuxury').attr('checked', false);
+            $('#chkCollectible').attr('checked', false);
+
+            $("#divAuto").hide();
+            $('#chkAll').attr('checked', false);
+        }
+    }
+
+    function clickBenefits() {
+        var chkBenefits = document.getElementById("chkBenefits");
+        if (chkBenefits.checked) {
+            $("#divBenefits").show();
+        } else {
+            $('#chkBenefits1').attr('checked', false);
+            $('#chkBenefits2').attr('checked', false);
+            $('#chkBenefits3').attr('checked', false);
+            $('#chkBenefits4').attr('checked', false);
+
+            $("#divBenefits").hide();
+            $('#chkAll').attr('checked', false);
+        }
+    }
+
+    function clickBusiness() {
+        var chkBusiness = document.getElementById("chkBusiness");
+        if (chkBusiness.checked) {
+            $("#divBusiness").show();
+        } else {
+            $('#chkBusiness1').attr('checked', false);
+            $('#chkBusiness2').attr('checked', false);
+            $('#chkBusiness3').attr('checked', false);
+            $('#chkBusiness4').attr('checked', false);
+
+            $("#divBusiness").hide();
+            $('#chkAll').attr('checked', false);
+        }
+    }
+
+    function clickLife() {
+        var chkLife = document.getElementById("chkLife");
+        if (chkLife.checked) {
+            $("#divLife").show();
+        } else {
+            $('#chkLife1').attr('checked', false);
+            $('#chkLife2').attr('checked', false);
+            $('#chkLife3').attr('checked', false);
+            $('#chkLife4').attr('checked', false);
+
+            $("#divLife").hide();
+            $('#chkAll').attr('checked', false);
+        }
+    }
+
+    function clickOK() {
+        var Spec = "";
+        var chkHome = document.getElementById("chkHome");
+        var chkAuto = document.getElementById("chkAuto");
+        var chkBenefits = document.getElementById("chkBenefits");
+        var chkBusiness = document.getElementById("chkBusiness");
+        var chkLife = document.getElementById("chkLife");
+
+        //For SubCategory
+        var Homevalue = "";
+        var AutoType = "";
+        var Revenue = "";
+        var Employees = "";
+        var CoverageAmt = "";
+        var flag = true;
+
+        ///////////////////////// For Home ///////////////////////////////////////////////////
+
+        var chkHome1 = document.getElementById("chkHome1");
+        if (chkHome1.checked) {
+            Homevalue = Homevalue + ';' + $("#chkHome1").attr('value');
+        }
+
+        var chkHome2 = document.getElementById("chkHome2");
+        if (chkHome2.checked) {
+            Homevalue = Homevalue + ';' + $("#chkHome2").attr('value');
+        }
+
+        var chkHome3 = document.getElementById("chkHome3");
+        if (chkHome3.checked) {
+            Homevalue = Homevalue + ';' + $("#chkHome3").attr('value');
+        }
+
+        Homevalue = Homevalue.slice(1, Homevalue.length);
+
+        $("#txtHomeValue1").val(Homevalue);
+
+        if (chkHome.checked && Homevalue == '') {
+            $("#lblErrorMessage").text('Please select sub category.');
+            flag = false;
+        }
+
+        ///////////////////////// For Auto ///////////////////////////////////////////////////
+
+        var chkAuto1 = document.getElementById("chkEconomy");
+        if (chkAuto1.checked) {
+            AutoType = AutoType + ';' + $("#chkEconomy").attr('value');
+        }
+
+        var chkAuto2 = document.getElementById("chkStandard");
+        if (chkAuto2.checked) {
+            AutoType = AutoType + ';' + $("#chkStandard").attr('value');
+        }
+
+        var chkAuto3 = document.getElementById("chkLuxury");
+        if (chkAuto3.checked) {
+            AutoType = AutoType + ';' + $("#chkLuxury").attr('value');
+        }
+
+        var chkAuto4 = document.getElementById("chkCollectible");
+        if (chkAuto4.checked) {
+            AutoType = AutoType + ';' + $("#chkCollectible").attr('value');
+        }
+
+        AutoType = AutoType.slice(1, AutoType.length);
+
+        $("#txtAutoType1").val(AutoType);
+
+        if (chkAuto.checked && AutoType == '') {
+            $("#lblErrorMessage").text('Please select sub category.');
+            flag = false;
+        }
+
+        ///////////////////////// For Benefits ///////////////////////////////////////////////////
+
+        var chkBenefits1 = document.getElementById("chkBenefits1");
+        if (chkBenefits1.checked) {
+            Employees = Employees + ';' + $("#chkBenefits1").attr('value');
+        }
+
+        var chkBenefits2 = document.getElementById("chkBenefits2");
+        if (chkBenefits2.checked) {
+            Employees = Employees + ';' + $("#chkBenefits2").attr('value');
+        }
+
+        var chkBenefits3 = document.getElementById("chkBenefits3");
+        if (chkBenefits3.checked) {
+            Employees = Employees + ';' + $("#chkBenefits3").attr('value');
+        }
+
+        var chkBenefits4 = document.getElementById("chkBenefits4");
+        if (chkBenefits4.checked) {
+            Employees = Employees + ';' + $("#chkBenefits4").attr('value');
+        }
+
+        Employees = Employees.slice(1, Employees.length);
+
+        $("#txtEmployees1").val(Employees);
+
+        if (chkBenefits.checked && Employees == '') {
+            $("#lblErrorMessage").text('Please select sub category.');
+            flag = false;
+        }
+
+        ///////////////////////// For Business ///////////////////////////////////////////////////
+
+        var chkBusiness1 = document.getElementById("chkBusiness1");
+        if (chkBusiness1.checked) {
+            Revenue = Revenue + ';' + $("#chkBusiness1").attr('value');
+        }
+
+        var chkBusiness2 = document.getElementById("chkBusiness2");
+        if (chkBusiness2.checked) {
+            Revenue = Revenue + ';' + $("#chkBusiness2").attr('value');
+        }
+
+        var chkBusiness3 = document.getElementById("chkBusiness3");
+        if (chkBusiness3.checked) {
+            Revenue = Revenue + ';' + $("#chkBusiness3").attr('value');
+        }
+
+        var chkBusiness4 = document.getElementById("chkBusiness4");
+        if (chkBusiness4.checked) {
+            Revenue = Revenue + ';' + $("#chkBusiness4").attr('value');
+        }
+
+        Revenue = Revenue.slice(1, Revenue.length);
+
+        $("#txtRevenue1").val(Revenue);
+
+        if (chkBusiness.checked && Revenue == '') {
+            $("#lblErrorMessage").text('Please select sub category.');
+            flag = false;
+        }
+
+        ///////////////////////// For Life ///////////////////////////////////////////////////
+
+        var chkLife1 = document.getElementById("chkLife1");
+        if (chkLife1.checked) {
+            CoverageAmt = CoverageAmt + ';' + $("#chkLife1").attr('value');
+        }
+
+        var chkLife2 = document.getElementById("chkLife2");
+        if (chkLife2.checked) {
+            CoverageAmt = CoverageAmt + ';' + $("#chkLife2").attr('value');
+        }
+
+        var chkLife3 = document.getElementById("chkLife3");
+        if (chkLife3.checked) {
+            CoverageAmt = CoverageAmt + ';' + $("#chkLife3").attr('value');
+        }
+
+        var chkLife4 = document.getElementById("chkLife4");
+        if (chkLife4.checked) {
+            CoverageAmt = CoverageAmt + ';' + $("#chkLife4").attr('value');
+        }
+
+        CoverageAmt = CoverageAmt.slice(1, CoverageAmt.length);
+
+        $("#txtCoverageAmt1").val(CoverageAmt);
+
+        if (chkLife.checked && CoverageAmt == '') {
+            $("#lblErrorMessage").text('Please select sub category.');
+            flag = false;
+        }
+
+        if (flag == true) {
+            if (chkHome.checked) {
+                Spec = Spec + ',' + $("#chkHome").attr('value');
+            }
+            if (chkAuto.checked) {
+                Spec = Spec + ',' + $("#chkAuto").attr('value');
+            }
+            if (chkBenefits.checked) {
+                Spec = Spec + ',' + $("#chkBenefits").attr('value');
+            }
+            if (chkBusiness.checked) {
+                Spec = Spec + ',' + $("#chkBusiness").attr('value');
+            }
+            if (chkLife.checked) {
+                Spec = Spec + ',' + $("#chkLife").attr('value');
+            }
+
+            Spec = Spec.slice(1, Spec.length);
+
+            $("#txtSpeciality1").val(Spec);
+            $("#lblErrorMessage").text('');
+            $('#ModalSpecialities').modal('hide');
+
+        }
+
+        //End of SubCategory
+    }
+
+    function clickCancel() {
+        var result1 = false;
+        var str1 = "";
+        if ($("#txtSpeciality1").val() != "") {
+            //alert($("#txtSpeciality1").val());
+
+            str1 = $("#txtSpeciality1").val();
+            result1 = str1.indexOf("Home") > -1;
+            //alert("result : "+result);
+            if (result1 == false) {
+                //alert("In Home If");
+                $('#chkHome').attr('checked', false);
+                clickHome();
+            }
+            else {
+                //alert("In Home Else");
+                var txtHomeValue1 = $("#txtHomeValue1").val();
+                var chkSubOptions = "";
+                //alert(txtHomeValue1);
+
+                chkSubOptions = txtHomeValue1.indexOf("$500,000 or less") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkHome1').attr('checked', true);
+                }
+                else {
+                    $('#chkHome1').attr('checked', false);
+                }
+
+                chkSubOptions = txtHomeValue1.indexOf("$501,000 - $1,000,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkHome2').attr('checked', true);
+                }
+                else {
+                    $('#chkHome2').attr('checked', false);
+                }
+
+                chkSubOptions = txtHomeValue1.indexOf("More than $1,000,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkHome3').attr('checked', true);
+                }
+                else {
+                    $('#chkHome3').attr('checked', false);
+                }
+
+                $('#chkHome').attr('checked', true);
+                $("#divHome").show();
+            }
+            result1 = false;
+
+            result1 = str1.indexOf("Auto") > -1;
+            if (result1 == false) {
+                $('#chkAuto').attr('checked', false);
+                clickAuto();
+            } else {
+                var txtAutoType1 = $("#txtAutoType1").val();
+                var chkSubOptions = "";
+
+                chkSubOptions = txtAutoType1.indexOf("Economy") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkEconomy').attr('checked', true);
+                }
+                else {
+                    $('#chkEconomy').attr('checked', false);
+                }
+
+                chkSubOptions = txtAutoType1.indexOf("Standard") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkStandard').attr('checked', true);
+                }
+                else {
+                    $('#chkStandard').attr('checked', false);
+                }
+
+                chkSubOptions = txtAutoType1.indexOf("Luxury") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkLuxury').attr('checked', true);
+                }
+                else {
+                    $('#chkLuxury').attr('checked', false);
+                }
+
+                chkSubOptions = txtAutoType1.indexOf("Collectible") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkCollectible').attr('checked', true);
+                }
+                else {
+                    $('#chkCollectible').attr('checked', false);
+                }
+
+                $('#chkAuto').attr('checked', true);
+                $("#divAuto").show();
+            }
+
+            result1 = false;
+
+            result1 = str1.indexOf("Benefits") > -1;
+            if (result1 == false) {
+                $('#chkBenefits').attr('checked', false);
+                clickBenefits();
+            }
+            else {
+
+                var txtEmployees1 = $("#txtEmployees1").val();
+                var chkSubOptions = "";
+
+                chkSubOptions = txtEmployees1.indexOf("1-25") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBenefits1').attr('checked', true);
+                }
+                else {
+                    $('#chkBenefits1').attr('checked', false);
+                }
+
+                chkSubOptions = txtEmployees1.indexOf("26-50") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBenefits2').attr('checked', true);
+                }
+                else {
+                    $('#chkBenefits2').attr('checked', false);
+                }
+
+                chkSubOptions = txtEmployees1.indexOf("51-100") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBenefits3').attr('checked', true);
+                }
+                else {
+                    $('#chkBenefits3').attr('checked', false);
+                }
+
+                chkSubOptions = txtEmployees1.indexOf("More than 100") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBenefits4').attr('checked', true);
+                }
+                else {
+                    $('#chkBenefits4').attr('checked', false);
+                }
+
+                $('#chkBenefits').attr('checked', true);
+                $("#divBenefits").show();
+            }
+            result1 = false;
+
+            result1 = str1.indexOf("Business") > -1;
+            if (result1 == false) {
+                $('#chkBusiness').attr('checked', false);
+                clickBusiness();
+            }
+            else {
+                var txtRevenue1 = $("#txtRevenue1").val();
+                var chkSubOptions = "";
+
+                chkSubOptions = txtRevenue1.indexOf("Up to $1,000,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBusiness1').attr('checked', true);
+                }
+                else {
+                    $('#chkBusiness1').attr('checked', false);
+                }
+
+                chkSubOptions = txtRevenue1.indexOf("$1,000,001 and $5,000,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBusiness2').attr('checked', true);
+                }
+                else {
+                    $('#chkBusiness2').attr('checked', false);
+                }
+
+                chkSubOptions = txtRevenue1.indexOf("$5,000,001 and $10,000,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBusiness3').attr('checked', true);
+                }
+                else {
+                    $('#chkBusiness3').attr('checked', false);
+                }
+
+                chkSubOptions = txtRevenue1.indexOf("Over $10,000,001") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkBusiness4').attr('checked', true);
+                }
+                else {
+                    $('#chkBusiness4').attr('checked', false);
+                }
+
+
+                $('#chkBusiness').attr('checked', true);
+                $("#divBusiness").show();
+            }
+            result1 = false;
+
+            result1 = str1.indexOf("Life") > -1;
+            if (result1 == false) {
+                $('#chkLife').attr('checked', false);
+                clickLife();
+            }
+            else {
+
+                var txtCoverageAmt1 = $("#txtCoverageAmt1").val();
+                var chkSubOptions = "";
+
+                chkSubOptions = txtCoverageAmt1.indexOf("$250,000 or less") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkLife1').attr('checked', true);
+                }
+                else {
+                    $('#chkLife1').attr('checked', false);
+                }
+
+                chkSubOptions = txtCoverageAmt1.indexOf("$250,001 to $500,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkLife2').attr('checked', true);
+                }
+                else {
+                    $('#chkLife2').attr('checked', false);
+                }
+
+                chkSubOptions = txtCoverageAmt1.indexOf("$500,001 to $1,000,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkLife3').attr('checked', true);
+                }
+                else {
+                    $('#chkLife3').attr('checked', false);
+                }
+
+                chkSubOptions = txtCoverageAmt1.indexOf("More than $1,000,000") > -1;
+                if (chkSubOptions == true) {
+                    $('#chkLife4').attr('checked', true);
+                }
+                else {
+                    $('#chkLife4').attr('checked', false);
+                }
+
+                $('#chkLife').attr('checked', true);
+                $("#divLife").show();
+            }
+            result1 = false;
+        }
+        else {
+
+            $('#chkHome').attr('checked', false);
+            clickHome();
+            $('#chkAuto').attr('checked', false);
+            clickAuto();
+            $('#chkBenefits').attr('checked', false);
+            clickBenefits();
+            $('#chkBusiness').attr('checked', false);
+            clickBusiness();
+            $('#chkLife').attr('checked', false);
+            clickLife();
+
+        }
+        $('#ModalSpecialities').modal('hide');
+    }
+
+
+    $(function () {
+        $('.classcheckbox').live('change', function () {
+            //alert("called");
+            if (this.checked == false) {
+                $('#chkAll').attr('checked', false); //change "select all" checked status to false
+            }
+
+            if ($('.classcheckbox:checked').length == $('.classcheckbox').length) {
+                $('#chkAll').attr('checked', true); //change "select all" checked status to true
+            }
+        });
+    });
+</script>
+@*End of Open Popup on Specialities textbox click*@
+
+@*/*================== For Zip Code ====================*/*@
+
+<script>
+    var iCntzip = 1;
+    var ZipCodeIds = ["2", "3", "4", "5"];
+    var ZipCodeCnt = 1;
+    $(document).ready(function () {
+
+        var cntZipCodes = '@ViewBag.cntZipCodes';
+
+        for (var i = 0; i < cntZipCodes - 1; i++) {
+            if (ZipCodeCnt <= 4) {
+                var NewZipCodeId = ZipCodeIds[0];
+                iCntzip = iCntzip + 1;
+                var div = $("<div />");
+                div.html(GetDynamicZipTextBox(NewZipCodeId));
+                //$('#Education1').val("");
+                $("#divzipId").prepend(div);
+                ZipCodeIds.shift();
+                //alert(EducationId);
+            }
+        }
+
+        $("#zipId").click(function (e) {
+            //alert("Called ZipId");
+            e.preventDefault();
+            if (iCntzip <= 4) {
+
+                if ($("#txtZipCode").val() != "") {
+                    if ($("#txtZipCode").val().length == 5) {
+                        iCntzip = iCntzip + 1;
+                        //   alert(iCntzip);
+                        var div = $("<div />");
+                        //   alert(div);
+                        var NewZipCodeId1 = ZipCodeIds[0];
+                        div.html(GetDynamicZipTextBox(NewZipCodeId1));
+                        $("#divzipId").prepend(div);
+                        $("#txtZipCode" + NewZipCodeId1).focus();
+                        ZipCodeIds.shift();
+                    }
+                    else {
+                        $("#lblError").text('Please enter valid ZipCode.');
+                        $("#ModalError").modal();
+                    }
+                }
+                else {
+                    $("#lblError").text('Please enter ZipCode.');
+                    $("#ModalError").modal();
+                }
+                //    alert(div);
+
+
+            }
+            else {
+                //alert("You Exceeds the limit");
+                $("#lblError").text('Sorry! ZipCode details record entry exceed its limit.');
+                $("#ModalError").modal();
+            }
+
+        });
+    });
+
+
+    function GetDynamicZipTextBox(value) {
+
+        var vHiddenZipCode = $("#txtHiddenZipCode" + value).val();
+
+        return '<input name = "ZipCode' + value + '" id=txtZipCode' + value + ' maxlength = "5" type="text" value = "' + vHiddenZipCode + '" Style ="width:84%;" onblur="checkTextField(this);", onkeypress = " return onkeypressPhone(event);",autofocus />' +
+      '<img src="/Images/Assets/Close_Red.png" id="' + value + '" value="Remove" class="removeZip" style="margin-left:3%;" /><br/>'
+    }
+    $("body").on("click", ".removeZip", function () {
+
+        //alert("Called 1");
+        var ImgId = this.id;
+
+        $(this).closest("div").remove();
+        iCntzip = iCntzip - 1;
+        ZipCodeIds.push(ImgId);
+        //alert("id -" + ImgId+", Array - "+ZipCodeIds);
+        $("#txtHiddenZipCode" + ImgId).val('');
+        //$("#txtIsVisibleZipCode" + ImgId).val('false');
+    });
+
+    function checkTextField(field) {
+        var flag = false;
+        //alert("Before Remove button clicked");
+        //document.getElementById('3').onclick = function () {
+        //    alert("Remove button clicked");
+        //    flag = true;
+        //};
+        //alert("After Remove button clicked");
+        if (field.value == '') {
+            //alert("Field is empty-" + field.id);
+            $("#lblError").text('Please enter ZipCode.');
+            $("#ModalError").modal();
+            setTimeout(function () {
+                $("#" + field.id).focus();
+            }, 1);
+            flag = false;
+
+        }
+    }
+
+    function onkeypressPhone(event) {
+        var code = event.which || event.keyCode;
+
+        var ZipCode = $('#txtZipCode').val();
+        var ZipCodelen = $('#txtZipCode').val().length;
+        if (code >= 48 && code <= 57 && ZipCodelen <= 5) {
+
+            //FormatPhoneOffice(ZipCode);
+            return true;
+        }
+        else {
+            if (code == 8 || code == 9) {
+                return true;
+            }
+            else { return false; }
+
+        }
+    }
+
+
+
+</script>
+
+@*/*================== For Zip Code ====================*/*@
+
+<style type="text/css">
+    .button {
+        background: #333;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+
+        .button:hover {
+            background: #51A8CA;
+        }
+</style>
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="~/Images/Assets/brokkrIcon24x24.png">
+    <title>Broker Registration</title>
+
+</head>
+<body>
+    <div class="container-fluid" style="margin-left:5%;margin-right:5%;">
+
+
+        @using (Html.BeginForm("EditBroker", "BrokerRegistration", FormMethod.Post
+            , new { enctype = "multipart/form-data" }))
+        {
+            <div class="row">
+                <div class="col-lg-12 brokerTag" style="font-weight: bold;padding-top: 1.2%;text-align:left;">
+                    <span>EDIT PROFILE</span>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="container-fluid" style="background-color:rgb(247,247,247)">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 style="text-align:left;margin: 30px;">Personal Information</h4>
+                    </div>
+
+                    <div class="col-md-12" style="">
+                        <div class="col-md-6">
+                            <!--================================================== FIRST NAME ========================================================-->
+                            <div class="col-md-2"></div>
+                            <div class="col-md-3" style="padding: 0%;top: 10px;">
+                                <div class="editor-label">
+                                    @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-12" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 ErrorMsg" tabindex="1">
+                                @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", Style = "margin-bottom: 0px;border-left: 2px solid #FF0000;" })
+                                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-1"></div>
+                            <!--================================================= //FIRST NAME =========================================================-->
+                            <!--==================================================LAST NAME ========================================================-->
+                            <div class="col-md-2"></div>
+                            <div class="col-md-3" style="padding: 0%;top: 10px;">
+                                <div class="editor-label">
+                                    @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-12" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 ErrorMsg" tabindex="1">
+                                @Html.TextBoxFor(model => model.LastName, new { @class = "form-control", Style = "margin-bottom: 0px;border-left: 2px solid #FF0000;" })
+                                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-1"></div>
+                            <!--================================================= //LAST NAME =========================================================-->
+                            <!--================================================== EMAIL  ========================================================-->
+                            <div class="col-md-2"></div>
+                            <div class="col-md-3" style="padding: 0%;top: 10px;">
+                                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-12" })
+                            </div>
+                            <div class="col-md-6 ErrorMsg">
+                                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", Style = "margin-bottom: 0px;border-left: 2px solid #FF0000;", @id = "EmailId", @readonly = "readonly" })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-1"></div>
+
+                            <!--================================================== // EMAIL ========================================================-->
+                            <!--================================================== Phone ========================================================-->
+
+                            <div class="col-md-2"></div>
+                            <div class="col-md-3" style="padding: 0%;top: 10px;">
+                                @Html.LabelFor(model => model.PhoneNo1, htmlAttributes: new { @class = "control-label col-md-2" })
+                            </div>
+                            <div class="col-md-6 ErrorMsg">
+                                @Html.TextBoxFor(model => model.PhoneNo1, new { @class = "form-control", Style = "margin-bottom: 0px;border-left: 2px solid #FF0000;", @maxlength = "15" })
+                                @Html.ValidationMessageFor(model => model.PhoneNo1, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-1"></div>
+
+                            <!--================================================== // Phone ========================================================-->
+                            <!--================================================== ZipCode ========================================================-->
+
+                            <div class="col-md-2"></div>
+                            <div class="col-md-3 zipcodealign" style="padding: 0%;top: 10px;font-weight: bold;">
+                                @*@Html.LabelFor(model => model.ZipCode1, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                                <span class="control-label">Zip Code</span>
+                            </div>
+                            <div class="col-md-6 ErrorMsg">
+                                @Html.TextBoxFor(model => model.ZipCode1, new { @class = "form-control", @maxlength = 5, @Id = "txtZipCode", Style = "margin-bottom: 0px;border-left: 2px solid #FF0000;", onkeypress = " return onkeypressPhone(event);" })
+                                @Html.ValidationMessageFor(model => model.ZipCode1, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-1" id="zipId">
+                                <span id="btnZipId" style="width:9%;"><img src="~/Images/Assets/ADD.png" id="btnZipId" style="padding-left: 1.7%;padding-top:2%;margin-top: 50%;display:none;" /></span>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-md-5" style="padding: 0%;top: 10px;">
+                            </div>
+                            <div class="col-md-7 ErrorMsg" id="divzipId">
+
+                            </div>
+                            @*<div class="col-md-1"></div>*@
+                            <div class="clearfix"></div>
+                            <!--================================================== //ZipCode ========================================================-->
+                            <!--================================================== Bio ================================================-->
+                            @*<div class="col-md-2"></div>
+                                <div class="col-md-3" style="padding: 0%;top: 10px;">
+                                    @Html.LabelFor(model => model.Bio, htmlAttributes: new { @class = "control-label col-md-12" })
+                                </div>
+                                <div class="col-md-6 ErrorMsg" tabindex="1">
+                                    @Html.TextAreaFor(model => model.Bio, new { @class = "form-control", @maxlength = 250, @Id = "txtBio", Style = "margin-bottom: 0px;" })
+                                </div>
+
+                                <div class="col-md-1"></div>*@
+                            <!--================================================== // Bio ================================================-->
+                            <!--================================================== Area ================================================-->
+                            <div class="col-md-2"></div>
+                            <div class="col-md-3" style="padding: 0%;top: 10px;">
+                                @Html.LabelFor(model => model.Area, htmlAttributes: new { @class = "control-label col-md-2" })
+                            </div>
+                            <div class="col-md-6 ErrorMsg" tabindex="1">
+                                @Html.TextBoxFor(model => model.Area, new { @class = "form-control", @maxlength = 50, Style = "margin-bottom: 0px;border-left: 2px solid #FF0000;" })
+                                @Html.ValidationMessageFor(model => model.Area, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="col-md-1"></div>
+                            <!--================================================== // Area ================================================-->
+                        </div>
+
+                        <div class="col-md-6">
+                            <!--================================================== AREA ========================================================-->
+                            @*<div class="col-md-4" style="padding: 0%;top: 10px;">
+                                    @Html.LabelFor(model => model.Area, htmlAttributes: new { @class = "control-label col-md-2" })
+                                </div>
+                                <div class="col-md-6 ErrorMsg" tabindex="1">
+                                    @Html.TextBoxFor(model => model.Area, new { @class = "form-control", @maxlength = 50, Style = "margin-bottom: 0px;border-left: 2px solid #FF0000;" })
+                                    @Html.ValidationMessageFor(model => model.Area, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div class="col-md-2"></div>*@
+
+                            <!--================================================== // AREA ========================================================-->
+                            <!--================================================== TITLE ================================================-->
+
+                            <div class="col-md-4" style="padding: 0%;top: 10px;">
+                                @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2" })
+                            </div>
+                            <div class="col-md-6 ErrorMsg" tabindex="1">
+                                @Html.TextBoxFor(model => model.Title, new { @class = "form-control", Style = "margin-bottom: 0px;" })
+                                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                            </div>
+
+                            <div class="col-md-2"></div>
+
+                            <!--================================================== // TITLE ================================================-->
+                            <!--================================================== COMPANY NAME  ========================================================-->
+
+                            <div class="col-md-4" style="padding: 0%;top: 10px;">
+                                @Html.LabelFor(model => model.Company, htmlAttributes: new { @class = "control-label col-md-2" })
+                            </div>
+                            <div class="col-md-6 ErrorMsg">
+                                @Html.TextBoxFor(model => model.Company, new { @class = "form-control", Style = "margin-bottom: 0px;" })
+                                @Html.ValidationMessageFor(model => model.Company, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-2"></div>
+
+                            <!--================================================== // COMPANY NAME ========================================================-->
+                            <!--================================================== COMPANY LOGO ================================================-->
+                            @*<div class="col-md-2"></div>*@
+                            <div class="col-md-4" style="padding: 0%;top: 10px;">
+                                @Html.LabelFor(model => model.CompanyLogo, htmlAttributes: new { @class = "control-label col-md-12" })
+                            </div>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(model => model.CompanyLogo, new { @class = "form-control", @id = "CompLogo1", @readonly = "readonly" })
+                                @Html.HiddenFor(model => model.HiddenCompanyLogo, new { @class = "txtHiddenCompanyLogo", @id = "txtHiddenCompanyLogo" })
+                            </div>
+                            <div class="col-md-4" style="padding-top: 1%;">
+                                <input type="file" id="UploadCompanyLogo" name="file" style="display:none" accept=".jpe,.jpg,.jpeg,.png,.gif" />
+                                <input type="button" value="BROWSE" id="btnUploadCompLogo" onclick="openfileDialogCompLogo();" class="btn btn-default" style="background-color: #066691;color: white;" />
+                            </div>
+                            @*<div class="col-md-1"></div>*@
+                            <!--================================================== // COMPANY LOGO ================================================-->
+                            <div class="clearfix"></div>
+                            <!--================================================== PROFILE PHOTO ================================================-->
+
+                            <div class="col-md-4" style="padding: 0%;top: 10px;">
+
+                                @Html.LabelFor(model => model.ProfilePhoto, htmlAttributes: new { @class = "control-label col-md-12" })
+                            </div>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(model => model.ProfilePhoto, new { @class = "form-control", @id = "ProfilePhoto1", @readonly = "readonly" })
+                                @Html.HiddenFor(model => model.HiddenProfilePhoto, new { @class = "txtHiddenProfilePhoto", @id = "txtHiddenProfilePhoto" })
+                            </div>
+                            <div class="col-md-4" style="padding-top: 1%;">
+                                <input type="file" id="fileToUpload" name="file" style="display:none" accept=".jpe,.jpg,.jpeg,.png,.gif" />
+                                <input type="button" value="BROWSE" id="btnUpload" onclick="openfileDialog();" class="btn btn-default" style="background-color: #066691;color: white;" />
+                            </div>
+
+                            <!--================================================== // PROFILE PHOTO ================================================-->
+                            <div class="clearfix"></div>
+                            <!--================================================== Bio ========================================================-->
+                            <div class="col-md-4" style="padding: 0%;top: 10px;">
+                                @Html.LabelFor(model => model.Bio, htmlAttributes: new { @class = "control-label col-md-12" })
+                            </div>
+                            <div class="col-md-6 ErrorMsg" tabindex="1">
+                                @Html.TextAreaFor(model => model.Bio, new { @class = "form-control", @maxlength = 250, @Id = "txtBio", Style = "margin-bottom: 0px;" })
+                            </div>
+
+                            <div class="col-md-2"></div>
+                            <div class="clearfix"></div>
+                            <!--================================================== // Bio ========================================================-->
+                            @*<input type="text" id="startDate1" onchange="myFunction();" />*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid" style="margin-bottom:12%;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 style="text-align:left;margin: 30px;">Other Information</h4>
+                    </div>
+                    <div class="col-md-12" style="margin-bottom:25px">
+                        <div class="col-md-6">
+                            <!--================================================== LANGUAGES ========================================================-->
+                            <div class="col-md-2"></div>
+                            <div class="col-md-3" style="padding: 0%;top: 10px;">
+                                @Html.LabelFor(model => model.Languages, htmlAttributes: new { @class = "control-label col-md-2" })
+                            </div>
+                            <div class="col-md-6" style="padding-bottom:10px;padding-top:8px">
+                                <select id="chkLanguages" multiple="multiple" name="chkLanguages">
+                                    <option value="English">English</option>
+                                    <option value="Spanish">Spanish</option>
+                                    <option value="Chinese(Cantonese)">Chinese(Cantonese)</option>
+                                    <option value="Chinese(Mandarin)">Chinese(Mandarin)</option>
+                                    <option value="Korean">Korean</option>
+                                    <option value="Vietnamese">Vietnamese</option>
+                                </select>
+                            </div>
+                            <div class="col-md-1"></div>
+
+                            <!--================================================== // LANGUAGES ========================================================-->
+                            <!--================================================== COMPANY YOU REPRESENT ========================================================-->
+                            @*<div class="col-md-2"></div>*@
+                            <div class="col-md-5" style="padding: 0%;top: 10px;">
+                                <div class="col-md-5"></div>
+                                <div class="col-md-4 prioremp">
+                                    @Html.LabelFor(model => model.CompanyNameRpt, htmlAttributes: new { @class = "control-label col-md-12 prioremplbl" })
+                                    @*<span style="font-weight:bold;">Prior Employment</span>*@
+                                </div>
+                                <div class="col-md-4"></div>
+
+                            </div>
+                            @*<div class="col-md-3" style="padding: 0%;top: 10px;">
+                                    @Html.LabelFor(model => model.CompanyNameRpt, htmlAttributes: new { @class = "control-label col-md-12" })
+                                </div>*@
+
+                            <div class="col-md-6" id="main">
+                                <div class="col-sm-12" style="padding-left:0px;">
+                                    <span id="btnAddExp" style="width:9%;"><img src="~/Images/Assets/ADD.png" style="padding-left: 1.7%;padding-top: 2%;" /></span>
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+
+                            <div class="clearfix"></div>
+
+                            <div class="col-md-5" style="padding: 0%;top: 10px;">
+                                <div class="col-md-5"></div>
+                                <div class="col-md-4" style="padding-left:0%;">
+                                </div>
+                                <div class="col-md-4"></div>
+                            </div>
+                            <div class="col-md-6" id="divExp">
+                                <div class="col-sm-12" style="padding-left:0px;">
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                            @*<div class="clearfix"></div>*@
+
+                            @*<div class="col-md-6">
+
+
+                                    @Html.DropDownList("CompanyNameRpt", ViewBag.CompanyMaster as SelectList, new { @class = "form-control", multiple = "multiple", @id = "CompanyName1", Style = "float:left; width:85%;padding-left:0px;" })
+                                    @Html.HiddenFor(model => model.HiddenCompanyNameRpt, new { @class = "txtHiddenCompanyNameRpt", @id = "txtHiddenCompanyNameRpt" })
+
+                                    <div class="col-sm-12" style="padding-left:0px;">
+                                        <span id="btnAddExp" style="width:9%;"><img src="~/Images/Assets/ADD.png" style="padding-left: 1.7%;padding-top: 2%;" /></span>
+                                    </div>
+
+                                    <div class="col-md-6" id="divExp">
+                                        <div class="col-sm-12" style="padding-left:0px;">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-1"></div>
+                                    <div class="clearfix"></div>
+
+
+                                </div>
+                                <div class="col-md-1"></div>*@
+
+                            <!--================================================== // COMPANY YOU REPRESENT ========================================================-->
+                            <div class="clearfix"></div>
+                            <!--================================================== EDUCATION ========================================================-->
+
+                            <div class="col-md-5" style="padding: 0%;top: 10px;">
+                                <div class="col-md-5"></div>
+                                <div class="col-md-4" style="padding-left:0%;">
+                                    @Html.LabelFor(model => model.School, htmlAttributes: new { @class = "control-label col-md-12 " })
+                                </div>
+                                <div class="col-md-4"></div>
+
+                            </div>
+                            <div class="col-md-6" id="main">
+                                <div class="col-sm-12" style="padding-left:0px;">
+                                    <span id="btnAdd" style="width:9%;"><img src="~/Images/Assets/ADD.png" style="padding-left: 1.7%;padding-top: 2%;" /></span>
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+
+                            <div class="clearfix"></div>
+
+                            <div class="col-md-5" style="padding: 0%;top: 10px;">
+                                <div class="col-md-5"></div>
+                                <div class="col-md-4" style="padding-left:0%;">
+                                </div>
+                                <div class="col-md-4"></div>
+                            </div>
+                            <div class="col-md-6" id="id1">
+                                <div class="col-sm-12" style="padding-left:0px;">
+                                </div>
+                            </div>
+                            <div class="col-md-1"></div>
+                            <div class="clearfix"></div>
+                            <!--================================================== // EDUCATION ========================================================-->
+
+                        </div>
+
+
+                        <div class="col-md-6">
+                            <!--================================================== SPECIALITIES ================================================-->
+
+                            <div class="col-md-4" style="padding: 0%;top: 10px;">
+                                @Html.LabelFor(model => model.Specialities, htmlAttributes: new { @class = "control-label col-md-2" })
+                            </div>
+                            <div class="col-md-6" style="padding-bottom:10px;padding-top:8px;">
+                                @Html.TextBoxFor(model => model.Specialities, new { @class = "txtSpeciality1", @id = "txtSpeciality1" })
+
+                                @Html.HiddenFor(model => model.HomeValue, new { @class = "txtHomeValue", @id = "txtHomeValue1" })
+                                @Html.HiddenFor(model => model.AutoType, new { @class = "txtAutoType", @id = "txtAutoType1" })
+                                @Html.HiddenFor(model => model.Revenue, new { @class = "txtRevenue", @id = "txtRevenue1" })
+                                @Html.HiddenFor(model => model.Employees, new { @class = "txtEmployees", @id = "txtEmployees1" })
+                                @Html.HiddenFor(model => model.CoverageAmt, new { @class = "txtCoverageAmt", @id = "txtCoverageAmt1" })
+                            </div>
+                            <div class="col-md-2"></div>
+
+                            <!--================================================== // SPECIALITIES ================================================-->
+                            <div class="clearfix"></div>
+                            <!--================================================== Industry and SIC codes ========================================================-->
+
+                            <div class="col-md-4" style="padding: 0%;top: 10px;">
+                                @Html.LabelFor(model => model.IndustryName, htmlAttributes: new { @class = "control-label col-md-12" })
+                            </div>
+                            <div class="col-md-6" id="company">
+                                <div class="col-sm-12" style="padding-left:0px;">
+                                    <span id="btnAddIndustry" style="width:9%;"><img src="~/Images/Assets/ADD.png" id="btnAddIndustry" style="padding-left: 1.7%;padding-top: 2%;" /></span>
+                                    @*<img src="~/Images/Assets/ADD.png" id="btnAddIndustry" class="btnClassAddIndustry" style="padding-left: 1.7%;padding-top: 2%;" />*@
+                                </div>
+                            </div>
+                            <div class="col-md-2"></div>
+
+                            <!--///////////////////////////////////For adding Extra Details///////////////////////////////////////////-->
+
+
+                            <div class="col-md-4" style="padding: 0%;top: 10px;">
+                            </div>
+                            <div class="col-md-6" id="Maindiv">
+                                <div id="divIndustry1" class="col-sm-12 ErrorMsg" style="padding-left:0px;display:none;">
+                                    @*@Html.DropDownList("Industry1", (IEnumerable<SelectListItem>)ViewBag.IndustryMaster, new { @class = "form-control", @id = "Industry1", Style = "float:left; width:85%;padding-left:0px;" })*@
+
+                                    @Html.DropDownList("Industry1", new List<SelectListItem> { }, new { @id = "Industry1", Style = "float:left; width:85%;padding-left:0px;" })
+
+                                    <img id="1" src="/Images/Assets/Close_Red.png" class="Remove1" /><br />
+
+                                    @Html.DropDownList("chkSubIndustry1", (IEnumerable<SelectListItem>)ViewBag.IndustryMaster, new { @class = "form-control", multiple = "multiple", @id = "chkSubIndustry1", Style = "float:left; width:100%;padding-left:0px;" })
+                                </div>
+                                <div class="col-sm-12">
+                                    &nbsp;
+                                </div>
+                                <div id="divIndustry2" class="col-sm-12 ErrorMsg" style="padding-left:0px;display:none;">
+                                    @*@Html.DropDownList("Industry2", (IEnumerable<SelectListItem>)ViewBag.IndustryMaster, new { @class = "form-control", @id = "Industry2", Style = "float:left; width:85%;padding-left:0px;" })*@
+
+                                    @Html.DropDownList("Industry2", new List<SelectListItem> { },
+                                        new { @id = "Industry2", Style = "float:left; width:85%;padding-left:0px;" })
+
+                                    <img id="2" src="/Images/Assets/Close_Red.png" class="Remove2" /><br />
+
+                                    @Html.DropDownList("chkSubIndustry2", (IEnumerable<SelectListItem>)ViewBag.IndustryMaster, new { @class = "form-control", multiple = "multiple", @id = "chkSubIndustry2", Style = "float:left; width:100%;padding-left:0px;" })
+                                </div>
+                                <div class="col-sm-12">
+                                    &nbsp;
+                                </div>
+                                <div id="divIndustry3" class="col-sm-12 ErrorMsg" style="padding-left:0px;display:none;">
+                                    @*@Html.DropDownList("Industry3", (IEnumerable<SelectListItem>)ViewBag.IndustryMaster, new { @class = "form-control", @id = "Industry3", Style = "float:left; width:85%;padding-left:0px;" })*@
+
+                                    @Html.DropDownList("Industry3", new List<SelectListItem> { },
+                                        new { @id = "Industry3", Style = "float:left; width:85%;padding-left:0px;" })
+
+                                    <img id="3" src="/Images/Assets/Close_Red.png" class="Remove3" /><br />
+
+                                    @Html.DropDownList("chkSubIndustry3", (IEnumerable<SelectListItem>)ViewBag.IndustryMaster, new { @class = "form-control", multiple = "multiple", @id = "chkSubIndustry3", Style = "float:left; width:100%;padding-left:0px;" })
+                                </div>
+                            </div>
+
+                            <div class="col-md-2"></div>
+
+                            <!--================================================== // Industry and SIC codes ========================================================-->
+                            <!--==================================================  HIDDEN FIELDS ========================================================-->
+                            @Html.HiddenFor(model => model.HiddenSchool1, new { @class = "txtHiddenSchool1", @id = "txtHiddenSchool1" })
+                            @Html.HiddenFor(model => model.HiddenDegree1, new { @class = "txtHiddenDegree1", @id = "txtHiddenDegree1" })
+                            @Html.HiddenFor(model => model.HiddenYear1, new { @class = "txtHiddenYear1", @id = "txtHiddenYear1" })
+                            @Html.HiddenFor(model => model.HiddenEducationLogo1, new { @class = "txtHiddenEducationLogo1", @id = "txtHiddenEducationLogo1" })
+                            @Html.HiddenFor(model => model.HiddenEducationLogoPath1, new { @class = "txtHiddenEducationLogoPath1", @id = "txtHiddenEducationLogoPath1" })
+                            @Html.HiddenFor(model => model.HiddenEducationLogoIsChanged1, new { @class = "txtHiddenEducationLogoIsChanged1", @id = "txtHiddenEducationLogoIsChanged1" })
+
+
+
+                            @Html.HiddenFor(model => model.HiddenSchool2, new { @class = "txtHiddenSchool2", @id = "txtHiddenSchool2" })
+                            @Html.HiddenFor(model => model.HiddenDegree2, new { @class = "txtHiddenDegree2", @id = "txtHiddenDegree2" })
+                            @Html.HiddenFor(model => model.HiddenYear2, new { @class = "txtHiddenYear2", @id = "txtHiddenYear2" })
+                            @Html.HiddenFor(model => model.HiddenEducationLogo2, new { @class = "txtHiddenEducationLogo2", @id = "txtHiddenEducationLogo2" })
+                            @Html.HiddenFor(model => model.HiddenEducationLogoPath2, new { @class = "txtHiddenEducationLogoPath2", @id = "txtHiddenEducationLogoPath2" })
+                            @Html.HiddenFor(model => model.HiddenEducationLogoIsChanged2, new { @class = "txtHiddenEducationLogoIsChanged2", @id = "txtHiddenEducationLogoIsChanged2" })
+
+                            @Html.HiddenFor(model => model.HiddenSchool3, new { @class = "txtHiddenSchool3", @id = "txtHiddenSchool3" })
+                            @Html.HiddenFor(model => model.HiddenDegree3, new { @class = "txtHiddenDegree3", @id = "txtHiddenDegree3" })
+                            @Html.HiddenFor(model => model.HiddenYear3, new { @class = "txtHiddenYear3", @id = "txtHiddenYear3" })
+                            @Html.HiddenFor(model => model.HiddenEducationLogo3, new { @class = "txtHiddenEducationLogo3", @id = "txtHiddenEducationLogo3" })
+                            @Html.HiddenFor(model => model.HiddenEducationLogoPath3, new { @class = "txtHiddenEducationLogoPath3", @id = "txtHiddenEducationLogoPath3" })
+                            @Html.HiddenFor(model => model.HiddenEducationLogoIsChanged3, new { @class = "txtHiddenEducationLogoIsChanged3", @id = "txtHiddenEducationLogoIsChanged3" })
+
+                            @Html.HiddenFor(model => model.HiddenSchool4, new { @class = "txtHiddenSchool4", @id = "txtHiddenSchool4" })
+                            @Html.HiddenFor(model => model.HiddenDegree4, new { @class = "txtHiddenDegree4", @id = "txtHiddenDegree4" })
+                            @Html.HiddenFor(model => model.HiddenYear4, new { @class = "txtHiddenYear4", @id = "txtHiddenYear4" })
+                            @Html.HiddenFor(model => model.HiddenEducationLogo4, new { @class = "txtHiddenEducationLogo4", @id = "txtHiddenEducationLogo4" })
+                            @Html.HiddenFor(model => model.HiddenEducationLogoPath4, new { @class = "txtHiddenEducationLogoPath4", @id = "txtHiddenEducationLogoPath4" })
+                            @Html.HiddenFor(model => model.HiddenEducationLogoIsChanged4, new { @class = "txtHiddenEducationLogoIsChanged4", @id = "txtHiddenEducationLogoIsChanged4" })
+
+                            @Html.HiddenFor(model => model.HiddenSchool5, new { @class = "txtHiddenSchool5", @id = "txtHiddenSchool5" })
+                            @Html.HiddenFor(model => model.HiddenDegree5, new { @class = "txtHiddenDegree5", @id = "txtHiddenDegree5" })
+                            @Html.HiddenFor(model => model.HiddenYear5, new { @class = "txtHiddenYear5", @id = "txtHiddenYear5" })
+                            @Html.HiddenFor(model => model.HiddenEducationLogo5, new { @class = "txtHiddenEducationLogo5", @id = "txtHiddenEducationLogo5" })
+                            @Html.HiddenFor(model => model.HiddenEducationLogoPath5, new { @class = "txtHiddenEducationLogoPath5", @id = "txtHiddenEducationLogoPath5" })
+                            @Html.HiddenFor(model => model.HiddenEducationLogoIsChanged5, new { @class = "txtHiddenEducationLogoIsChanged5", @id = "txtHiddenEducationLogoIsChanged5" })
+
+
+                            @*Hidden fields for experience*@
+
+                            @Html.HiddenFor(model => model.HiddenExpCompanyName1, new { @class = "txtHiddenExpCompanyName1", @id = "txtHiddenExpCompanyName1" })
+                            @Html.HiddenFor(model => model.HiddenExpLogo1, new { @class = "txtHiddenExpLogo1", @id = "txtHiddenExpLogo1" })
+                            @Html.HiddenFor(model => model.HiddenExpTitle1, new { @class = "txtHiddenExpTitle1", @id = "txtHiddenExpTitle1" })
+                            @Html.HiddenFor(model => model.HiddenExpDurationFrom1, new { @class = "txtHiddenExpDurationFrom1", @id = "txtHiddenExpDurationFrom1" })
+                            @Html.HiddenFor(model => model.HiddenExpDurationTo1, new { @class = "txtHiddenExpDurationTo1", @id = "txtHiddenExpDurationTo1" })
+                            @Html.HiddenFor(model => model.HiddenExpLogoPath1, new { @class = "txtHiddenExpLogoPath1", @id = "txtHiddenExpLogoPath1" })
+                            @Html.HiddenFor(model => model.HiddenExpLogoIsChanged1, new { @class = "txtHiddenExpLogoIsChanged1", @id = "txtHiddenExpLogoIsChanged1" })
+
+
+                            @Html.HiddenFor(model => model.HiddenExpCompanyName2, new { @class = "txtHiddenExpCompanyName2", @id = "txtHiddenExpCompanyName2" })
+                            @Html.HiddenFor(model => model.HiddenExpLogo2, new { @class = "txtHiddenExpLogo2", @id = "txtHiddenExpLogo2" })
+                            @Html.HiddenFor(model => model.HiddenExpTitle2, new { @class = "txtHiddenExpTitle2", @id = "txtHiddenExpTitle2" })
+                            @Html.HiddenFor(model => model.HiddenExpDurationFrom2, new { @class = "txtHiddenExpDurationFrom2", @id = "txtHiddenExpDurationFrom2" })
+                            @Html.HiddenFor(model => model.HiddenExpDurationTo2, new { @class = "txtHiddenExpDurationTo2", @id = "txtHiddenExpDurationTo2" })
+                            @Html.HiddenFor(model => model.HiddenExpLogoPath2, new { @class = "txtHiddenExpLogoPath2", @id = "txtHiddenExpLogoPath2" })
+                            @Html.HiddenFor(model => model.HiddenExpLogoIsChanged2, new { @class = "txtHiddenExpLogoIsChanged2", @id = "txtHiddenExpLogoIsChanged2" })
+
+
+                            @Html.HiddenFor(model => model.HiddenExpCompanyName3, new { @class = "txtHiddenExpCompanyName3", @id = "txtHiddenExpCompanyName3" })
+                            @Html.HiddenFor(model => model.HiddenExpLogo3, new { @class = "txtHiddenExpLogo3", @id = "txtHiddenExpLogo3" })
+                            @Html.HiddenFor(model => model.HiddenExpTitle3, new { @class = "txtHiddenExpTitle3", @id = "txtHiddenExpTitle3" })
+                            @Html.HiddenFor(model => model.HiddenExpDurationFrom3, new { @class = "txtHiddenExpDurationFrom3", @id = "txtHiddenExpDurationFrom3" })
+                            @Html.HiddenFor(model => model.HiddenExpDurationTo3, new { @class = "txtHiddenExpDurationTo3", @id = "txtHiddenExpDurationTo3" })
+                            @Html.HiddenFor(model => model.HiddenExpLogoPath3, new { @class = "txtHiddenExpLogoPath3", @id = "txtHiddenExpLogoPath3" })
+                            @Html.HiddenFor(model => model.HiddenExpLogoIsChanged3, new { @class = "txtHiddenExpLogoIsChanged3", @id = "txtHiddenExpLogoIsChanged3" })
+
+
+
+
+                            @Html.HiddenFor(model => model.HiddenExpCompanyName4, new { @class = "txtHiddenExpCompanyName4", @id = "txtHiddenExpCompanyName4" })
+                            @Html.HiddenFor(model => model.HiddenExpLogo4, new { @class = "txtHiddenExpLogo4", @id = "txtHiddenExpLogo4" })
+                            @Html.HiddenFor(model => model.HiddenExpTitle4, new { @class = "txtHiddenExpTitle4", @id = "txtHiddenExpTitle4" })
+                            @Html.HiddenFor(model => model.HiddenExpDurationFrom4, new { @class = "txtHiddenExpDurationFrom4", @id = "txtHiddenExpDurationFrom4" })
+                            @Html.HiddenFor(model => model.HiddenExpDurationTo4, new { @class = "txtHiddenExpDurationTo4", @id = "txtHiddenExpDurationTo4" })
+                            @Html.HiddenFor(model => model.HiddenExpLogoPath4, new { @class = "txtHiddenExpLogoPath4", @id = "txtHiddenExpLogoPath4" })
+                            @Html.HiddenFor(model => model.HiddenExpLogoIsChanged4, new { @class = "txtHiddenExpLogoIsChanged4", @id = "txtHiddenExpLogoIsChanged4" })
+
+
+                            @Html.HiddenFor(model => model.HiddenExpCompanyName5, new { @class = "txtHiddenExpCompanyName5", @id = "txtHiddenExpCompanyName5" })
+                            @Html.HiddenFor(model => model.HiddenExpLogo5, new { @class = "txtHiddenExpLogo5", @id = "txtHiddenExpLogo5" })
+                            @Html.HiddenFor(model => model.HiddenExpTitle5, new { @class = "txtHiddenExpTitle5", @id = "txtHiddenExpTitle5" })
+                            @Html.HiddenFor(model => model.HiddenExpDurationFrom5, new { @class = "txtHiddenExpDurationFrom5", @id = "txtHiddenExpDurationFrom5" })
+                            @Html.HiddenFor(model => model.HiddenExpDurationTo5, new { @class = "txtHiddenExpDurationTo5", @id = "txtHiddenExpDurationTo5" })
+                            @Html.HiddenFor(model => model.HiddenExpLogoPath5, new { @class = "txtHiddenExpLogoPath5", @id = "txtHiddenExpLogoPath5" })
+                            @Html.HiddenFor(model => model.HiddenExpLogoIsChanged5, new { @class = "txtHiddenExpLogoIsChanged5", @id = "txtHiddenExpLogoIsChanged5" })
+
+
+
+
+                            @Html.HiddenFor(model => model.HiddenExpCompanyName6, new { @class = "txtHiddenExpCompanyName6", @id = "txtHiddenExpCompanyName6" })
+                            @Html.HiddenFor(model => model.HiddenExpLogo6, new { @class = "txtHiddenExpLogo6", @id = "txtHiddenExpLogo6" })
+                            @Html.HiddenFor(model => model.HiddenExpTitle6, new { @class = "txtHiddenExpTitle6", @id = "txtHiddenExpTitle6" })
+                            @Html.HiddenFor(model => model.HiddenExpDurationFrom6, new { @class = "txtHiddenExpDurationFrom6", @id = "txtHiddenExpDurationFrom6" })
+                            @Html.HiddenFor(model => model.HiddenExpDurationTo6, new { @class = "txtHiddenExpDurationTo6", @id = "txtHiddenExpDurationTo6" })
+                            @Html.HiddenFor(model => model.HiddenExpLogoPath6, new { @class = "txtHiddenExpLogoPath6", @id = "txtHiddenExpLogoPath6" })
+                            @Html.HiddenFor(model => model.HiddenExpLogoIsChanged6, new { @class = "txtHiddenExpLogoIsChanged6", @id = "txtHiddenExpLogoIsChanged6" })
+
+
+
+                            @Html.HiddenFor(model => model.HiddenExpCompanyName7, new { @class = "txtHiddenExpCompanyName7", @id = "txtHiddenExpCompanyName7" })
+                            @Html.HiddenFor(model => model.HiddenExpLogo7, new { @class = "txtHiddenExpLogo7", @id = "txtHiddenExpLogo7" })
+                            @Html.HiddenFor(model => model.HiddenExpTitle7, new { @class = "txtHiddenExpTitle7", @id = "txtHiddenExpTitle7" })
+                            @Html.HiddenFor(model => model.HiddenExpDurationFrom7, new { @class = "txtHiddenExpDurationFrom7", @id = "txtHiddenExpDurationFrom7" })
+                            @Html.HiddenFor(model => model.HiddenExpDurationTo7, new { @class = "txtHiddenExpDurationTo7", @id = "txtHiddenExpDurationTo7" })
+                            @Html.HiddenFor(model => model.HiddenExpLogoPath7, new { @class = "txtHiddenExpLogoPath7", @id = "txtHiddenExpLogoPath7" })
+                            @Html.HiddenFor(model => model.HiddenExpLogoIsChanged7, new { @class = "txtHiddenExpLogoIsChanged7", @id = "txtHiddenExpLogoIsChanged7" })
+
+
+
+                            @*Hidden fields for experience*@
+
+
+                            @Html.HiddenFor(model => model.IsVisibleIndustry1, new { @class = "txtIsVisibleIndustry1", @id = "txtIsVisibleIndustry1" })
+                            @Html.HiddenFor(model => model.IsVisibleIndustry2, new { @class = "txtIsVisibleIndustry2", @id = "txtIsVisibleIndustry2" })
+                            @Html.HiddenFor(model => model.IsVisibleIndustry3, new { @class = "txtIsVisibleIndustry3", @id = "txtIsVisibleIndustry3" })
+
+                            @Html.HiddenFor(model => model.HiddenZipCode1, new { @class = "txtHiddenZipCode1", @id = "txtHiddenZipCode1" })
+                            @Html.HiddenFor(model => model.HiddenZipCode2, new { @class = "txtHiddenZipCode2", @id = "txtHiddenZipCode2" })
+                            @Html.HiddenFor(model => model.HiddenZipCode3, new { @class = "txtHiddenZipCode3", @id = "txtHiddenZipCode3" })
+                            @Html.HiddenFor(model => model.HiddenZipCode4, new { @class = "txtHiddenZipCode4", @id = "txtHiddenZipCode4" })
+                            @Html.HiddenFor(model => model.HiddenZipCode5, new { @class = "txtHiddenZipCode5", @id = "txtHiddenZipCode5" })
+
+                            @*@Html.HiddenFor(model => model.IsVisibleZipCode1, new { @class = "txtIsVisibleZipCode1", @id = "txtIsVisibleZipCode1" })
+                                @Html.HiddenFor(model => model.IsVisibleZipCode2, new { @class = "txtIsVisibleZipCode2", @id = "txtIsVisibleZipCode2" })
+                                @Html.HiddenFor(model => model.IsVisibleZipCode3, new { @class = "txtIsVisibleZipCode3", @id = "txtIsVisibleZipCode3" })
+                                @Html.HiddenFor(model => model.IsVisibleZipCode4, new { @class = "txtIsVisibleZipCode4", @id = "txtIsVisibleZipCode4" })
+                                @Html.HiddenFor(model => model.IsVisibleZipCode5, new { @class = "txtIsVisibleZipCode5", @id = "txtIsVisibleZipCode5" })*@
+
+                            @Html.HiddenFor(model => model.UserId, new { @class = "txtUserId", @id = "txtUserId" })
+                            <!--================================================== // HIDDEN FIELDS ========================================================-->
+
+                        </div>
+                    </div>
+                </div>
+
+                @*<div class="row">
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <div class="col-md-4">
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="col-md-4"></div>
+                                    <div class="col-md-4">
+                                        <input type="submit" value="SUBMIT" name="SUBMIT" id="UpdateInfo" class=" btn btn-default" style="position: relative;margin-left: 37%;background-color:rgb(6, 102, 145);color: white;" />
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="submit" value="CANCEL" name="CANCEL" id="UpdateInfo" class=" btn btn-default" style="position: relative;margin-left: 37%;background-color:rgb(6, 102, 145);color: white;" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
+
+                <div class="row">
+                    <div class="form-group">
+                        <div class="col-md-12" style="padding-left:0%;padding-top:6%;padding-bottom:6%;">
+                            <div class="col-md-2">
+                            </div>
+                            <div class="col-md-8" style="padding-left:0%">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6" style="padding-left: 0px;">
+                                    <div class="col-xs-1" style="padding:0%"></div>
+                                    <div class="col-xs-5" style="padding-left:0%;padding-right:0%">
+                                        <input type="submit" value="SUBMIT" name="SUBMIT" id="UpdateInfo" class=" btn btn-default" style="position: relative;margin-left: 37%;background-color:rgb(6, 102, 145);color: white;" />
+                                    </div>
+                                    <div class="col-xs-5" style="padding-left:0%;padding-right:0%">
+                                        <input type="submit" value="CANCEL" name="CANCEL" id="UpdateInfo" class=" btn btn-default" style="position: relative;margin-left: 37%;background-color:rgb(6, 102, 145);color: white;" />
+                                    </div>
+                                    <div class="col-xs-1"></div>
+                                </div>
+                                <div class="col-md-3"></div>
+                            </div>
+                            <div class="col-md-2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-8">
+                    <div class="modal fade" id="ModalSpecialities" role="dialog">
+                        <div class="modal-dialog" style="padding:5%;text-align: center;">
+                            <div class="modal-content" style="text-align:left;">
+                                <div class="modal-header" style="padding-top: 3px; padding-bottom: 3px;">
+                                    <button type="button" class="close" onclick="clickCancel();" style="color: red;margin-top:10px;">&times;</button>
+                                    <h4 class="modal-title" style="font-weight:bold;font-size: 16px;margin-top:10px;margin-bottom:10px;">Pick your specialities</h4>
+                                </div>
+                                <div class="modal-body" style="padding-top: 0px;padding-bottom: 0px;font-weight:100;">
+                                    <br />
+                                    <div>
+                                        <input type="checkbox" id="chkAll" name="Select All" value="Select All" onclick="clickAll();" />&nbsp;Select All<br />
+                                    </div>
+                                    <br />
+                                    <input type="checkbox" class="classcheckbox" id="chkHome" name="Home" value="Home" onclick="clickHome();" />&nbsp;Home<br />
+
+                                    <div id="divHome" style="display:none;">
+                                        Home Value(Select one or all that apply to you)<br />
+                                        <input type="checkbox" class="classcheckbox" id="chkHome1" name="$500,000 or less" value="$500,000 or less" style="margin-left:15px;" />&nbsp;$500,000 or less<br />
+                                        <input type="checkbox" class="classcheckbox" id="chkHome2" name="$501,000 - $1,000,000" value="$501,000 - $1,000,000" style="margin-left:15px;" />&nbsp;$501,000 - $1,000,000<br />
+                                        <input type="checkbox" class="classcheckbox" id="chkHome3" name="More than $1,000,000" value="More than $1,000,000" style="margin-left:15px;" />&nbsp;More than $1,000,000<br />
+                                        <br />
+                                    </div>
+
+                                    <input type="checkbox" id="chkAuto" class="classcheckbox" name="Auto" value="Auto" onclick="clickAuto();" />&nbsp;Auto<br />
+
+                                    <div id="divAuto" style="display:none;">
+                                        Auto Type(Select one or all that apply to you)<br />
+                                        <input type="checkbox" class="classcheckbox" id="chkEconomy" name="Economy" value="Economy" style="margin-left:15px;" />&nbsp;Economy<br />
+                                        <input type="checkbox" class="classcheckbox" id="chkStandard" name="Standard" value="Standard" style="margin-left:15px;" />&nbsp;Standard<br />
+                                        <input type="checkbox" class="classcheckbox" id="chkLuxury" name="Luxury" value="Luxury" style="margin-left:15px;" />&nbsp;Luxury<br />
+                                        <input type="checkbox" class="classcheckbox" id="chkCollectible" name="Collectible" value="Collectible" style="margin-left:15px;" />&nbsp;Collectible<br />
+                                        <br />
+                                    </div>
+
+                                    <input type="checkbox" id="chkBenefits" class="classcheckbox" name="Benefits" value="Benefits" onclick="clickBenefits();" />&nbsp;Benefits<br />
+
+                                    <div id="divBenefits" style="display:none;">
+                                        Number of Employees(Select one or all that apply to you)<br />
+                                        <input type="checkbox" class="classcheckbox" id="chkBenefits1" name="1-25" value="1-25" style="margin-left:15px;" />&nbsp;1-25<br />
+                                        <input type="checkbox" class="classcheckbox" id="chkBenefits2" name="26-50" value="26-50" style="margin-left:15px;" />&nbsp;26-50<br />
+                                        <input type="checkbox" class="classcheckbox" id="chkBenefits3" name="51-100" value="51-100" style="margin-left:15px;" />&nbsp;51-100<br />
+                                        <input type="checkbox" class="classcheckbox" id="chkBenefits4" name="More than 100" value="More than 100" style="margin-left:15px;" />&nbsp;More than 100<br />
+                                        <br />
+                                    </div>
+                                    <input type="checkbox" id="chkBusiness" class="classcheckbox" name="Business" value="Business" onclick="clickBusiness();" />&nbsp;Business<br />
+
+                                    <div id="divBusiness" style="display:none;">
+                                        Gross Revenue(Select one or all that apply to you)<br />
+                                        <input type="checkbox" class="classcheckbox" id="chkBusiness1" name="Up to $1,000,000" value="Up to $1,000,000" style="margin-left:15px;" />&nbsp;Up to $1,000,000<br />
+                                        <input type="checkbox" class="classcheckbox" id="chkBusiness2" name="$1,000,001 and $5,000,000" value="$1,000,001 and $5,000,000" style="margin-left:15px;" />&nbsp;$1,000,001 and $5,000,000<br />
+                                        <input type="checkbox" class="classcheckbox" id="chkBusiness3" name="$5,000,001 and $10,000,000" value="$5,000,001 and $10,000,000" style="margin-left:15px;" />&nbsp;$5,000,001 and $10,000,000<br />
+                                        <input type="checkbox" class="classcheckbox" id="chkBusiness4" name="Over $10,000,001" value="Over $10,000,001" style="margin-left:15px;" />&nbsp;Over $10,000,001<br />
+                                        <br />
+                                    </div>
+                                    <input type="checkbox" id="chkLife" class="classcheckbox" name="Life" value="Life" onclick="clickLife();" />&nbsp;Life<br />
+
+                                    <div id="divLife" style="display:none;">
+                                        Coverage Amount(Select one or all that apply to you)<br />
+                                        <input type="checkbox" class="classcheckbox" id="chkLife1" name="$250,000 or less" value="$250,000 or less" style="margin-left:15px;" />&nbsp;$250,000 or less<br />
+                                        <input type="checkbox" class="classcheckbox" id="chkLife2" name="$250,001 to $500,000" value="$250,001 to $500,000" style="margin-left:15px;" />&nbsp;$250,001 to $500,000<br />
+                                        <input type="checkbox" class="classcheckbox" id="chkLife3" name="$500,001 to $1,000,000" value="$500,001 to $1,000,000" style="margin-left:15px;" />&nbsp;$500,001 to $1,000,000<br />
+                                        <input type="checkbox" class="classcheckbox" id="chkLife4" name="More than $1,000,000" value="More than $1,000,000" style="margin-left:15px;" />&nbsp;More than $1,000,000<br />
+                                        <br />
+                                    </div>
+                                </div>
+                                <br />
+                                <span><label for="lblErrorMessage" id="lblErrorMessage" style="color:red;margin-left:20px;"></label></span>
+                                <div class="modal-footer" style="padding: 5px; text-align:center;">
+                                    <button type="button" class="btn btn-default" onclick="clickOK();">Done</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>
+
+
+            <div class="col-md-12">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-8">
+                    <div class="modal fade" id="ModalError" role="dialog">
+                        <div class="modal-dialog" style="padding:5%">
+                            <div class="modal-content popupwidth">
+                                <div class="modal-header" style="padding-top: 3px; padding-bottom: 3px;">
+                                    <button type="button" class="close" data-dismiss="modal" style="color: red;margin-top:10px;">&times;</button>
+                                    <h4 class="modal-title" style="font-size: 16px;margin-top:10px;margin-bottom:10px;">Message</h4>
+                                </div>
+                                <div class="modal-body" style="padding-top: 0px;padding-bottom: 0px;font-weight:100;">
+                                    <br />
+                                    <span><label for="lblError" id="lblError" style="color:red;margin-left:20px;"></label></span>
+                                    <br />
+                                </div>
+                                <div class="modal-footer" style="padding: 5px;text-align:center;">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal" style="width:70px;">OK</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                </div>
+            </div>
+        }
+
+    </div>
+    @*<script>
+        $(window).scroll(function () {
+            $('#footerLayout').hide();
+            $('#noresults').hide();
+        });
+
+        </script>*@
+    @*<footer class="footer-distributed" style="position:fixed;bottom:0;">
+            <div class="container" style="width:100%;">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding:0;">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-6" style="padding:0;">
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="text-align:center;">
+                                <p class="footer-company-about">
+                                    <div class="social-icons" style="margin-bottom:0px;">
+                                        <a href="#"><span class="facebook"></span></a>
+                                        <a href="#"><span class="twitter"></span></a>
+                                        <a href="#"><span class="linkedin"></span></a>
+                                    </div>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="col-md-6 col-sm-6 col-xs-6" style="margin-bottom: 0%;text-align:center;padding-right: 0;">
+                            <div class="footer-right-header">
+
+                                <div>
+                                    <p style="display: block;color: #666666;font-size: 16px;font-weight: 800;font-family:'Varela Round',sans-serif;padding-top:2%;">© 2018 brokkrr Inc.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>*@
+</body>
+</html>

@@ -1,0 +1,441 @@
+﻿@model BrokerMVC.Models.HomeInsurance
+@{
+    ViewBag.Title = "HomeInsurance";
+    Layout = "~/Views/Shared/View_CustomerProfileLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home and Auto Insurance</title>
+
+
+    <script type="text/javascript">
+        
+        $.ajax({
+            url: '@Url.Action("GetCompany", "Insurances")',
+            type: 'GET',
+            dataType: 'json',
+            cache: false,
+            // data: { id: id },
+            success: function (data) {
+                var obj = JSON.parse(data);
+                var issuccess1 = obj.IsSuccess;
+                var ErrorMessage = obj.ErrorMessage;
+                //alert("Called");
+                var company1;
+
+                if (issuccess1 == true) {
+                    company1 = obj.CompanyList;
+
+                    var selectedDeviceModel = $('#InsuranceCompany');
+                    selectedDeviceModel.empty();
+                    //alert("Called");
+                    selectedDeviceModel.append(
+                                $('<option/>', {
+                                    value: "0",
+                                    text: "--Select--"
+                                })
+                            );
+                    $.each(company1, function (i, cmp) {
+
+                        // alert(cmp.CompanyId);
+                        selectedDeviceModel.append(
+                            $('<option/>', {
+                                value: cmp.CompanyId,
+                                text: cmp.CompanyName
+                            })
+                        );
+                    });
+                }
+            }
+        });
+
+
+        function InsuranceCompany() {
+
+            if ($('#IsInsured').val() == "" || $('#IsInsured').val() == undefined) {
+
+                $("#InsComapny").css("display", "none");
+            }
+            else if ($('#IsInsured').val() == "Acquisition") {
+
+                $("#InsComapny").css("display", "none");
+            }
+            else if ($('#IsInsured').val() == "Currently insured") {
+
+                $("#InsComapny").css("display", "block");
+            }
+        }
+
+        function SubmitHomeInsurance() {
+            // alert("Called : " + $('#IsInsured').val() + " ," + $('#InsuranceCompany').val());
+
+            if ($('#IsInsured').val() == "Currently insured") {
+                if ($('#InsuranceCompany').val() == "0") {
+                    $("#lblErrorMessage").text('Please select value');
+                    return false;
+                }
+                else {
+                    $("#lblErrorMessage").text('');
+                    return true;
+                }
+            }
+            else {
+                $("#lblErrorMessage").text('');
+                return true;
+            }
+        }
+
+        function GetCity(e) {
+            //alert('hi'+e);
+            var zipaddress = $("#ZipCode").val();
+            if (zipaddress.length >= 5) {
+                $.ajax({
+                    url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + zipaddress + '',
+                    success: function (data) {
+                        lat = data.results[0].geometry.location.lat;
+                        lng = data.results[0].geometry.location.lng;
+
+                        $('#Longitude').val(lng);
+                        $('#Latitude').val(lat);
+
+                        for (var i = 0; i < data.results[0].address_components.length; i++) {
+
+                            for (var b = 0; b < data.results[0].address_components[i].types.length; b++) {
+                                if (data.results[0].address_components[i].types[b] == "postal_code") {
+                                    var zip = data.results[0].address_components[i].long_name;
+                                }
+                                if (data.results[0].address_components[i].types[b] == "locality") {
+                                    localCity = data.results[0].address_components[i].long_name;
+
+                                    $('#City').val(localCity);
+                                    //alert("City - " + $('#City').val());
+                                }
+                            }
+                        }
+                    }
+
+                });
+            }
+            else {
+                $('#City').val("");
+            }
+        }
+
+
+        function FillCompany() {
+            InsuranceCompany();
+        }
+
+        window.onload = function () {
+
+            FillCompany();
+
+            var ZipCode = '@ViewBag.ZipCode';
+            if (ZipCode != "") {
+                $("#ZipCode").val(ZipCode);
+                GetCity($("#ZipCode"));
+            }
+
+            $('#footerLayout').hide();
+            $('#noresults').hide();
+        };
+
+
+    </script>
+
+
+    <style type="text/css">
+        .red-border-left {
+            border-left: 2px solid #FF0000 !important;
+        }
+       
+    </style>
+    
+</head>
+<body>
+    <div class="container clearfix">
+        <div class="row">
+            <br />
+            <div class="col-lg-12 brokerTag" style="font-weight: bold;font-size: 25px;text-align: center;">
+                <span>HOMEOWNER'S INSURANCE</span>
+            </div>
+        </div>
+
+
+        <div class="row" style="padding-bottom:2%;padding-top:2%;">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#"><img src="~/Images/Insurance/homeblue.png"></a></li>
+                    <li><a href="~/Insurances/AutoInsurance"><img src="~/Images/Insurance/carblack.png"></a></li>
+                </ul>
+                <div class="cleardiv"></div>
+            </div>
+        </div>
+
+        <div style="padding-top:3%;">
+            @using (Html.BeginForm("HomeInsurance", "Insurances"))
+            {
+                @*====================================== (Start) ZipCode ========================================*@
+
+    <div class="row">
+        <div class="col-sm-12" style="padding-left:10%;padding-right:21.2%;">
+
+            <div class="col-sm-6" style="padding-top:2%;padding-left:1%;">@Html.LabelFor(model => model.ZipCode, htmlAttributes: new { @class = "control-label col-md-12 " })</div>
+            <div class="col-sm-6" style="padding-right: 0;">
+                @*<div class="col-sm-6 hrlabel"><input data-wrapper-class="zipcode" value="" id="zipcode" type="number" placeholder="Business Zip Code"></div>*@
+                <div class="col-sm-6 hrlabel" style="padding-right:0;padding-left: 1.9%;">
+
+                    @Html.TextBoxFor(Model => Model.ZipCode, htmlAttributes: new { @class = "control-label col-md-12 red-border-left", placeholder = "Home Zip Code", @maxlength = 5, onkeyup = "GetCity(this)" })
+                    @Html.ValidationMessageFor(Model => Model.ZipCode, "", new { @class = "RequiredField" })
+                </div>
+                <div class="col-sm-6 lable" style="padding-right:0;padding-left: 1.9%;">
+                    @*<input data-wrapper-class="city" value="" type="text" id="txtcity" disabled placeholder="City">*@
+                    @Html.TextBoxFor(Model => Model.City, htmlAttributes: new { @class = "control-label col-md-12 city red-border-left", placeholder = "City", @readonly = true })
+                    @Html.ValidationMessageFor(Model => Model.City, "", new { @class = "RequiredField" })
+                </div>
+
+                @Html.HiddenFor(Model => Model.Longitude)
+                @Html.HiddenFor(Model => Model.Latitude)
+
+                @*<textarea id="txtlat" style="display:none;" rows="50" cols="50"></textarea>
+                    <textarea id="txtlang" style="display:none;" rows="50" cols="50"></textarea>*@
+            </div>
+
+        </div>
+    </div>
+
+                @*====================================== (End) ZipCode ========================================*@
+
+
+                @*====================================== (Start) IsInsured ========================================*@
+
+
+                <div class="row" style="padding-bottom:0.8%;">
+                    <div class="col-sm-12" style="padding-left:10%;padding-right:20%;">
+                        <div class="col-sm-6" style="padding-top:2%;padding-left:1%;">@Html.LabelFor(model => model.IsInsured, htmlAttributes: new { @class = "control-label col-md-12 " })</div>
+                        <div class="col-sm-6">
+
+                            @Html.DropDownListFor(m => m.IsInsured, new List<SelectListItem> {
+                                        new SelectListItem {Value="", Text ="--Select--", Selected = true},
+                                        new SelectListItem {Value="Acquisition", Text ="New purchase"},
+                                        new SelectListItem { Value = "Currently insured", Text = "Currently insured"}
+
+                                        }, new { @class = "DropdownBG red-border-left", @onchange = "FillCompany()" })
+                            @Html.ValidationMessageFor(Model => Model.IsInsured, "", new { @class = "RequiredField" })
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="InsComapny" class="row Hiddenfield" style="padding-bottom:0.8%;">
+                    <div class="col-sm-12" style="padding-left:10%;padding-right:20%;">
+                        <div class="col-sm-6" style="padding-top:2%;padding-left:1%;">@Html.LabelFor(model => model.InsuranceCompany, htmlAttributes: new { @class = "control-label col-md-12 " })</div>
+                        <div class="col-sm-6">
+
+                            @Html.DropDownListFor(m => m.InsuranceCompany, new List<SelectListItem>
+           {
+                                      //new SelectListItem {Value="", Text ="--Select--", Selected = true},
+                                      //  new SelectListItem {Value="test", Text ="test"},
+                                      //  new SelectListItem { Value = "test 1", Text = "test 1"}
+           }, new { @class = "DropdownBG red-border-left" })
+                            @Html.ValidationMessageFor(Model => Model.InsuranceCompany, "", new { @class = "RequiredField" })
+
+                        </div>
+                        <span><label for="lblErrorMessage" id="lblErrorMessage" style="font-family:Helvetica;font-size:14px;color:red;margin-left:2%;font-weight:100;"></label></span>
+                    </div>
+                </div>
+
+
+                @*====================================== (End) IsInsured ========================================*@
+
+                @*====================================== (Start) FaceValue ========================================*@
+
+
+                <div class="row" style="padding-bottom:0.8%;">
+                    <div class="col-sm-12" style="padding-left:10%;padding-right:20%;">
+                        <div class="col-sm-6" style="padding-top:2%;padding-left:1%;">@Html.LabelFor(model => model.EstimatedValue, htmlAttributes: new { @class = "control-label col-md-12 " })</div>
+                        <div class="col-sm-6">
+
+                            @Html.DropDownListFor(m => m.EstimatedValue, new List<SelectListItem> {
+                                        new SelectListItem {Value="", Text ="--Select--", Selected = true},
+                                        new SelectListItem {Value="$500,000 or less", Text ="$500,000 or less"},
+                                        new SelectListItem { Value = "$501,000 - $1,000,000", Text = "$501,000 - $1,000,000"},
+                                        new SelectListItem { Value = "More than $1,000,000", Text = "More than $1,000,000"}
+
+
+                                        }, new { @class = "DropdownBG red-border-left" })
+
+                            @Html.ValidationMessageFor(Model => Model.EstimatedValue, "", new { @class = "RequiredField" })
+
+                        </div>
+                    </div>
+                </div>
+
+
+                @*====================================== (End) FaceValue ========================================*@
+
+
+                @*====================================== (Start) CoverageExpires ========================================*@
+
+
+                <div class="row" style="padding-bottom:0.8%;">
+                    <div class="col-sm-12" style="padding-left:10%;padding-right:20%;">
+                        <div class="col-sm-6" style="padding-top:2%;padding-left:1%;">@Html.LabelFor(model => model.CoverageExpires, htmlAttributes: new { @class = "control-label col-md-12 " })</div>
+                        <div class="col-sm-6">
+
+                            @Html.DropDownListFor(m => m.CoverageExpires, new List<SelectListItem> {
+                                        new SelectListItem {Value="", Text ="--Select--", Selected = true},
+                                        new SelectListItem {Value="Now", Text ="Now"},
+                                        new SelectListItem { Value = "Coverage expires after 30 days", Text = "Coverage expires after 30 days"},
+
+                                        }, new { @class = "DropdownBG red-border-left" })
+
+                            @Html.ValidationMessageFor(Model => Model.CoverageExpires, "", new { @class = "RequiredField" })
+                        </div>
+                    </div>
+                </div>
+
+
+                @*====================================== (End) CoverageExpires ========================================*@
+
+
+                @*====================================== (Start) Language ========================================*@
+
+
+                <div class="row" style="padding-bottom:0.8%;">
+                    <div class="col-sm-12" style="padding-left:10%;padding-right:20%;">
+                        <div class="col-sm-6" style="padding-top:2%;padding-left:1%;">@Html.LabelFor(model => model.Language, htmlAttributes: new { @class = "control-label col-md-12 " })</div>
+                        <div class="col-sm-6">
+                            @*<select id="chkLanguages" multiple="multiple" name="chkLanguages">*@
+
+
+                            @Html.DropDownListFor(m => m.Language, new List<SelectListItem> {
+                                        new SelectListItem {Value="English", Text ="English", Selected = true},
+                                        new SelectListItem { Value = "Spanish", Text = "Spanish"},
+                                        new SelectListItem { Value = "Chinese(Cantonese)", Text = "Chinese(Cantonese)"},
+                                        new SelectListItem { Value = "Chinese(Mandarin)", Text = "Chinese(Mandarin)"},
+                                        new SelectListItem { Value = "Korean", Text = "Korean"},
+                                        new SelectListItem { Value = "Vietnamese", Text = "Vietnamese"},
+
+                                        }, new { @class = "DropdownBG" })
+                            @Html.ValidationMessageFor(Model => Model.Language, "", new { @class = "RequiredField" })
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                @*====================================== (End) Language ========================================*@
+
+                @*====================================== (Start) Notes ========================================*@
+
+
+                <div class="row" style="padding-bottom:5%;">
+                    <div class="col-sm-12" style="padding-left:10%;padding-right:20%;">
+                        <div class="col-sm-6" style="padding-top:2%;padding-left:1%;">@Html.LabelFor(model => model.Notes, htmlAttributes: new { @class = "control-label col-md-12 " })</div>
+                        <div class="col-sm-6">
+                            @Html.TextAreaFor(Model => Model.Notes, htmlAttributes: new { @class = "control-label col-md-12 ", placeholder = "Enter any notes" })
+                        </div>
+                    </div>
+                </div>
+
+
+                @*====================================== (End) Notes ========================================*@
+
+                @*====================================== (Start) submit to brokkrr ========================================*@
+                <div class="row" style="padding-bottom:15%;padding-top:5%;">
+                    <div class="form-group">
+                        <div class="col-md-12 col-xs-12" style="text-align:center;">
+                            <input type="submit" value="Submit to Brokkrrs" name="SubmittoBrokkrrs" onclick="return SubmitHomeInsurance();" id="UpdateInfo" class="btn btn-default" style="position: relative;background-color:#17d1ff;color: white;" />
+                        </div>
+                    </div>
+                </div>
+                @*====================================== (End) submit to brokkrr ========================================*@
+                <div class="cleardiv"></div>
+            }
+        </div>
+    </div>
+    <script>
+    $(window).scroll(function () {
+        $('#footerLayout').hide();
+        $('#noresults').hide();
+    });
+
+    </script>
+    <footer class="footer-distributed" style="position:fixed;bottom:0;">
+        <div class="container" style="width:100%;">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="padding:0;">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6" style="padding:0;">
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="text-align:center;">
+                            <p class="footer-company-about">
+                                <div class="social-icons" style="margin-bottom:0px;">
+                                    <a href="#"><span class="facebook"></span></a>
+                                    <a href="#"><span class="twitter"></span></a>
+                                    <a href="#"><span class="linkedin"></span></a>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 col-sm-6 col-xs-6" style="margin-bottom: 0%;text-align:center;padding-right: 0;">
+                        <div class="footer-right-header">
+                            @*<div class="copyright">*@
+                            <div>
+                                <p style="display: block;color: #666666;font-size: 16px;font-weight: 800;font-family:'Varela Round',sans-serif;padding-top:2%;">© 2018 brokkrr Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

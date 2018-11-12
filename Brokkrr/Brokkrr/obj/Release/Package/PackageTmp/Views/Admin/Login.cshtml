@@ -1,0 +1,126 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+
+<html>
+<head>
+    <link rel="shortcut icon" href="~/Images/Assets/brokkrIcon24x24.png">
+    <title>brokkrr Inc.</title>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+
+    @*<link href="~/Content/bootstrap.css" rel="stylesheet" />*@
+    <link href="~/Content/AdminPage.css" rel="stylesheet" />
+    <script src="~/js/login.js"></script>
+   
+</head>
+<body>
+    <div class="wrapper">
+        @using (Html.BeginForm())
+        {
+            <div class="loginPage">
+                <div class="logo">
+                    <a href="@Url.Action("Index","Home")"><img src="~/Images/NewImages/image001.png" alt="brokkrrLogo" /></a>
+                </div>
+                <div class="blankRow">
+                    <div class="rowControls Error" style="width: 419px;">
+                        @ViewBag.incorrect
+                    </div>
+                </div>
+                <br />
+                <div>
+                    <div class="formRow">
+                        <div class="label">
+                            User name
+
+                        </div>
+                        <div class="control">
+                            <input type="text" id="username" name="Username" placeholder="Enter user name" />
+                            @*@Html.TextBoxFor(m => m.UserName)*@
+                            <span class="Error">
+                                @*@Html.ValidationMessageFor(m => m.UserName)*@
+                            </span>
+                        </div>
+                    </div>
+                    <div class="formRow" style="height: 35px;!important">
+                        <div class="label">
+                            Password
+                            @*@Html.LabelFor(m => m.Password)*@
+                        </div>
+                        <div class="control">
+                            @*@{
+            string pass = "";
+            if (Model.Password != null)
+            {
+                pass = Model.Password;
+            }
+                            }
+                            @Html.PasswordFor(m => m.Password, new { value = @pass })*@
+                            <input type="password" id="passwrd" name="Password" placeholder="Enter password" />
+                            <span class="Error" id="error">
+                                @*@Html.ValidationMessageFor(m => m.Password)*@
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row" id="errorDiv" style="margin-top: 10px;margin-left: -33px;">
+                        <div class="col-md-12 col-sm-12" style="color:red;padding-left: 30% !important;">@ViewBag.error</div>
+                    </div>
+                    <div style="clear:both"></div>
+                    <div class="formRow" style="height: 35px;!important">
+                        <div class="label">
+
+                        </div>
+                        <div class="control">
+
+                            @*<span>  @Html.CheckBoxFor(m => m.RememberMe)</span>
+                            <span style="padding-top:-2px;">Remember Me</span>*@
+                        </div>
+                    </div>
+                    <div class="formRow rowControls">
+                        <input type="submit" id="login" class="button" value="Login" />
+
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+                @*<div class="formRow rowControls" style="font-size: 14px">
+                    <div style="float: left; width: 175px">
+
+                        @if (!ViewBag.accountblocked)
+                        {
+                            <a href='@Url.Action("ForgotPassword", "Login")' id="ForgotPassword" target="_blank">Forgot your password?</a>
+                        }
+                        else
+                        {
+
+                        }
+                        <br />
+                        @*<div style="color:Red; padding-top:5px;">Cookies must be enabled</div>
+                        <div style="color:Red; padding-top:5px;">
+                            <a href="" onclick="EnableSessionDemo();">Cookies must be enabled</a>
+                        </div>
+                    </div>
+                    <div>
+                        <a href='@Url.Action("Registration", "Login")' target="_blank">Sign Up</a>
+                    </div>
+                </div>
+                <div class="rowControls Error" style="padding-bottom:5px;">
+                    @ViewBag.logged
+                    <br />
+                </div>
+                 <div id="divForgotPassword" title="Forgot Password" style="width:443px">
+
+                     <div style="padding-top:2%;"><input type="text" id="txtEmailid" /></div>
+
+
+                    </div>*@
+            </div>
+
+        }
+    </div>
+</body>
+</html>

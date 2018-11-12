@@ -1,0 +1,1774 @@
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Facebook.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Owin.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\WebGrease.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Facebook.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+G:\Santosh\MVC NEW\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Owin.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.Practices.ObjectBuilder2.dll
+D:\Shashikant\PROJECTS\From Santosh\21-Apr-2016\BrokerMVC\BrokerMVC\BrokerMVC\bin\Microsoft.Practices.Unity.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-May-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-May-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\23-May-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\2-June-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\8-June-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-June-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\13-June-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-June-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\20-June-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\22-June-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\24-June-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\30-June-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\11-July-2016\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\16-Sept-2016-09-42am\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\19-Sept-2016-12-06pm\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\PushSharp.Amazon.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\PushSharp.Apple.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\PushSharp.Blackberry.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\PushSharp.Core.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\PushSharp.Firefox.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\PushSharp.Google.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\PushSharp.Windows.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\05-Oct-2016-10-05am\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\PushSharp.Amazon.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\PushSharp.Apple.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\PushSharp.Blackberry.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\PushSharp.Core.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\PushSharp.Firefox.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\PushSharp.Google.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\PushSharp.Windows.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\06-Oct-2016-10-37am\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Owin.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\PushSharp.Amazon.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\PushSharp.Apple.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\PushSharp.Blackberry.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\PushSharp.Core.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\PushSharp.Firefox.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\PushSharp.Google.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\PushSharp.Windows.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\PROJECTS\From Rashmikant\10-Oct-2016-09-54am\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Owin.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\PushSharp.Amazon.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\PushSharp.Apple.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\PushSharp.Blackberry.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\PushSharp.Core.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\PushSharp.Firefox.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\PushSharp.Google.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\PushSharp.Windows.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\Working Projects\BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\ASPSnippets.LinkedInAPI.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Owin.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\PagedList.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\PagedList.Mvc.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\PushSharp.Amazon.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\PushSharp.Apple.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\PushSharp.Blackberry.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\PushSharp.Core.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\PushSharp.Firefox.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\PushSharp.Google.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\PushSharp.Windows.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\RestSharp.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\PagedList.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\PagedList.Mvc.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\RestSharp.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\ASPSnippets.LinkedInAPI.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Owin.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\PagedList.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\PagedList.Mvc.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\PushSharp.Amazon.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\PushSharp.Apple.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\PushSharp.Blackberry.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\PushSharp.Core.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\PushSharp.Firefox.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\PushSharp.Google.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\PushSharp.Windows.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\RestSharp.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\PagedList.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\PagedList.Mvc.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\RestSharp.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-12-35pm-For Sample 1\BrokerMVCLatest\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\ASPSnippets.LinkedInAPI.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Owin.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\PagedList.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\PagedList.Mvc.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\PushSharp.Amazon.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\PushSharp.Apple.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\PushSharp.Blackberry.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\PushSharp.Core.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\PushSharp.Firefox.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\PushSharp.Google.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\PushSharp.Windows.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\RestSharp.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\PagedList.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\PagedList.Mvc.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\RestSharp.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\2016\BrokkrrWebApp\17-Apr-2017-04-17pm\BrokerMVCLatest17Apr17\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\ASPSnippets.LinkedInAPI.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Owin.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\PagedList.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\PagedList.Mvc.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\PushSharp.Amazon.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\PushSharp.Apple.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\PushSharp.Blackberry.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\PushSharp.Core.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\PushSharp.Firefox.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\PushSharp.Google.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\PushSharp.Windows.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\RestSharp.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\PagedList.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\PagedList.Mvc.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\RestSharp.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\Working Projects\BrokerMVCLatest21Apr17\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Owin.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\PagedList.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\PagedList.Mvc.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\PushSharp.Amazon.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\PushSharp.Apple.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\PushSharp.Blackberry.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\PushSharp.Core.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\PushSharp.Firefox.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\PushSharp.Google.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\PushSharp.Windows.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\RestSharp.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\PagedList.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\PagedList.Mvc.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\RestSharp.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\Working Projects\For Publish\22-Sept-2017-11-49am\BrokerMVC-NewDesign-For Pub\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Owin.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\PagedList.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\PagedList.Mvc.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\PushSharp.Amazon.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\PushSharp.Apple.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\PushSharp.Blackberry.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\PushSharp.Core.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\PushSharp.Firefox.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\PushSharp.Google.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\PushSharp.Windows.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\RestSharp.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\PagedList.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\PagedList.Mvc.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\RestSharp.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\Working Projects\BrokerMVC-NewDesign\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll.config
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\LoginWithLinkedInMVC.pdb
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\EntityFramework.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Facebook.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.Owin.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.Web.Infrastructure.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Owin.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Owin.Security.Providers.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\PagedList.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\PagedList.Mvc.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\PushSharp.Amazon.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\PushSharp.Apple.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\PushSharp.Blackberry.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\PushSharp.Core.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\PushSharp.Firefox.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\PushSharp.Google.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\PushSharp.Windows.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\RestSharp.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\System.Web.Helpers.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\System.Web.Mvc.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\System.Web.Optimization.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\System.Web.Razor.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\System.Web.WebPages.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\WebActivatorEx.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\WebGrease.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Facebook.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.Owin.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Facebook.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Newtonsoft.Json.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\PagedList.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\PagedList.Mvc.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\RestSharp.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\System.Web.Helpers.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\System.Web.Mvc.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\System.Web.Optimization.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\System.Web.Razor.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\System.Web.WebPages.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Deployment.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\System.Web.WebPages.Razor.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Antlr3.Runtime.pdb
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\EntityFramework.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\EntityFramework.SqlServer.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Google.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.Twitter.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\obj\Release\BrokerMVC.csprojResolveAssemblyReference.cache
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.dll
+D:\Shashikant\Working Projects\Current BrokerMVC\BrokerMVC\obj\Release\LoginWithLinkedInMVC.pdb

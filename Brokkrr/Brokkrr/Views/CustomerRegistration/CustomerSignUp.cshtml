@@ -1,0 +1,523 @@
+﻿@model BrokerMVC.Models.CustomerSignUp
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/View_BrokkrrMainLayout.cshtml";
+}
+
+@*<link href="~/Content/BrokkrrCSS/ProgressBar1.css" rel="stylesheet" />
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script type="text/javascript" src="~/Scripts/Scripts2/jquery.min.js"></script>
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>*@
+
+<link href="~/Content/BrokkrrCSS/ProgressBar1.css" rel="stylesheet" />
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script type="text/javascript" src="~/Scripts/Scripts2/jquery.min.js"></script>
+<link href="~/Content/BrokkrrCSS/ModelPopUp.css" rel="stylesheet" />
+
+
+<link href="~/Content/BrokkrrCSS/jquery-ui.css" rel="stylesheet" />
+
+<script src="~/Scripts/Scripts1/jquery-1.10.2.js"></script>
+
+<script src="~/Scripts/Scripts1/jquery-ui.js"></script>
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+@*For Multiselect list for Languages*@
+
+<script src="~/js/bootstrap-multiselect.js"></script>
+<script src="~/js/bootstrapForMultiSelect.min.js"></script>
+
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrapForMultiSelect.min.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrap-multiselect.css" rel="stylesheet" type="text/css">
+
+
+
+@* This Script is for clear form fields. *@
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#Cancel').click(function () {
+            $('input#FirstName').val('');
+            $('input#LastName').val('');
+            $('input#PhoneNo1').val('');
+            $('input#PhoneNo2').val('');
+            $('input#PhoneNo3').val('');
+            $('input#Email').val('');
+            $('#Address').val('');
+            $('input#ZipCode').val('');
+            $('input#CompanyName').val('');
+            $('input#NumberofCars').val('');
+            $('input#ProfilePhoto1').val('');
+            $('input#Password').val('');
+            $('input#ConfirmPassword').val('');
+
+            $("#NumberofCars").attr("readonly", true);
+            //$("#NumberofCars").val("1");
+            $('#No').attr('checked', true);
+            $('#Yes').attr('checked', false);
+            $("#NoofCars").hide();
+        })
+    });
+</script>
+
+@* This Script is for Radiobutton-IsHavingCars checked events *@
+
+<script type="text/javascript">
+    $(function () {
+        $("input[name='IsCars']").change(function () {
+            var $this = $(this);
+            if ($this.val() == "Yes") {
+                $("#NoofCars").show();
+                $("#NumberofCars").attr("readonly", false);
+                $("#NumberofCars").val("1");
+            } else {
+                $("#NoofCars").hide();
+                $("#NumberofCars").attr("readonly", true);
+                //$("#NumberofCars").val("1");
+            }
+        });
+    });
+</script>
+
+@* This Script is for Datepicker *@
+@*<script>
+        $(function () {
+            //alert("Clicked");
+            $("#datepicker").datepicker({
+                showOn: "button",
+                buttonImage: "../Images/Assets/glyphicons-46-calendar.png",
+                buttonImageOnly: true,
+                buttonText: "Select date"
+            });
+
+        });
+    </script>*@
+
+@* This Script is for opening file browser on click of browse button *@
+
+<script type="text/javascript">
+    function openfileDialog() {
+        $("#fileToUpload").click();
+
+        $("#fileToUpload").change(function () {
+
+            //$("#ProfilePhoto1").val($(this).val());
+            //alert("Called");
+            if (this.files[0].size / 1024 <= 4096) {
+                $("#ProfilePhoto1").val($(this).val());
+            }
+            else {
+
+                $("#fileToUpload").val('');
+                $("#ProfilePhoto1").val('');
+                $("#lblError").text('File Size Should not greater than 4 MB.');
+                $("#ModalError").modal();
+
+            }
+        });
+
+    }
+</script>
+
+<script>
+    window.onload = function () {
+
+        $('#footerLayout').hide();
+
+    };
+
+</script>
+
+<style type="text/css">
+    .button {
+        background: #333;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 5px;
+    }
+
+        .button:hover {
+            background: #51A8CA;
+        }
+
+    .red-border-left {
+        border-left: 2px solid #FF0000;
+    }
+
+    .ErrorMsg {
+        margin-bottom: 3%;
+    }
+</style>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="~/Images/Assets/brokkrIcon24x24.png">
+    <title>Customer Registration</title>
+
+</head>
+<body>
+    <div class="container">
+
+
+        @using (Html.BeginForm("CustomerSignUp", "CustomerRegistration", FormMethod.Post
+            , new { enctype = "multipart/form-data" }))
+        {
+            <div class="row">
+                <div class="col-lg-12 brokerTag" style="font-weight: bold;padding-top: 1.2%">
+                    <span>CUSTOMER SIGN UP</span>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="container-fluid" style="background-color:rgb(247,247,247)">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 style="text-align:left;margin: 30px;">Personal Information</h4>
+                    </div>
+
+                    <div class="col-md-12" style="">
+                        <div class="col-md-6">
+                            <!--================================================== FIRST NAME ========================================================-->
+                            <div class="col-md-2"></div>
+                            <div class="col-md-3" style="padding: 0%;top: 10px;">
+                                <div class="editor-label">
+                                    @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-12" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 ErrorMsg" tabindex="1">
+                                @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", Style = "margin-bottom: 0px;border-left: 2px solid #FF0000;", title = "I'm a Tooltip!" })
+                                @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-1"></div>
+                            <!--================================================= //FIRST NAME =========================================================-->
+                            <!--==================================================LAST NAME ========================================================-->
+                            <div class="col-md-2"></div>
+                            <div class="col-md-3" style="padding: 0%;top: 10px;">
+                                <div class="editor-label">
+                                    @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-12" })
+                                </div>
+                            </div>
+                            <div class="col-md-6 ErrorMsg" tabindex="1">
+                                @Html.TextBoxFor(model => model.LastName, new { @class = "form-control", Style = "margin-bottom: 0px;border-left: 2px solid #FF0000;", title = "I'm a Tooltip!" })
+                                @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-1"></div>
+                            <!--================================================= //LAST NAME =========================================================-->
+                            <!--================================================== PHONE NO ========================================================-->
+
+                            <div class="col-md-2"></div>
+                            <div class="col-md-3" style="padding: 0%;top: 10px;">
+                                @Html.LabelFor(model => model.PhoneNo1, htmlAttributes: new { @class = "control-label col-md-2" })
+                            </div>
+                            <div class="col-md-6 ErrorMsg" tabindex="1">
+                                @Html.TextBoxFor(model => model.PhoneNo1, new { @class = "form-control", Style = "margin-bottom: 0px;border-left: 2px solid #FF0000;", @maxlength = "15" })
+                                @Html.ValidationMessageFor(model => model.PhoneNo1, "", new { @class = "text-danger" })
+                            </div>
+                            @*Change 29Dec16*@
+                            @*<div class="col-md-6 ErrorMsg">
+                                    <div class="col-md-4 " style="padding-left: 0%; padding-right: 0.5%;" tabindex="2">
+                                        @Html.TextBoxFor(model => model.PhoneNo1, new { @class = "form-control", Style = "margin-bottom: 0px;border-left: 2px solid #FF0000;", @maxlength = "5" })
+                                        @Html.ValidationMessageFor(model => model.PhoneNo1, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-4" style="padding-left: 0%; padding-right: 0.5%;" tabindex="3">
+                                        @Html.TextBoxFor(model => model.PhoneNo2, new { @class = "form-control", Style = "margin-bottom: 0px;border-left: 2px solid #FF0000;", @maxlength = "3" })
+                                        @Html.ValidationMessageFor(model => model.PhoneNo2, "", new { @class = "text-danger" })
+                                    </div>
+                                    <div class="col-md-4" style="padding-left: 0%; padding-right: 0.5%;">
+                                        @Html.TextBoxFor(model => model.PhoneNo3, new { @class = "form-control", Style = "margin-bottom: 0px;border-left: 2px solid #FF0000;", @maxlength = "4" })
+                                        @Html.ValidationMessageFor(model => model.PhoneNo3, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>*@
+                            @*Change 29Dec16*@
+                            <div class="col-md-1"></div>
+
+                            <!--================================================== // PHONE NO ========================================================-->
+                            <!--================================================== PROFILE PHOTO ================================================-->
+
+                            <div class="col-md-2"></div>
+                            <div class="col-md-3" style="padding: 0%;top: 10px;">
+                                @Html.LabelFor(model => model.ProfilePhoto, htmlAttributes: new { @class = "control-label col-md-12" })
+                            </div>
+                            <div class="col-md-4">
+                                @Html.TextBoxFor(model => model.ProfilePhoto, new { @class = "form-control", @id = "ProfilePhoto1", @readonly = "readonly" })
+                            </div>
+                            <div class="col-md-2" style="padding-top: 1%;">
+
+                                <input type="file" id="fileToUpload" name="file" style="display:none" accept=".jpe,.jpg,.jpeg,.png,.gif" />
+                                <input type="button" value="BROWSE" id="btnUpload" onclick="openfileDialog();" class="btn btn-default" style="background-color: #066691;color: white;" />
+                            </div>
+                            <div class="col-md-2"></div>
+                            <!--================================================== // PROFILE PHOTO ================================================-->
+                        </div>
+
+
+
+                        <div class="col-md-6">
+                            <!--================================================== EMAIL  ========================================================-->
+
+                            <div class="col-md-4" style="padding: 0%;top: 10px;">
+                                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-12" })
+                            </div>
+                            <div class="col-md-6 ErrorMsg">
+                                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", Style = "margin-bottom: 0px;border-left: 2px solid #FF0000;" })
+                                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-2"></div>
+
+                            <!--================================================== // EMAIL ========================================================-->
+                            <!--================================================== Password ========================================================-->
+
+                            <div class="col-md-2"></div>
+                            <div class="col-md-4" style="padding: 0%;top: 10px;">
+                                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-12" })
+                            </div>
+                            <div class="col-md-6 ErrorMsg">
+                                @Html.PasswordFor(model => model.Password, new { @class = "form-control", Style = "margin-bottom: 0px;border-left: 2px solid #FF0000;" })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-1"></div>
+
+                            <!--================================================== // Password ========================================================-->
+                            <!--================================================== Confirm Password ========================================================-->
+
+                            <div class="col-md-2"></div>
+                            <div class="col-md-4" style="padding: 0%;top: 10px;">
+                                @Html.LabelFor(model => model.ConfirmPassword, htmlAttributes: new { @class = "control-label col-md-12" })
+                            </div>
+                            <div class="col-md-6 ErrorMsg">
+                                @Html.PasswordFor(model => model.ConfirmPassword, new { @class = "form-control", Style = "margin-bottom: 0px;border-left: 2px solid #FF0000;" })
+                                @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-1"></div>
+
+                            <!--================================================== //Confirm Password ========================================================-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4 style="text-align:left;margin: 30px;">Other Information</h4>
+                    </div>
+                    <div class="col-md-12" style="margin-bottom:25px">
+                        <div class="col-md-6">
+                            <!--================================================== HOUSE TYPE ========================================================-->
+                            <div class="col-md-2"></div>
+                            <div class="col-md-3" style="padding: 0%;top: 10px;">
+                                @Html.LabelFor(model => model.HouseType, htmlAttributes: new { @class = "control-label col-md-12" })
+                            </div>
+                            <div class="col-md-6" style="padding-bottom:10px;padding-top:8px">
+                                <div class="col-xs-6" style="padding-left: 0%; padding-right: 0.5%;" tabindex="2">
+                                    @Html.RadioButtonFor(model => model.HouseType, "Own", new { id = "Own", Checked = "checked" })
+                                    @Html.Label("Own", "Own")
+                                </div>
+                                <div class="col-xs-6" style="padding-left: 0%; padding-right: 0.5%;" tabindex="3">
+                                    @Html.RadioButtonFor(model => model.HouseType, "Rent", new { id = "Rent" })
+                                    @Html.Label("Rent", "Rent")
+                                </div>
+
+                            </div>
+                            <div class="col-md-1"></div>
+
+                            <!--================================================== // HOUSE TYPE ========================================================-->
+                            <!--================================================== ADDRESS ========================================================-->
+
+                            <div class="col-md-2"></div>
+                            <div class="col-md-3" style="padding: 0%;top: 10px;">
+                                @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.TextAreaFor(model => model.Address, new { @class = "form-control", Style = "margin-top: 3%;" })
+                                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-1"></div>
+
+                            <!--================================================== // ADDRESS ========================================================-->
+                            <!--================================================== ZIP CODE ========================================================-->
+
+                            <div class="col-md-2"></div>
+                            <div class="col-md-3" style="padding: 0%;top: 10px;">
+                                @Html.LabelFor(model => model.ZipCode, htmlAttributes: new { @class = "control-label col-md-2" })
+                            </div>
+                            <div class="col-md-6 ErrorMsg">
+                                @Html.TextBoxFor(model => model.ZipCode, new { @class = "form-control", @maxlength = 5, Style = "margin-bottom: 0px;border-left: 2px solid #FF0000;" })
+                                @Html.ValidationMessageFor(model => model.ZipCode, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-1"></div>
+
+                            <!--================================================== // ZIP CODE ========================================================-->
+                            <!--================================================== HAVING CARS ========================================================-->
+                            <div class="col-md-2"></div>
+                            <div class="col-md-3" style="padding: 0%;top: 10px;">
+                                @Html.LabelFor(model => model.IsCars, htmlAttributes: new { @class = "control-label col-md-12" })
+                            </div>
+                            <div class="col-md-6" style="padding-bottom:10px;padding-top:8px;">
+                                <div class="col-xs-6" style="padding-left: 0%; padding-right: 0.5%;" tabindex="2">
+                                    @Html.RadioButtonFor(model => model.IsCars, "Yes", new { id = "Yes" })
+                                    @Html.Label("Yes", "Yes")
+                                </div>
+                                <div class="col-xs-6" style="padding-left: 0%; padding-right: 0.5%;" tabindex="3">
+                                    @Html.RadioButtonFor(model => model.IsCars, "No", new { id = "No", Checked = "checked" })
+                                    @Html.Label("No", "No")
+                                </div>
+
+                            </div>
+                            <div class="col-md-1"></div>
+
+                            <!--================================================== // HAVING CARS========================================================-->
+                            <!--================================================== NO OF CARS ========================================================-->
+                            <div id="NoofCars" style="display:none">
+                                <div class="col-md-2"></div>
+                                <div class="col-md-3" style="padding: 0%;top: 10px;">
+                                    @Html.LabelFor(model => model.NumberofCars, htmlAttributes: new { @class = "control-label col-md-12" })
+                                </div>
+                                <div class="col-md-6">
+                                    @Html.TextBoxFor(model => model.NumberofCars, new { @class = "form-control", @Value = "1", @readonly = "readonly" })
+                                    @Html.ValidationMessageFor(model => model.NumberofCars, "", new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-1"></div>
+                            </div>
+                            <!--================================================== // NO OF CARS ========================================================-->
+                        </div>
+                        <div class="col-md-6">
+                            <!--================================================== OCCUPATION ================================================-->
+
+                            <div class="col-md-4" style="padding: 0%;top: 10px;">
+                                @Html.LabelFor(model => model.Occupation, htmlAttributes: new { @class = "control-label col-md-12" })
+                            </div>
+                            <div class="col-md-8" style="padding-bottom:10px;padding-top:8px;">
+                                <div class="col-xs-6" style="padding-left: 0%;">
+                                    @Html.RadioButtonFor(model => model.Occupation, "Employed", new { id = "Employed", Checked = "checked" })
+                                    @Html.Label("Employed", "Employed")
+                                </div>
+                                <div class="col-xs-6" style="padding-left: 0%;">
+                                    @Html.RadioButtonFor(model => model.Occupation, "Business Owner", new { id = "Business" })
+                                    @Html.Label("Business Owner", "Business Owner")
+                                </div>
+                            </div>
+                            @*<div class="col-md-2"></div>*@
+
+                            <!--================================================== // OCCUPATION ================================================-->
+                            <!--================================================== COMPANY  ========================================================-->
+
+                            <div class="col-md-4" style="padding: 0%;top: 10px;">
+                                @Html.LabelFor(model => model.CompanyName, htmlAttributes: new { @class = "control-label col-md-12" })
+                            </div>
+                            <div class="col-md-6">
+                                @Html.TextBoxFor(model => model.CompanyName, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.CompanyName, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-md-2"></div>
+
+                            <!--================================================== // COMPANY ========================================================-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row" style="margin-bottom: 15%;">
+                    <div class="form-group">
+                        <div class="col-md-12" style="padding-left:0%">
+                            <div class="col-md-2">
+                            </div>
+                            <div class="col-md-8" style="padding-left:0%">
+                                <div class="col-md-3"></div>
+                                <div class="col-md-6" style="padding-left: 0px;">
+                                    <div class="col-xs-1" style="padding:0%"></div>
+                                    <div class="col-xs-5" style="padding-left:0%;padding-right:0%">
+                                        <input type="submit" value="Submit" name="Submit" id="UpdateInfo" class=" btn btn-default" style="position: relative;margin-left: 30%;background-color:rgb(6, 102, 145);color: white;" />
+                                    </div>
+                                    <div class="col-xs-5" style="padding-left:0%;padding-right:0%">
+                                        <input type="submit" value="Cancel" name="Cancel" id="Cancel" class=" btn btn-default" style="position: relative;margin-left: 30%;background-color:rgb(6, 102, 145);color: white;" />
+                                    </div>
+                                    <div class="col-xs-1"></div>
+                                </div>
+                                <div class="col-md-3"></div>
+                            </div>
+                            <div class="col-md-2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="col-md-8">
+                        <div class="modal fade" id="ModalError" role="dialog">
+                            <div class="modal-dialog" style="padding:5%">
+                                <div class="modal-content">
+                                    <div class="modal-header" style="padding-top: 3px; padding-bottom: 3px;">
+                                        <button type="button" class="close" data-dismiss="modal" style="color: red;margin-top:10px;">&times;</button>
+                                        <h4 class="modal-title" style="font-size: 16px;margin-top:10px;margin-bottom:10px;">Message</h4>
+                                    </div>
+                                    <div class="modal-body" style="padding-top: 0px;padding-bottom: 0px;font-weight:100;">
+                                        <br />
+                                        <span><label for="lblError" id="lblError" style="color:red;margin-left:20px;"></label></span>
+                                        <br />
+                                    </div>
+                                    <div class="modal-footer" style="padding: 5px;text-align:center;">
+                                        <button type="button" class="btn btn-default" data-dismiss="modal" style="width:70px;">OK</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                    </div>
+                </div>
+            </div>
+
+            
+        }
+
+    </div>
+    <script>
+    $(window).scroll(function () {
+        $('#footerLayout').hide();
+        $('#noresults').hide();
+    });
+
+    </script>
+    <footer class="footer-distributed" style="position:fixed;bottom:0;">
+        <div class="container" style="width:100%;">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="padding:0;">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6" style="padding:0;">
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="text-align:center;">
+                            <p class="footer-company-about">
+                                <div class="social-icons" style="margin-bottom:0px;">
+                                    <a href="#"><span class="facebook"></span></a>
+                                    <a href="#"><span class="twitter"></span></a>
+                                    <a href="#"><span class="linkedin"></span></a>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 col-sm-6 col-xs-6" style="margin-bottom: 0%;text-align:center;padding-right: 0;">
+                        <div class="footer-right-header">
+                            @*<div class="copyright">*@
+                            <div>
+                                <p style="display: block;color: #666666;font-size: 16px;font-weight: 800;font-family:'Varela Round',sans-serif;padding-top:2%;">© 2018 brokkrr Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

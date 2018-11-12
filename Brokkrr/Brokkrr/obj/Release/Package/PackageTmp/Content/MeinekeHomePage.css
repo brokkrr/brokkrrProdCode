@@ -1,0 +1,438 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+@font-face {
+    font-family: 'OpenSans-Semibold';
+    src: url('../fonts/SemiBold/OpenSans-Semibold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OpenSans-Light';
+    src: url('../fonts/Light/OpenSans-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src: url('../fonts/OpenSans/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Gotham Book';
+    src: url('../fonts/Gotham Book.otf') format('opentype');
+}
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: auto;
+}
+
+.Banner {
+    width: 100%;
+}
+
+.btn-primary {
+    font-size: 0.8vw;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.banner {
+    height: auto;
+    width: 100%;
+}
+
+#MainImage {
+    width: 100%;
+    height: auto;
+    position: absolute;
+}
+
+#LogoImage {
+    position: relative;
+    padding: 3% 3%;
+}
+
+#listedbroker {
+    color: rgb(35,84,164);
+    font-size: .8vw;
+    padding-top: 6%;
+}
+
+#GetStarted {
+    border-radius: 30px;
+    width: 35%;
+    background-color: rgb(30,172,226);
+    color: #fff;
+    border: none;
+    height: 35px;
+    margin-left: 5%;
+}
+
+#MainGetStarted {
+    border-radius: 30px;
+    width: 30%;
+    background-color: rgb(30,172,226);
+    color: #fff;
+    border: none;
+    height: 35px;
+    margin-left: 14%;
+    margin-top: 58%;
+}
+
+.bannerheading {
+    font-family: OpenSans-Semibold;
+    position: relative;
+    font-size: 3.8vw;
+    width: 50%;
+    padding-left: 6%;
+    padding-top: 6%;
+    padding-bottom: 3%;
+    font-weight: 500;
+    line-height: 1.2em;
+}
+
+.subcontent {
+    position: relative;
+    font-size: 1.4vw;
+    padding-left: 6%;
+    width: 50%;
+    font-family: OpenSans-Regular;
+}
+
+.btnradius2 {
+    border-radius: 20px !important;
+    font-size: 0.8vw;
+    padding: 5%;
+    background-color: rgb(30,172,226);
+    border: none;
+    font-family: OpenSans-Regular;
+    width: 100%;
+}
+
+    .btnradius2:hover {
+        background-color: rgb(30,172,226);
+    }
+
+    .btnradius2:active {
+        background-color: rgb(30,172,226);
+    }
+
+
+.btnradius {
+    border-radius: 20px !important;
+    width: 100%;
+    padding: 5%;
+    font-family: OpenSans-Regular;
+    font-size: 1.2vw;
+    background-color: rgb(30,172,226);
+    border: none;
+}
+
+    .btnradius:hover {
+        background-color: rgb(30,172,226);
+    }
+
+    .btnradius:active {
+        background-color: rgb(30,172,226);
+    }
+
+
+
+
+#MMS {
+    color: #29abe2;
+    padding: 3%;
+    font-size: 30px;
+    font-family: OpenSans-Semibold;
+}
+
+#MMS-content {
+    color: rgb(150,131,132);
+    line-height: 1.2em;
+    font-size: 20px;
+    font-weight: 300;
+}
+
+/*#MMS-images{
+    height:auto;
+}*/
+
+#heading {
+    color: rgb(30,172,226);
+    font-size: 20px;
+    padding-top: 4%;
+}
+
+.MMS-Sub-Content {
+    padding-top: 8%;
+    color: rgb(162,162,162);
+    font-size: 15px;
+}
+
+.Match-image-size {
+    width: 85px;
+    height: 85px;
+}
+
+.Meet-image-size {
+    width: 108px;
+    height: 85px;
+}
+
+.Secure-image-size {
+    width: 68px;
+    height: 88px;
+}
+
+#guarantee-heading {
+    color: rgb(241,190,60);
+    font-size: 23px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-family: OpenSans-Semibold;
+}
+
+.guarantee-content {
+    color: rgb(137,137,139);
+    font-size: 18px;
+    font-family: OpenSans-Regular;
+}
+
+.row {
+    margin-right: 0;
+}
+
+h1 {
+    color: rgb(30,172,226);
+    font-size: 38px;
+    font-family: OpenSans-Regular;
+}
+
+.name {
+    font-family: OpenSans-Semibold;
+    color: rgb(47,173,227);
+    padding: 1% 0 0 4%;
+    font-size: 1.4vw;
+}
+
+.testcontent {
+    font-family: OpenSans-Regular;
+    padding-left: 4%;
+    color: rgb(153,153,153);
+   font-size: 1.1vw;
+}
+
+.testdate {
+    font-family: OpenSans-Regular;
+    padding: 2%;
+    font-size: 1vw;
+}
+
+.match {
+    font-family: OpenSans-Regular;
+    text-align: center;
+    color: #fff !important;
+}
+
+.meet {
+    font-family: OpenSans-Regular;
+    text-align: center;
+    color: #fff !important;
+}
+
+.secure {
+    font-family: OpenSans-Regular;
+    text-align: center;
+    color: #fff !important;
+}
+
+.mmssubcontent {
+    text-align: justify;
+    font-family: OpenSans-Regular;
+    color: rgb(150,131,132) !important;
+}
+
+.mmsmain {
+    font-family: OpenSans-Regular;
+    font-size: 32px !important;
+    padding-bottom: 15px;
+    color: #fff !important;
+    text-align: center;
+}
+
+.selfpro {
+    color: rgb(47,173,227);
+    font-size: 28px;
+    font-family: OpenSans-Regular;
+}
+
+.selfcontent {
+    color: rgb(190,190,190);
+    font-size: 17px;
+    font-family: OpenSans-Light;
+}
+
+.btnfindbroker {
+    font-family: OpenSans-Regular;
+    font-size: 1.3vw;
+    color: #fff;
+}
+
+
+.placeholder::-webkit-input-placeholder {
+    font-size: 1.3vw;
+    color: rgb(52,67,78) !important;
+    /*text-transform: uppercase;*/
+    text-align: left;
+    font-family: OpenSans-Regular;
+    font-weight:100;
+}
+
+.placeholder:-moz-placeholder { /* older Firefox*/
+    font-size: 1.3vw;
+    color: rgb(52,67,78) !important;
+    /*text-transform: uppercase;*/
+    text-align: left;
+    font-family: OpenSans-Regular;
+    font-weight:100;
+}
+
+.placeholder::-moz-placeholder { /* Firefox 19+ */
+    font-size: 1.3vw;
+    color: rgb(52,67,78) !important;
+    /*text-transform: uppercase;*/
+    text-align: left;
+    font-weight:100;
+    font-family: OpenSans-Regular;
+}
+
+.placeholder:-ms-input-placeholder {
+    font-size: 1.3vw;
+    color: rgb(52,67,78) !important;
+    /*text-transform: uppercase;*/
+    text-align: left;
+    font-family: OpenSans-Regular;
+    font-weight:100;
+}
+
+
+hr {
+    margin: 8px 0 0 0;
+    padding: 0;
+    border-top: 2px solid rgb(57,67,73);
+    width: 70%;
+}
+
+.loginlink {
+    font-family: 'Gotham Book' !important;
+    color: rgb(47,173,227) !important;
+}
+
+.btnrubroker {
+    font-family: 'Gotham Book' !important;
+    width: 100%;
+    height: auto;
+    background-color: rgb(41,171,228);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-family: open sans;
+    padding: 4% 7% 4% 7%;
+    /*font-size: 15px;*/
+}
+
+.insurancesubcontent{
+    font-family:OpenSans-Regular !important;
+    font-size:1.8vw;
+    color: rgb(59,71,78);
+    bottom: 0;
+    line-height:1.3em;
+    font-weight:100;
+}
+
+/*17 Oct 18*/
+
+
+@media (max-width:850px)
+{
+    .brkr
+    {
+        padding-top:30px;
+        
+    }
+    .assc {
+     height:27px !important;
+     width:108px !important;
+
+    }
+
+}
+
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  { .assc {
+     height:40px !important;
+     width:201px !important;
+
+    }}
+@media only screen 
+and (min-device-width : 1024px) 
+and (max-device-width : 1336px)  { .assc {
+     height:40px !important;
+     width:250px !important;
+
+    }}
+
+
+@media only screen 
+and (min-device-width : 375px) 
+and (max-device-width : 766px)  { 
+    
+    .username {
+     padding:0;
+     top:22px !important;
+
+    }
+
+    .fontSize11 {
+    font-size:11px !important;
+    margin-top: 8px !important;
+    }
+
+    .badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 1px 4px;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: #999;
+  border-radius: 10px;
+}
+}
+
+

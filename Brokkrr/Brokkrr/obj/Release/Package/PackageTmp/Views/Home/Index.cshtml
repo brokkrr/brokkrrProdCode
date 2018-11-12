@@ -1,0 +1,1053 @@
+﻿@model BrokerMVC.Models.GetZipWithCityName
+
+<!---New Website Work-->
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/BrokkrrMainLayout.cshtml";
+}
+
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<!-- /css links -->
+<script type="text/javascript" src="~/Scripts/Scripts2/jquery.min.js"></script>
+<script src="~/Scripts/Scripts2/bootstrap.min.js"></script>
+
+
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700' rel='stylesheet' type='text/css'>
+<link href="~/Content/MeinekeHomePage.css" rel="stylesheet" />
+
+<style type="text/css">
+    @@media only screen and (min-width:2880px) {
+        .popupwidth {
+            width:150%;
+        }
+    }
+
+    @@media only screen and (min-width:3840px) {
+        .popupwidth {
+            width:210%;
+        }
+    }
+</style>
+
+<style type="text/css">
+
+     input[type="text"] {
+        font-size: 1.3vw !important;
+        height: 34px !important;
+    }
+
+    *:focus {
+        outline: none;
+    }
+
+    select::-ms-expand {
+        display: none;
+    }
+
+    .ImgText {
+        position: absolute;
+        z-index: 99;
+        /*bottom: 50%;*/
+        font-size: 3.2vw;
+        color: #fff;
+        left: 30%;
+        top: 20%;
+        font-family: open sans-serif;
+    }
+
+    .ImgSubText {
+        position: absolute;
+        z-index: 99;
+        bottom: 40%;
+        font-size: 3.1vw;
+        color: #fff;
+        /*left: 20%;*/
+        left: 8%;
+        /*right: 20%;*/
+        width: 80%;
+        line-height: 1.2em;
+        font-family: open sans-serif;
+    }
+
+    .btn-3 {
+    }
+
+    .btn {
+        height: 50px;
+        width: 42%;
+        color: #fff;
+        padding: 5%;
+    }
+
+
+        .btn:hover {
+            height: 50px;
+            width: 42%;
+            color: #fff;
+        }
+
+        .btn a:hover {
+            color: #fff;
+        }
+
+    .placeholder {
+        color: #fff;
+    }
+
+    #aLogin {
+        color: #FFFFFF;
+    }
+
+        #aLogin :hover {
+            color: #FFFFFF;
+        }
+</style>
+
+<style type="text/css">
+    /*For tab and big smartphones*/
+    #imgpos {
+        cursor: pointer;
+        margin-top: -27px;
+    }
+
+    #arrow {
+        position: relative;
+        z-index: 999;
+        margin-left: -29px;
+        border-left: .5px solid rgb(247,247,247);
+        margin-top: 6px;
+        height: 34px;
+        background-color: rgb(240,240,240);
+        width: 30px;
+        border-top-right-radius: 3px;
+        border-bottom-right-radius: 3px;
+    }
+
+    @@media screen and (max-width: 768px) and (min-width: 768px) {
+
+        #headingtext {
+            top: 4px;
+        }
+
+        #headingbtn {
+            top: -2px;
+        }
+
+        #imgpos {
+            cursor: pointer;
+            margin-top: 2px;
+        }
+
+        #arrow {
+            position: relative;
+            z-index: 999;
+            margin-left: -25px;
+            border-left: .5px solid rgb(247,247,247);
+            margin-top: 6px;
+            height: 34px;
+            background-color: rgb(240,240,240);
+            width: 30px;
+        }
+    }
+
+    /*For small smartphones*/
+
+    @@media screen and (max-width:360px) {
+
+        #headingtext {
+            top: 7px;
+        }
+
+        #headingbtn {
+            top: -4px;
+        }
+    }
+
+    @@media screen and (max-width: 1024px) and (min-width: 1024px) {
+
+        #headingtext {
+            top: 4px;
+        }
+
+        #headingbtn {
+            top: -2px;
+        }
+
+        #imgpos {
+            cursor: pointer;
+            margin-top: -9px;
+        }
+
+        #arrow {
+            position: relative;
+            z-index: 999;
+            margin-left: -25px;
+            border-left: .5px solid rgb(247,247,247);
+            margin-top: 6px;
+            height: 34px;
+            background-color: rgb(240,240,240);
+            width: 30px;
+        }
+    }
+
+    .btnrubroker {
+        cursor: pointer;
+    }
+
+    .alreadyMember {
+        cursor: pointer;
+    }
+</style>
+
+<script type="text/javascript">
+    function CheckValidation() {
+        //alert("Called");
+        var zipaddress = $("#ZipCode").val();
+        //alert(zipaddress);
+        if (zipaddress.length >= 5) {
+            //alert("Valid");
+
+            var model = {
+                ZipCode: $('#ZipCode').val(),
+                City: $('#City').val(),
+                Longitude: $('#Longitude').val(),
+                Latitude: $('#Latitude').val(),
+                Country: $('#Country').val(),
+                Company: $('#Company').val(),
+                State: $('#State').val(),
+            };
+
+            $.ajax({
+                url: '@Url.Action("JsonIndex", "Home")',
+                data: JSON.stringify(model),
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+                    if (data.result == 'Success') {
+
+                        window.location.href = '/Insurances/Insurance';
+                    }
+                    else {
+
+                        window.location.href = '/Home/Index';
+                    }
+                }
+            });
+            return true;
+        }
+        else {
+            $("#lblError").text('Enter valid ZipCode.');
+            $("#lblError").css("display", "block");
+            $("#ZipCode").focus();
+            return false;
+        }
+
+    }
+
+    $(document).ready(function () {
+                
+        var GoogleMapKey='@ViewBag.GoogleMapKey';
+
+        //alert("Document Ready - " + GoogleMapKey);
+
+        $("#btnClose").click(function () {
+            //alert("Called");
+            $("#industry").val("");
+            $("#PageBody").css("overflow-y", "scroll");
+            $("#ModalSelect").modal('hide');
+        });
+
+
+        $("#industry").val('');
+
+        //$('body').css('opacity', '0.5');
+
+        $("#loading").css("display", "none");
+
+        $(".SelectCompany").change(function () {
+            var optionSelected = $("option:selected", this);
+            var valueSelected = this.value;
+            if (valueSelected == "") {
+
+            }
+            else if (valueSelected == "Meineke") {
+                //$("#loading").css("display", "block");
+                //window.location.href = "/CustomerRegistration/MeinekeCustomerSignUp";
+                $("#PageBody").css("overflow-y", "hidden");
+                $("#aMeinekeSignUp").css("display", "block");
+                $("#aAPSPSignUp").css("display", "none");
+
+                $('#ModalSelect').modal({ backdrop: 'static', keyboard: false });
+                $("#ModalSelect").modal('show');
+            }
+            else if (valueSelected == "APSP") {
+                $("#PageBody").css("overflow-y", "hidden");
+                $("#aMeinekeSignUp").css("display", "none");
+                $("#aAPSPSignUp").css("display", "block");
+
+                $('#ModalSelect').modal({ backdrop: 'static', keyboard: false });
+                $("#ModalSelect").modal('show');
+                //$("#loading").css("display", "block");
+                //window.location.href = "/CustomerRegistration/APSPCustomerSignUp";
+            }
+        });
+
+        //30April18
+        $(".btnrubroker").click(function () {
+            $('#ModelOnAreYouBroker').modal({ backdrop: 'static', keyboard: false });
+            $("#ModelOnAreYouBroker").modal('show');
+        });
+        //30April18
+        $("#btnCloseAreYouBroker").click(function () {
+            $("#ModelOnAreYouBroker").modal('hide');
+        });
+
+
+        //30April18
+        $(".alreadyMember").click(function () {
+            $('#ModelOnAlreadyMember').modal({ backdrop: 'static', keyboard: false });
+            $("#ModelOnAlreadyMember").modal('show');
+        });
+        //30April18
+        $("#btnCloseAlreadyMember").click(function () {
+            $("#ModelOnAlreadyMember").modal('hide');
+        });
+
+        //called when key is pressed in textbox
+        $("#ZipCode").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            //if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            //    return false;
+            //}
+            //else {
+            //    return true;
+            //}
+            if (e.which == 13) {
+
+                var zipaddress = $("#ZipCode").val();
+
+                if (zipaddress.length >= 5) {
+
+                    if (zipaddress.match(/^\d+$/)) {
+                        $.ajax({
+                            url: "/Home/HomePage",
+                            type: "POST",
+                            success: function (data) {
+
+                            }
+                        })
+                    }
+                    else {
+                        $("#lblError").text('Enter valid ZipCode.');
+                        $("#lblError").css("display", "block");
+                        $("#ZipCode").focus();
+                    }
+                }
+            }
+        });
+
+        //function GetCity(e)
+        $("#ZipCode").keyup(function (e) {
+            //alert("Key Up");
+            var zipaddress = $("#ZipCode").val();
+            //alert("Length" + zipaddress.length);
+            if (zipaddress.length >= 5) {
+                
+                $.ajax({
+                    url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + zipaddress + '&key=' + GoogleMapKey,
+                    success: function (data) {
+                        lat = data.results[0].geometry.location.lat;
+                        lng = data.results[0].geometry.location.lng;
+
+                        $('#Longitude').val(lng);
+                        $('#Latitude').val(lat);
+                        //alert(JSON.stringify( data.results[0].address_components));
+                        for (var i = 0; i < data.results[0].address_components.length; i++) {
+
+                            for (var b = 0; b < data.results[0].address_components[i].types.length; b++) {
+
+                                if (data.results[0].address_components[i].types[b] == "postal_code") {
+                                    var zip = data.results[0].address_components[i].long_name;
+                                }
+                                if (data.results[0].address_components[i].types[b] == "locality") {
+                                    localCity = data.results[0].address_components[i].long_name;
+                                    $('#City').val(localCity);
+                                }
+                                if (data.results[0].address_components[i].types[b] == "country") {
+                                    Country = data.results[0].address_components[i].long_name;
+                                    $('#Country').val(Country);
+                                }
+                                if (data.results[0].address_components[i].types[b] == "administrative_area_level_1") {
+                                    //alert("Data" + data.results[0].address_components[i].types[b] + " Name -" + data.results[0].address_components[i].short_name);
+                                    //administrative_area_level_1
+                                    var State = data.results[0].address_components[i].short_name;
+                                    $('#State').val(State);
+                                }
+                            }
+                        }
+                    }
+
+                });
+                $("#lblError").text('');
+                $("#lblError").css("display", "none");
+            }
+            //$('#loading').hide();
+            //$('.bodycustomer').removeClass('Insurancemainblur');
+        });
+
+        $("#ZipCode").blur(function () {
+            var zipaddress = $("#ZipCode").val();
+            //alert("Length" + zipaddress.length);
+            if (zipaddress.length >= 5) {
+                //alert("In If" + zipaddress.length);
+                $.ajax({
+                    url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + zipaddress + '&key=' + GoogleMapKey,
+                    success: function (data) {
+                        lat = data.results[0].geometry.location.lat;
+                        lng = data.results[0].geometry.location.lng;
+
+                        $('#Longitude').val(lng);
+                        $('#Latitude').val(lat);
+
+                        for (var i = 0; i < data.results[0].address_components.length; i++) {
+
+                            for (var b = 0; b < data.results[0].address_components[i].types.length; b++) {
+                                if (data.results[0].address_components[i].types[b] == "postal_code") {
+                                    var zip = data.results[0].address_components[i].long_name;
+                                }
+                                if (data.results[0].address_components[i].types[b] == "locality") {
+                                    localCity = data.results[0].address_components[i].long_name;
+                                    $('#City').val(localCity);
+                                }
+                                if (data.results[0].address_components[i].types[b] == "country") {
+                                    Country = data.results[0].address_components[i].long_name;
+                                    $('#Country').val(Country);
+                                }
+                                if (data.results[0].address_components[i].types[b] == "administrative_area_level_1") {
+                                    var State = data.results[0].address_components[i].short_name;
+                                    $('#State').val(State);
+                                }
+                            }
+                        }
+                    }
+
+                });
+            }
+        });
+        //$('#loading').hide();
+        //$('.bodycustomer').removeClass('Insurancemainblur');
+    });
+
+</script>
+
+
+<link href="~/Content/BrokkrrCSS/MediaQueries.css" rel="stylesheet" />
+
+<div class="bodycustomer" id="myPage" style="overflow-x:hidden;">
+
+    <div id="loading" style="padding-left: 40%;top: 40%; position: absolute; z-index: 999;display:none;">
+        <img id="loading-image" src="~/Images/NewAssets/loader.gif" alt="Loading..." />
+    </div>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12" style="height:auto;padding:0;margin:0;">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12 " style="position:absolute;z-index:99;padding:2%;padding-left:0;padding-right:0;">
+                    <div class="col-md-6 col-sm-6 col-lg-6 col-xs-6 img-responsive" style="padding-left:9%;">
+                        <img class="img-responsive" src="~/Images/NewImages/image001.png" style="float:left;max-width: 100%;" />
+                    </div>
+                    <div class="col-md-1 col-lg-1 col-sm-1 col-xs-1" style="padding-bottom:0;">
+
+                    </div>
+                    <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5" style="float:right;color:#fff;padding-left:0px;padding-right:0px;">
+
+                        <div class="col-md-3 col-lg-3 col-sm-1 col-xs-3" style="font-size:1.5vw;padding-top:4%;padding-left:0px;padding-right:0px;">
+                            @*<center><a href="#priorities" style="color:#fff;font-family: 'Open Sans';">HOW IT WORKS</a></center>*@
+                        </div>
+                        <div class="col-md-4 col-lg-4 col-sm-4 col-xs-4" style="font-size:1.25vw;padding-top:4%;padding-left:0px;padding-right:0px;">
+                            <center><a id="aLogin" class="loginlink alreadyMember">ALREADY MEMBER?</a></center>
+                        </div>
+                        <div class="col-md-5 col-lg-5 col-sm-7 col-xs-5" style="font-size:1.25vw;padding-top:3.8%;padding-right:0px;padding-left: 0;">
+                            @*<button style="height:auto;background-color: #fff;color: darkturquoise;border: none;border-radius: 20px;font-family: open sans;">DOWNLOAD APP</button>*@
+                            <center><a id="aLogin" class="btnrubroker">ARE YOU A BROKKRR?</a></center>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row brkr">
+                <div class="col-md-12 col-lg-12 col-sm-12 col-xs-4" style="width: 40%;position: absolute;z-index: 99;top:19%;font-size:4vw;font-weight: bold;line-height:0.9em;font-family: Open Sans;left: 10%;color: rgb(52,60,66);">
+                    Level up with brokkrr
+                    <br />
+
+                    <div class="insurancesubcontent" style="padding-top:4%;padding-bottom:2%;">Change the game and Level up with brokkrr!<br />brokkrr is the first real-time on demand insurance platform.</div>
+                    @*<br />*@
+
+                    @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { @class = "", Style = "" }))
+                    {
+
+                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="display:inline-flex;padding:0px;">
+
+                            @Html.TextBoxFor(model => model.ZipCode, new { @id = "ZipCode", @maxlength = 5, @class = "col-lg-10 col-md-10 col-sm-10 placeholder assc form-control img-responsive ziptxtbx", style = "width:66%;border-radius: 3px;border: none;", @placeholder = "Enter the zip to find a brokkrr" }) 
+
+                            <span class="col-lg-2 col-md-2 col-sm-2" id="arrow" style="background-image:url(../../Images/Assets/to-rightnew.png); background-repeat:no-repeat;background-position: 2px;cursor: pointer;" onclick="return CheckValidation();"></span>
+
+                        </div>
+
+                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+                            @Html.ValidationMessageFor(model => model.ZipCode, "", new { @class = " text-danger", style = "float: left;font-size:1.3vw;bottom:0;margin-bottom:-3%;color:#FFF;padding-left: 0;" })
+                            <label for="lblError" id="lblError" style="font-weight: 100;float: left;font-size:1.3vw;bottom:0;margin-bottom:-1%;color:#FFF;display:none;"></label>
+                        </div>
+
+                        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12" style="padding-left: 25%;padding-top:0;margin-top:-1%;font-size: 20px;">
+                            @*<div>OR</div>*@&nbsp;
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-top: 1%;padding:0px;">
+                            <select id="industry" class="asscdropdown SelectCompany assc" style="width:66%;background-image: url('../../Images/Assets/to-downnew.png');background-size: 26px 17px;background-color: white !important;">
+                                @*padding-top: 0px;width:66%;max-width:none; border: none;text-align: left;font-size: 1.3vw !important;font-weight: initial;padding-bottom: 0px;padding-left: 5px;margin-top: -12px;line-height: 1.8em;background-size: 26px 17px;border-radius: 3px;background-image: url('../../Images/Assets/to-downnew.png');background-position: calc(100% - 3px) center;height:33px;*@
+                                <option value="" disabled selected hidden>Search for your association</option>
+                                <option value="Meineke">Meineke</option>
+                                <option value="APSP">APSP</option>
+                            </select>
+                        </div>
+                        @Html.HiddenFor(model => model.City, new { @class = "", @id = "City" })
+                        @Html.HiddenFor(model => model.Longitude, new { @class = "", @id = "Longitude" })
+                        @Html.HiddenFor(model => model.Latitude, new { @class = "", @id = "Latitude" })
+                        @Html.HiddenFor(model => model.Country, new { @class = "", @id = "Country" })
+                        @Html.HiddenFor(model => model.State, new { @class = "", @id = "State" })
+                        @Html.HiddenFor(model => model.Company, new { @class = "", @id = "Company" })
+                    }
+                </div>
+            </div>
+
+
+
+            <img src='~/Images/NewImages/main-bg-with-characters.png' class="img-responsive" style="height:auto !important;width:100%;position:relative" />
+        </div>
+    </div>
+</div>
+
+<div class="priority" id="priorities" style="height:auto;">
+    @*background-image:url(../../Images/MeinekeDealers/MeetMatchSecureBackground.png);*@
+    <div class="container">
+        <div class="text-center">
+            <h4 class="mmsmain" style="color: rgb(41,174,225) !important;">Match. Meet. Secure.</h4>
+            <div class="clearfix"></div>
+            <div id="MMS-content" style="color: rgb(115,124,132);">
+                Choose from carefully vetted and rated insurance brokkrrs to get you<br /> the best insurance at the best price.
+            </div>
+        </div>
+        <div class="col-sm-4" style="padding:2%;">
+            <img src="~/Images/APSP/icon-match.png" alt="icon-match" width="90" height="90" />
+            <h4 class="match" style="color: rgb(41,174,225) !important;">Match.</h4>
+            <center>
+                <span class="mmssubcontent" style="color: rgb(115,124,132);">
+                    In just a few clicks you'll be instantly<br />
+                    matched with the best brokkrr for your<br />
+                    specific insurance need. All brokkrr specialists are<br />
+                    brokkrr verified experts in their niche.
+                </span>
+            </center>
+        </div>
+        <div class="col-sm-4" style="padding:2%;">
+            <img src="~/Images/APSP/icon-meet.png" alt="icon-meet" width="140" height="140" style="height:90px;" />
+            <h4 class="meet" style="color: rgb(41,174,225) !important;">Meet.</h4>
+            <center>
+                <span class="mmssubcontent" style="color: rgb(115,124,132);">
+                    Meet with the expert brokkrr of your<br />
+                    choosing (up to 3) to secure the perfect<br />
+                    policy. Check out their experience,<br />
+                    resume and ratings. You have the con-<br />
+                    trol - feel free to date around.
+                </span>
+            </center>
+        </div>
+        <div class="col-sm-4" style="padding:2%;">
+            <img src="~/Images/APSP/icon-secure.png" alt="icon-secure" width="70" height="70" />
+            <h4 class="secure" style="color: rgb(41,174,225) !important;">Secure.</h4>
+            <center>
+                <span class="mmssubcontent" style="color: rgb(115,124,132);">
+                    Secure your insurance policy with<br />
+                    the peace of mind knowing it's<br />
+                    backed by the brokkrr<br />
+                    guarantee.
+                </span>
+            </center>
+        </div>
+
+        <div class="clearboth">
+
+        </div>
+        <br />
+        <br />
+        <div class="col-md-12">
+            <center>
+                <img src="~/Images/APSP/icon-guarantee.png" />
+                <div id="guarantee-heading" style="color: rgb(41,174,225) !important;">
+                    The brokkrr Guarantee!
+                </div>
+                <br />
+                <div class="guarantee-content" style="color: rgb(115,124,132);">
+                    brokkrr is Free and insures your transaction up to a $1,000,000 dollars. Why take on the liability?<br />
+                    Let the professional compete and earn your business!
+                </div>
+                <br />
+                <br />
+                <br />
+            </center>
+        </div>
+
+    </div>
+</div>
+
+@*<div class="priority" id="priorities" style="background-image:url(../../Images/MeinekeDealers/MeetMatchSecureBackground.png);height:auto;">
+        <div class="container">
+            <div class="text-center">
+                <h4 class="mmsmain">Match. Meet. Secure.</h4>
+                <div class="clearfix"></div>
+                <div id="MMS-content">
+                    Choose from carefully vetted and rated insurance brokkrrs to get you<br /> the best insurance at the best price.
+                </div>
+            </div>
+            <div class="col-sm-4" style="padding:2%;">
+                <img src="~/Images/MeinekeDealers/icon-match.png" alt="icon-match" width="90" height="90" />
+                <h4 class="match">Match.</h4>
+                <center>
+                    <span class="mmssubcontent">
+                        In just a few clicks you'll be instantly<br />
+                        matched with the best brokkrr for your<br />
+                        specific insurance need. All brokkrr specialists are<br />
+                        brokkrr verified experts in their niche.
+                    </span>
+                </center>
+            </div>
+            <div class="col-sm-4" style="padding:2%;">
+                <img src="~/Images/MeinekeDealers/icon-meet.png" alt="icon-meet" width="140" height="140" style="height:90px;"/>
+                <h4 class="meet">Meet.</h4>
+                <center>
+                    <span class="mmssubcontent">
+                        Meet with the expert brokkrr of your<br />
+                        choosing (up to 3) to secure the perfect<br />
+                        policy. Check out their experience,<br />
+                        resume and ratings. You have the con-<br />
+                        trol - feel free to date around.
+                    </span>
+                </center>
+            </div>
+            <div class="col-sm-4" style="padding:2%;">
+                <img src="~/Images/MeinekeDealers/icon-secure.png" alt="icon-secure" width="140" height="140" style="height:90px;" />
+                <h4 class="secure">Secure.</h4>
+                <center>
+                    <span class="mmssubcontent">
+                        Secure your insurance policy with<br />
+                        the peace of mind knowing it's<br />
+                        backed by the brokkrr<br />
+                        guarantee.
+                    </span>
+                </center>
+            </div>
+
+            <div class="clearboth">
+
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="col-md-12">
+                <center>
+                    <img src="~/Images/MeinekeDealers/icon-guarantee.png" />
+                    <div id="guarantee-heading">
+                        The brokkrr Guarantee!
+                    </div>
+                    <br />
+                    <div class="guarantee-content">
+                        brokkrr is Free and insures your transaction up to a $1,000,000 dollars. Why take on the liability?<br />
+                        Let the professional compete and eran your business!
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                </center>
+            </div>
+
+        </div>
+    </div>*@
+
+<div class="Phone img-responsive" style="background-image:url(../../Images/NewImages/Rating-bg.png);height:auto;background-repeat:no-repeat;background-size: 100% 100%;">
+    <br />
+
+
+    <center>
+        <div class="col-md-12" style="padding: 7% 0 2%;font-size: 34px;">
+            See what people are saying about brokkrr...
+        </div>
+    </center>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-1 col-sm-1 col-xs-1">
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-9" style="background-color:#fff;border-radius: 6px;padding-bottom: 1%;color:#69737b;">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 2% 3%;padding-bottom:0%;clear:both;">
+                    <div class="col-md-1 col-sm-2 col-xs-3" style="padding:0px 0px 0px 8px">
+                        <img src="~/Images/MeinekeDealers/review-avatar-1.png" class="img-responsive" style="float:left;" />
+                    </div>
+
+                    <div class="col-md-10 col-sm-9 col-xs-9" style="padding-left:0;margin-left:0;">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                            <img src="~/Images/MeinekeDealers/5-stars.png" class="img-responsive" style="float:left;" />
+
+
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <span class="col-md-12 col-sm-12 col-xs-12 testdate">December 4, 2017</span>
+                        </div>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1">
+
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 name">
+                    Owner of a Pool Construction Company
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 testcontent">
+                    "I have always struggled with my insurance. What to cover, how to cover it properly and most importantly am I with the right brokkrr and carrier. brokkrr solved this problem for me by answering a few quick questions. I was connected to a specialty brokkrr who placed my insurance within minutes. I am convinced this is the way to go. Reminds me of Uber for insurance."
+                </div>
+                <br />
+
+            </div>
+            <div class="col-md-2 col-sm-2 col-xs-2">
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-2 col-sm-2 col-xs-2">
+
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-9" style="background-color:#fff;border-radius: 6px;padding-bottom: 1%;color:#69737b;">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 1% 3%;padding-bottom:0%;clear:both;">
+                    <div class="col-md-1 col-sm-2 col-xs-3" style="padding:0px 0px 0px 8px">
+                        <img src="~/Images/MeinekeDealers/review-avatar-2.png" class="img-responsive" style="float:left;" />
+                    </div>
+
+                    <div class="col-md-10 col-sm-9 col-xs-9" style="padding-left:0;margin-left:0;">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                            <img src="~/Images/MeinekeDealers/5-stars.png" class="img-responsive" style="float:left;" />
+
+
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <span class="col-md-12 col-sm-12 col-xs-12 testdate">January 14, 2018</span>
+                        </div>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1">
+
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 name">
+                    Owner of a Auto repair franchise with multiple locations
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 testcontent">
+                    I have always felt that the insurance industry sucks. It’s impossible to understand coverages and navigate the multitude of options. I was referred to brokkrr by a friend and I have to tell you this simplified the process and connected real time to a brokkrr who specializes in the auto industry. He came to my office within an hour and I was able to place the insurance seamlessly. I can’t believe how easy this was! I would recommend it to anyone who wants to simplify the purchase of their insurance.
+
+                </div>
+                <br />
+
+            </div>
+            <div class="col-md-1 col-sm-1 col-xs-1">
+
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-1 col-sm-1 col-xs-1">
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-9" style="background-color:#fff;border-radius: 6px;padding-bottom: 1%;color:#69737b;">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 1% 3%;padding-bottom:0%;clear:both;">
+                    <div class="col-md-1 col-sm-2 col-xs-3" style="padding:0px 0px 0px 8px">
+                        <img src="~/Images/MeinekeDealers/review-avatar-3.png" class="img-responsive" style="float:left;" />
+                    </div>
+
+                    <div class="col-md-10 col-sm-9 col-xs-9" style="padding-left:0;margin-left:0;">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                            <img src="~/Images/MeinekeDealers/5-stars.png" class="img-responsive" style="float:left;" />
+
+
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <span class="col-md-12 col-sm-12 col-xs-12 testdate">January 26, 2018</span>
+                        </div>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1">
+
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 name">
+                    Owner of High Value Home
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 testcontent">
+                    I live in an area considered risky due to Fire. I always was told I had no options for insuring my high value home. One of my neighbors told me to go brokkrr. I did and I was immediately connected with five brokkrrs who specialize in writing insurance for homes in my area. It took me less than a minute and I was connected and speaking with a brokkrr who provided me some options that saved me money. They even drove to my house to pick up the payment and introduce themselves. I couldn’t be happier.
+
+                </div>
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-2 col-sm-2 col-xs-2">
+
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-9" style="background-color:#fff;border-radius: 6px;padding-bottom: 1%;color:#69737b;">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 1% 3%;padding-bottom:0%;clear:both;">
+                    <div class="col-md-1 col-sm-2 col-xs-3" style="padding:0px 0px 0px 8px">
+                        <img src="~/Images/MeinekeDealers/review-avatar-2.png" class="img-responsive" style="float:left;" />
+                    </div>
+
+                    <div class="col-md-10 col-sm-9 col-xs-9" style="padding-left:0;margin-left:0;">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                            <img src="~/Images/MeinekeDealers/5-stars.png" class="img-responsive" style="float:left;" />
+
+
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <span class="col-md-12 col-sm-12 col-xs-12 testdate">February 14, 2018</span>
+                        </div>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1">
+
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 name">
+                    Owner of Multiple Luxury vehicles
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 testcontent">
+                    I have a collection of Luxury vehicles. I was paying through the nose to cover them. When I found brokkrr I was connected with a certified auto expert who specialized in Luxury autos. He found me solutions and saved me money in the process. This was done all via their app. This is no doubt the future of the insurance buying process.
+
+                </div>
+                <br />
+
+            </div>
+            <div class="col-md-1 col-sm-1 col-xs-1">
+
+            </div>
+        </div>
+    </div>
+    <br />
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-1 col-sm-1 col-xs-1">
+            </div>
+            <div class="col-md-9 col-sm-9 col-xs-9" style="background-color:#fff;border-radius: 6px;padding-bottom: 1%;color:#69737b;">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding: 1% 3%;padding-bottom:0%;clear:both;">
+                    <div class="col-md-1 col-sm-2 col-xs-3" style="padding:0px 0px 0px 8px">
+                        <img src="~/Images/MeinekeDealers/review-avatar-3.png" class="img-responsive" style="float:left;" />
+                    </div>
+
+                    <div class="col-md-10 col-sm-9 col-xs-9" style="padding-left:0;margin-left:0;">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                            <img src="~/Images/MeinekeDealers/5-stars.png" class="img-responsive" style="float:left;" />
+
+
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <span class="col-md-12 col-sm-12 col-xs-12 testdate">february 27, 2018</span>
+                        </div>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1">
+
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 name">
+                    Owner of a technology company and multiple homes
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 testcontent">
+                    I don’t like to meet with people or speak to people until I am ready to buy something from them. brokkrr gave me the opportunity to match with an insurance brokkrr that could help me cover my business and home. The best part is I was able to do it all through the app. This is the way my generation will buy their insurance. What a concept what an app! THERE IS NO OTHER WAY!
+
+                </div>
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+    <br />
+
+</div>
+<br />
+<br />
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-4">
+
+            <div class="col-md-4 col-sm-4">
+
+            </div>
+
+            <div class="col-md-6 col-sm-6" style="padding:6%;padding-left:0px;padding-left:0px;">
+                <img src="~/Images/NewImages/nerds.png" class="img-responsive " style="width: 200px;height: 150px;" />
+            </div>
+            <div class="col-md-2 col-sm-2">
+
+            </div>
+            <div class="clearfix">
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6 selfcontent">
+
+
+            <h3 class="selfpro">Self-proclaimed Insurance Nerds</h3>
+            <br />
+
+            <span>
+                brokkrr was developed by self-proclaimed "insurance nerds" who<br />
+                were born with a genetic mutation of loving the insurance industry.<br />
+                The beauty is we love it, so you don't have to.  Along with our love<br />
+                for the industry came displeasure with the process and how it takes place.<br />
+                Teamed with self-proclaimed "analytic nerds,” we came up<br />
+                with a process to demystify the insurance industry (thus upsetting the<br />
+                old-guard).  This new process gives the power of the industry back<br />
+                to where it belongs...you. Level UP and Match.Meet. Secure your brokkrr.
+            </span>
+
+
+
+
+        </div>
+        <div class="col-md-2">
+
+        </div>
+        <div class="clearfix">
+
+        </div>
+        <br />
+    </div>
+
+</div>
+
+<div class="modal fade" id="ModalSelect" role="dialog" style="overflow-y:hidden;">
+    <div class="modal-dialog" style="padding:5%">
+        <div class="modal-content popupwidth">
+            <div class="modal-header" style="padding-top: 1px; padding-bottom: 0px;border:none;">
+                <img id="btnClose" src="~/Images/NewAssets/closepopup.png" style="float: right;margin-top: 1%;cursor:pointer;" />
+                @*<h4 class="modal-title" style="color: black;font-size:30px;margin-top:10px;margin-bottom:10px;text-align: left;margin:2.5%;font-weight:bold;font-family:open sans;">Select</h4>*@
+                <h4 class="modal-title" style="color: black;font-size:30px;text-align: left;font-weight:bold;font-family:open sans;">&nbsp;</h4>
+            </div>
+            <div class="modal-body" style="padding-top: 0px;padding-bottom: 0px;font-weight:100;">
+
+                <center><a id="aMember" class="loginlink" style="font-size:20px;" href="@Url.Action("CustomerLogin", "Login")">ALREADY MEMBER?</a></center>
+                <br />
+                <center><a id="aMeinekeSignUp" class="loginlink" style="display:none;font-size:20px;" href="@Url.Action("MeinekeCustomerSignUp", "CustomerRegistration")">SIGN UP</a></center>
+                <center><a id="aAPSPSignUp" class="loginlink" style="display:none;font-size:20px;" href="@Url.Action("APSPCustomerSignUp", "CustomerRegistration")">SIGN UP</a></center>
+                <br />
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="ModelOnAreYouBroker" role="dialog" style="overflow-y:hidden;">
+    <div class="modal-dialog" style="padding:5%">
+        <div class="modal-content popupwidth">
+            <div class="modal-header" style="padding-top: 1px; padding-bottom: 0px;border:none;">
+                <img id="btnCloseAreYouBroker" src="~/Images/NewAssets/closepopup.png" style="float: right;margin-top: 1%;cursor:pointer;" />
+                @*<h4 class="modal-title" style="color: black;font-size:30px;margin-top:10px;margin-bottom:10px;text-align: left;margin:2.5%;font-weight:bold;font-family:open sans;">Select</h4>*@
+                <h4 class="modal-title" style="color: black;font-size:30px;text-align: left;font-weight:bold;font-family:open sans;">&nbsp;</h4>
+            </div>
+            <div class="modal-body" style="padding-top: 0px;padding-bottom: 0px;font-weight:100;">
+
+                <center><a id="aMember" class="loginlink" style="font-size:20px;" href="@Url.Action("BrokerLogin", "Login")">ALREADY MEMBER?</a></center>
+                <br />
+                <center><a id="abrokerRegister" class="loginlink" style="font-size:20px;" href="@Url.Action("BrokerSignUp", "BrokerRegistration")">SIGN UP</a></center>
+
+                <br />
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="modal fade" id="ModelOnAlreadyMember" role="dialog" style="overflow-y:hidden;">
+    <div class="modal-dialog" style="padding:5%">
+        <div class="modal-content popupwidth">
+            <div class="modal-header" style="padding-top: 1px; padding-bottom: 0px;border:none;">
+                <img id="btnCloseAlreadyMember" src="~/Images/NewAssets/closepopup.png" style="float: right;margin-top: 1%;cursor:pointer;" />
+                @*<h4 class="modal-title" style="color: black;font-size:30px;margin-top:10px;margin-bottom:10px;text-align: left;margin:2.5%;font-weight:bold;font-family:open sans;">Select</h4>*@
+                <h4 class="modal-title" style="color: black;font-size:30px;text-align: left;font-weight:bold;font-family:open sans;">&nbsp;</h4>
+            </div>
+            <div class="modal-body" style="padding-top: 0px;padding-bottom: 0px;font-weight:100;">
+
+                <center><a id="aMember" class="loginlink" style="font-size:20px;" href="@Url.Action("BrokerLogin", "Login")">BROKKRR</a></center>
+                <br />
+                <center><a id="abrokerRegister" class="loginlink" style="font-size:20px;" href="@Url.Action("CustomerLogin", "Login")">CUSTOMER</a></center>
+
+                <br />
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer class="footer-distributed" style="position: relative;background-image:none !important;">
+    <div class="container" style="width:100%">
+        <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-right:0;">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 allrightalign" style="">
+                    <p style="display: block;color: #666666;font-size: 16px;font-family:open sans;text-align: center;">
+                        © 2018 brokkrr. All rights reserved.
+                    </p>
+                </div>
+
+                <div class="col-sm-3 col-md-2 text-center" style="padding-left:0;">
+                    <p class="footer-company-about">
+                        <div class="social-icons socialiconsalign" style="">
+                            <a style="cursor:default;"><span class="facebook"></span></a>
+                            <a style="cursor:default;"><span class="twitter"></span></a>
+                            <a style="cursor:default;"><span class="linkedin"></span></a>
+                        </div>
+                    </p>
+                </div>
+                <div class="col-sm-2 col-md-5" style="margin-bottom:0%;text-align: center;margin-top: 25px;font-size: 16px;">
+                    <a href="@Url.Action("TermsAndConditions", "Home")">Terms and conditions</a> | <a href="@Url.Action("PrivacyPolicy", "Home")">Privacy policy</a>
+                </div>
+                <div class="col-sm-1 col-md-1" style="margin-bottom: 0%;margin-top: 1.5%;">
+                    <div style="padding-right:4%;text-align:center">
+                        <img src="~/Images/NewAssets/footer-logo.png" alt="logo" />
+                    </div>
+                </div>
+                <div class="col-md-1 col-sm-1" style="margin-bottom:0%;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+<script src="~/js/HomeJs/jquery-2.2.4.min.js"></script>
+<script src="~/js/HomeJs/main-a63a635ec9.bundle.js"></script>

@@ -1,0 +1,1415 @@
+﻿@model BrokerMVC.Models.UserModel
+@{
+    ViewBag.Title = "SearchBroker";
+    if (ViewBag.User == "Authorize")
+    { Layout = "~/Views/Shared/_NewCustomerLayout.cshtml"; }
+    else
+    { Layout = "~/Views/Shared/_NewCustomerLayoutWithoutLogin.cshtml"; }
+}
+<!Doctype html>
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Search brokkrr</title>
+    <link href="~/Content/BrokkrrCSS/MediaQueries.css" rel="stylesheet" />
+    <link href="~/Content/BrokkrrCSS/SearchBroker.css" rel="stylesheet" />
+    <link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet" />
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    <style type="text/css">
+       
+    .disableContactBtn {
+        pointer-events:none;
+    }
+
+        .modal-open {
+            overflow-y: scroll !important;
+        }        
+        fieldset, label {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+           
+        }
+
+        h1 {
+            font-size: 1.5em;
+            margin: 10px;
+        }
+
+        /****** Style Star Rating Widget *****/
+
+        .rating {
+            border: none;
+            float: left;
+        }
+
+            .rating > input {
+                display: none;
+            }
+
+            .rating > label:before {
+                margin: 5px;
+                font-size: 1.25em;
+                font-family: FontAwesome;
+                display: inline-block;
+                content: "\f005";
+            }
+
+            .rating > .half:before {
+                content: "\f089";
+                position: absolute;
+            }
+
+            .rating > label {
+                color: #ddd;
+                float: right;
+            }
+
+            /***** CSS Magic to Highlight Stars on Hover *****/
+
+            .rating > input:checked ~ label, /* show gold star when clicked */
+            .rating:not(:checked) > label:hover, /* hover current star */
+            .rating:not(:checked) > label:hover ~ label {
+                /*color: #FFD700;*/
+                color: #FFD700;
+            }
+                /* hover previous stars in list */
+
+
+
+                .rating > input:checked + label:hover, /* hover current star when changing rating */
+                .rating > input:checked ~ label:hover,
+                .rating > label:hover ~ input:checked ~ label, /* lighten current selection */
+                .rating > input:checked ~ label:hover ~ label {
+                    color: #FFD700; /*#FFED85*/
+                }
+
+      
+
+        .bio {
+            font-size: 12px;
+            text-decoration: underline;
+            text-transform: none;
+            padding-left: 4%;
+        }
+
+
+        .brokername {
+            padding-top: 2%;
+            font-weight: bold;
+            font-size: 18px;
+            font-family: open sans;
+            text-transform: capitalize;
+            text-align: left;
+        }
+
+        .contactbutton {
+            border: none;
+            background-color: rgb(72,205,255);
+            color: #fff;
+            height: 40px;
+            width: 100%;
+            border-radius: 21px;
+            font-family: open sans;
+            font-size: 20px;
+            padding-top: 5px;
+            cursor: pointer;
+        }
+
+        .contactbuttonpadding {
+            color: #fff;
+            text-align: center;
+            font-size: 15px;
+            color: rgb(153,153,153) !important;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+
+        .cityname {
+            padding-top: 1%;
+            color: #fff;
+            text-align: center;
+            font-size: 18px;
+            color: rgb(153,153,153) !important;
+            text-align: center;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        .threebroker {
+            float: right;
+            font-size: 14px;
+            color: rgb(196,196,196);
+            padding-top: 1%;
+        }
+
+        .infopopup {
+            width: 35%;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        function contact() {
+            //alert('here');
+            //$("#chatcontent",this).focus();
+            $("#ModalError").modal();
+            //$('#ModalError').on('shown.bs.modal', function () {
+            //    $('.mychatcontent').focus();
+            //});
+        }
+    </script>
+    <script type="text/javascript">
+
+        function myFunction() {
+
+
+            var text0 = $("#myInput").val().toLowerCase();
+            $(".BrokerName").filter(function () {
+
+                $(this).parent().hide();
+                return $(this).text().toLowerCase().indexOf(text0) != -1
+
+            }).parent().show();
+        }
+
+        function ShowBrokerDetails(id) {
+            //alert('called '+id);
+
+            $(".Profile").css("display", "none");
+            $("#" + id).css("display", "block");
+        }
+
+
+        function cancel() {
+            $('#ModalError').modal("hide");
+        }
+
+    </script>
+
+
+    <style type="text/css">
+        /*Square Images (Start)*/
+
+        .circular--square {
+            border-radius: 50%;
+        }
+
+        .circular--square {
+            border-top-left-radius: 50% 50%;
+            border-top-right-radius: 50% 50%;
+            border-bottom-right-radius: 50% 50%;
+            border-bottom-left-radius: 50% 50%;
+        }
+
+        /*Square Images (End)*/
+
+
+        /*landscape Images (Start)*/
+
+        .circular--landscape {
+            display: inline-block;
+            position: relative;
+            width: 60px;
+            height: 60px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+
+            .circular--landscape img {
+                width: auto;
+                height: 100%;
+                margin-left: -50px;
+            }
+
+        /*landscape Images (End)*/
+
+        /*portrait Images (Start)*/
+
+        .circular--portrait {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            overflow: hidden;
+            border-radius: 50%;
+        }
+
+            .circular--portrait img {
+                width: 100%;
+                height: auto;
+            }
+
+        /*#ui-id-1 {
+            display: none !important;
+        }*/
+
+
+        .ui-dialog .ui-dialog-titlebar {
+            text-align: center;
+            background: #fff;
+            border: none;
+            font-size: 22px;
+        }
+
+        .ui-widget .ui-widget {
+            background: none;
+            border: none;
+        }
+
+        .ui-button .ui-icon {
+            background-image: url(../../Images/Assets/closeblue.png) !important;
+        }
+
+        .ui-button-icon-only .ui-icon {
+            top: 20% !important;
+            margin-left: -22px !important;
+        }
+
+        .ui-icon {
+            width: 35px;
+            height: 35px;
+        }
+
+        .ui-icon-closethick {
+            background-position: 0px !important;
+        }
+
+
+        /*portrait Images (End)*/
+    </style>
+    <script src="~/js/jquery-1.11.3.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".notification").css("display", "block");
+            $("#aSerchBroker").css("display", "none");
+            var Auth = '@ViewBag.User';
+            var Comp = '@ViewBag.Company';
+
+            if (Auth == "Authorize")
+            {
+                if (Comp == "Meineke") {
+                    //alert("Auth Meineke");
+                    $("#MeinekeHomePageImage").css("display", "block");
+                    $("#HomePageImage").css("display", "none");
+
+                    $("#MenuMeinekeHomePage").css("display", "block");
+                    $("#MenuHomePage").css("display", "none");
+                    $("#MenuMeinekeCustomerProfile").css("display", "block");
+                    $("#MenuCustomerProfile").css("display", "none");
+
+                    $("#aSerchBrokerMeineke").css("display", "block");
+                    $("#aSerchBrokerBrokkrr").css("display", "none");
+                    $("#footerMeinekeLogo").css("display", "block");
+
+                    $("#footerLayout1").css("display", "none");
+                    $("#meinekefotter").css("display", "block");
+                    $("#APSPfooter").css("display", "none");
+                }
+                else if (Comp == "Brokkrr") {
+                    //alert("Auth Brokkrr");
+                    $("#MeinekeHomePageImage").css("display", "none");
+                    $("#HomePageImage").css("display", "block");
+
+                    $("#MenuMeinekeHomePage").css("display", "none");
+                    $("#MenuHomePage").css("display", "block");
+                    $("#MenuMeinekeCustomerProfile").css("display", "none");
+                    $("#MenuCustomerProfile").css("display", "block");
+
+                    $("#aSerchBrokerMeineke").css("display", "none");
+                    $("#aSerchBrokerBrokkrr").css("display", "block");
+                    $("#footerBrokerLogo").css("display", "block");
+
+                    $("#footerLayout1").css("display", "block");
+                    $("#meinekefotter").css("display", "none");
+                    $("#APSPfooter").css("display", "none");
+                }
+                else if (Comp == "APSP") {
+                    //alert("Auth Brokkrr");
+                    $("#APSPHomePageImage").css("display", "block");                   
+                    $("#MenuAPSPHomePage").css("display", "block");                   
+                    $("#MenuAPSPCustomerProfile").css("display", "block");
+                    $("#aSerchBrokerAPSP").css("display", "block");
+                    $("#footerAPSPLogo").css("display", "block");
+
+                    $("#HomePageImage").css("display", "none");
+                    $("#MenuHomePage").css("display", "none");
+                    $("#MenuCustomerProfile").css("display", "none");
+                    $("#aSerchBrokerBrokkrr").css("display", "none");
+                    
+                    $("#footerLayout1").css("display", "none");
+                    $("#meinekefotter").css("display", "none");
+                    $("#APSPfooter").css("display", "block");
+                   
+                }
+            }
+            else
+            {
+                if (Comp == "Meineke") {
+                    //alert("UnAuth Meineke");
+                }
+                else {
+                    //alert("UnAuth Brokkrr");
+                }
+            }
+
+
+            $("#chatcontent").keyup(function (e) {
+                //alert("Called");
+                var content = $("#chatcontent").val();
+                if (content != '') {
+                    $('#chatcontent').css("border", "none");
+                    $('#chatcontent').css("border", "1px solid #48CDFF");
+                }
+                else {
+                    $('#chatcontent').css("border", "none");
+                    $('#chatcontent').css("border", "1px solid red");
+                }
+            });
+        });
+
+        var GlobalContactCount = 0;
+
+        function ContactBroker(id, BrokerId, InsuranceType, BrokerName, profile, city) {
+            $('#chatcontent').val('');
+
+            if (GlobalContactCount < 3) {
+                // alert(GlobalContactCount);
+
+                //Code for getting Current Datetime
+
+                var nowdt = new Date();
+                var onlydate = ("0" + (nowdt.getMonth() + 1)).slice(-2) + '/' + nowdt.getDate() + '/' + nowdt.getFullYear();
+                var nowtime = nowdt.getHours() + ":" + nowdt.getMinutes() + ":" + nowdt.getSeconds();
+
+                var sec = '';
+                var hrs = nowdt.getHours();
+                if (hrs >= 12) {
+                    hrs = hrs - 12;
+                    sec = "PM";
+                }
+                else {
+                    sec = "AM";
+                }
+
+                var LocalDateTime = onlydate + ' ' + nowtime + ' ' + sec;
+
+                //alert('LocalDateTime - ' + LocalDateTime);
+
+                //End of Code for getting Current Datetime
+
+                $("#Loader_" + id).css("display", "block");//18April17
+                $("#Div_" + id).css("display", "none");//18April17
+
+                $(".contactbutton").addClass('disableContactBtn');//11Apr18
+
+                $.ajax({
+                    url: '@Url.Action("ContactBroker", "Insurances")',
+                    type: 'GET',
+                    // dataType: 'json',
+                    cache: false,
+                    data: { BrokerId: BrokerId, InsuranceType: InsuranceType, BrokerName: BrokerName, LocalDateTime: LocalDateTime },
+                    success: function (data) {
+
+                        var obj = JSON.parse(data);
+                        var obj1 = obj.MsgDetails;
+
+                        //$.each(obj1, function (i, userobj) {
+
+
+                        //    $('#brokerid').val(userobj.BrokerID);
+                        //    $('#customerid').val(userobj.CustId);
+                        //    $('#customermsgid').val(userobj.CustMsgId);
+                        //    $('#brokermsgid').val(userobj.BrokerMsgId);
+
+                        //    document.getElementById('profilepicprofilepopup').src = profile;
+
+                        //    $('#showname').text(BrokerName);
+                        //    $('#showcity').text(city);
+
+                        //});
+
+
+                        if (obj1.length > 0) {
+
+                            GlobalContactCount++
+
+                            var Tick = ' <img src="/Images/Insurance/Tick_Mark.png" style="height: 60px;width: 50px;" />';
+                            $('#Div_' + id).empty();
+                            $('#Div_' + id).append(Tick);
+                            $("#Div_" + id).css("display", "block");//18April17
+                            $("#Loader_" + id).css("display", "none");//18April17
+
+                            $('#ErrorModal').modal('hide');
+
+                            // $('#ModalError').on('shown.bs.modal', function () {
+                            //    $('#chatcontent').focus();
+                            //});
+                            //$('#chatcontent').css("border", "1px solid rgb(230,230,230)");
+                            //$("#ModalError").modal();
+
+                            $('#MessageInfo').empty();
+                            var autorize = '@ViewBag.User';
+                            var IsEmailVerified = '@Session["IsEmailVerified"]';
+                            var msg = '';
+
+                            // alert("IsEmailVerified -" + IsEmailVerified);
+
+                            if (autorize == 'Authorize') {
+                                // alert("If autorize - " + autorize);
+                                msg = 'Message sent successfully.';
+                            }
+                            else if (IsEmailVerified == "True") {
+                                msg = "Message sent successfully. To view reply from brokkrr,</br> please <a href='@Url.Action("CustomerLogin", "Login")'>login</a>.";
+                            }
+                            else {
+                                // alert("Else autorize - " + autorize);
+                                msg = 'Message sent successfully. To view reply from brokkrr,</br> please check your registered email id to verify your account.';
+                            }
+                            $(".contactbutton").removeClass('disableContactBtn');//11Apr18
+                            $('#MessageInfo').append(msg);
+                            $("#ModalInfo").modal();
+
+                            $.ajax({
+                                url: '@Url.Action("SendContactMail", "Insurances")',
+                                type: 'GET',
+                                cache: false,
+                                data: { BrokerName: BrokerName, BrokerId: BrokerId },
+                                success: function (data) {
+                                    //alert("Here in Success");
+                                }
+                            });
+
+                        }
+                        else {
+                            $("#Loader_" + id).css("display", "none");//18April17
+                            $("#Div_" + id).css("display", "block");//18April17
+
+                            //alert('Faild,Try again!');
+                            //$('#Message').empty();
+                            //var msg = 'Failed,Try again!';
+                            //$('#Message').append(msg);
+                            //$("#dialog").dialog({ show: "show", modal: true, autoOpen: false });
+                            //$("#dialog").dialog("open");
+                            $(".contactbutton").removeClass('disableContactBtn');//11Apr18
+                            $('#MessageInfo').empty();
+                            var msg = 'Failed,Try again!.';
+                            $('#MessageInfo').append(msg);
+                            // $("#dialog").dialog({ show: "show", modal: true, autoOpen: false });
+                            //$("#dialog").dialog("open");
+                            $("#ModalInfo").modal();
+                        }
+                    }
+                });
+            }
+            else {
+
+                $(".contactbutton").removeClass('disableContactBtn');//11Apr18
+                //alert('Sorry! You have exeed broker contact limit.');
+                $('#MessageInfo').empty();
+                var msg = 'Sorry! You have exceed brokkrr contact limit.';
+                $('#MessageInfo').append(msg);
+                // $("#dialog").dialog({ show: "show", modal: true, autoOpen: false });
+                //$("#dialog").dialog("open");
+                $("#ModalInfo").modal();
+            }
+        }
+        window.onbeforeunload = function (e) {
+            //  alert('refreshed');
+        };
+
+
+
+        window.onload = function (e) {
+            //  alert('refreshed');
+            $('#footerLayout').hide();
+            $('#noresults').hide();
+        };
+
+
+        function SaveBrokerChat() {
+
+            //alert("Called SaveBrokerChat");
+
+            var chatcontent = $('#chatcontent').val();
+            if (chatcontent != '') {
+                var webserviceURL = '@ViewBag.WebServiceURL';
+
+                var msgdate2 = '';
+
+                var nowdt = new Date();
+
+                var onlydate = (nowdt.getMonth() + 1) + '/' + nowdt.getDate() + '/' + nowdt.getFullYear();
+                var nowtime = nowdt.getHours() + ":" + nowdt.getMinutes() + ":" + nowdt.getSeconds();
+
+                var sec = '';
+                var hrs = nowdt.getHours();
+
+                if (hrs > 12) {
+                    hrs = hrs - 12;
+                    sec = "PM";
+
+                }
+                else if (hrs == 12) {
+                    sec = "PM";
+                }
+                else {
+                    sec = "AM";
+                }
+
+                var LocalDateTime = onlydate + ' ' + nowtime + ' ' + sec;
+                var chatcontent = $('#chatcontent').val();
+                var BrokerMessageId = $('#brokermsgid').val();
+                var CustomerMessageId = $('#customermsgid').val();
+                var CustomerId = $('#customerid').val();
+                var BrokerId = $('#brokerid').val();
+
+                //  alert('chatcontent ' + chatcontent + ' ' + 'BrokerMessageId ' + BrokerMessageId + 'CustomerMessageId ' + CustomerMessageId + ' ' + CustomerId + ' BrokerId ' + BrokerId);
+
+                $.ajax({
+                    type: "POST",
+                    url: webserviceURL,
+                    data: { BrokerMsgId: BrokerMessageId, CustMsgId: CustomerMessageId, CustomerId: CustomerId, BrokerId: BrokerId, CustomerMessage: chatcontent, OldMessageId: 0, LocalDateTime: LocalDateTime, ActionName: "DoSaveCustomerChat" },
+                    success: function (data) {
+                        //alert('data '+data);
+                        var obj = JSON.parse(data);
+                        var issuccess = obj.IsSuccess;
+                        var ErrorMessage = obj.ErrorMessage;
+
+                        if (issuccess == true) {
+                            // alert('success');
+                            $('#ModalError').modal("hide");
+
+
+                            //27Sep17
+                            $('#MessageInfo').empty();
+                            var autorize = '@ViewBag.User';
+                            var msg = '';
+
+                            if (autorize == 'Authorize') {
+                                // alert("If autorize - " + autorize);
+                                msg = 'Message sent successfully.';
+                            }
+                            else {
+                                // alert("Else autorize - " + autorize);
+                                msg = 'Message sent successfully. To view reply from brokkrr,</br> please check your registered email id to verify your account.';
+                            }
+
+                            $('#MessageInfo').append(msg);
+                            $("#ModalInfo").modal();
+                            //27Sep17
+                        }
+                        else if (issuccess == false) {
+
+                            alert('fail');
+                        }
+
+                    },
+
+                    error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+                    }
+                });
+            }
+            else {
+                $('#chatcontent').css("border", "none");
+                $('#chatcontent').css("border", "1px solid red");
+                $('#chatcontent').focus();
+            }
+        }
+
+
+
+    </script>
+
+    <style type="text/css">
+        @@media (max-width: 640px) {
+
+            .ratingspacing {
+                padding-top: 1%;
+                color: #fff;
+                text-align: center;
+                font-size: 15px;
+                color: rgb(153,153,153) !important;
+                padding-left: 29%;
+                padding-right: 28%;
+            }
+
+
+            .bio {
+                font-size: 12px;
+                text-decoration: underline;
+                text-transform: none;
+                text-align: left;
+                /*padding-left: 18%;*/
+                padding: 0;
+            }
+
+            .brokername {
+                padding-top: 3%;
+                font-weight: bold;
+                font-size: 18px;
+                font-family: open sans;
+                text-transform: capitalize;
+                text-align: left;
+            }
+
+            .imagepadding {
+                padding-top: 1%;
+            }
+
+
+            .contactbutton {
+                border: none;
+                background-color: rgb(72,205,255);
+                color: #fff;
+                height: 40px;
+                width: 100%;
+                border-radius: 21px;
+                font-family: open sans;
+                font-size: 20px;
+                padding-top: 5px;
+                cursor: pointer;
+            }
+
+
+            .contactbuttonpadding {
+                color: #fff;
+                text-align: center;
+                font-size: 15px;
+                color: rgb(153,153,153) !important;
+                padding-left: 16%;
+                padding-right: 16%;
+            }
+
+            .cityname {
+                /*padding-top: 1%;*/
+                color: #fff;
+                text-align: center;
+                font-size: 18px;
+                color: rgb(153,153,153) !important;
+                text-align: center;
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .threebroker {
+                float: right;
+                font-size: 14px;
+                color: rgb(196,196,196);
+                padding-top: 1%;
+                padding-bottom: 1%;
+            }
+
+            .infopopup {
+                width: 90% !important;
+            }
+        }
+
+
+
+
+
+
+        @@media (max-width: 1024px) {
+
+            .ratingspacing {
+                padding-top: 1%;
+                color: #fff;
+                text-align: center;
+                font-size: 15px;
+                color: rgb(153,153,153) !important;
+                /*padding-left: 6%;
+            padding-right: 6%;*/
+            }
+
+            .rating {
+                border: none;
+                /*float: left;*/
+            }
+
+            .infopopup {
+                width: 35%;
+            }
+        }
+    </style>
+
+    <style type="text/css">
+        @@media only screen and (min-width:3840px) {
+            .Insfooterlogo {
+                margin-bottom: 0%;
+                /*margin-top: 0.4%;*/
+                padding-left: 0%;
+                margin-top: 1.5% !important;
+            }
+        }
+
+        @@media only screen and (min-width:2880px) {
+            .Insfooterlogo {
+                margin-bottom: 0%;
+                /*margin-top: 0.7%;*/
+                padding-left: 0%;
+                margin-top: 1.5% !important;
+            }
+        }
+    </style>
+
+</head>
+<body>
+    <br />
+    <div class="container" style="height:auto;min-height:100%;">
+
+        <div class="row">
+            <div class="col-lg-12" style="padding-left:5%;padding-right:5%;">
+                <span style="font-size: 37px;font-weight: 600;">
+                    Top matches based on your search
+                    <span class="threebroker">
+                        <img src="~/Images/NewAssets/icon-contact-3-brokers.png" /> Contact upto 3 brokkrrs
+                    </span>
+                </span>
+            </div>
+        </div>
+        <div class="row" style="padding-left:5%;padding-right:5%;">
+            <div class="col-md-12 col-sm-12" style="background-color:rgb(226,226,226);border-bottom: 1px solid rgb(226,226,226) !important;height:100%;padding:0;font-size:20px;padding-top: 1%;padding-bottom: 1%;">
+
+                <div class="col-md-3 col-sm-2" style="text-align:center;padding-right:0; padding-left:0 ;color:#fff;font-size: 15px;color: rgb(153,153,153) !important;">
+                    <div class="col-lg-3 col-md-3 col-sm-3"></div>
+                    <div class="col-lg-6 col-md-9 col-sm-9">
+                        <span>Brokkrr</span>
+                    </div>
+                    <div class="col-lg-3">
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-4" style="color:#fff;text-align:center;font-size: 15px;color: rgb(153,153,153) !important;padding-right:0; padding-left:0 ;">
+                    <span>Rating</span>
+                </div>
+
+                <div class="col-md-3 col-sm-3" style="color:#fff;text-align:center;font-size: 15px;color: rgb(153,153,153) !important;padding-right:0; padding-left:0 ;">
+                    <span>Location</span>
+                </div>
+                @*<div class="col-sm-1 col-md-1">
+
+                    </div>*@
+                @*<div class="col-md-2 col-sm-2" style="color:#fff;text-align:center;font-size: 15px;color: rgb(153,153,153) !important;">
+                        <span>Avg. Response Time</span>
+                    </div>*@
+                <div class="col-md-3 col-sm-3" style="color:#fff;text-align:center;font-size: 15px;color: rgb(153,153,153) !important;padding-right:0; padding-left:0 ;">
+                    <span>Contact</span>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="padding-left:5%;padding-right:5%;">
+            <div class="col-md-12 col-sm-12" style="background-color:#fff;height:100%;padding:0;font-size:20px;padding-top: 1%;padding-bottom: 1%;">
+                <div class="col-md-12 col-sm-12" style="position:absolute;z-index:-1;font-family: open sans;font-size:25px;text-align: center;padding-top:1%;">
+                    No brokkrr found
+                </div>
+                @*<script type="text/javascript">*@
+                @{int i = 0;}
+                @foreach (var item in ViewBag.userdetails)
+                {
+                    var cnt = 0;
+                    var UserId = item[0];
+                    cnt++;
+                    <div class="BrokerList" style="padding-top:2%;">
+
+                        <div class="col-md-3 col-sm-2 col-xs-12" style="text-align:center;padding-left:0;padding-right:0;color:#fff;font-size: 15px;color: rgb(153,153,153) !important;">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+
+                                @*@item.ProfilePicture*@
+                                @{
+                    var profile = "";
+                    if (item[29] is System.DBNull)
+                    {
+                        profile = "../../Images/Insurance/customer.jpg";
+
+                    }
+                    else if (item[29] != "")
+                    {
+                        profile = item[29];@* Profile pic*@
+                    }
+                    else
+                    {
+                        profile = "../../Images/Insurance/customer.jpg";
+                    }
+                                }
+                                <div class="col-md-3 col-sm-12 col-xs-3 imagepadding">
+                                    <img class="circular--landscape circular--square circular--portrait" src='@{ @profile}' id="profilepicprofile" style="position:none !important;" />
+                                </div>
+                                <div class="col-md-9 col-sm-12 col-xs-9 brokername">
+
+                                    <div id='Img_@i' onclick="ShowBrokerDetails(@item[0]);">
+                                        @{
+                    var itemdet = @item[1] + " " + @item[2]; //First Name, LastNAme
+                                        }
+                                        @itemdet
+                                        @*<a data-toggle="modal" data-target="#myModal" href="#" data-role="button" style="color:black;">  @itemdet </a>*@
+                                        <div style="text-align:left;"><a data-toggle="modal" class="bio" data-target="#myModal" href="#" data-role="button">Click for bio</a></div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-4 col-xs-12 ratingspacing">
+                        <fieldset class="rating" id="fieldset_@i">
+                            <input type="radio" id="star5_@i" name="rating_@i" value="5" checked="checked" disabled="disabled" /><label class="full" for="star5_@i" title="5 stars"></label>
+                            <input type="radio" id="star4half_@i" name="rating_@i" value="4 and a half" disabled="disabled" /><label class="half" for="star4half_@i" title="4.5 stars"></label>
+                            <input type="radio" id="star4_@i" name="rating_@i" value="4" disabled="disabled" /><label class="full" for="star4_@i" title="4 stars"></label>
+                            <input type="radio" id="star3half_@i" name="rating_@i" value="3 and a half" disabled="disabled" /><label class="half" for="star3half_@i" title="3.5 stars"></label>
+                            <input type="radio" id="star3_@i" name="rating_@i" value="3" disabled="disabled" /><label class="full" for="star3_@i" title="3 stars"></label>
+                            <input type="radio" id="star2half_@i" name="rating_@i" value="2 and a half" disabled="disabled" /><label class="half" for="star2half_@i" title="2.5 stars"></label>
+                            <input type="radio" id="star2_@i" name="rating_@i" value="2" disabled="disabled" /><label class="full" for="star2_@i" title="2 stars"></label>
+                            <input type="radio" id="star1half_@i" name="rating_@i" value="1 and a half" disabled="disabled" /><label class="half" for="star1half_@i" title="1.5 stars"></label>
+                            <input type="radio" id="star1_@i" name="rating_@i" value="1" disabled="disabled" /><label class="full" for="star1_@i" title="1 star"></label>
+                            <input type="radio" id="starhalf_@i" name="rating_@i" value="half" disabled="disabled" /><label class="half" for="starhalf_@i" title="0.5 stars"></label>
+                        </fieldset>
+
+                        @*@foreach (var item5 in ViewBag.UserRating)
+                            {
+                                var UserId1 = item5[0];
+                                double Rating = Convert.ToDouble(item5[1]);
+                                if (UserId1 == UserId)
+                                {
+                                    if (Rating != 0)
+                                    {
+                                        if (Rating > 0.0 && Rating <= 0.5)
+                                        {
+                                            <script type="text/javascript">
+                                                $("#starhalf_"+@i).attr('checked', 'checked');
+                                            </script>
+                                        }
+                                        else if (Rating > 0.5 && Rating <= 1.0)
+                                        {
+                                            <script type="text/javascript">
+                                                $("#star1_"+@i).attr('checked', 'checked');
+                                            </script>
+                                        }
+                                        else if (Rating > 1.0 && Rating <= 1.5)
+                                        {
+                                            <script type="text/javascript">
+                                                $("#star1half_"+@i).attr('checked', 'checked');
+                                            </script>
+                                        }
+                                        else if (Rating > 1.5 && Rating <= 2.0)
+                                        {
+                                            <script type="text/javascript">
+                                                $("#star2_"+@i).attr('checked', 'checked');
+                                            </script>
+                                        }
+                                        else if (Rating > 2.0 && Rating <= 2.5)
+                                        {
+                                            <script type="text/javascript">
+                                                $("#star2half_"+@i).attr('checked', 'checked');
+                                            </script>
+                                        }
+                                        else if (Rating > 2.5 && Rating <= 3.0)
+                                        {
+                                            <script type="text/javascript">
+
+                                                $("#star3_"+@i).attr('checked', 'checked');
+                                            </script>
+                                        }
+                                        else if (Rating > 3.0 && Rating <= 3.5)
+                                        {
+                                            <script type="text/javascript">
+                                                $("#star3half_"+@i).attr('checked', 'checked');
+                                            </script>
+                                        }
+
+                                        else if (Rating > 3.5 && Rating <= 4.0)
+                                        {
+                                            <script type="text/javascript">
+                                                $("#star4_"+@i).attr('checked', 'checked');
+                                            </script>
+                                        }
+                                        else if (Rating > 4.0 && Rating <= 4.5)
+                                        {
+                                            <script type="text/javascript">
+                                                $("#star4half_"+@i).attr('checked', 'checked');
+                                            </script>
+                                        }
+                                        else if (Rating > 4.5 && Rating <= 5.0)
+                                        {
+                                            <script type="text/javascript">
+                                                $("#star5_"+@i).attr('checked', 'checked');
+                                            </script>
+                                        }
+                                    }
+                                }
+                            }*@
+
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-12 cityname">
+                        <span>@item[5]</span>
+                    </div>
+
+                    <div class="col-md-3 col-sm-3 col-xs-12 contactbuttonpadding">
+
+                        <span id='Div_@i'>
+
+                            <div id='Img_@i' class="contactbutton" onclick="ContactBroker(@i,@item[0],'@Session["insurancetype"]','@itemdet','@profile', '@item[5]');">Contact</div>
+
+                        </span>
+                        <span id='Loader_@i' style="display:none;"><img src="~/Images/Assets/loadingimg.gif" style="height:41px;width:41px;" /></span>
+
+                    </div>
+                    <div class="clearfix"></div>
+                    <hr />
+
+                    i++;
+                }
+                @*</script>*@
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                <div class="col-md-12 col-xs-12 modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog" style="text-align:center;">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <img id="" src="~/Images/NewAssets/closepopup.png" style="float: right;margin-top: 3%;cursor:pointer;" data-dismiss="modal" />
+                                <h4 class="modal-title" style="font-size:30px;margin-top:10px;margin-bottom:10px;text-align: left;margin:2.5%;font-weight:bold;font-family:open sans;">brokkrr details</h4>
+                            </div>
+                            <div class="modal-body ">
+
+                                <div class="">
+                                    @{  var cnt3 = 0; var cnt1 = 0; var cnt2 = 0; var itemimg = ""; var id = 0; var IsExpAvail = "false"; var IsEduAvail = "false"; var IsCompAvail = "false";}
+                                    @foreach (var item in ViewBag.userdetails)
+                                    {
+                                        cnt3++;
+                                        id = item[0];
+
+                                        <div id="@item[0]" style="display:none;" class="Profile">
+
+
+                                            @*12Dec16*@
+
+                                            @*@item.ProfilePicture*@
+                                            <div>
+                                                @{
+                                        var profile = "";
+                                        if (item[29] is System.DBNull)
+                                        {
+                                            profile = "../../Images/Profile/customer.jpg";
+
+                                        }
+                                        else if (item[29] != "")
+                                        {
+                                            profile = item[29];@* Profile pic*@
+                                        }
+                                        else
+                                        {
+                                            profile = "../../Images/Profile/customer.jpg";
+                                        }
+
+                                                }
+
+                                                <img class="imageFit circular--landscape circular--square circular--portrait" src='@{ @profile}' id="profilepicprofile" style="height:140px !important;width:140px !important" />
+
+                                            </div>
+                                            <div style="font-size:25px;font-weight:bold;">
+                                                @{
+                                        var itemdet = @item[1] + " " + @item[2]; //First Name, LastNAme
+
+                                                }
+                                                @itemdet
+                                            </div>
+                                            <div>
+                                                @item[5]
+                                            </div>
+                                            <hr />
+                                            <div>
+                                                <h4 style="text-align:left;">Company</h4>
+                                                @{
+                                        //var itemDet = @item[31] + " at " + @item[17]; //DEsignation, Company
+                                        IsCompAvail = "false";
+                                        var complogo = "";
+                                        if (item[31] is System.DBNull)
+                                        {
+                                            complogo = "../../Images/Profile/companydefaultlogo.jpg";
+                                            IsCompAvail = "false";
+
+                                        }
+                                        else if (item[31] != "")
+                                        {
+                                            complogo = item[31];@* Profile pic*@
+                                            IsCompAvail = "true";
+                                        }
+                                        else
+                                        {
+                                            complogo = "../../Images/Profile/companydefaultlogo.jpg";
+                                            IsCompAvail = "false";
+                                        }
+
+                                        if (@item[18] == "" && @item[17] == "")
+                                        {
+                                            IsCompAvail = "false";
+                                        }
+                                        else
+                                        {
+                                            IsCompAvail = "true"; 
+                                        }
+
+                                        if(IsCompAvail == "true")
+                                        { 
+                                        <div>
+                                            <!--RS 19April17-->
+                                            <div class="col-sm-2">
+                                                <span style="visibility:hidden;">sxawx</span>
+                                            </div>
+                                            <div class="col-sm-2">
+                                                <img class="imageFitSize" src='@{ @complogo}' id="profilepicprofile" style="height:60px !important;width:60px !important;margin-left:15%;" />
+                                            </div>
+                                            <div class="col-sm-8" style="padding-top:3%;text-align: center;">
+                                                <span style="margin-left:20%;">@item[18] at @item[17]</span>
+                                            </div>
+                                            <div class="clearboth"></div>
+                                        </div>
+                                        }
+                                        else
+                                        {
+                                            <p class="pCompany" style="text-align:left;word-wrap:break-word;line-height:1.3;margin-top:0px !important;margin-left:3%;color:gray;">
+                                                No company added
+                                            </p>
+                                        }
+}
+
+                                            </div>
+                                            <hr />
+                                            <div>
+                                                <h4 style="text-align:left;">Bio</h4>
+                                                <div>
+                                                    <div class="col-sm-12">
+                                                        @{
+                                        var Bio = @item[32];
+                                        if (Bio == "")
+                                            Bio = "No bio available";
+                                                        }
+
+                                                        <p style="text-align:left;word-wrap:break-word;line-height:1.3;margin-top:0px !important;color:gray;">
+                                                            @Bio
+                                                        </p>
+                                                    </div>
+                                                    <div class="clearboth"></div>
+                                                </div>
+                                            </div>
+                                            <hr />
+                                            <div>
+                                                <h4 style="text-align:left;">Prior employment</h4>
+
+                                                @{
+                                        IsExpAvail = "false";
+                                                }
+                                                @foreach (var item1 in ViewBag.Experiencedetails)
+                                                {
+                                                    var id1 = item1[1];
+                                                    var Compnylogo = "";
+
+                                                    cnt1++;
+
+                                                    <div style="margin-bottom: 3%;">
+                                                        @{
+                                                    if (id1 == id)
+                                                    {
+                                                        IsExpAvail = "true";
+
+                                                        if (item1[6] is System.DBNull)
+                                                        {
+                                                            Compnylogo = "../../Images/Profile/companydefaultlogo.jpg";
+                                                        }
+                                                        else if (item1[6] != "")
+                                                        {
+                                                            Compnylogo = item1[6];
+                                                        }
+                                                        else
+                                                        {
+                                                            Compnylogo = "../../Images/Profile/companydefaultlogo.jpg";
+                                                        }
+
+                                                        <div>
+                                                            <!--RS19April17-->
+                                                            <div class="col-sm-2">
+                                                                <span style="visibility:hidden;">sxawx</span>
+                                                            </div>
+                                                            <div class="col-sm-2" style="text-align:center;">
+                                                                <img class="imageFitSize" src='@{ @Compnylogo}' id="profilepicprofile" style="height:60px !important;width:60px !important;margin-left:15%;" />
+                                                            </div>
+                                                            <div class="col-sm-8" style="padding-top:0%;text-align: center;">
+                                                                <span style="margin-left:20%;"> @item1[3]</span><br />
+                                                                <span style="margin-left:20%;"> @item1[2]</span><br />
+
+                                                                @{
+                                                        var DurFrom = @item1[4];
+                                                        var DurTo = @item1[5];
+
+                                                        var Dur = "";
+
+                                                        if (@item1[4] != "")
+                                                            Dur = DurFrom + " to " + DurTo;
+                                                                }
+
+                                                                <span style="margin-left:20%;">@Dur</span>
+                                                            </div>
+                                                            <div class="clearboth"></div>
+                                                        </div>
+
+                                                            @*<div style="text-align:left;">
+                                                                    <img class="imageFitSize" src='@{ @Compnylogo}' id="profilepicprofile" style="height:60px !important;width:60px !important;margin-left:15%;" /><span style="margin-left:20%; text-align:center;">@item1[3]</span>
+                                                                </div>*@
+                                                    }
+                                                    else
+                                                    {
+
+                                                    }
+                                                        }
+                                                    </div>
+                                                }
+
+                                                @{
+                                        if (IsExpAvail == "false")
+                                        {
+                                            <p class="pExperience+'@item[0]'" style="text-align:left;word-wrap:break-word;line-height:1.3;margin-top:0px !important;margin-left:3%;color:gray;">
+                                                No experience added
+                                            </p>
+                                        }
+                                                }
+
+                                            </div>
+                                            <hr />
+
+
+                                            <div>
+                                                <h4 style="text-align:left;">Education</h4>
+
+                                                @{
+                                        IsEduAvail = "false";
+                                                }
+
+                                                @foreach (var item2 in ViewBag.Educationdetails)
+                                                {
+
+                                                    var id2 = item2[1];
+                                                    var Compnylogo = "";
+
+                                                    cnt2++;
+                                                    <div>
+                                                        @{
+                                                    if (id2 == id)
+                                                    {
+                                                        IsEduAvail = "true";
+                                                        if (item2[6] is System.DBNull)
+                                                        {
+                                                            Compnylogo = "../../Images/Profile/education.png";
+                                                        }
+                                                        else if (item2[6] != "")
+                                                        {
+
+                                                            Compnylogo = item2[6];
+                                                        }
+                                                        else
+                                                        {
+                                                            Compnylogo = "../../Images/Profile/education.png";
+                                                        }
+
+                                                        <div>
+                                                            <!--RS19April17-->
+                                                            <div class="col-sm-2">
+                                                                <span style="visibility:hidden;">sxawx</span>
+                                                            </div>
+                                                            <div class="col-sm-2" style="text-align:center;padding-bottom: 2%;">
+                                                                <img class="imageFitSize" src='@{ @Compnylogo}' id="profilepicprofile" style="height:60px !important;width:60px !important;margin-left:15%;margin-right:20%;" />
+                                                            </div>
+                                                            <div class="col-sm-8" style="padding-top:3%;text-align:center;">
+                                                                <span style="margin-left:20%;"> @item2[2]&nbsp;&nbsp;@item2[3]&nbsp;&nbsp;@item2[4]</span>
+                                                            </div>
+                                                            <div class="clearboth"></div>
+                                                        </div>
+
+                                                            @*<div style="text-align:left;">
+                                                                    <img class="imageFitSize" src='@{ @Compnylogo}' id="profilepicprofile" style="height:60px !important;width:60px !important;margin-left:15%;" /><span style="margin-left:20%;">@item2[2]</span><br /><span style="margin-left:46%;">@item2[3]</span><br /><br /><span style="margin-left:46%;">@item2[4]</span>
+                                                                </div>*@
+                                                    }
+                                                        }
+                                                    </div>
+                                                }
+
+                                                @{
+                                        if (IsEduAvail == "false")
+                                        {
+                                            <p class="pEducation" style="text-align:left;word-wrap:break-word;line-height:1.3;margin-top:0px !important;margin-left:3%;color:gray;">
+                                                No education added
+                                            </p>
+                                        }
+                                                }
+
+                                            </div>
+                                            <hr />
+                                        </div>
+                                        i++;
+                                    }
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div id="dialog" title="Information">
+                    <div id="Message" style="color:black;text-align: center;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+
+    <div class="col-md-12">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8">
+            <div class="modal fade" id="ModalError" role="dialog">
+                <div class="modal-dialog" style="width: 70%;">
+                    <div class="modal-content">
+                        <div class="modal-header" style="padding-top: 3px; padding-bottom: 3px;">
+                            <img id="" src="~/Images/NewAssets/closepopup.png" style="float: right;margin-top: 3%;cursor:pointer;" data-dismiss="modal" />
+                            <h4 class="modal-title" style="font-size:30px;margin-top:10px;margin-bottom:10px;text-align: left;margin:2.5%;font-weight:bold;font-family:open sans;">Contact brokkrr</h4>
+                        </div>
+                        <div class="modal-body" style="font-weight:100;">
+
+                            <div class="col-md-12 col-sm-12 col-xs-12" style="margin-bottom:3%;">
+                                <div class="col-md-2 col-sm-3 col-xs-3" style="padding-left: 0;">
+                                    <img class="imageFit circular--landscape circular--square circular--portrait" src="" id="profilepicprofilepopup" style="height:90px !important;width:90px !important;margin-left:2%;" />
+
+                                </div>
+                                <div class="col-md-9 col-sm-9 col-xs-10" style="margin-top:1%;padding: 0;">
+                                    <div id="showname" style="font-weight: bold;font-family: open sans;font-size: 16px;">
+
+                                    </div>
+
+                                    <div id="showcity" style="font-family:open sans;">
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+
+                                <textarea id="chatcontent" class="col-md-12 col-sm-12 col-xs-12 mychatcontent" autofocus placeholder="Type Message here." style="font-size:20px !important;font-weight:100 !important; border:1px solid rgb(230,230,230);height:250px;padding-top:2%;padding-left:2%;font-family:open sans;box-shadow:none;outline:none !important;"></textarea>
+
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+
+                                </div>
+                                <div class="col-md-6 col-sm-12 col-xs-12" style="float:right;padding-top: 2%;left: 10%;">
+                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                        <button onclick="cancel();" id="cancel" style="margin: 2.5%;width:100%; height: 35px;border-radius: 20px;border:1px solid rgb(72,205,255);background: #fff;color:rgb(72,205,255);">
+                                            cancel
+                                        </button>
+                                    </div>
+                                    <div class="col-md-5 col-sm-5 col-xs-12">
+                                        <button onclick="SaveBrokerChat();" style="margin: 2.5%;width:100%;height: 35px;border-radius: 20px;border:none;background: rgb(72,205,255);color:#fff">
+                                            Send
+
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <input type="hidden" id="brokerid" />
+                            <input type="hidden" id="customerid" />
+                            <input type="hidden" id="customermsgid" />
+                            <input type="hidden" id="brokermsgid" />
+                            <input type="hidden" id="brokername" />
+                            <input type="hidden" id="profile" />
+                            <input type="hidden" id="city" />
+                            <span>
+                                <label for="lblError" id="lblError" style="color:red;margin-left:20px;"></label>
+                            </span>
+                            <br />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-2">
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-8">
+            <div class="modal fade" style="margin-top: 10%;overflow-y:hidden;" id="ModalInfo" role="dialog">
+                <div class="modal-dialog infopopup">
+                    <div class="modal-content">
+                        <div class="modal-header" style="padding-top: 3px; padding-bottom: 3px;">
+                            <img id="" src="~/Images/NewAssets/closepopup.png" style="float: right;margin-top: 3%;cursor:pointer;" data-dismiss="modal" />
+                            <h4 class="modal-title" style="font-size:30px;margin-top:10px;margin-bottom:10px;text-align: left;margin:2.5%;font-weight:bold;font-family:open sans;">Information</h4>
+                        </div>
+                        <div class="modal-body" style="font-weight:100; text-align:center;">
+                            <div id="MessageInfo" style="font-family:open sans;"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+    <footer class="footer-distributed" style="position: relative;background-image:none;" id="footerLayout">
+        <div class="container" style="width:100%">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-right:0;">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3" style="padding-top: 20px;padding-right:0;text-align: center;">
+                        <p style="display: block;color: #666666;font-size: 16px;font-family:open sans;text-align:center;">
+                            © 2018 brokkrr. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-sm-3 col-md-2 text-center" style="padding-left:0;">
+                        <p class="footer-company-about">
+                            <div class="social-icons" style="margin-bottom:0px;margin-top: 15px;">
+                                <a style="cursor:default;"><span class="facebook"></span></a>
+                                <a style="cursor:default;"><span class="twitter"></span></a>
+                                <a style="cursor:default;"><span class="linkedin"></span></a>
+                            </div>
+                        </p>
+                    </div>
+                    <div class="col-sm-2 col-md-5" style="margin-bottom:0%;">
+                    </div>
+                    <div class="col-sm-1 col-md-1" style="margin-bottom: 0%;margin-top: 1.5%;">
+                        <div style="padding-right:4%;text-align:center">
+                            <img src="~/Images/NewAssets/footer-logo.png" alt="logo" />
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1" style="margin-bottom:0%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,588 @@
+﻿@{
+    ViewBag.Title = "Privacy Policy";
+    //Layout = "~/Views/Shared/View_CustomerProfileLayout.cshtml";
+    Layout = "~/Views/Shared/_TermsandPolicyLayout.cshtml";
+    //Layout = null;
+}
+
+
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<!-- /css links -->
+<script type="text/javascript" src="~/Scripts/Scripts2/jquery.min.js"></script>
+<script src="~/Scripts/Scripts2/bootstrap.min.js"></script>
+
+@*<script src="~/Scripts/Scripts1/jquery-1.10.2.js"></script>
+
+    <script src="~/Scripts/Scripts1/jquery-ui.js"></script>*@
+
+
+
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+
+<style type="text/css">
+    .meinekelogo {
+        padding-top: 20px;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    @@media only screen and (min-width:2880px) {
+        .profilefooter {
+            margin-bottom: 20%;
+        }
+
+        .meinekelogo {
+            padding-top: 60px;
+            padding-right: 0;
+            text-align: center;
+        }
+    }
+
+    @@media only screen and (min-width:3840px) {
+        .profilefooter {
+            margin-bottom: 21% !important;
+        }
+
+        .meinekelogo {
+            padding-top: 68px;
+            padding-right: 0;
+            text-align: center;
+        }
+    }
+</style>
+
+<style type="text/css">
+    .modal-open {
+        overflow-y: scroll !important;
+    }
+
+    /*Square Images (Start)*/
+    .imageClass {
+        object-fit: cover;
+        -webkit-object-fit: cover !important;
+        -moz-object-fit: cover;
+        -ms-object-fit: cover;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
+
+    .circular--square {
+        border-radius: 50%;
+    }
+
+    .circular--square {
+        border-top-left-radius: 50% 50%;
+        border-top-right-radius: 50% 50%;
+        border-bottom-right-radius: 50% 50%;
+        border-bottom-left-radius: 50% 50%;
+    }
+
+    /*Square Images (End)*/
+
+
+    /*landscape Images (Start)*/
+
+    .circular--landscape {
+        display: inline-block;
+        position: relative;
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+
+        .circular--landscape img {
+            width: auto;
+            height: 100%;
+            margin-left: -50px;
+        }
+
+    /*landscape Images (End)*/
+
+    /*portrait Images (Start)*/
+
+    .circular--portrait {
+        position: relative;
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        border-radius: 50%;
+    }
+
+        .circular--portrait img {
+            width: 100%;
+            height: auto;
+        }
+
+
+    /*portrait Images (End)*/
+
+
+    .myprofiletag {
+        margin: 5%;
+        margin-bottom: 2%;
+        font-size: 40px;
+    }
+
+    #profileImage1 {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        background: rgb(235,235,235);
+        font-size: 60px;
+        color: #fff;
+        text-align: center;
+        line-height: 135px;
+        /*margin: 20px 0;*/
+    }
+
+    .detailslabel {
+        font-size: 12px;
+        color: rgb(153,153,153);
+        font-weight: 300;
+    }
+
+    .input {
+        border: none;
+        margin-top: 2%;
+        font-size: 18px;
+        border-bottom: 2px;
+        width: 100%;
+    }
+
+    .hr {
+        margin-top: 5px;
+        margin-bottom: 0px;
+        border-top: 2px solid rgb(204,204,204);
+    }
+
+    .hrRequired {
+        margin-top: 5px;
+        margin-bottom: 0px;
+        border-top: 2px solid red;
+    }
+</style>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $(".notification").css("display", "none");
+
+        $("#ZipCode").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                return false;
+            }
+            else {
+                return true;
+            }
+        });
+
+    });
+</script>
+
+<script>
+    window.onload = function () {
+
+        $('#footerLayout').hide();
+        $('#username').css('display', 'none');
+        $('#usernamedropdown').css('display', 'none');
+
+    };
+
+</script>
+
+<script type="text/javascript">
+    function openfileDialog() {
+        $("#fileToUpload").click();
+
+        $("#fileToUpload").change(function () {
+
+            if (this.files[0].size / 1024 <= 4096) {
+                $("#ProfilePhoto1").val($(this).val());
+                $("#IsProfilePhotoChanged").val("Yes");
+
+                //var data = new FormData();
+                //var files = $("#fileToUpload").get(0).files;
+                //if (files.length > 0) {
+                //    data.append("HelpSectionImages", files[0]);
+                //}
+
+                //$.ajax({
+                //    url: "/Profile/UploadProfilePicture",
+                //    type: "POST",
+                //    processData: false,
+                //    contentType: false,
+                //    data: data,
+                //    success: function (response) {
+                //        $('#profilepicprofile').css('display', 'block');
+                //        $('#profileImage1').css('display', 'none');
+                //        $("#profilepicprofile").fadeOut(600, function () {
+                //            $('#profilepicprofile').attr("src", response.ImagePath).fadeIn(600);
+                //        });
+
+                //    },
+                //    error: function (er) {
+                //    }
+
+                //});
+            }
+            else {
+                //alert("Called start");
+                $("#fileToUpload").val('');
+                $("#ProfilePhoto1").val('');
+                $("#IsProfilePhotoChanged").val("No");
+
+                $("#lblError").text('File Size Should not greater than 4 MB.');
+                //alert("Called End");
+                $("#ModalError").modal('show');
+
+            }
+        });
+
+    }
+
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('#profilepicprofile')
+                    .attr('src', e.target.result);
+                $('#profilepicprofile').css('display', 'block');
+                $('#profileImage1').css('display', 'none');
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    function CheckValidation() {
+
+        //alert("Called CheckValidation()");
+
+
+
+        var IsValidFirstName = false;
+        var IsValidLastName = false;
+        var IsValidPhoneNo = false;
+        var IsValidZipCode = false;
+        var IsValidEmailId = false;
+
+        var FirstName = $("#FirstName").val();
+        var LastName = $("#LastName").val();
+        var PhoneNo = $("#PhoneNo").val();
+        var ZipCode = $("#ZipCode").val();
+        var EmailId = $("#EmailId").val();
+
+        if (FirstName != "") {
+            //alert("inside fn if");
+            IsValidFirstName = true;
+            //$("#hrFirstName").removeClass("hrRequired");
+            //$("#hrFirstName").addClass("hr");
+        }
+        else {
+            //alert("else fn if");
+            IsValidFirstName = false;
+            //$("#hrFirstName").removeClass("hr");
+            //$("#hrFirstName").addClass("hrRequired");
+        }
+
+        if (LastName != "") {
+
+            IsValidLastName = true;
+            //$("#hrLastName").removeClass("hrRequired");
+            //$("#hrLastName").addClass("hr");
+        }
+        else {
+
+            IsValidLastName = false;
+            //$("#hrLastName").removeClass("hr");
+            //$("#hrLastName").addClass("hrRequired");
+        }
+
+        if (PhoneNo != "") {
+
+            IsValidPhoneNo = true;
+            //$("#hrPhoneno").removeClass("hrRequired");
+            //$("#hrPhoneno").addClass("hr");
+        }
+        else {
+
+            IsValidPhoneNo = false;
+            //$("#hrPhoneNo").removeClass("hr");
+            // $("#hrPhoneNo").addClass("hrRequired");
+        }
+
+        if (ZipCode != "") {
+            if (ZipCode.length < 5) {
+                IsValidZipCode = false;
+                //$("#hrZipCode").removeClass("hr");
+                //$("#hrZipCode").addClass("hrRequired");
+            }
+            else {
+                IsValidZipCode = true;
+                //$("#hrZipCode").removeClass("hrRequired");
+                //$("#hrZipCode").addClass("hr");
+            }
+        }
+        else {
+
+            IsValidZipCode = false;
+            //$("#hrZipCode").removeClass("hr");
+            //$("#hrZipCode").addClass("hrRequired");
+        }
+
+        if (EmailId != "") {
+
+            IsValidEmailId = true;
+            //$("#hrEmailId").removeClass("hrRequired");
+            //$("#hrEmailId").addClass("hr");
+        }
+        else {
+
+            IsValidEmailId = false;
+            //$("#hrEmailId").removeClass("hr");
+            //$("#hrEmailId").addClass("hrRequired");
+        }
+
+        if (IsValidFirstName == true && IsValidLastName == true && IsValidPhoneNo == true && IsValidZipCode == true && IsValidEmailId == true) {
+            $("#btnSave").prop("disabled", "disabled");
+            $("#btnSave").css("opacity", "0.2");
+            return true;
+        }
+        else {
+            //alert("False");
+            return false;
+        }
+    }
+
+
+
+</script>
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="~/Images/Assets/brokkrIcon24x24.png">
+    <title>Privacy Policy</title>
+</head>
+<body>
+    <div class="container profilefooter">
+        <div class="row">
+            <div class="col-lg-12 col-md-12" style="margin-top: 10px; margin-bottom: 10px;">
+                <div class="col-lg-1 col-md-1"></div>
+                <div class="col-lg-10 col-md-10">
+                    <div style="font-size: 28px;">
+                        Privacy Policy
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1"></div>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom:25px;">
+            <div class="col-lg-12 col-md-12">
+                <div class="col-lg-1 col-md-1"></div>
+                <div class="col-lg-10 col-md-10">
+                    <b>About us</b><br /><br />
+                    We are brokkrr, Inc., the owner and operator of the brokkrr app. In this privacy policy, we refer to the services we provide via the brokkrr app, our mobile website, email, text message, social media, and any other means as our "Services". References in this privacy policy to "brokkrr", "we", "us" or "our" are references to brokkrr, Inc. and any group companies involved in providing the Services.<br /><br />
+
+                    <b>About this privacy policy</b><br /><br />
+                    When you use our Services, we collect personal information about you. The purpose of this privacy policy is to explain the types of information we collect, how we use it and with whom it is shared.<br /><br />
+                    
+                    This privacy policy applies to all users of our Services as required by local laws.<br /><br />
+                    
+                    This privacy policy is divided into the following sections:<br />
+                    • How to contact us<br />
+                    • What is personal information?<br />
+                    • What personal information do we collect about you?<br />
+                    • Our cookies policy<br />
+                    • How do we use the personal information we collect?<br />
+                    • With whom do we share your personal information?<br />
+                    • We are not responsible for personal information you provide to other websites<br />
+                    • What choices and rights do you have regarding the use of your personal information?<br />
+                    • Complaints and queries<br />
+                    • Changes to this privacy policy<br /><br />
+
+                    <b>How to contact us</b><br /><br />
+                    If you have any questions about this privacy policy, or about how we use your personal information, you may contact us by email at info@brokkrr.com, or by writing to us using the following address:<br /> 
+                    brokkrr Inc,<br />
+                    111 Corporate Drive,<br /> 
+                    #200, Ladera Ranch,<br />
+                    CA 92694,<br />
+                    United States.<br /><br />
+
+                    <b>What is personal information?</b><br /><br />
+
+                    As used in this privacy policy, the term "personal information" means any information that specifically identifies an individual (such as a name, user name, e-mail address, postal address, phone number, credit card details, or account details) or information about that individual that is directly linked to information specifically identifying an individual. We have explained more about the information we collect about you in the section below.<br /><br />
+                    
+                    <b>What personal information do we collect about you?</b><br /><br />
+
+                    <i> Personal information which you provide to us, or which is provided to us by third parties</i><br /><br />
+
+                    The following personal information about you is provided to us either by you, or by third parties:<br />
+                    •	Information that you have provided to us or one of our third-party suppliers, such as your name, email address, telephone number, postal address, date of birth, payment information, credit card number, expiration date, authentication code, and similar information. This includes credit card information you provide when provide an image of your credit card to us using a mobile phone.<br />
+                    •	Information you provide to us when you communicate with us as part of the Services, for example when you call us, text us, email us, or whenever you use the chat feature in our app.<br />
+                    •	Information about you that you have made publicly available and which we use as part of the Services.<br />
+                    •	Information about you which we have obtained from certain third parties.<br />
+                    •	Information we collect about you when you sign up to our program.<br />
+                    •	Information about your location. We use this information to provide our Services to you, to improve our Services, and to send you information about products and services you may be interested in.<br /><br />
+
+                    You can decide not to provide certain personal information. However, if you choose not to provide it, you may not be able to use our Services.<br /><br />
+                    
+                    <i> We collect certain information about you automatically</i>
+                   
+                    When you use our Services, some information is also automatically collected, such as:<br /><br />
+                    •	Information about other websites you have visited (for example, the address of a referring website) before using the app;<br />
+                    •	Information about how you use our app (for example, how long you spend using it, how often, and when you last used it).<br />
+                    •	Information about your location.<br />
+                    •	We may collect certain technical and device-specific information, such as your IP address, your hardware model, operating system version, unique device identifiers, and mobile network information including your phone number.<br />
+                    •	Other personal information from third parties. For example, information obtained when you use social media accounts.<br /><br />
+
+                    <i>We collect personal information about you using cookies</i><br /><br />
+
+                    <b>Our cookies policy</b><br /><br />
+
+                    We may also automatically collect certain information through the use of "cookies." Cookies are small data files stored on your hard drive at the request of a website. Among other things, cookies help us to improve our Services and your experience. If you wish to block, erase, or be warned of cookies, please refer to your browser manufacturer to learn about these functions. However, if you choose to remove or reject cookies, this could affect our ability to provide our Services to you.<br /><br />
+                    We may also employ the use of anonymous identifiers, which are random strings of characters that are used for the same purposes as cookies on platforms, including certain mobile devices, where cookie technology is not available.<br /><br />
+                    We may use web beacons or similar technology on our Services. Web beacons are small, invisible graphic images that may be used on our Services or in emails relating to our Services to collect certain information and monitor user activity on our Services, such as to count visits, understand usage effectiveness and to tell if an email has been opened and acted upon.<br /><br />
+                    
+                    <b> How do we use the personal information we collect?</b><br /><br />
+
+                    We use personal information we collect for the following purposes:<br /><br />
+                    •	To enable us to provide our Services (e.g. to get information from you, or to send you booking confirmations via email or text message).<br />
+                    •	To request feedback and to otherwise contact you about your use of our Services.<br />
+                    •	To respond to your emails, questions, comments, requests and complaints, and to provide customer service.<br />
+                    •	To monitor and analyze how you use our Services, for example, how long you spend using our app, how you use our app, your usage and trends.<br />
+                    •	To personalize and improve our Services, and our users' experiences with our Services (such as providing content or features that match interests), and to increase our Services' functionality and user friendliness.<br />
+                    •	To provide you with marketing messages, news and information about events, offers, promotions and services we think will be of interest to you (if you do not wish to receive these messages, you can unsubscribe by following the instructions at the bottom of the message).<br />
+                    •	To send you confirmations, updates, security alerts and support and administrative messages, and otherwise facilitate your use of, and our administration and operation of, our Services.<br />
+                    •	To notify you about important changes to our Services.<br />
+                    •	To enforce, or apply this privacy policy, our Terms of Use, or our other policies or agreements.<br />
+                    •	To investigate and protect our users from fraudulent, abusive, inappropriate, or unlawful use of our Services.<br />
+                    •	For other purposes which are explained to you at the time we collect your personal information.<br /><br />
+
+                    <b>With whom do we share your personal information?</b><br /><br />
+                    We share your personal information with the following third parties, which may vary from time to time and may be different according to where you are located when you access the Services:<br /><br />
+                    
+                    <b>With whom do we share your personal information? Why do we share it?</b><br /><br />
+                    Insurance agents and brokers - In order to provide our Services, we share your personal information with insurance agents and brokers or with other third parties who carry out Services on the agents or brokers behalf.<br /><br />
+
+                    Other users - If you choose to include personal information (such as your email address, photo or other details) in your public profile, this may be viewed by others who use our Services. If you choose to participate in a discussion forum, your IP address may be shared with forum moderators. Sometimes information you choose to share will be available to other users and in some cases may be publicly available (for example, where you share personal information as part of a review, photo submission or similar).<br /><br />
+
+                    Our marketing and sales partners - We share your personal information with our marketing and sales partners, who help us manage our advertising, and enable us to send you information about products and services you may be interested in. These partners help us to manage our customer information and personalize emails. We may share your name, email address, information 
+                    about how you use the internet and our Services, information about your device (such as your device ID, operating system and browser) and information about your location.<br /><br />
+
+                    Third party service providers - From time to time, we may need to share your personal information with certain third parties so that they can perform services on our behalf. This may include payment and credit card information, your name and address, details about your invoice, details of your account with us, location, and information about the device you are using to access our Service (such as your device ID, operating system and browser, application and service logs, and information about how your use and interact with our app). Typically, our third party service providers help us by carrying out data analytics, providing booking and general customer support, processing payments, supporting email or IT services (for example, backing up our data), or carrying out similar activities. We also share your personal information with a range of other third party service providers who help us provide our Services, improve your user experience, develop our business, or help us anticipate and fix any problems with our Services.<br /><br />
+
+                    Third parties requiring information for legal reasons - We may share your personal information with others if the law requires us to, or if we think it is necessary to comply with the law. We may also share your personal information if we need to do so to protect or defend our legal rights, or those of others.<br /><br />
+
+                    Third party investigators, authorities or law enforcement bodies - We may share your personal information to investigate and protect our users from fraudulent, abusive, inappropriate, or unlawful use of our Services.<br /><br />
+
+                    Potential buyers or investors - In the unlikely event that we wished to sell our business, we may need to share your personal information with a potential buyer or an investor.<br /><br />
+
+                    Group companies - We share your personal information with members of our group of companies, if any, where required for business operational reasons.<br /><br />
+
+                    <b>We are not responsible for personal information you provide to other websites</b><br /><br />
+
+                    Our Services may contain links to other websites. Any personal information you provide on the linked pages is provided directly to that third party and is subject to that third party's privacy policy. We are not responsible for the content or privacy and security practices and policies of these websites or any other websites that are linked to/from our Services. We encourage you to 
+                    learn about their privacy and security practices and policies before providing them with any personal information.<br /><br />
+
+                    <b>What choices and rights do you have regarding the use of your personal information?</b><br /><br />
+                    
+                    You may "opt out" of receiving marketing or promotional messages from us by following the instructions in those messages. You may also opt out of such marketing by emailing us at info@brokkrr.com. If you opt out, we may still send you non-promotional emails, such as emails about your account or our on-going business relations. We want you to be in control of your information, so you also have the following rights:<br /><br />
+                    •	To have access to any personal information we hold about you.<br />
+                    •	To ask us to erase the personal information we hold about you.<br />
+                    •	To ask us not to use your personal information for direct-marketing purposes.<br />
+                    •	To restrict the way that we process your personal information.<br />
+                    •	To have your personal information provided to a third-party provider of services.<br />
+                    •	To have a copy of any personal information which we hold about you.<br />
+                    •	To object to our processing of your personal information.<br /><br />
+
+                    If you need help or wish to exercise any of the above rights or have questions about them, please contact us using the details above.  We will consider all such requests and provide our response as soon as we can. Please note, however, that personal information may be exempt from such requests in certain circumstances, which may include needing to keep processing your personal information for our legitimate interests or to comply with a legal obligation. Please note that we may request you provide us with information necessary to confirm your identity.<br /><br />
+
+                    <b>Complaints and queries</b><br /><br />
+                    If you have any complaints, queries or questions about how we use your personal information, you may contact us using the contact details set out above. We will then get in touch with you to see how we can help. If you have a complaint about how we use your personal information, we would always prefer you to contact us first. However, you may also make a complaint to the relevant data privacy regulator if you wish to do so. Please let us know if you are unsure about how to get in touch with the data privacy regulator.<br /><br />
+
+                    <b>Changes to this privacy policy</b><br /><br />
+                    We may amend this privacy policy from time to time. Please review this privacy policy periodically so that you understand how your personal information will be used.
+
+
+                </div>
+                <div class="col-lg-1 col-md-1"></div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <footer class="footer-distributed" style="position: relative;background-image:none;">
+        <div class="container" style="width:100%">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-right:0;">
+                <div class="row">
+                    <div class="col-md-3 col-sm-3 allrightalign" style="">
+                        <p style="display: block;color: #666666;font-size: 16px;font-family:open sans;text-align: center;">
+                            © 2018 brokkrr. All rights reserved.
+                        </p>
+                    </div>
+
+                    <div class="col-sm-3 col-md-2 text-center" style="padding-left:0;">
+                        <p class="footer-company-about">
+                            <div class="social-icons socialiconsalign" style="">
+                                <a style="cursor:default;"><span class="facebook"></span></a>
+                                <a style="cursor:default;"><span class="twitter"></span></a>
+                                <a style="cursor:default;"><span class="linkedin"></span></a>
+                            </div>
+                        </p>
+                    </div>
+                    <div class="col-sm-2 col-md-5" style="margin-bottom:0%;text-align: center;margin-top: 25px;font-size: 16px;">
+
+                    </div>
+                    <div class="col-sm-1 col-md-1" style="margin-bottom: 0%;">
+                        <div style="padding-right:4%;text-align:center">
+                            <img src="~/Images/NewAssets/footer-logo.png" alt="logo" />
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1" style="margin-bottom:0%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        @*<div class="container" style="width:100%">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-right:0;">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 meinekelogo" >
+                            <p style="display: block;color: #666666;font-size: 16px;font-family:open sans;text-align: center;">
+                                <img src="~/Images/MeinekeDealers/logo-MDA.png" class="img-responsive" />
+                            </p>
+                        </div>
+
+                        <div class="col-sm-3 col-md-2 text-center" style="padding-left:0;">
+                            <p class="footer-company-about">
+                                <div class="social-icons" style="margin-bottom:0px;margin-top: 15px;">
+
+                                </div>
+                            </p>
+                        </div>
+                        <div class="col-sm-4 col-md-4" style="margin-bottom:0%;">
+                        </div>
+                        <div class="col-sm-3 col-md-3" style="margin-bottom: 0%;margin-top: 1.5%;">
+                            <div class="col-sm-2 col-md-2">
+                            </div>
+                            <div class="col-sm-8 col-md-8" style="padding-left:6px;">
+                                <img src="~/Images/MeinekeDealers/brokkrr-logo-powered-by.png" class="img-responsive" />
+                            </div>
+                            <div class="col-sm-2 col-md-2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>*@
+    </footer>
+</body>
+</html>

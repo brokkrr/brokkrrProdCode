@@ -1,0 +1,904 @@
+﻿@{
+    ViewBag.Title = "Insurance";
+    //if (ViewBag.User == "Authorize")
+    //{ Layout = "~/Views/Shared/_NewCustomerLayout.cshtml"; }
+    //else
+    //{ Layout = "~/Views/Shared/_NewCustomerLayoutWithoutLogin.cshtml"; }
+    Layout = "";
+}
+
+<html>
+<head>
+    <title>brokkrr Inc.</title>
+
+    @*Start Layout style and script*@
+    <link rel="shortcut icon" href="~/Images/Assets/brokkrIcon24x24.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- font links -->
+    <link href="~/Content/BrokkrrCSS/OpenSans.css" rel="stylesheet" />
+
+    <!-- css links -->
+    <link href="~/Content/BrokkrrCSS/CSS1/style.css" rel="stylesheet" />
+    <link href="~/Content/BrokkrrCSS/CSS2/style.css" rel="stylesheet" />
+    <link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/BrokkrrCSS/Site.css" rel="stylesheet" />
+
+
+    <!-- /css links -->
+    <!-- js links -->
+    <script src="~/Scripts/Scripts2/jquery.min.js"></script>
+    <script src="~/Scripts/Scripts2/bootstrap.min.js"></script>
+
+    <!-- /js links -->
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var count = 0;
+
+
+            var Auth = '@ViewBag.User';
+
+            //alert("Authorize - " + Auth)
+
+            if (Auth == "Authorize") {
+                $("#HomePage").css("display", "none");
+                $("#MeinekeHomePage").css("display", "block");
+            }
+            else {
+                $("#HomePage").css("display", "block");
+                $("#MeinekeHomePage").css("display", "none");
+            }
+
+            $('#profileImage').click(function () {
+                //  alert("hii");
+                if (count == 0) {
+                    // alert("enter for fadeIn");
+                    $('#myDropdown').fadeIn('slow');
+                    count++;
+                    //  alert("Called for fadeIn");
+                }
+                else {
+                    //  alert("enter for fadeOut");
+                    $('#myDropdown').fadeOut('slow');
+                    count--;
+                    //  alert("Called for fadeOut");
+                }
+
+                window.onclick = function (event) {
+                    $('#myDropdown').fadeOut('slow');
+                    count = 0;
+                }
+
+            });
+
+
+            $("#ZipCodeSectionValue").keypress(function (e) {
+                //if the letter is not digit then display error and don't type anything
+                if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+                    return false;
+                }
+                else {
+                    return true;
+                }
+            });
+
+        });
+
+    </script>
+
+    <style>
+        .dropbtn {
+            /*background-color: #4CAF50;*/
+            background-color: #f1f1f1;
+            /*color: white;*/
+            color: rgb(72,205,255);
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+            .dropbtn:hover, .dropbtn:focus {
+                background-color: #3e8e41;
+                /*background-color:rgb(72,205,255);*/
+                color: #fff;
+            }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            color: rgb(72,205,255);
+            min-width: 160px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                /*color: black;*/
+                color: rgb(72,205,255);
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+        .dropdown a:hover {
+            /*background-color: #f1f1f1;*/
+            background-color: rgb(72,205,255);
+            color: #fff;
+        }
+
+        .show {
+            display: block;
+        }
+
+
+        #profileImage {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #ffffff;
+            font-size: 20px;
+            color: rgb(72,205,255);
+            text-align: center;
+            line-height: 40px;
+            font-family: open sans;
+            text-align: center;
+            margin-left: 12% !important;
+        }
+
+        .username {
+            color: #fff;
+            padding-right: 0;
+            font-size: 22px !important;
+            font-family: open sans;
+            text-align: right;
+            top: 25px;
+        }
+    </style>
+    <style type="text/css">
+        /*and (min-width: 335px)*/
+        @@media screen and (max-width:640px) {
+
+            #profileImage {
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+                background: #ffffff;
+                font-size: 14px;
+                color: rgb(72,205,255);
+                text-align: center;
+                line-height: 25px;
+                font-family: open sans;
+                text-align: center;
+                margin: -5px 0;
+            }
+
+
+            .dropdown-content {
+                position: absolute;
+                background-color: #f9f9f9;
+                color: rgb(72,205,255);
+                /*min-width: 67px;*/
+                overflow: auto;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1;
+                margin-left: 30%;
+                min-width: 64px;
+                /*margin-left: -62%;*/
+                margin-left: 16px;
+                font-size: 2.8vw;
+                margin-top: 66% !important;
+            }
+
+
+                .dropdown-content a {
+                    color: black;
+                    color: rgb(72,205,255);
+                    padding: 5px 8px;
+                    text-decoration: none;
+                    display: block;
+                }
+
+            .username {
+                color: #fff;
+                padding-right: 0;
+                font-size: 9.8px !important;
+                font-family: open sans;
+                text-align: right;
+                top: 19px;
+                right: -14px;
+            }
+        }
+
+        .ss {
+            padding-left: 0 !important;
+            top: 20px;
+        }
+
+        .loginname {
+            font-size: 10px;
+        }
+    </style>
+    @*End Layout style and script*@
+
+    <script>
+        window.onload = function () {
+            $('#footerLayout').hide();
+        };
+
+    </script>
+    <script>
+
+        $(document).ready(function () {
+            var isLogin = '@ViewBag.User';
+            IsUserLogin = isLogin;
+
+            @*Regarding hidding header content on basis of Authorized and unauthorized user*@
+
+            if (IsUserLogin == "Authorize") {
+                //alert("if called");
+                $('#headerlayout').show();
+            }
+            else {
+                //alert("else called");
+                $('#headerlayout').hide();
+            }
+            @*Regarding hidding header content on basis of Authorized and unauthorized user*@
+
+            var intr;
+
+            $('#loading').show();
+            $('.bodycustomer').addClass('Insurancemainblur');
+
+
+
+            // alert('html');
+
+            @*City = '@ViewBag.City';
+            ZipCode = '@ViewBag.ZipCode';
+            Longitude = '@ViewBag.Longitude';
+            Latitude = '@ViewBag.Latitude';
+            Country = '@ViewBag.Country';*@
+
+            //$('#city').val(City);
+            //$('#zipCode').val(ZipCode);
+            //$('#longitude').val(Longitude);
+            //$('#latitude').val(Latitude);
+
+            //alert(Longitude + "," + Latitude);
+
+
+            //if (Longitude == '' && Latitude == '') {
+
+            //    var IntrZipCode = setInterval(
+            //   function () {
+            //       var longitude = $('#longitude').val();
+            //       var latitude = $('#latitude').val();
+
+
+            //       if (longitude == '' && latitude == '') {
+            //           $.ajax({
+            //               url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + ZipCode + '',
+            //               success: function (data) {
+            //                   lat = data.results[0].geometry.location.lat;
+            //                   lng = data.results[0].geometry.location.lng;
+
+            //                   $('#longitude').val(lng);
+            //                   $('#latitude').val(lat);
+
+            //                   for (var i = 0; i < data.results[0].address_components.length; i++) {
+
+            //                       for (var b = 0; b < data.results[0].address_components[i].types.length; b++) {
+            //                           if (data.results[0].address_components[i].types[b] == "postal_code") {
+            //                               var zip = data.results[0].address_components[i].long_name;
+            //                           }
+            //                           if (data.results[0].address_components[i].types[b] == "locality") {
+            //                               localCity = data.results[0].address_components[i].long_name;
+            //                               $('#city').val(localCity);
+            //                           }
+            //                           if (data.results[0].address_components[i].types[b] == "country") {
+            //                               Country = data.results[0].address_components[i].long_name;
+            //                               $('#Country').val(Country);
+            //                           }
+            //                       }
+            //                   }
+            //               }
+
+            //           });
+            //       }
+            //       else {
+            //           clearInterval(IntrZipCode);
+            //       }
+            //   }, 4000);
+            //}
+
+            var location = '';
+            //if (City != '') {
+            //    location = City + ',' + Country
+            //}
+            //else {
+            //    location = ZipCode;
+            //}
+
+            $('.selected-answer-location').text(location);
+
+            $.ajax({
+                url: '@Url.Action("GetIndustryMaster", "Insurances")',
+                type: 'GET',
+                success: function (data) {
+
+                    industryList = data;
+                }
+            });
+
+
+            $.ajax({
+                url: '@Url.Action("GetSubindustry", "Insurances")',
+                type: 'GET',
+                success: function (data) {
+
+                    subIndustryList = data;
+                }
+            });
+
+
+            $.ajax({
+                url: '@Url.Action("GetCompany", "Insurances")',
+                type: 'GET',
+                success: function (data) {
+
+                    insuranceCompanyList = data;
+                }
+            });
+
+            intr = setInterval(
+                function () {
+                    $('#loading').hide();
+                    $('.bodycustomer').removeClass('Insurancemainblur');
+
+                    clearInterval(intr);
+                },
+                2000);
+        });
+
+
+
+        var isLogin = '@ViewBag.User';
+
+        $(document).on('click', '.selected-answer-location', function () {
+            if (isLogin == 'Authorize')
+                window.location.href = "/Home/HomePage";
+            else
+                window.location.href = "/Home/Index";
+        });
+
+        $(document).on('click', '.hrfHome', function () {
+            if (isLogin == 'Authorize')
+                window.location.href = "/Home/HomePage";
+            else
+                window.location.href = "/Home/Index";
+        });
+
+        $(document).on('click', '.SubmitInsurance', function () {
+            //alert('called');
+            //alert("Without Login Called");
+            $(".errormessage").text('');
+            $(".showerrormessage").text('');
+
+            $('#loading').show();
+            $('.bodycustomer').addClass('Insurancemainblur');
+
+
+            var firstname = $('#firstName');
+            // var lastname = $('#lastName');
+            var phone = $('#phone');
+            var email = $('#email');
+            // var password = $('#password');
+            // var conpassword = $('#conpassword');
+
+
+            firstname.keyup(validatefirstname);
+            //lastname.keyup(validatelastname);
+            phone.keyup(validatephone);
+            //email.keyup(validateemail);
+            //password.keyup(validatepassword);
+            //conpassword.keyup(validateconpassword);
+
+            email.keyup(validateRequiredEmail);
+            // password.keyup(validateRequiredpass);
+            //conpassword.keyup(validateRequiredconpass);
+
+
+
+            function validatefirstname() {
+
+                if (globalvalidateName(firstname)) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+            //function validatelastname() {
+
+            //    if (checkRequiredField(lastname)) {
+            //        return true;
+            //    }
+            //    else {
+            //        return false;
+            //    }
+            //}
+            function validatephone() {
+
+                if (checkRequiredField(phone)) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+
+            function validateRequiredEmail() {
+
+                if (checkRequiredField(email)) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+            //function validateRequiredpass() {
+
+            //    if (checkRequiredField(password)) {
+            //        return true;
+            //    }
+            //    else {
+            //        return false;
+            //    }
+            //}
+
+            //function validateRequiredconpass() {
+
+            //    if (checkRequiredField(conpassword)) {
+            //        return true;
+            //    }
+            //    else {
+            //        return false;
+            //    }
+            //}
+
+
+
+            function validateemail() {
+
+                if (globalvalidateEmail(email)) {
+                    return true;
+                }
+                else {
+                    return false;
+                }
+            }
+            //function validatepassword() {
+
+            //    if (globalvalidatePassword(password)) {
+            //        return true;
+            //    }
+            //    else {
+            //        return false;
+            //    }
+            //}
+
+            //function validateconpassword() {
+
+            //    if (globalvalidateConPassword(conpassword)) {
+            //        return true;
+            //    }
+            //    else {
+            //        return false;
+            //    }
+            //}
+
+
+            function validateFields() {
+                //if (checkRequiredField(firstname) & checkRequiredField(lastname) & checkRequiredField(phone) & checkRequiredField(email) & checkRequiredField(password) & checkRequiredField(conpassword) & globalvalidateEmail(email) & globalvalidatePassword(password) & globalvalidateConPassword(conpassword)) {
+
+                if (checkRequiredField(phone) & checkRequiredField(email) & globalvalidateEmail(email) & globalvalidateName(firstname)) {
+                    //  alert('valid');
+                    return true;
+                }
+                else {
+                    // alert('in valid');
+                    return false;
+                }
+            }
+
+
+            if (validateFields()) {
+
+                var siccodeid = '', industryid = '';
+
+                if ($('#industry').val() != "") {
+
+                    industryid = $('#industry').val();
+                    siccodeid = $('#siccode').val();
+
+                }
+                var model = {
+                    firstName: $('#firstName').val(),
+                    lastName: $('#lastName').val(),
+                    phone: $('#phone').val(),
+                    email: $('#email').val(),
+                    password: $('#password').val(),
+                    newPurchaseOrCurrentlyInsured: $('#newPurchaseOrCurrentlyInsured').val(),
+                    insuranceCompany: '',//$('#insuranceCompany').val()
+                    acquisitionIsInsured: $('#acquisitionIsInsured').val(),
+                    whenNeedInsurence: '',//$('#whenNeedInsurence').val()
+                    noOfEmployee: $('#NumberofEmployees').val(),
+                    industry: industryid,
+                    siccode: siccodeid,
+                    coverageamount: $('#coverageamount').val(),
+                    grossrevenue: $('#grossrevenue').val(),
+                    acquisitionIsInsured: $('#acquisitionIsInsured').val(),
+                    typeOfAuto: $('#typeOfAuto').val(),
+                    valueOfHome: $('#valueOfHome').val(),
+                    language: $('#language').val(),
+                    notes: $('#notes1').val(),
+                    city: $('#city').val(),
+                    zipCode: $('#zipCode').val(),
+                    longitude: $('#longitude').val(),
+                    latitude: $('#latitude').val(),
+                    insurancetype: $('#insurancetype').val(),
+                    NoOfUnits: $('#howManyUnits').val(),
+                    deductibleIfany: $('#deductibleIfany').val(),
+                    currentLimit: $('#currentLimit').val(),
+                    GrossSale: $('#grossrevenue').val(),
+                    GrossPayroll: $('#GrossPayroll').val(),
+                    noOfEmployeeMeinekeBenefits: $('#noOfEmployee').val()
+                };
+
+                //alert("noOfEmployee - " + $('#noOfEmployee').val());
+                //alert(JSON.stringify(model));
+                $.ajax({
+                    url: '@Url.Action("SearchInsurance", "Insurances")',
+                    data: JSON.stringify(model),
+                    type: 'POST',
+                    contentType: 'application/json; charset=utf-8',
+                    success: function (data) {
+                        if (data.result == 'Success') {
+                            $('#loading').hide();
+                            $('.bodycustomer').removeClass('Insurancemainblur');
+
+                            window.location.href = '/Insurances/SearchBroker';
+                        }
+                        else {
+                            // alert(data.result);
+                            $('#loading').hide();
+                            $('.bodycustomer').removeClass('Insurancemainblur');
+
+                            $(".showerrormessage").text(data.result);
+                            $("#ModalError").modal();
+
+                        }
+                    }
+                });
+
+            }
+            else {
+
+                $('#loading').hide();
+                $('.bodycustomer').removeClass('Insurancemainblur');
+
+                var error = $('.errormessage').html();
+
+                if (error != '') {
+                    $(".showerrormessage").html(error);
+                    $("#ModalError").modal();
+                }
+
+
+            }
+        });
+
+
+        $(document).on('click', '.SubmitInsuranceWithLogin', function () {
+            //alert("With Login Called");
+            $('#loading').show();
+            $('.bodycustomer').addClass('Insurancemainblur');
+
+            $(".errormessage").text('');
+            $(".showerrormessage").text('');
+
+            //alert('called');
+            var siccodeid = '', industryid = '';
+
+            if ($('#industry').val() != "") {
+
+                industryid = $('#industry').val();
+                siccodeid = $('#siccode').val();
+
+            }
+            var model = {
+                firstName: $('#firstName').val(),
+                lastName: $('#lastName').val(),
+                phone: $('#phone').val(),
+                email: $('#email').val(),
+                password: $('#password').val(),
+                newPurchaseOrCurrentlyInsured: $('#newPurchaseOrCurrentlyInsured').val(),
+                insuranceCompany: '',//$('#insuranceCompany').val()
+                acquisitionIsInsured: $('#acquisitionIsInsured').val(),
+                whenNeedInsurence: '',//$('#whenNeedInsurence').val()
+                noOfEmployee: $('#NumberofEmployees').val(),
+                industry: industryid,
+                siccode: siccodeid,
+                coverageamount: $('#coverageamount').val(),
+                grossrevenue: $('#grossrevenue').val(),
+                acquisitionIsInsured: $('#acquisitionIsInsured').val(),
+                typeOfAuto: $('#typeOfAuto').val(),
+                valueOfHome: $('#valueOfHome').val(),
+                language: $('#language').val(),
+                notes: $('#notes1').val(),
+                city: $('#city').val(),
+                zipCode: $('#zipCode').val(),
+                longitude: $('#longitude').val(),
+                latitude: $('#latitude').val(),
+                insurancetype: $('#insurancetype').val(),
+                NoOfUnits: $('#howManyUnits').val(),
+                deductibleIfany: $('#deductibleIfany').val(),
+                currentLimit: $('#currentLimit').val(),
+                GrossSale: $('#grossrevenue').val(),
+                GrossPayroll: $('#GrossPayroll').val(),
+                noOfEmployeeMeinekeBenefits: $('#noOfEmployee').val()
+            };
+
+            //alert(JSON.stringify(model));
+            $.ajax({
+                url: '@Url.Action("SearchInsurance", "Insurances")',
+                data: JSON.stringify(model),
+                type: 'POST',
+                contentType: 'application/json; charset=utf-8',
+                success: function (data) {
+
+                    if (data.result == 'Success') {
+                        $('#loading').hide();
+                        $('.bodycustomer').removeClass('Insurancemainblur');
+
+                        window.location.href = '/Insurances/SearchBroker';
+                    }
+                    else {
+                        //alert(data.result);
+                        $('#loading').hide();
+                        $('.bodycustomer').removeClass('Insurancemainblur');
+
+                        $(".showerrormessage").html(data.result);
+                        $("#ModalError").modal();
+
+                    }
+                }
+            });
+
+        });
+
+    </script>
+
+    <link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <!-- /css links -->
+    @*<script type="text/javascript" src="~/Scripts/Scripts2/jquery.min.js"></script>*@
+    @*<script src="~/Scripts/Scripts2/bootstrap.min.js"></script>*@
+
+    <link href="~/Content/BrokkrrCSS/jquery1.12.1-ui.css" rel="stylesheet" />
+
+    <script src="~/js/jquery-1.12.4.js"></script>
+
+    <script src="~/js/jquery-ui.js"></script>
+
+
+    <link href="~/Content/BrokkrrCSS/Meinekenewinsurance.css" rel="stylesheet" />
+
+    <script src="~/js/multipleSelectJS/jquery.min.2.1.1.js"></script>
+    @*<script src="~/js/insurance.js"></script>*@
+    <script src="~/js/MeinekeInsuranceWithoutLogin.js"></script>
+
+    <script src="~/js/jquery.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+
+
+    <script src="~/js/multipleSelectJS/jquery-ui.min.js"></script>
+    <script src="~/js/multipleSelectJS/infragistics.core.js"></script>
+    <script src="~/js/multipleSelectJS/infragistics.lob.js"></script>
+    <link href="~/Content/multipleSelectCSS/infragistics.css" rel="stylesheet" />
+
+    <link href="~/Content/multipleSelectCSS/Meinekeinfragistics.theme.css" rel="stylesheet" />
+</head>
+
+<body class="bodycustomer" style="background-image:url(../../Images/Assets/insurance_background.png);background-repeat:no-repeat;overflow-x:hidden;background-size:100% 980px;">
+    <div class="row" style="height:auto;">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-6 col-sm-6 col-xs-6" style="padding:1.5%;padding-left:7%;">
+                <a id="MeinekeHomePage" class="hrfHome" style="cursor:pointer;" href="@Url.Action("MeinekeHomePage", "Home")"><img src="~/Images/MeinekeDealers/preferred-logo.png" alt="Logo" class="img-responsive" /></a>
+                <a id="HomePage" class="hrfHome" style="cursor:pointer;" href="@Url.Action("Index", "Home")"><img src="~/Images/MeinekeDealers/preferred-logo.png" alt="Logo" class="img-responsive" /></a>
+            </div>
+            <div id="headerlayout">
+                <div class="col-md-4 col-sm-4 col-xs-4" style="padding-right:0;">
+                    <div class="col-md-12 col-sm-12 col-xs-12 username">
+                        @ViewBag.UserName
+                    </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-2 dropdown">
+                    <div class="col-md-12 col-sm-12 col-xs-12 ss">
+                        <div onclick="myFunction()" id="profileImage" style="margin-left:2%;cursor:pointer;border: 1px solid;" class="dropdown-toggle" data-toggle="dropdown">@ViewBag.Initials</div>
+                    </div>
+                    <div id="myDropdown" class="dropdown-content" style="border-radius:4%;margin-top: 28%;left: -23px;text-align: center;">
+                        <a id="HomePage" style="font-family:open sans;text-decoration:none;display:none;" href="@Url.Action("HomePage", "Home")">Search brokkrr</a>
+                        <a id="MeinekeHomePage" style="font-family:open sans;text-decoration:none;display:block;" href="@Url.Action("MeinekeHomePage", "Home")">Search brokkrr</a>
+                        <a id="CustomerProfile" style="font-family:open sans;text-decoration:none;display:none;" href="@Url.Action("CustomerProfile", "Profile")">My Profile</a>
+                        <a id="MeinekeCustomerProfile" style="font-family:open sans;text-decoration:none;display:block;" href="@Url.Action("MeinekeCustomerProfile", "Profile")">My Profile</a>
+                        <a style="font-family:open sans;text-decoration:none;" href="@Url.Action("CustomerMessage", "Message")">Messages</a>
+                        <a style="font-family:open sans;text-decoration:none;" href="@Url.Action("CustomerLogout", "Login")">Log out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 Insurancemain">
+            @*<h2>Insurance</h2>*@
+
+            <input type="hidden" id="Country" class="submitanswer" />
+            <input type="hidden" id="city" class="submitanswer" />
+            <input type="hidden" id="zipCode" class="submitanswer" />
+            <input type="hidden" id="longitude" class="submitanswer" />
+            <input type="hidden" id="latitude" class="submitanswer" />
+            <div id="loading">
+                <img id="loading-image" src="~/Images/NewAssets/loader.gif" alt="Loading..." />
+            </div>
+            <ul id="InsuranceOtherQuestion">
+                @*<li class="main firstQ " style="line-height:1.4em;">
+                    <span class="line hideline"></span> <span class="bullet firstbullet"></span>
+                    <div>
+                        <div class="question-bar selected-answer-location">
+                            
+                        </div>
+                    </div>
+                </li>*@
+
+                <li id="ZipCodeSection" class="main firstQ ">
+                    <span class="line hideline"></span> <span class="bullet firstbullet"></span>
+                    <div style="width:100%;">
+                        <div class="question-bar">
+                            <div class="qusetion">Enter Zip Code</div>
+                            <div class="selectedanswer"></div>
+                            <input type="hidden" id="submitZipCode" class="submitanswer" />
+
+                        </div>
+                        <div class="question-div">
+                            <div class="next-question-div">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="col-sm-6 col-md-6">
+                                            <input type="text" maxlength="5" id="ZipCodeSectionValue" class="contactinfo" placeholder="Enter zip code" />
+
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="next-question-button answer-small-button" id="btnZipCodeSection">Next >></div>
+
+                                    </div>
+                                    <div class="col-sm-12 col-md-12">
+                                        <div class="errormessage"></div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li id="typeofinsurance" class="main SecondQ" style="line-height:1.2em;display:none;">
+                    <span class="line hideline"></span>   <span class="bullet secondbullet"></span>
+                    <div style="width:100%;">
+                        <div class="question-bar" style="line-height: 1.5em;">
+                            <div class="qusetion">What type of insurance you are looking for ? <span class="typeofinsurance">(Select insurance type)</span></div>
+                            <div class="selectedanswer"></div>
+                            <input type="hidden" id="insurancetype" class="submitanswer" />
+                        </div>
+                        <div class="question-div">
+                            <div class="next-question-div">
+                                <div class="col-md-2 col-sm-2 col-xs-6"><center><img class="next-question-button img-responsive" id="Commercial Auto Insurance" src="~/Images/NewAssets/garage-keepers.png" alt="Commercial Auto" /></center><div style="text-align: center;margin-top: 7%;">Commercial Auto</div></div>
+                                <div class="col-md-2 col-sm-2 col-xs-6"><center><img class="next-question-button img-responsive" id="Workers Compensation" src="~/Images/NewAssets/workers-comp.png" alt="Worker Compensation" /></center><div style="text-align: center;margin-top: 7%;">Worker Compensation</div></div>
+                                <div class="col-md-2 col-sm-2 col-xs-6"><center><img class="next-question-button img-responsive" id="Liability Insurance" src="~/Images/NewAssets/Liability.png" alt="Liability" /></center><div style="text-align: center;margin-top: 7%;">Liability</div></div>
+                                <div class="col-md-2 col-sm-2 col-xs-6"><center><img class="next-question-button img-responsive" id="Meineke Benefits Insurance" src="~/Images/NewAssets/MeinekeBenefits.png" alt="Benefits" /></center><div style="text-align: center;margin-top: 7%;">Benefits</div></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+            <div class="col-md-12 col-sm-12 col-xs-12" style="position: absolute;left: 0;bottom:15px;">
+                <div class="col-md-6 col-sm-6 col-xs-6" style="left:20px;">
+                    <img src="~/Images/MeinekeDealers/logo-MDA.png" class="img-responsive" />
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-2">
+
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-4">
+                    <div style="position:relative;">
+                        <img src="~/Images/MeinekeDealers/brokkrr-logo-powered-by.png" class="img-responsive" />
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="col-md-12">
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-md-6">
+            <div class="modal fade" style="margin-top: 10%;" id="ModalError" role="dialog">
+                <div class="modal-dialog" style="width: 35%;">
+                    <div class="modal-content">
+                        <div class="modal-header" style="padding-top: 3px; padding-bottom: 3px;">
+                            <img id="" src="~/Images/NewAssets/closepopup.png" style="float: right;margin-top: 3%;cursor:pointer;" data-dismiss="modal" />
+                            <h4 class="modal-title" style="font-size:30px;margin-top:10px;margin-bottom:10px;text-align: left;margin:2.5%;font-weight:bold;font-family:open sans;">Information</h4>
+                        </div>
+                        <div class="modal-body" style="font-weight:100; text-align:left;font-family: 'Open Sans' !important;padding-left: 25px;">
+                            <div class="showerrormessage"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+
+    @*<footer class="footer-distributed" style="position: relative;background-image:none;">
+            <div class="container" style="width:100%">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-right:0;">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3" style="padding-top: 20px;padding-right:0;text-align: center;">
+                            <p style="display: block;color: #666666;font-size: 16px;font-family:open sans;text-align:center;">
+                                © 2018 Brokkrr. All rights reserved.
+                            </p>
+                        </div>
+
+                        <div class="col-sm-3 col-md-2 text-center" style="padding-left:0;">
+                            <p class="footer-company-about">
+                                <div class="social-icons" style="margin-bottom:0px;margin-top: 15px;">
+                                    <a style="cursor:default;"><span class="facebook"></span></a>
+                                    <a style="cursor:default;"><span class="twitter"></span></a>
+                                    <a style="cursor:default;"><span class="linkedin"></span></a>
+                                </div>
+                            </p>
+                        </div>
+                        <div class="col-sm-2 col-md-5" style="margin-bottom:0%;">
+                        </div>
+                        <div class="col-sm-1 col-md-1" style="margin-bottom: 0%;margin-top: 1.5%;">
+                            <div style="padding-right:4%;text-align:center">
+                                <img src="~/Images/NewAssets/footer-logo.png" alt="logo" />
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-sm-1" style="margin-bottom:0%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>*@
+</body>
+</html>

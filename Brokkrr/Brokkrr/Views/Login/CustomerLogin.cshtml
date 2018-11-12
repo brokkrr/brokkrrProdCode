@@ -1,0 +1,372 @@
+﻿<!---New Design-->
+@model BrokerMVC.Models.LoginModel
+@{
+    ViewBag.Title = "CustomerLogin";
+    Layout = "~/Views/Shared/View_BrokkrrLoginLayout.cshtml";
+}
+<link href="~/Content/BrokkrrCSS/MediaQueries.css" rel="stylesheet" />
+<link href="~/Content/BrokkrrCSS/Login.css" rel="stylesheet" />
+<link href="~/Content/BrokkrrCSS/LoginFont.css" rel="stylesheet" />
+<link href="~/Content/font-awesome.css" rel="stylesheet" />
+<link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/js/bootstrap.min.js"></script>
+<script src="~/js/jquery.min.js"></script>
+
+<script type="text/javascript">
+
+
+
+    function forgetpwd() {
+
+        $('#emailfailed').css("display", "none");
+        $('#emailsent').css("display", "none");
+        $('#errorforgetpwd').css("display", "none");
+        $('#emailsending').css("display", "block");
+        $('#invalidemail').css("display", "none");
+
+        $('#btnSendLink').prop('disabled', true);
+
+        var emailID = $("#ForgetEmail").val();
+
+        if (emailID != '') {
+
+            $.ajax({
+                url: '@Url.Action("ForgetPassword", "Login")',
+                type: 'GET',
+                dataType: 'json',
+                cache: false,
+                data: { emailID: emailID },
+                success: function (data) {
+
+                    var emailsent = data.Success;
+                    if (emailsent == "Success") {
+                        $('#emailsent').css("display", "block");
+                        $('#btnSendLink').prop('disabled', false);
+                        $('#emailsending').css("display", "none");
+                        $('#invalidemail').css("display", "none");
+                        $("#ForgetEmail").val('');
+                    }
+                    else if (emailsent == "Fail") {
+                        $('#emailfailed').css("display", "block");
+                        $('#btnSendLink').prop('disabled', false);
+                        $('#emailsending').css("display", "none");
+                        $('#invalidemail').css("display", "none");
+                    }
+                    else if (emailsent == "Invalid") {
+                        $('#emailfailed').css("display", "none");
+                        $('#btnSendLink').prop('disabled', false);
+                        $('#emailsending').css("display", "none");
+                        $('#invalidemail').css("display", "block");
+                    }
+
+                }
+            });
+        }
+        else {
+
+            $("#ForgetEmail").focus();
+            $('#errorforgetpwd').css("display", "block");
+            $('#btnSendLink').prop('disabled', false);
+            $('#emailsending').css("display", "none");
+            $('#invalidemail').css("display", "none");
+        }
+
+        window.onload = function () {
+            $('#noresults').hide();
+        };
+    }
+
+
+    $(document).ready(function (e) {
+
+        history.pushState(null, null, location.href);
+        window.onpopstate = function () {
+            history.go(1);
+        };
+
+        var LoginFailBroker = '@ViewData["LoginFailBroker"]';
+
+        if (LoginFailBroker != "")
+        {
+            $("#BrokerLogin").css("display", "block");
+        }
+
+        //alert("Ready-" + LoginFailBroker);
+
+        $("#Pass").click(function () {
+            //alert("Called");
+            if ($('#Password').attr("type") == "password") {
+                $('#Password').attr("type", "text");
+                $('#Pass').css({ "background-image": "url('../../Images/Login/show_password.png')", "background-repeat": "no-repeat", "background-position": "100% 5px;" })
+
+            }
+            else {
+                $('#Password').attr("type", "password");
+                $('#Pass').css({ "background-image": "url('../../Images/Login/hide_password.png')", "background-repeat": "no-repeat", "background-position": "100% 5px;" })
+            }
+        });
+
+        $("#Pass").blur(function () {
+            $('#Password').attr("type", "password");
+            $('#Pass').css({ "background-image": "url('../../Images/Login/hide_password.png')", "background-repeat": "no-repeat", "background-position": "100% 5px;" })
+        });
+
+        screensize();
+
+        $(window).resize(function () {
+            screensize();
+        });
+
+
+        $("#loginid").mouseenter(function (e) {
+            $('#logindiv').show("slide", {
+                direction: "right"
+            }, 2000);
+        });
+
+        $("#Username").click(function () {
+            //alert("Clicked");
+            $('#Username').removeAttr('placeholder');
+        });
+
+        $("#Username").blur(function () {
+
+            var Username = $("#Username").val()
+            if (Username != '') {
+            }
+            else {
+                $('#Username').attr("placeholder", "Username");
+
+            }
+        });
+
+        $("#Password").click(function () {
+
+            $('#Password').removeAttr('placeholder');
+        });
+
+        $("#Password").blur(function () {
+
+            var Password = $("#Password").val()
+            if (Password != '') {
+            }
+            else {
+                $('#Password').attr("placeholder", "Password");
+
+            }
+        });
+
+        $("#Password").focus(function () {
+
+            var Password = $("#Password").val()
+            if (Password != '') {
+            }
+            else {
+                $('#Password').removeAttr('placeholder');
+
+            }
+        });
+
+    });
+
+
+    function screensize() {
+
+        if (window.screen.height >= 768 && window.screen.width > 1024) {
+
+            $('#divheightimage').css('height', '99.5%');
+            $('#loginpageimage').css('height', '99.5%');
+        }
+        else {
+
+            $('#divheightimage').css('height', 'auto');
+            $('#loginpageimage').css('height', 'auto');
+
+        }
+    }
+
+    function openPopup() {
+        //alert("Called");
+        //$('#myModal').modal('show');
+        //$('#myModal').modal('toggle');
+    }
+
+</script>
+
+<style type="text/css">
+    *:focus {
+    outline: none;
+}
+    #slider-div {
+        background: green;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        display: none;
+        right: 0px;
+    }
+</style>
+
+<style>
+    .placeholder {
+        color: rgb(204,204,204);
+    }
+</style>
+
+<body style="height: 103%;">
+    <div class="col-md-12 col-sm-12" style="padding:0;margin:0;height:91.3%;">
+        <div class="col-md-8 col-sm-12 " id="divheightimage" style="padding:0;margin:0; position:relative;z-index:99;">
+            <img id="loginpageimage" class="img-responsive" src="~/Images/NewImages/main-bg-with-characters.png" alt="main pic" style="position:relative;" />
+        </div>
+
+        <div class="col-md-8 col-sm-8 " style="position: absolute; z-index: 99;padding:2%;padding-left:7%;top: 0%;">
+            <a id="aLogin" href="@Url.Action("Index", "Home")"><img class="img-responsive" src="~/Images/NewImages/image001.png" style="float:left;max-width: 100%;" /></a>
+        </div>
+        <div class="col-md-8 col-sm-8 top12per" style="width: 50%;top:30%; position: absolute; z-index: 99;font-size: 3.4vw; font-weight: 600; line-height: 1.2em; font-family: open sans; left: 3%; color: grey;">
+
+            Find the best insurance brokkrr in real-time
+        </div>
+        <div class="col-sm-2">
+
+        </div>
+        <div class="col-md-4 col-sm-8 col-xs-12" style="height:auto !important;">
+            <br />
+            <br />
+
+            <div class="col-md-12 col-sm-12 col-xs-12" style="text-align:center;">
+                <img src="~/Images/NewAssets/logoB.png" />
+            </div>
+
+            <div class="col-md-12 col-sm-12" style="text-align:center;padding-top:5%;padding-bottom:10%;">
+                <span style="color:rgb(43,190,148);font-size: 19px;">Login as customer</span>
+            </div>
+
+            @using (Html.BeginForm("CustomerLogin", "Login", FormMethod.Post, new { @class = "", Style = "background-color:#fff;" }))
+            {
+
+                <div class="col-md-12 col-sm-12">
+                    @*<input style="border: none;background: transparent;width:100%;font-size: 1.5vw;color: rgb(204,204,204);bottom: 0;" placeholder="Username"></input>*@
+                    @Html.TextBoxFor(model => model.Email, new { @Id = "Username", @class = "placeholder", style = "padding:1%;font-size:20px !important;font-family:Helvetica !important;font-weight:normal !important;margin-bottom: 0px !important;border:none;color:black;", @placeholder = "Username" })
+
+                    <hr style="margin-top: 1px;border-width: 2px;width:100%;margin-left: 0%;margin-bottom: 0;" />
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger", style = "float: left;margin-top: 1%;" })
+                </div>
+
+
+                <div class="col-md-12 col-sm-12" style="padding-top:5%;padding-bottom:3.5%;">
+                    @*<input style="border: none;background: transparent;width:100%;font-size: 1.5vw;color:rgb(204,204,204);bottom: 0;" placeholder="Password"></input>*@
+                    <div class="input-group" style="margin-bottom: 0px !important;">
+                        @Html.PasswordFor(model => model.Password, new { @Id = "Password", @class = "placeholder", style = "font-size:20px !important;font-family:Helvetica !important;font-weight:normal !important;margin-bottom: 0px !important;border:none;color:black;", @placeholder = "Password" })
+                        <span id="Pass" class="input-group-addon" style="background-image:url('../../Images/Login/hide_password.png');background-repeat:no-repeat;background-position: 100% 5px;background-color: transparent;border: transparent;cursor:pointer;"></span>
+                    </div>
+                        <hr style="margin-top: 1px;border-width: 2px;width:100%;margin-left: 0%;margin-bottom: 0;" />
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger", style = "float: left;margin-top: 1%;" })
+
+
+                        <a href="#myModal" data-target="#myModal" data-toggle="modal"><span style="color:darkturquoise;float:right;font-size: 12px;margin-top:1%;">Forgot Password?</span></a>@*onclick="openPopup()"*@
+
+                    </div>
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding-top:2%;text-align: center;">
+                    <span style="color:#a94442 !important;"> @ViewData["LoginFailBroker"] <span id="BrokerLogin" style="display:none;">Please <a href="@Url.Action("BrokerLogin", "Login")">click here</a> to login as brokkrr !</span></span>
+                    <span style="color:#a94442 !important;"> @ViewData["LoginFail"]</span>
+                    
+                </div>
+
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding-bottom:5%;text-align: center;">
+                    @*<input type="button" value="Login" style="font-size: 20px;color: #fff;background-color: rgb(72,205,258);height: 55px;width: 63%;border: none;border-radius: 30px;" />*@
+
+                    <button style="width: 100%;height: 46px;background-color:#17d1ff;color: #fff;background-color: rgb(72,205,258);height: 55px;width: 63%;border: none;border-radius: 30px;">
+                        <span style="font-size: 20px;">Login</span>
+                    </button>
+
+                </div>
+
+            }
+            <div class="col-md-12 col-sm-12 col-xs-12" style="text-align:center;">
+                <span style="color:darkturquoise;font-size: 17px;font-family: open sans;font-weight:800;">
+                    Join For Free
+                </span>
+            </div>
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog" style="text-align:center;">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            @*<h4 class="modal-title" style="font-size:25px !important;">
+                                    Forgot Password
+                                    <a href="~/Login/CustomerLogin"><img src="~/Images/NewAssets/closepopup.png" style="float:right;" /> </a>
+                                </h4>*@
+                            <img id="" src="~/Images/NewAssets/closepopup.png" style="float: right;margin-top: 3%;cursor:pointer;" data-dismiss="modal" />
+                            <h4 class="modal-title" style="font-size:30px;margin-top:10px;margin-bottom:10px;text-align: left;margin:2.5%;font-weight:bold;font-family:open sans;">Forgot Password</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div style="padding-left:20%;padding-right:20%;">
+                                Enter your email id. We will send you link to reset your password.
+                                <br />
+                                <br />
+                                <input id="ForgetEmail" autofocus placeholder="Enter valid email" style="color: black;background: transparent;padding: 8px 10px;width: 90%;margin-left:1%;border-radius:0!important;border:none;" />
+
+                                @*<input style="border: none;background: transparent;width:100%;font-size: 1.5vw;color: rgb(204,204,204);bottom: 0;" placeholder="Username"></input>*@
+
+                                <hr style="margin-top: 1px;border-width: 2px;width:100%;margin-left: 0%;margin-bottom: 0;" />
+                                <div align="left" id="emailsent" style="display:none;color:#a94442;text-align: center;margin-top: 20px;padding-left:5%">Email sent successfully</div>
+                                <div align="left" id="emailfailed" style="display:none;color:#a94442;text-align: center;margin-top: 20px;padding-left:5%">Error occur,Please try again</div>
+                                <div align="left" id="errorforgetpwd" style="display:none;color:#a94442;text-align: center;margin-top: 20px;padding-left:5%">Enter valid email Id</div>
+                                <div align="left" id="emailsending" style="display:none;color:#a94442;text-align: center;margin-top: 20px;padding-left:5%">Sending email ...</div>
+                                <div align="left" id="invalidemail" style="display:none;color:#a94442;text-align: center;margin-top: 20px;padding-left:5%">Invalid email address</div>
+                            </div>
+                        </div>
+                        <div align="center" class="">
+                            <hr />
+                            @*<button style="width:38%;height: 46px;background-color:#17d1ff;margin-top:5%;margin-bottom:5%;" onclick="forgetpwd()">send link</button>*@
+                            <button id="btnSendLink" style="margin-bottom: 20px;height: 46px;background-color:#17d1ff;color: #fff;background-color: rgb(72,205,258);height: 55px;width: 40%;border: none;border-radius: 30px;" onclick="forgetpwd();">
+                                <span style="font-size: 20px;">Send Link</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-2">
+
+        </div>
+        <div class="clearfix">
+
+        </div>
+    </div>
+
+    <footer class="footer-distributed" style="position:relative ;bottom:0;background-image:none;">
+        <div class="" style="width:100%">
+            <div class="col-md-12 col-sm-12 col-xs-12 loginfooter" style="padding-left:0;padding-right:0;padding-bottom: 8px;">
+                <div class="">
+                    <div class="col-md-3 col-sm-3" style="padding-top: 20px;padding-right:0;">
+                        <p style="display: block;color: #666666;font-size:16px;font-family:open sans;text-align:center;">
+                            © 2018 brokkrr. All rights reserved.
+                        </p>
+                    </div>
+                    <div class="col-md-2 col-sm-3 text-center" style="padding-left:0;">
+                        <p class="footer-company-about">
+                            <div class="social-icons img-responsive" style="margin-bottom:0px;margin-top: 15px;">
+                                <a style="cursor:default;"><span class="facebook"></span></a>
+                                <a style="cursor:default;"><span class="twitter"></span></a>
+                                <a style="cursor:default;"><span class="linkedin"></span></a>
+                            </div>
+                        </p>
+                    </div>
+                    <div class="col-md-5 col-sm-3" style="margin-bottom:0%;">
+                    </div>
+                    <div class="col-md-1 col-sm-1 Insfooterlogo" >
+                        <div style="padding-right:4%;text-align:center">
+                            <img src="~/Images/NewAssets/footer-logo.png" alt="logo" />
+                        </div>
+                    </div>
+                    <div class="col-md-1 col-sm-1" style="margin-bottom:0%;">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+</body>

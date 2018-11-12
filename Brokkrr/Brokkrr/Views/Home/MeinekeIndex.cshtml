@@ -1,0 +1,606 @@
+﻿@model BrokerMVC.Models.GetZipWithCityName
+
+<!---New Website Work-->
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/BrokkrrMainLayout.cshtml";
+}
+
+@*<link href="~/Content/HomeCSS/Hub-442016f18c.css" rel="stylesheet" />*@
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<!-- /css links -->
+<script type="text/javascript" src="~/Scripts/Scripts2/jquery.min.js"></script>
+<script src="~/Scripts/Scripts2/bootstrap.min.js"></script>
+
+
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,700italic,400,600,700' rel='stylesheet' type='text/css'>
+<link href="~/Content/MeinekeHomePage.css" rel="stylesheet" />
+@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>*@
+
+<style type="text/css">
+    *:focus {
+        outline: none;
+    }
+
+    .ImgText {
+        position: absolute;
+        z-index: 99;
+        /*bottom: 50%;*/
+        font-size: 3.2vw;
+        color: #fff;
+        left: 30%;
+        top: 20%;
+        font-family: open sans-serif;
+    }
+
+    .ImgSubText {
+        position: absolute;
+        z-index: 99;
+        bottom: 40%;
+        font-size: 3.1vw;
+        color: #fff;
+        /*left: 20%;*/
+        left: 8%;
+        /*right: 20%;*/
+        width: 80%;
+        line-height: 1.2em;
+        font-family: open sans-serif;
+    }
+
+    .btn-3 {
+    }
+
+    .btn {
+        height: 50px;
+        width: 42%;
+        color: #fff;
+        padding: 5%;
+    }
+
+
+        .btn:hover {
+            height: 50px;
+            width: 42%;
+            color: #fff;
+        }
+
+        .btn a:hover {
+            color: #fff;
+        }
+
+    .placeholder {
+        color: #fff;
+    }
+
+    #aLogin {
+        color: #FFFFFF;
+    }
+
+        #aLogin :hover {
+            color: #FFFFFF;
+        }
+</style>
+
+<script type="text/javascript">
+
+
+    function CheckValidation() {
+        //alert("Called");
+        var zipaddress = $("#ZipCode").val();
+        //alert(zipaddress);
+        if (zipaddress.length >= 5) {
+            return true;
+        }
+        else {
+            $("#lblError").text('Enter valid ZipCode.');
+            $("#lblError").css("display", "block");
+            $("#ZipCode").focus();
+            return false;
+        }
+        //$('#loading').show();
+        //$('.bodycustomer').addClass('Insurancemainblur');
+    }
+
+    //function initialize() {
+    //    //alert("Called");
+    //    new google.maps.places.Autocomplete(
+    //    (document.getElementById('ZipCode')), {
+    //        types: ['geocode']
+    //    });
+    //}
+
+    $(document).ready(function () {
+        // initialize();
+
+        //called when key is pressed in textbox
+        $("#ZipCode").keypress(function (e) {
+            //if the letter is not digit then display error and don't type anything
+            //if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            //    return false;
+            //}
+            //else {
+            //    return true;
+            //}
+            if (e.which == 13) {
+
+                var zipaddress = $("#ZipCode").val();
+
+                if (zipaddress.length >= 5) {
+
+                    if (zipaddress.match(/^\d+$/)) {
+                        $.ajax({
+                            url: "/Home/HomePage",
+                            type: "POST",
+                            success: function (data) {
+
+                            }
+                        })
+                    }
+                    else {
+                        $("#lblError").text('Enter valid ZipCode.');
+                        $("#lblError").css("display", "block");
+                        $("#ZipCode").focus();
+                    }
+                }
+            }
+        });
+
+        //function GetCity(e)
+        $("#ZipCode").keyup(function (e) {
+            //alert("Key Up");
+            var zipaddress = $("#ZipCode").val();
+            //alert("Length" + zipaddress.length);
+            if (zipaddress.length >= 5) {
+                // alert("In If" + zipaddress.length);
+                $.ajax({
+                    url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + zipaddress + '',
+                    success: function (data) {
+                        lat = data.results[0].geometry.location.lat;
+                        lng = data.results[0].geometry.location.lng;
+
+                        $('#Longitude').val(lng);
+                        $('#Latitude').val(lat);
+
+                        for (var i = 0; i < data.results[0].address_components.length; i++) {
+
+                            for (var b = 0; b < data.results[0].address_components[i].types.length; b++) {
+                                if (data.results[0].address_components[i].types[b] == "postal_code") {
+                                    var zip = data.results[0].address_components[i].long_name;
+                                }
+                                if (data.results[0].address_components[i].types[b] == "locality") {
+                                    localCity = data.results[0].address_components[i].long_name;
+                                    $('#City').val(localCity);
+                                }
+                                if (data.results[0].address_components[i].types[b] == "country") {
+                                    Country = data.results[0].address_components[i].long_name;
+                                    $('#Country').val(Country);
+                                }
+                            }
+                        }
+                    }
+
+                });
+                $("#lblError").text('');
+                $("#lblError").css("display", "none");
+            }
+            //$('#loading').hide();
+            //$('.bodycustomer').removeClass('Insurancemainblur');
+        });
+
+        $("#ZipCode").blur(function () {
+            var zipaddress = $("#ZipCode").val();
+            //alert("Length" + zipaddress.length);
+            if (zipaddress.length >= 5) {
+                //alert("In If" + zipaddress.length);
+                $.ajax({
+                    url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + zipaddress + '',
+                    success: function (data) {
+                        lat = data.results[0].geometry.location.lat;
+                        lng = data.results[0].geometry.location.lng;
+
+                        $('#Longitude').val(lng);
+                        $('#Latitude').val(lat);
+
+                        for (var i = 0; i < data.results[0].address_components.length; i++) {
+
+                            for (var b = 0; b < data.results[0].address_components[i].types.length; b++) {
+                                if (data.results[0].address_components[i].types[b] == "postal_code") {
+                                    var zip = data.results[0].address_components[i].long_name;
+                                }
+                                if (data.results[0].address_components[i].types[b] == "locality") {
+                                    localCity = data.results[0].address_components[i].long_name;
+                                    $('#City').val(localCity);
+                                }
+                                if (data.results[0].address_components[i].types[b] == "country") {
+                                    Country = data.results[0].address_components[i].long_name;
+                                    $('#Country').val(Country);
+                                }
+                            }
+                        }
+                    }
+
+                });
+            }
+        });
+        //$('#loading').hide();
+        //$('.bodycustomer').removeClass('Insurancemainblur');
+    });
+
+</script>
+
+
+
+<div class="bodycustomer" id="myPage" style="overflow-x:hidden;">
+
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12" style="height:auto;padding:0;margin:0;">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="position:absolute;z-index:99;padding:2%;padding-left:0;padding-right:0;">
+                    <div class="col-sm-6 col-xs-6 img-responsive" style="padding-left:9%;">
+                        <a id="" class="" href="@Url.Action("Index", "Home")"><img class="img-responsive" src="~/Images/MeinekeDealers/preferred-logo.png" style="float:left;max-width: 100%;" /></a>
+                    </div>
+                    <div class="col-md-1 col-sm-1 col-xs-1" style="padding-bottom:0;">
+
+                    </div>
+                    <div class="col-md-5 col-sm-5 col-xs-5" style="float:right;color:#fff;padding-left:0px;padding-right:0px;">
+
+                        <div class="col-md-5 col-sm-5 col-xs-3" style="font-size:1.5vw;padding-top:4%;padding-left:0px;padding-right:0px;">
+                            @*<center><a href="#priorities" style="color:#fff;font-family: 'Open Sans';">HOW IT WORKS</a></center>*@
+                        </div>
+                        <div class="col-md-2 col-sm-2 col-xs-2" style="font-size:1.25vw;padding-top:4%;padding-left:0px;padding-right:0px;">
+                            <center><a id="aLogin" class="loginlink" href="@Url.Action("CustomerLogin", "Login")">LOGIN</a></center>
+                        </div>
+                        <div class="col-md-5 col-sm-5 col-xs-7" style="font-size:1.25vw;padding-top:3.8%;padding-right:0px;padding-left: 0;">
+                            @*<button style="height:auto;background-color: #fff;color: darkturquoise;border: none;border-radius: 20px;font-family: open sans;">DOWNLOAD APP</button>*@
+                            <center><a id="aLogin" class="btnrubroker" href="@Url.Action("Index", "BrokerRegistration")">ARE YOU A BROKER?</a></center>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-8 col-xs-4" style="width: 40%;position: absolute;z-index: 99;top:22%;font-size:4vw;font-weight: bold;line-height:1em;font-family: Open Sans;left: 10%;color: rgb(52,60,66);">
+                    Insurance Sucks!
+                    <br />
+                    <br />
+                    <div class="insurancesubcontent">We get it. That's why we've come up with<br /> the solution... Insurance on Demand.</div>
+                    <br />
+
+                    @using (Html.BeginForm("MeinekeIndex", "Home", FormMethod.Post, new { @class = "", Style = "" }))
+                    {
+
+                        @Html.TextBoxFor(model => model.ZipCode, new { @id = "ZipCode", @maxlength = 5, @class = "placeholder form-control", style = "margin-bottom:-2px !important;font-size:1.3vw !important;border: none;width:70%;color:rgb(52,67,78);bottom:19%;padding:0;height:auto !important;background: transparent;", @placeholder = "Enter the zip to get started" })
+
+                        @*<hr style="margin-top: 1px;border-width: 2px;width: 70%;margin-left: 0%;margin-bottom:0px;float:left;" />*@
+                        <hr />
+                        @Html.ValidationMessageFor(model => model.ZipCode, "", new { @class = "col-md-12 col-sm-12 col-xs-12 text-danger", style = "float: left;font-size:1.3vw;bottom:0;margin-bottom:-3%;color:#FFF;padding-left: 0;" })
+                        <label for="lblError" id="lblError" style="float: left;font-size:1.3vw;bottom:0;margin-bottom:-1%;color:#FFF;display:none;"></label>
+
+                        @*<div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-top:0;margin-top:1%;">
+                                <button id="Brokkrr" name="Brokkrr" onclick="return CheckValidation();" style="width: 48% !important;border-radius: 31px;border:none;text-transform:none !important;font-family:open sans !important;font-weight:100;background-color:rgb(41,171,226);">
+                                    <div class="btnfindbroker">Find a Broker</div>
+                                </button>
+                            </div>*@
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-top:0;margin-top:1%;">
+                            <button id="Meineke" name="Meineke" onclick="return CheckValidation();" style="width: 48% !important;border-radius: 31px;border:none;text-transform:none !important;font-family:open sans !important;font-weight:100;background-color:rgb(41,171,226);">
+                                <div class="btnfindbroker">Find a brokkrr Now</div>
+                            </button>
+                        </div>
+                        @Html.HiddenFor(model => model.City, new { @class = "", @id = "City" })
+                        @Html.HiddenFor(model => model.Longitude, new { @class = "", @id = "Longitude" })
+                        @Html.HiddenFor(model => model.Latitude, new { @class = "", @id = "Latitude" })
+                        @Html.HiddenFor(model => model.Country, new { @class = "", @id = "Country" })
+                    }
+
+                </div>
+            </div>
+
+
+
+            <img src='~/Images/MeinekeDealers/main-bg-with-characters.png' class="img-responsive" style="height:auto !important;width:100%;position:relative" />
+        </div>
+    </div>
+</div>
+
+<div class="priority" id="priorities" style="background-image:url(../../Images/MeinekeDealers/MeetMatchSecureBackground.png);height:auto;">
+    <div class="container">
+        <div class="text-center">
+            <h4 class="mmsmain">Match.Meet.Secure.</h4>
+            <div class="clearfix"></div>
+            <div id="MMS-content">
+                Choose from carefully vetted and rated insurance brokers to get you<br /> the best insurance at the best price.
+            </div>
+        </div>
+        <div class="col-sm-4" style="padding:2%;">
+            <img src="~/Images/MeinekeDealers/icon-match.png" alt="icon-match" width="90" height="90" />
+            <h4 class="match">Match.</h4>
+            <center>
+                <span class="mmssubcontent">
+                    In just a few clicks you'll be instantly<br />
+                    matched with the best brokkrr for your<br />
+                    specific insurance need. All brokkrr specialists are<br />
+                    brokkrr verified experts in their niche.
+                </span>
+            </center>
+        </div>
+        <div class="col-sm-4" style="padding:3%;">
+            <img src="~/Images/MeinekeDealers/icon-meet.png" alt="icon-meet" width="140" height="140" />
+            <h4 class="meet">Meet.</h4>
+            <center>
+                <span class="mmssubcontent">
+                    Meet with the expert broker of your<br />
+                    choosing (up to 3) to secure the perfect<br />
+                    policy. Check out their experience,<br />
+                    resume and ratings. You have the con-<br />
+                    trol - feel free to date around.
+                </span>
+            </center>
+        </div>
+        <div class="col-sm-4" style="padding:2%;">
+            <img src="~/Images/MeinekeDealers/icon-secure.png" alt="icon-secure" width="140" height="140" />
+            <h4 class="secure">Secure.</h4>
+            <center>
+                <span class="mmssubcontent">
+                    Secure your insurance policy with<br />
+                    the peace of mind knowing it's<br />
+                    backed by the brokkrr<br />
+                    guarantee.
+                </span>
+            </center>
+        </div>
+
+        <div class="clearboth">
+
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div class="col-md-12">
+            <center>
+                <img src="~/Images/MeinekeDealers/icon-guarantee.png" />
+                <div id="guarantee-heading">
+                    The brokkrr Guarantee!
+                </div>
+                <br />
+                <div class="guarantee-content">
+                    brokkrr is Free and insures your transaction up to a $1,000,000 dollars. Why take on the liability?<br />
+                    Let the professional compete and eran your business!
+                </div>
+                <br />
+                <br />
+                <br />
+            </center>
+        </div>
+
+    </div>
+</div>
+
+<div class="Phone img-responsive" style="background-image:url(../../Images/MeinekeDealers/testimonials.png);height:1040px;">
+    <br />
+
+
+    <center>
+        <div class="col-md-12" style="padding:7%;padding-bottom:4%;font-size: 34px;">
+            See what people are saying about brokkrr...
+        </div>
+    </center>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-1 col-sm-1 col-xs-1">
+            </div>
+            <div class="col-md-8 col-sm-8 col-xs-8" style="background-color:#fff;border-radius: 6px;padding-bottom: 1%;color:#69737b;">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding:3%;padding-bottom:0%;clear:both;">
+                    <div class="col-md-1 col-sm-2 col-xs-3" style="padding:0px 0px 0px 8px">
+                        <img src="~/Images/MeinekeDealers/review-avatar-1.png" class="img-responsive" style="float:left;" />
+                    </div>
+
+                    <div class="col-md-10 col-sm-9 col-xs-9" style="padding-left:0;margin-left:0;">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                            <img src="~/Images/MeinekeDealers/5-stars.png" class="img-responsive" style="float:left;" />
+
+
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <span class="col-md-12 col-sm-12 col-xs-12 testdate">October 17, 2017</span>
+                        </div>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1">
+
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 name">
+                    Justin Miller
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 testcontent">
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+                </div>
+                <br />
+
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-3 col-sm-3 col-xs-3">
+
+            </div>
+            <div class="col-md-8 col-sm-8 col-xs-8" style="background-color:#fff;border-radius: 6px;padding-bottom: 1%;color:#69737b;">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding:3%;padding-bottom:0%;clear:both;">
+                    <div class="col-md-1 col-sm-2 col-xs-3" style="padding:0px 0px 0px 8px">
+                        <img src="~/Images/MeinekeDealers/review-avatar-2.png" class="img-responsive" style="float:left;" />
+                    </div>
+
+                    <div class="col-md-10 col-sm-9 col-xs-9" style="padding-left:0;margin-left:0;">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                            <img src="~/Images/MeinekeDealers/5-stars.png" class="img-responsive" style="float:left;" />
+
+
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <span class="col-md-12 col-sm-12 col-xs-12 testdate">October 17, 2017</span>
+                        </div>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1">
+
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 name">
+                    Jane Smith
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 testcontent">
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+                </div>
+                <br />
+
+            </div>
+            <div class="col-md-1 col-sm-1 col-xs-1">
+
+            </div>
+        </div>
+    </div>
+
+    <br />
+    <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-md-1 col-sm-1 col-xs-1">
+            </div>
+            <div class="col-md-8 col-sm-8 col-xs-8" style="background-color:#fff;border-radius: 6px;padding-bottom: 1%;color:#69737b;">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding:3%;padding-bottom:0%;clear:both;">
+                    <div class="col-md-1 col-sm-2 col-xs-3" style="padding:0px 0px 0px 8px">
+                        <img src="~/Images/MeinekeDealers/review-avatar-3.png" class="img-responsive" style="float:left;" />
+                    </div>
+
+                    <div class="col-md-10 col-sm-9 col-xs-9" style="padding-left:0;margin-left:0;">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+
+                            <img src="~/Images/MeinekeDealers/5-stars.png" class="img-responsive" style="float:left;" />
+
+
+                        </div>
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <span class="col-md-12 col-sm-12 col-xs-12 testdate">October 17, 2017</span>
+                        </div>
+
+                    </div>
+                    <div class="col-md-1 col-sm-1">
+
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 name">
+                    Jack Balestone
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 testcontent">
+                    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+                </div>
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+    <br />
+</div>
+<br />
+<br />
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="col-md-4">
+
+            <div class="col-md-4 col-sm-4">
+
+            </div>
+
+            <div class="col-md-6 col-sm-6" style="padding:6%;">
+                <img src="~/Images/MeinekeDealers/nerds.png" class="img-responsive " style="height: 240px;" />
+            </div>
+            <div class="col-md-2 col-sm-2">
+
+            </div>
+            <div class="clearfix">
+
+            </div>
+
+        </div>
+
+        <div class="col-md-6 selfcontent">
+
+
+            <h3 class="selfpro">Self-proclaimed Insurance Nerds</h3>
+            <br />
+
+            <span>
+                brokkrr was developed by self proclaimed "insurance nerds" who<br />
+                were born with a prediposed genetic mutation of loving the insur-<br />
+                ance industry. The beauty is - we love it. so you don't have to.<br />
+                Along with our love for the industry came the displeasure with the<br />
+                way the process takes place. Teamed with self proclaimed "analytic<br />
+                nerds",we came up with a process to demystify the insurance in-<br />
+                dustry(thus upsetting the old-guard). This new process gives the<br />
+                power of the industry back to where it belongs... You.
+            </span>
+
+
+
+
+        </div>
+        <div class="col-md-2">
+
+        </div>
+        <div class="clearfix">
+
+        </div>
+        <br />
+    </div>
+
+</div>
+
+
+<footer class="footer-distributed" style="position: relative;">
+    <div class="container" style="width:100%">
+        <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-right:0;">
+            <div class="row">
+                <div class="col-md-3 col-sm-3" style="padding-top: 20px;padding-right:0;text-align: center;">
+                    <p style="display: block;color: #666666;font-size: 16px;font-family:open sans;text-align: center;">
+                        © 2018 brokkrr. All rights reserved.
+                    </p>
+                </div>
+
+                <div class="col-sm-3 col-md-2 text-center" style="padding-left:0;">
+                    <p class="footer-company-about">
+                        <div class="social-icons" style="margin-bottom:0px;margin-top: 15px;">
+                            <a style="cursor:default;"><span class="facebook"></span></a>
+                            <a style="cursor:default;"><span class="twitter"></span></a>
+                            <a style="cursor:default;"><span class="linkedin"></span></a>
+                        </div>
+                    </p>
+                </div>
+                <div class="col-sm-2 col-md-5" style="margin-bottom:0%;">
+                </div>
+                <div class="col-sm-1 col-md-1" style="margin-bottom: 0%;margin-top: 1.5%;">
+                    <div style="padding-right:4%;text-align:center">
+                        <img src="~/Images/NewAssets/footer-logo.png" alt="logo" />
+                    </div>
+                </div>
+                <div class="col-md-1 col-sm-1" style="margin-bottom:0%;">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+
+<script src="~/js/HomeJs/jquery-2.2.4.min.js"></script>
+<script src="~/js/HomeJs/main-a63a635ec9.bundle.js"></script>

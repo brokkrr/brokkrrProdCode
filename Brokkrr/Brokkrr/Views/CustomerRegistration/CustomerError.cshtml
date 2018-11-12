@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "Error";
+    if (@ViewBag.Company == "APSP")
+    {
+        Layout = "~/Views/Shared/_APSPNewCustomerLayout.cshtml";
+    }
+    else if (@ViewBag.Company == "Meineke")
+    {
+        Layout = "~/Views/Shared/_MeinekeNewCustomerLayout.cshtml";
+    }
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#footerLayout').hide();
+        $('#username').css('display', 'none');
+        $('#usernamedropdown').css('display', 'none'); 
+        $('#aSerchBrokerAPSP').css('display', 'none');
+    });
+</script>
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<!-- /css links -->
+<script type="text/javascript" src="~/Scripts/Scripts2/jquery.min.js"></script>
+<script src="~/Scripts/Scripts2/bootstrap.min.js"></script>
+<div style="height:81.3%">
+    <h2>Error</h2>
+    <br />
+    <h3>You are registered successfully but can't send mail to you.</h3>
+    <h3>Please contact to admin.</h3>
+</div>
+<footer class="footer-distributed" style="position: relative;background-image:none;" id="footerLayout">
+    <div class="container" style="width:100%">
+        <div class="col-md-12 col-sm-12 col-xs-12" style="padding-left:0;padding-right:0;">
+            <div class="row">
+                <div class="col-md-3 col-sm-3" style="padding-top: 20px;padding-right:0;text-align: center;">
+                    <p style="display: block;color: #666666;font-size: 16px;font-family:open sans;text-align:center;">
+                        © 2018 brokkrr. All rights reserved.
+                    </p>
+                </div>
+
+                <div class="col-sm-3 col-md-2 text-center" style="padding-left:0;">
+                    <p class="footer-company-about">
+                        <div class="social-icons" style="margin-bottom:0px;margin-top: 15px;">
+                            <a style="cursor:default;"><span class="facebook"></span></a>
+                            <a style="cursor:default;"><span class="twitter"></span></a>
+                            <a style="cursor:default;"><span class="linkedin"></span></a>
+                        </div>
+                    </p>
+                </div>
+                <div class="col-sm-2 col-md-3" style="margin-bottom:0%;">
+                </div>
+                <div class="col-sm-4 col-md-4" style="margin-bottom: 0%;margin-top: 1.5%;">
+                    <div style="padding-right:4%;text-align:center">
+                        <img style="margin-top: -12px;" src="~/Images/MeinekeDealers/preferred-logo.png" alt="logo" />
+                    </div>
+                </div>            
+            </div>
+        </div>
+    </div>    
+</footer>
+
+
+

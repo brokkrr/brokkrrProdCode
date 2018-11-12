@@ -1,0 +1,97 @@
+﻿@model BrokerMVC.Models.BrokerPaymentModel
+@{
+    ViewBag.Title = "MakePayment";
+    Layout = "~/Views/Shared/View_BrokkrrMainLayout.cshtml";
+}
+
+@*<link href="~/Content/Brokkrr%20CSS/ProgressBar.css" rel="stylesheet" />
+    <link href="~/Content/Brokkrr%20CSS/bootstrap.min.css" rel="stylesheet" />*@
+<link href="~/Content/BrokkrrCSS/ProgressBar1.css" rel="stylesheet" />
+@*<link href="~/Content/bootstrap.min.css" rel="stylesheet" media="all" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />*@
+<link href="~/Content/BrokkrrCSS/CSS1/bootstrap.min.css" rel="stylesheet" />
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+
+<div class="container" style="height:100%">
+
+    <div class="row">
+        <br />
+        <div class="col-lg-12 brokerTag" style="font-weight: bold;">
+            <span>BROKER REGISTRATION</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <br />
+        <div class="col-md-12">
+            <div class="col-sm-3"></div>
+            <div class="col-md-6">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="progress" style="height:10px;">
+                        <div class="progress-bar progress-bar-info" style="width: 100%"></div>
+                        <div class="one info-color">
+                            <span class="progress-Text">1</span>
+                        </div>
+                        <div class="two info-color">
+                            <span class="progress-Text">2</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+
+    <div class="row ">
+        <div class="col-md-12">
+            <div class="col-md-4"></div>
+            <div class="col-md-4 progressbar-belowText">
+                <div class="col-xs-6 textbelowPB" style="font-weight: bold;font-size: 16px;color:#939393">
+                    Personal Information
+                </div>
+                <div class="col-xs-5" style="font-size: 16px;font-weight: bold">
+                    <div class="col-xs-10 textbelowPB" style="padding-right:0px;">
+                        Payment
+                    </div>
+                    <div class="col-xs-2"></div>
+                </div>
+                <div class="col-xs-1"></div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>
+
+
+
+    @using (Html.BeginForm())
+    {
+        <div class="row" style="padding-left:20%;padding-right:20%;margin-top: 1%;">
+            <div class="row col-sm-12" style="background-color: #e6faff;text-align:center;padding-top: 3%;">
+                There is fee of $<label>@Html.DisplayFor(model => model.Amount)</label>0 for 3 months of broker registration.If you want to register as Broker then please continue
+                with payment otherwise you can cancel the process.
+            </div>
+            
+            <div class="row col-md-12" style="background-color: #e6faff;text-align:right;">
+                <div class="col-sm-6">
+                    <span style="font-family:Arial, Helvetica, sans-serif"> You are about make payment of<br /><span style="font-weight:bolder;font-size:38px">$ 0</span></span>
+                    <label style="font-weight:bolder;font-size:38px">@Html.DisplayFor(model => model.Amount)</label>
+                    @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", style = "width: 150px; display:none" } })
+                    <br />
+                    For<br />
+                    <b>brokkrr Inc</b>
+                    <br /><br />
+                </div>
+                <div class="col-sm-6" style="background-color: #e6faff;text-align:left;padding-top: 1%;">
+                    <input type="image" src="~/Images/Assets/checkout_Paypal.png" class="img-responsive" />
+                    <br /><br />
+                </div>
+            </div>
+
+
+
+        </div>
+    }
+
+</div>

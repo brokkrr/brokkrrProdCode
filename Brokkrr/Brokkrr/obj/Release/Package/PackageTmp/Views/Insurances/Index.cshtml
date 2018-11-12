@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/View_CustomerProfileLayout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+
+</head>
+<body>
+   <div class="container clearfix">
+       <div class="row">
+           <div class="col-md-12">
+               
+               <br>
+               <div class="row headingtitle" align="center" style="font-size:30px;"> Welcome <span id="name" class="capitalText"> @ViewData["UserName"] </span>!</div>
+               <div class="row" align="center" style="font-size:19px;">Select the type of insurance you need and <br>you will have a brokkrr in a few easy clicks!</div>
+               <br>
+           </div>
+       </div>
+
+       <div class="row" style="padding-bottom:4%;">
+           <div class="col-sm-12 col-xs-12" align="center"><img src="~/Images/Insurance/icon.png" class="iconimg"></div>
+       </div>
+
+       <div class="row" style="padding-left:20%;padding-right:20%;">
+           <div class="col-md-6 col-sm-6 col-xs-6 lable" style="padding-bottom:4%;">
+               <a href="~/Insurances/HomeInsurance" id="SelectEconomy" data-transition="slide">
+                   <img src="~/Images/Insurance/homeAuto.png" class="imgBorder" alt=""
+                        style="width:100%; height:80;box-shadow: 10px 10px 5px #ccc;">
+               </a>
+           </div>
+           <div class="col-md-6 col-sm-6 col-xs-6  hrlabel" style="padding-bottom:4%">
+               <a href="~/Insurances/BusinessInsurance" id="SelectStandard" data-transition="slide">
+                   <img src="~/Images/Insurance/business.png" class="imgBorder" alt=""
+                        style="width:100%; height:80;box-shadow: 10px 10px 5px #ccc;">
+               </a>
+           </div>
+       </div>
+       <div class="row" style="padding-left:20%;padding-right:20%;padding-bottom:12%"><!--18April RS padding-bottom:12%-->
+           <div class="col-md-6 col-sm-6 col-xs-6  lable" style="padding-bottom:4%">
+               <a href="~/Insurances/BenefitsInsurance" id="SelectLuxury" data-transition="slide">
+                   <img src="~/Images/Insurance/benefits.png" class="imgBorder" alt=""
+                        style="width:100%; height:80;box-shadow: 10px 10px 5px #ccc;">
+               </a>
+           </div>
+           <div class="col-md-6 col-sm-6 col-xs-6  hrlabel" style="padding-bottom:15%"><!--18April RS padding-bottom:15%-->
+               <a href="~/Insurances/LifeandDisabilityInsurance" id="SelectCollectable" data-transition="slide">
+                   <img src="~/Images/Insurance/life.png"
+                        class="imgBorder" alt="" style="width:100%; height:80;box-shadow: 10px 10px 5px #ccc;">
+               </a>
+           </div>
+       </div>
+   </div>
+    <script>
+    $(window).scroll(function () {
+        $('#footerLayout').hide();
+      
+    });
+
+    </script>
+    <footer class="footer-distributed" style="position:fixed;bottom:0;margin-top:3%;">
+        <div class="container" style="width:100%;">
+            <div class="col-md-12 col-sm-12 col-xs-12" style="padding:0;">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 col-xs-6" style="padding:0;">
+                        <div class="col-md-12 col-sm-12 col-xs-12" style="text-align:center;">
+                            <p class="footer-company-about">
+                                <div class="social-icons" style="margin-bottom:0px;">
+                                    <a href="#"><span class="facebook"></span></a>
+                                    <a href="#"><span class="twitter"></span></a>
+                                    <a href="#"><span class="linkedin"></span></a>
+                                </div>
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6 col-sm-6 col-xs-6" style="margin-bottom: 0%;text-align:center;padding-right: 0;">
+                        <div class="footer-right-header">
+                            @*<div class="copyright">*@
+                            <div>
+                                <p style="display: block;color: #666666;font-size: 16px;font-weight: 800;font-family:'Varela Round',sans-serif;padding-top:2%;">© 2018 brokkrr Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
